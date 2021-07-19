@@ -1,3 +1,5 @@
+import { watch } from 'vue';
+
 import Theme from "vitepress/theme"
 import "./custom.scss"
 
@@ -13,7 +15,12 @@ import SliderZoom from '../components/controls/SliderZoom.vue'
 export default {
   ...Theme,
 
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
+    // Google Analytics
+    if (globalThis && globalThis.gtag) watch(router.route, () => {
+        gtag('config', window.GA_MEASUREMENT_ID, {'page_path': router.route.path });
+    });
+
     app.use(ElementPlus)
     app.use(VNetworkGraph)
     app.component("demo-tabs", DemoTabs)
