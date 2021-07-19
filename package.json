@@ -16,7 +16,13 @@
     "build:lib:force": "vite --config vite-lib-force.config.ts build",
     "build:example": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "clean": "rimraf lib"
+    "clean": "rimraf lib",
+    "docs:dev": "vitepress dev docs --port 3001",
+    "docs:build": "run-s docs:clean docs:build:*",
+    "docs:build:link": "npm link && npm link v-network-graph",
+    "docs:build:vp": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "docs:clean": "rimraf docs/.vitepress/dist"
   },
   "devDependencies": {
     "@types/d3-force": "^3.0.3",
@@ -25,8 +31,10 @@
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "@vitejs/plugin-vue": "^1.2.5",
-    "@vue/compiler-sfc": "^3.1.5",
-    "eslint": "^7.31.0",
+    "@vue/compiler-sfc": "^3.1.1",
+    "@vue/server-renderer": "^3.1.1",
+    "element-plus": "^1.0.2-beta.55",
+    "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.14.0",
@@ -37,9 +45,10 @@
     "sass": "^1.36.0",
     "svg-pan-zoom": "github:dash14/svg-pan-zoom#main",
     "typescript": "^4.3.5",
-    "vite": "^2.4.3",
-    "vite-plugin-dts": "^0.5.3",
-    "vue-tsc": "^0.2.2"
+    "vite": "^2.4.2",
+    "vite-plugin-dts": "^0.5.2",
+    "vitepress": "^0.15.6",
+    "vue-tsc": "^0.0.26"
   },
   "peerDependencies": {
     "d3-force": "^3.0.0",
