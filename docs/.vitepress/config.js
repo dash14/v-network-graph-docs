@@ -4,7 +4,7 @@ const path = require("path")
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
-  // base: "/v-network-graph/",
+  base: "/v-network-graph/",
   title: "v-network-graph",
   description: "An interactive network graph visualization library for Vue 3",
   themeConfig: {
