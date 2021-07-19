@@ -27,7 +27,6 @@ module.exports = {
         link: "/examples/",
         children: [
           { text: "Basic Usage", link: "/examples/basic" },
-          { text: "Handle Events", link: "/examples/handle_events" }
         ],
       },
       { text: "Reference", link: "/reference" },
