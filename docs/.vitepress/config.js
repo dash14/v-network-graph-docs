@@ -34,13 +34,5 @@ module.exports = {
   },
   markdown: {
     lineNumbers: true
-  },
-  vite: {
-    resolve: {
-      alias: {
-        // avoid conflicts with vitepress/node_modules/*
-        "@vue": path.resolve(__dirname, "../../node_modules/@vue"),
-      }
-    }
   }
 }
