@@ -1,0 +1,20 @@
+---
+home: true
+
+heroImage: /logo.png
+heroAlt: Logo image
+heroText: v-network-graph
+tagline: An interactive network graph visualization library for Vue 3
+actionText: Getting Started
+actionLink: /getting-started
+
+features:
+- title: SVG based
+  details: Draws a graph by SVG elements based on your data reactively.
+- title: Interactive
+  details: Supports user interactions such as panning, zooming, dragging nodes, and selecting.
+- title: Fully configurable
+  details: You can change the appearance and behavior of the interaction by the configuration.
+
+footer: MIT Licensed | Copyright © 2021 dash14.ack (@dash14ack)
+---
