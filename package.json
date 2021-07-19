@@ -22,6 +22,7 @@
     "docs:build:link": "npm link && npm link v-network-graph",
     "docs:build:vp": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
+    "docs:publish": "./docs/.vitepress/publish.sh",
     "docs:clean": "rimraf docs/.vitepress/dist"
   },
   "devDependencies": {
