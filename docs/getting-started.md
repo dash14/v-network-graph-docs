@@ -14,7 +14,7 @@ and setup via Vue.use
 import VNetworkGraph from 'v-network-graph'
 import 'v-network-graph/style.css'
 
-Vue.use(VNetworkGraph, options)
+Vue.use(VNetworkGraph)
 ```
 
 ## Usage
