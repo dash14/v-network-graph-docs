@@ -21,7 +21,7 @@ export default {
         gtag('config', window.GA_MEASUREMENT_ID, {'page_path': router.route.path });
     });
 
-    app.use(ElementPlus)
+    app.use(ElementPlus,  { size: 'small' })
     app.use(VNetworkGraph)
     app.component("demo-tabs", DemoTabs)
     app.component("el-slider-custom-zoom", SliderZoom)

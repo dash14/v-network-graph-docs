@@ -1,9 +1,9 @@
 <template>
   <div class="demo-control-panel">
-    <el-button size="small" @click="graph?.panToCenter()">To center</el-button>
-    <el-button size="small" @click="graph?.fitToContents()">Fit</el-button>
-    <el-button size="small" @click="graph?.zoomIn()">Zoom In</el-button>
-    <el-button size="small" @click="graph?.zoomOut()">Zoom Out</el-button>
+    <el-button @click="graph?.panToCenter()">To center</el-button>
+    <el-button @click="graph?.fitToContents()">Fit</el-button>
+    <el-button @click="graph?.zoomIn()">Zoom In</el-button>
+    <el-button @click="graph?.zoomOut()">Zoom Out</el-button>
     <el-slider-custom-zoom v-model="zoomLevel" />
   </div>
 
