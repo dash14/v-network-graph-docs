@@ -39,5 +39,17 @@ module.exports = {
   },
   markdown: {
     lineNumbers: true
+  },
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 700, // for element-plus
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            "element-plus": ['element-plus']
+          }
+        }
+      }
+    }
   }
 }
