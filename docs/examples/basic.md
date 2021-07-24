@@ -4,8 +4,10 @@
 
 With the default settings of just specifying node and edge data,
 you can pan, zoom in/out with the mouse wheel, and drag nodes.
+It also supports multi-touch, with the ability to move multiple
+nodes separately at the same time, and pinch to zoom.
 
-<demo-tabs>
+<demo-tabs :demo-height="250">
 <template v-slot:demo>
   <BasicMinimal />
 </template>
@@ -20,7 +22,7 @@ you can pan, zoom in/out with the mouse wheel, and drag nodes.
 
 The positional coordinates of each node can be specified.
 
-<demo-tabs :demo-height="200">
+<demo-tabs :demo-height="250">
 <template v-slot:demo>
   <SetLayouts />
 </template>
