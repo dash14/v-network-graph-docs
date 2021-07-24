@@ -1,15 +1,15 @@
 <template>
   <div class="demo-control-panel">
-    <el-checkbox v-model="styles.view.panEnabled">Pan enabled</el-checkbox>
-    <el-checkbox v-model="styles.view.zoomEnabled">Zoom enabled</el-checkbox>
-    <el-checkbox v-model="styles.node.draggable">Node draggable</el-checkbox>
+    <el-checkbox v-model="configs.view.panEnabled">Pan enabled</el-checkbox>
+    <el-checkbox v-model="configs.view.zoomEnabled">Zoom enabled</el-checkbox>
+    <el-checkbox v-model="configs.node.draggable">Node draggable</el-checkbox>
   </div>
 
   <v-network-graph
     :nodes="nodes"
     :edges="edges"
     :layouts="layouts"
-    :styles="styles"
+    :configs="configs"
     class="v-network-graph"
   />
 </template>
@@ -38,7 +38,7 @@ export default defineComponent({
         node4: { x: 150, y: 50 },
       },
     }
-    const styles = reactive({
+    const configs = reactive({
       view: {
         panEnabled: true,
         zoomEnabled: true,
@@ -47,7 +47,7 @@ export default defineComponent({
         draggable: true,
       },
     })
-    return { nodes, edges, layouts, styles }
+    return { nodes, edges, layouts, configs }
   },
 })
 </script>
