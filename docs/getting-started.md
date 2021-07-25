@@ -4,13 +4,13 @@
 
 Install with npm
 
-```
+```bash
 $ npm install v-network-graph
 ```
 
-and setup via Vue.use
+and setup via Vue.use()
 
-```JavaScript
+```js
 import VNetworkGraph from 'v-network-graph'
 import 'v-network-graph/style.css'
 
