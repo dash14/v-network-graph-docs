@@ -37,7 +37,7 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 20px;
   label,
   span {
     font-size: 12px;

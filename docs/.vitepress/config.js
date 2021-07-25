@@ -32,6 +32,7 @@ module.exports = {
         link: "/examples/",
         children: [
           { text: "Basic Usage", link: "/examples/basic" },
+          { text: "Layout / Positioning", link: "/examples/layout" },
         ],
       },
       { text: "Reference", link: "/reference" },
