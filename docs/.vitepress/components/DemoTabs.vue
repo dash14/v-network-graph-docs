@@ -2,7 +2,9 @@
   <el-tabs type="border-card" value="demo" >
     <el-tab-pane label="Demo" :lazy="true">
       <div class="demo" :style="{ height: `${demoHeight}px` }">
-        <slot name="demo"></slot>
+        <div class="network-graph">
+          <slot name="demo"></slot>
+        </div>
         <div v-if="message" class="float-message">
           <i class="el-icon-warning-outline"></i>
           {{ message }}
@@ -36,6 +38,17 @@ export default defineComponent({
 .demo {
   margin: -15px;
   height: 300px;
+}
+.network-graph {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  :deep(.v-network-graph) {
+    height: 1px;
+    flex: 1;
+  }
 }
 .el-tab-pane :deep(.language-vue) {
   margin: 0;

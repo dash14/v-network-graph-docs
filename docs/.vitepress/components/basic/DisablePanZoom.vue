@@ -10,7 +10,6 @@
     :edges="edges"
     :layouts="layouts"
     :configs="configs"
-    class="v-network-graph"
   />
 </template>
 
@@ -51,12 +50,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style scoped>
-.demo-control-panel {
-  height: 40px;
-}
-.v-network-graph {
-  height: calc(100% - 40px);
-}
-</style>
