@@ -34,7 +34,12 @@ An example of modifying the `view.layoutHandler` config and snapping to the grid
 
 ## Position nodes with d3-force
 
-This component also provide a layout strategy with simulating physical forces on particles with [d3-force](https://github.com/d3/d3-force).
+This component also provide a layout strategy with simulating
+physical forces on particles with [d3-force](https://github.com/d3/d3-force).
+
+In this example, clicking on a node with Alt key pressed will fix
+the position of the node. Clicking the node again with the Alt key
+will return it to the position of the d3-force calculation result.
 
 <demo-tabs :demo-height="450">
 <template v-slot:demo>
@@ -42,14 +47,13 @@ This component also provide a layout strategy with simulating physical forces on
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/layout/D3Force.vue{65-78}
+  <<< @/.vitepress/components/layout/D3Force.vue{19,57-72}
 
 </template>
 </demo-tabs>
 
 To use this class, install the `d3-force` package with the following command.
 (Also install `@types/d3-force` if necessary.)
-
 
 ```bash
 $ npm install d3-force
