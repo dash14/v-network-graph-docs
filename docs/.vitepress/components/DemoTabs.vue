@@ -9,6 +9,10 @@
           <i class="el-icon-warning-outline"></i>
           {{ message }}
         </div>
+        <div v-if="hint" class="float-message hint">
+          <i class="el-icon-thumb"></i>
+          {{ hint }}
+        </div>
       </div>
     </el-tab-pane>
     <el-tab-pane label="Source">
@@ -23,6 +27,10 @@ import { defineComponent } from "vue"
 export default defineComponent({
   props: {
     message: {
+      type: String,
+      default: ""
+    },
+    hint: {
       type: String,
       default: ""
     },
@@ -61,6 +69,9 @@ export default defineComponent({
   border-radius: 4px;
   inset: 10px auto auto 10px;
   background-color: #88888844;
+}
+.hint {
+  inset: auto auto 10px 10px;
 }
 // .source {
 //   max-height: 400px;
