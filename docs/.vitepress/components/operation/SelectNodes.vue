@@ -36,7 +36,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, computed, ref, watch } from "vue"
-import { UserConfigs, NodeLabelDirection } from "v-network-graph"
+import { UserConfigs } from "v-network-graph"
 
 export default defineComponent({
   setup() {
