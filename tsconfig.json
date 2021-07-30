@@ -15,7 +15,6 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
-    "docs/.vitepress/components/**.vue"
+    "src/**/*.vue"
   ]
 }
