@@ -2,16 +2,16 @@
   <div class="demo-control-panel">
     <label>Selected:</label>
     <el-select
-      v-model="selectedNodes"
+      v-model="selectedEdges"
       :disabled="limit === 0"
       multiple
       :multiple-limit="limit"
       placeholder="Select"
     >
       <el-option
-        v-for="(node, key) in nodes"
+        v-for="(edge, key) in edges"
         :key="key"
-        :label="node.name"
+        :label="`[${nodes[edge.source].name}=${nodes[edge.target].name}]`"
         :value="key"
       />
     </el-select>
@@ -19,14 +19,14 @@
     <label>Limit:</label>
     <el-select v-model="limit">
       <el-option :key="0" label="0 (disable)" :value="0" />
-      <el-option :key="1" label="1 node" :value="1" />
-      <el-option :key="2" label="2 nodes" :value="2" />
+      <el-option :key="1" label="1 edge" :value="1" />
+      <el-option :key="2" label="2 edges" :value="2" />
       <el-option :key="3" label="unlimited" :value="-1" />
     </el-select>
   </div>
 
   <v-network-graph
-    v-model:selected-nodes="selectedNodes"
+    v-model:selected-edges="selectedEdges"
     :nodes="nodes"
     :edges="edges"
     :layouts="layouts"
@@ -57,32 +57,36 @@ export default defineComponent({
         node3: { x: 100, y: 75 },
       },
     })
-    const selectedNodes = ref<string[]>([])
+    const selectedEdges = ref<string[]>([])
+    // req
     const configs = reactive({
-      node: {
-        selectable: true as boolean | number // enable (unlimited)
+      edge: {
+        selectable: true as boolean | number, // enable (unlimited)
+        stroke: {
+          width: 4
+        }
       },
     })
 
     const limit = ref(-1)
     watch(limit, v => {
-      selectedNodes.value = [] // reset
+      selectedEdges.value = [] // reset
       switch (v) {
         case 0: // disabled
-          configs.node.selectable = false
+          configs.edge.selectable = false
           break
         case 1: // limit
         case 2:
-          configs.node.selectable = v
+          configs.edge.selectable = v
           break
         case -1: // unlimited
         default:
-          configs.node.selectable = true
+          configs.edge.selectable = true
           break
       }
     })
 
-    return { nodes, edges, layouts, selectedNodes, configs, limit }
+    return { nodes, edges, layouts, selectedEdges, configs, limit }
   },
 })
 </script>
