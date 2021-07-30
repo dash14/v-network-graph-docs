@@ -8,7 +8,7 @@ Set `configs.node.selectable` to true to make the node selectable by clicking or
 If you specify a number instead of `true`, it will be taken as the maximum number of selectable nodes.  
 Specify 2-way binding for `selected-nodes` prop to get an array of node IDs selected. It is also possible to control the selection state on the network graph by setting a value to the same prop.
 
-<demo-tabs hint="To select multiple nodes, Shift+click or hold down the selected node and tap another node.">
+<demo-tabs hint="To select multiple nodes, Shift+click or hold down the selected node and tap another node." :demo-height="400">
 <template v-slot:demo>
   <DemoSelectNodes />
 </template>
@@ -25,7 +25,7 @@ Set `configs.edge.selectable` to true to make the node selectable by clicking or
 If you specify a number instead of `true`, it will be taken as the maximum number of selectable nodes.  
 Specify 2-way binding for `selected-edges` prop to get an array of edge IDs selected. It is also possible to control the selection state on the network graph by setting a value to the same prop.
 
-<demo-tabs hint="To select multiple edges, Shift+click or hold down the selected edge and tap another edge.">
+<demo-tabs hint="To select multiple edges, Shift+click or hold down the selected edge and tap another edge." :demo-height="400">
 <template v-slot:demo>
   <DemoSelectEdges />
 </template>
@@ -36,11 +36,9 @@ Specify 2-way binding for `selected-edges` prop to get an array of edge IDs sele
 </template>
 </demo-tabs>
 
-## Multiple selection
 
-## Add a node
+## Add a node and an edge
 
-## Add an edge
 
 ## Summarize edges between the same nodes
 
