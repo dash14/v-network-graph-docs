@@ -37,14 +37,30 @@ Specify 2-way binding for `selected-edges` prop to get an array of edge IDs sele
 </demo-tabs>
 
 
-## Add a node and an edge
+## Add/remove network elements
+
+Adding/removing nodes and edges is automatically reflected by changing
+the reactive objects specified in `nodes` prop and `edges` prop respectively.  
+The newly added node will be placed in the center of the view area.  
+Deleting a node with edges will automatically delete the associated edges as well.  
+Multiple edges can be placed between the same two nodes.
+
+<demo-tabs :demo-height="400">
+<template v-slot:demo>
+  <DemoAddElements />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/operation/AddElements.vue{74-95}
+
+</template>
+</demo-tabs>
 
 
 ## Summarize edges between the same nodes
 
 <script setup>
-import DemoSelectNodes from '../.vitepress/components/operation/SelectNodes.vue'
-import DemoSelectEdges from '../.vitepress/components/operation/SelectEdges.vue'
+import DemoSelectNodes from "../.vitepress/components/operation/SelectNodes.vue"
+import DemoSelectEdges from "../.vitepress/components/operation/SelectEdges.vue"
+import DemoAddElements from "../.vitepress/components/operation/AddElements.vue"
 </script>
-
-

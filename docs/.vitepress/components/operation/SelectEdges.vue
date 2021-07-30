@@ -58,12 +58,11 @@ export default defineComponent({
       },
     })
     const selectedEdges = ref<string[]>([])
-    // req
     const configs = reactive({
       edge: {
         selectable: true as boolean | number, // enable (unlimited)
         stroke: {
-          width: 4
+          width: 3
         }
       },
     })
