@@ -59,8 +59,25 @@ Multiple edges can be placed between the same two nodes.
 
 ## Summarize edges between the same nodes
 
+If there are too many edges between nodes to be displayed, they are automatically summarized into a single line and displayed.  The summarized edges will be displayed with the number of edges.
+Note: This feature is still under development, so it is not yet possible to select individual summarized edges.
+
+<demo-tabs :demo-height="400">
+<template v-slot:demo>
+  <DemoSummarizeEdges />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/operation/SummarizeEdges.vue
+
+</template>
+</demo-tabs>
+
+Whether or not to aggregate can be specified by a function that returns a boolean or a boolean value, as specified in the configuration `edge.summarize`.
+
 <script setup>
 import DemoSelectNodes from "../.vitepress/components/operation/SelectNodes.vue"
 import DemoSelectEdges from "../.vitepress/components/operation/SelectEdges.vue"
 import DemoAddElements from "../.vitepress/components/operation/AddElements.vue"
+import DemoSummarizeEdges from "../.vitepress/components/operation/SummarizeEdges.vue"
 </script>
