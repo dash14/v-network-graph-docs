@@ -2,8 +2,11 @@
 
 ## Scale the entire objects
 
-By default, zooming only changes the relative position of the nodes, and does not change the size of the object, such as the size of nodes, the font size of labels, or the line width of links.  
-If you set the `view.scalingObjects` config to `true`, the objects will change as you zoom.
+By default, zooming only changes the relative position of the nodes,
+and does not change the size of the object, such as the size of nodes,
+the font size of labels, or the line width of links.  
+If you set the `view.scalingObjects` config to `true`, the objects
+will change as you zoom.
 
 <demo-tabs>
 <template v-slot:demo>
@@ -19,7 +22,8 @@ If you set the `view.scalingObjects` config to `true`, the objects will change a
 ## Snap nodes to the grid
 
 You can change the node positioning strategy in the config.  
-An example of modifying the `view.layoutHandler` config and snapping to the grid is shown below.
+An example of modifying the `view.layoutHandler` config and snapping to
+the grid is shown below.
 
 <demo-tabs message="When you drag a node, it will snap to invisible grids of the specified width.">
 <template v-slot:demo>

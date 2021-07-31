@@ -49,8 +49,10 @@ you can get the position changes by dragging nodes reactively.
 
 ## Pan and zoom
 
-Using the methods provided by `v-network-graph`, it is possible to pan to the center and perform a zoom that fits the content.
-The current zoom level can be retrieved via two-way binding for `zoom-level` prop.
+Using the methods provided by `v-network-graph`, it is possible to pan
+to the center and perform a zoom that fits the content.
+The current zoom level can be retrieved via two-way binding for
+`zoom-level` prop.
 
 <demo-tabs>
 <template v-slot:demo>
@@ -66,7 +68,8 @@ The current zoom level can be retrieved via two-way binding for `zoom-level` pro
 
 ## Disable mouse operations
 
-Panning, zooming in/out with the mouse wheel, and dragging nodes can each be enabled/disabled.
+Panning, zooming in/out with the mouse wheel, and dragging nodes can
+each be enabled/disabled.
 
 <demo-tabs>
 <template v-slot:demo>
