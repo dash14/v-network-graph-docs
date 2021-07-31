@@ -10,6 +10,8 @@ npm run docs:build
 cd docs/.vitepress/dist
 
 git init
+git config --global user.name "dash14"
+git config --global user.email "dash14.ack@gmail.com"
 git add -A
 git commit -m 'deploy'
 
