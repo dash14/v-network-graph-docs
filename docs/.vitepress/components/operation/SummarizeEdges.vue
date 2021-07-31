@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, watch } from "vue"
+import { defineComponent, reactive, ref } from "vue"
 import { Nodes, Edges } from "v-network-graph"
 
 export default defineComponent({

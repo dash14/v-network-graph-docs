@@ -74,8 +74,4 @@ export default defineComponent({
   inset: auto auto 10px 10px;
   background-color: #eeeeeedd;
 }
-// .source {
-//   max-height: 400px;
-//   overflow-y: auto;
-// }
 </style>

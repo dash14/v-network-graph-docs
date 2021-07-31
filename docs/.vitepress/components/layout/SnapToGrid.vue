@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from "vue"
+import { defineComponent, reactive } from "vue"
 import { GridLayout } from "v-network-graph"
 
 export default defineComponent({
