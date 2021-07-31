@@ -1,28 +1,15 @@
 {
-  "name": "v-network-graph",
-  "description": "An interactive network graph visualization component for Vue 3",
-  "version": "0.0.1-alpha.1",
+  "name": "v-network-graph-docs",
+  "description": "Documentation for v-network-graph",
+  "version": "0.0.1",
   "license": "MIT",
-  "files": [
-    "lib"
-  ],
-  "main": "./lib/index.umd.js",
-  "module": "./lib/index.es.js",
   "scripts": {
-    "dev": "vite",
-    "build": "run-s clean build:tc build:lib",
-    "build:tc": "vue-tsc --noEmit",
-    "build:lib": "run-p build:lib:*",
-    "build:lib:main": "vite --config vite-lib.config.ts build",
-    "build:lib:force": "vite --config vite-lib-force.config.ts build",
-    "build:example": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
-    "clean": "rimraf lib",
     "docs:dev": "run-s docs:link docs:dev:*",
     "docs:dev:vp": "vitepress dev docs --port 3001",
     "docs:build": "run-s docs:clean docs:link docs:build:*",
+    "docs:build:ts": "vue-tsc --noEmit",
     "docs:build:vp": "vitepress build docs",
-    "docs:link": "npm link && npm link v-network-graph",
+    "docs:link": "npm link v-network-graph",
     "docs:serve": "vitepress serve docs",
     "docs:publish": "./docs/.vitepress/publish.sh",
     "docs:clean": "rimraf docs/.vitepress/dist"
@@ -34,49 +21,17 @@
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "@vitejs/plugin-vue": "^1.2.5",
-    "@vue/compiler-sfc": "^3.1.5",
-    "@vue/server-renderer": "^3.1.5",
     "element-plus": "^1.0.2-beta.55",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.14.0",
     "lodash-es": "^4.17.21",
-    "mitt": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "sass": "^1.36.0",
-    "svg-pan-zoom": "github:dash14/svg-pan-zoom#main",
     "typescript": "^4.3.5",
-    "vite": "^2.4.3",
-    "vite-plugin-dts": "^0.5.3",
     "vitepress": "^0.15.6",
-    "vue-tsc": "^0.0.26"
-  },
-  "peerDependencies": {
-    "d3-force": "^3.0.0",
-    "vue": "^3.1.4"
-  },
-  "exports": {
-    ".": {
-      "import": "./lib/index.es.js",
-      "require": "./lib/index.umd.js"
-    },
-    "./force-layout": {
-      "import": "./lib/force-layout.es.js",
-      "require": "./lib/force-layout.umd.js"
-    },
-    "./style.css": "./lib/style.css"
-  },
-  "types": "./lib/types/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "lib/types/index.d.ts": [
-        "lib/types/index.d.ts"
-      ],
-      "*": [
-        "lib/types/*"
-      ]
-    }
+    "vue-tsc": "^0.2.2"
   }
 }

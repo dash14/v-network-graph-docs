@@ -53,5 +53,10 @@ module.exports = {
         }
       }
     }
+  },
+  server: {
+    fs: {
+      allow: true
+    }
   }
 }
