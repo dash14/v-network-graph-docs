@@ -18,7 +18,7 @@ on the network graph by setting a value to the same prop.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/operation/SelectNodes.vue{29,60-65}
+  <<< @/.vitepress/components/operation/SelectNodes.vue{29,60-67}
 
 </template>
 </demo-tabs>
@@ -39,7 +39,7 @@ on the network graph by setting a value to the same prop.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/operation/SelectEdges.vue{29,60-65}
+  <<< @/.vitepress/components/operation/SelectEdges.vue{29,60-67}
 
 </template>
 </demo-tabs>
