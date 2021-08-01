@@ -43,13 +43,13 @@ export default defineComponent({
     const nextNodeIndex = ref(Object.keys(nodes).length + 1)
     const nextEdgeIndex = ref(Object.keys(edges).length + 1)
 
-    const layouts = reactive({
+    const layouts = {
       nodes: {
         node1: { x: 50, y: 0 },
         node2: { x: 0, y: 75 },
         node3: { x: 100, y: 75 },
       },
-    })
+    }
 
     const selectedNodes = ref<string[]>([])
     const selectedEdges = ref<string[]>([])
