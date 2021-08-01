@@ -12,6 +12,8 @@ import "v-network-graph/style.css"
 import DemoTabs from "../components/DemoTabs.vue"
 import SliderZoom from "../components/controls/SliderZoom.vue"
 import NodeConfigPanel from "../components/controls/NodeConfigPanel.vue"
+import LabelConfigPanel from "../components/controls/LabelConfigPanel.vue"
+import FocusConfigPanel from "../components/controls/FocusConfigPanel.vue"
 
 export default {
   ...Theme,
@@ -28,5 +30,7 @@ export default {
     app.component("demo-tabs", DemoTabs)
     app.component("el-slider-custom-zoom", SliderZoom)
     app.component("demo-node-config-panel", NodeConfigPanel)
+    app.component("demo-label-config-panel", LabelConfigPanel)
+    app.component("demo-focus-config-panel", FocusConfigPanel)
   },
 }

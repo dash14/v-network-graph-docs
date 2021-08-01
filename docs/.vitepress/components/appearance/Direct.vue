@@ -27,11 +27,37 @@
           v-model:color="configs.node.hover.color"
         />
       </el-tab-pane>
-      <el-tab-pane label="[active]">
+      <el-tab-pane label="[selected]">
+        <demo-node-config-panel
+          v-model:type="configs.node.selected.type"
+          v-model:radius="configs.node.selected.radius"
+          v-model:width="configs.node.selected.width"
+          v-model:height="configs.node.selected.height"
+          v-model:borderRadius="configs.node.selected.borderRadius"
+          v-model:strokeWidth="configs.node.selected.strokeWidth"
+          v-model:strokeColor="configs.node.selected.strokeColor"
+          v-model:strokeDasharray="configs.node.selected.strokeDasharray"
+          v-model:color="configs.node.selected.color"
+        />
       </el-tab-pane>
       <el-tab-pane label="Label">
+        <demo-label-config-panel
+          v-model:visible="configs.node.label.visible"
+          v-model:fontFamily="configs.node.label.fontFamily"
+          v-model:fontSize="configs.node.label.fontSize"
+          v-model:color="configs.node.label.color"
+          v-model:margin="configs.node.label.margin"
+          v-model:direction="configs.node.label.direction"
+        />
       </el-tab-pane>
       <el-tab-pane label="Focus">
+        <demo-focus-config-panel
+          v-model:visible="configs.node.focusring.visible"
+          v-model:width="configs.node.focusring.width"
+          v-model:padding="configs.node.focusring.padding"
+          v-model:color="configs.node.focusring.color"
+          v-model:dasharray="configs.node.focusring.dasharray"
+        />
       </el-tab-pane>
       <el-tab-pane label="Edge">
       </el-tab-pane>
@@ -48,6 +74,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from "vue"
+import { NodeLabelDirection } from "v-network-graph"
 
 export default defineComponent({
   setup() {
@@ -99,7 +126,34 @@ export default defineComponent({
           strokeColor: "#000000",
           strokeDasharray: "none",
           color: "#dd2288",
-        }
+        },
+        selected: {
+          type: "circle",
+          radius: 16,
+          // for type is "rect" -->
+          width: 32,
+          height: 32,
+          borderRadius: 4,
+          // <-- for type is "rect"
+          strokeWidth: 0,
+          strokeColor: "#000000",
+          strokeDasharray: "none",
+          color: "#4466cc",
+        },
+        label: {
+          visible: true,
+          fontFamily: undefined,
+          fontSize: 11,
+          color: "#000000",
+          margin: 4,
+          direction: NodeLabelDirection.SOUTH,
+        },
+        focusring: {
+          visible: true,
+          width: 4,
+          padding: 3,
+          color: "#eebb00",
+        },
       }
     })
 

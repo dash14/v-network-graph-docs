@@ -168,6 +168,7 @@ export default defineComponent({
 
 :deep(.el-slider) {
   margin-left: 20px;
+  margin-right: 10px;
 }
 
 :deep(.el-color-picker) {
