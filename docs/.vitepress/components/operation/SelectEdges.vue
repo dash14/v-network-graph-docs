@@ -36,16 +36,16 @@
 
 <script lang="ts">
 import { defineComponent, reactive, ref, watch } from "vue"
-import { Nodes, Edges } from "v-network-graph"
+import * as vNG from "v-network-graph"
 
 export default defineComponent({
   setup() {
-    const nodes: Nodes = {
+    const nodes = {
       node1: { name: "N1" },
       node2: { name: "N2" },
       node3: { name: "N3" },
     }
-    const edges: Edges = {
+    const edges = {
       edge1: { source: "node1", target: "node2" },
       edge2: { source: "node2", target: "node3" },
       edge3: { source: "node3", target: "node1" },
@@ -58,14 +58,14 @@ export default defineComponent({
       },
     }
     const selectedEdges = ref<string[]>([])
-    const configs = reactive({
-      edge: {
-        selectable: true as boolean | number, // enable (unlimited)
-        stroke: {
-          width: 3
-        }
-      },
-    })
+
+    // If you want to change the configuration object later,
+    // you can use a function (`getFullConfigs()`) that can
+    // also get the type information of the configuration object.
+    const configs = reactive(vNG.getFullConfigs())
+
+    configs.edge.selectable = true
+    configs.edge.stroke.width = 3
 
     const limit = ref(-1)
     watch(limit, v => {
