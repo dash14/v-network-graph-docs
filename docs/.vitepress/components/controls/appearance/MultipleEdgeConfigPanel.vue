@@ -1,0 +1,69 @@
+<template>
+  <div class="edge-configs">
+    <div class="control">
+      Gap:
+      <el-slider v-model="gap" :min="0" :max="16" :step="1" />
+    </div>
+    <div class="control">
+      Summarize:
+      <el-checkbox v-model="summarize" />
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, computed, ComputedRef } from "vue"
+
+export default defineComponent({
+  props: {
+    gap: {
+      type: Number,
+      required: true,
+    },
+    summarize: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  emits: [
+    "update:gap",
+    "update:summarize"
+  ],
+  setup(props, { emit }) {
+    const vars: { [name: string]: ComputedRef<any> } = {}
+    const keys = Object.keys(props) as (keyof typeof props)[]
+    for (const key of keys) {
+      vars[key] = computed({
+        get: () => props[key],
+        set: v => emit(`update:${key}`, v),
+      })
+    }
+    return vars
+  },
+})
+</script>
+
+<style lang="scss" scoped>
+.edge-configs {
+  width: 100%;
+  font-size: 12px;
+}
+
+.control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+}
+
+:deep(.el-input) {
+  width: 80px;
+  margin-left: 10px;
+}
+
+:deep(.el-slider) {
+  width: 80px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+</style>

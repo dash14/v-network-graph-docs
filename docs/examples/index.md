@@ -7,5 +7,5 @@ See below for live examples of various uses.
 - [Basic usage](./basic)
 - [Layout / Positioning](./layout)
 - [Operations on Graphs](./operation)
-- [Customize appearances](./appearance)
+- [Appearance Customization](./appearance)
 - Make custom layer

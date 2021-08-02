@@ -1,6 +1,6 @@
 <template>
   <div class="node-configs">
-    <div>Shape</div>
+    <div>Shape:</div>
     <div>
       <div class="control">
         Type:
@@ -30,7 +30,14 @@
         </div>
       </template>
     </div>
-    <div>Stroke</div>
+    <div>Fill:</div>
+    <div>
+      <div class="control">
+        Color:
+        <el-color-picker v-model="color" color-format="hex" @active-change="color = $event" />
+      </div>
+    </div>
+    <div>Stroke:</div>
     <div>
       <div class="control">
         Width:
@@ -38,26 +45,11 @@
       </div>
       <div class="control">
         Color:
-        <el-color-picker
-          v-model="strokeColor"
-          show-alpha
-          @active-change="strokeColor = $event"
-        />
+        <el-color-picker v-model="strokeColor" show-alpha @active-change="strokeColor = $event" />
       </div>
       <div class="control">
         Dasharray:
         <el-input v-model="strokeDasharray" />
-      </div>
-    </div>
-    <div>Fill Color</div>
-    <div>
-      <div class="control">
-        Normal:
-        <el-color-picker
-          v-model="color"
-          color-format="hex"
-          @active-change="color = $event"
-        />
       </div>
     </div>
   </div>
@@ -133,13 +125,19 @@ export default defineComponent({
 <style lang="scss" scoped>
 .node-configs {
   width: 100%;
+  display: grid;
+  grid-template-columns: 60px 1fr;
 
   > div:nth-child(odd) {
+    font-size: 13px;
     font-weight: bold;
-    font-size: 14px;
+    background-color: #efefef;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   > div:nth-child(even) {
-    padding-left: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -155,7 +153,6 @@ export default defineComponent({
 }
 
 :deep(.el-select),
-:deep(.el-slider),
 :deep(.el-input) {
   width: 80px;
   margin-left: 10px;
@@ -167,12 +164,12 @@ export default defineComponent({
 }
 
 :deep(.el-slider) {
-  margin-left: 20px;
+  width: 50px;
+  margin-left: 16px;
   margin-right: 10px;
 }
 
 :deep(.el-color-picker) {
   margin-left: 10px;
 }
-
 </style>

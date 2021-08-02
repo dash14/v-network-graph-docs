@@ -1,5 +1,5 @@
 <template>
-  <el-tabs type="border-card" value="demo" >
+  <el-tabs type="border-card" value="demo">
     <el-tab-pane label="Demo" :lazy="true">
       <div class="demo" :style="{ height: `${demoHeight}px` }">
         <div class="network-graph">
@@ -28,17 +28,17 @@ export default defineComponent({
   props: {
     message: {
       type: String,
-      default: ""
+      default: "",
     },
     hint: {
       type: String,
-      default: ""
+      default: "",
     },
     demoHeight: {
       type: Number,
-      default: 300
-    }
-  }
+      default: 300,
+    },
+  },
 })
 </script>
 
@@ -53,6 +53,17 @@ export default defineComponent({
   height: 100%;
   display: flex;
   flex-direction: column;
+  :deep(.demo-control-panel) {
+    .el-tabs {
+      width: 100%;
+      .el-tabs {
+        position: relative;
+        top: -6px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
   :deep(.v-network-graph) {
     height: 1px;
     flex: 1;

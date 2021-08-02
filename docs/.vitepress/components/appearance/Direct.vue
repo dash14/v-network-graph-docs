@@ -1,44 +1,48 @@
 <template>
   <div class="demo-control-panel">
     <el-tabs type="border-card" class="demo-tab">
-      <el-tab-pane label="Node[default]">
-        <demo-node-config-panel
-          v-model:type="configs.node.shape.type"
-          v-model:radius="configs.node.shape.radius"
-          v-model:width="configs.node.shape.width"
-          v-model:height="configs.node.shape.height"
-          v-model:borderRadius="configs.node.shape.borderRadius"
-          v-model:strokeWidth="configs.node.shape.strokeWidth"
-          v-model:strokeColor="configs.node.shape.strokeColor"
-          v-model:strokeDasharray="configs.node.shape.strokeDasharray"
-          v-model:color="configs.node.shape.color"
-        />
-      </el-tab-pane>
-      <el-tab-pane label="[hover]">
-        <demo-node-config-panel
-          v-model:type="configs.node.hover.type"
-          v-model:radius="configs.node.hover.radius"
-          v-model:width="configs.node.hover.width"
-          v-model:height="configs.node.hover.height"
-          v-model:borderRadius="configs.node.hover.borderRadius"
-          v-model:strokeWidth="configs.node.hover.strokeWidth"
-          v-model:strokeColor="configs.node.hover.strokeColor"
-          v-model:strokeDasharray="configs.node.hover.strokeDasharray"
-          v-model:color="configs.node.hover.color"
-        />
-      </el-tab-pane>
-      <el-tab-pane label="[selected]">
-        <demo-node-config-panel
-          v-model:type="configs.node.selected.type"
-          v-model:radius="configs.node.selected.radius"
-          v-model:width="configs.node.selected.width"
-          v-model:height="configs.node.selected.height"
-          v-model:borderRadius="configs.node.selected.borderRadius"
-          v-model:strokeWidth="configs.node.selected.strokeWidth"
-          v-model:strokeColor="configs.node.selected.strokeColor"
-          v-model:strokeDasharray="configs.node.selected.strokeDasharray"
-          v-model:color="configs.node.selected.color"
-        />
+      <el-tab-pane label="Node">
+        <el-tabs>
+          <el-tab-pane label="default">
+            <demo-node-config-panel
+              v-model:type="configs.node.shape.type"
+              v-model:radius="configs.node.shape.radius"
+              v-model:width="configs.node.shape.width"
+              v-model:height="configs.node.shape.height"
+              v-model:borderRadius="configs.node.shape.borderRadius"
+              v-model:strokeWidth="configs.node.shape.strokeWidth"
+              v-model:strokeColor="configs.node.shape.strokeColor"
+              v-model:strokeDasharray="configs.node.shape.strokeDasharray"
+              v-model:color="configs.node.shape.color"
+            />
+          </el-tab-pane>
+          <el-tab-pane label="hover">
+            <demo-node-config-panel
+              v-model:type="configs.node.hover.type"
+              v-model:radius="configs.node.hover.radius"
+              v-model:width="configs.node.hover.width"
+              v-model:height="configs.node.hover.height"
+              v-model:borderRadius="configs.node.hover.borderRadius"
+              v-model:strokeWidth="configs.node.hover.strokeWidth"
+              v-model:strokeColor="configs.node.hover.strokeColor"
+              v-model:strokeDasharray="configs.node.hover.strokeDasharray"
+              v-model:color="configs.node.hover.color"
+            />
+          </el-tab-pane>
+          <el-tab-pane label="selected">
+            <demo-node-config-panel
+              v-model:type="configs.node.selected.type"
+              v-model:radius="configs.node.selected.radius"
+              v-model:width="configs.node.selected.width"
+              v-model:height="configs.node.selected.height"
+              v-model:borderRadius="configs.node.selected.borderRadius"
+              v-model:strokeWidth="configs.node.selected.strokeWidth"
+              v-model:strokeColor="configs.node.selected.strokeColor"
+              v-model:strokeDasharray="configs.node.selected.strokeDasharray"
+              v-model:color="configs.node.selected.color"
+            />
+          </el-tab-pane>
+        </el-tabs>
       </el-tab-pane>
       <el-tab-pane label="Label">
         <demo-label-config-panel
@@ -60,6 +64,65 @@
         />
       </el-tab-pane>
       <el-tab-pane label="Edge">
+        <el-tabs>
+          <el-tab-pane label="default">
+            <demo-edge-config-panel
+              v-model:width="configs.edge.stroke.width"
+              v-model:color="configs.edge.stroke.color"
+              v-model:dasharray="configs.edge.stroke.dasharray"
+              v-model:linecap="configs.edge.stroke.linecap"
+            />
+          </el-tab-pane>
+          <el-tab-pane label="hover">
+            <demo-edge-config-panel
+              v-model:width="configs.edge.hover.width"
+              v-model:color="configs.edge.hover.color"
+              v-model:dasharray="configs.edge.hover.dasharray"
+              v-model:linecap="configs.edge.hover.linecap"
+            />
+          </el-tab-pane>
+          <el-tab-pane label="selected">
+            <demo-edge-config-panel
+              v-model:width="configs.edge.selected.width"
+              v-model:color="configs.edge.selected.color"
+              v-model:dasharray="configs.edge.selected.dasharray"
+              v-model:linecap="configs.edge.selected.linecap"
+            />
+          </el-tab-pane>
+          <el-tab-pane label="multiple edge">
+            <demo-multiple-edge-config-panel
+              v-model:gap="configs.edge.gap"
+              v-model:summarize="configs.edge.summarize"
+            />
+          </el-tab-pane>
+        </el-tabs>
+      </el-tab-pane>
+      <el-tab-pane label="Summarized Edge">
+        <el-tabs>
+          <el-tab-pane label="stroke">
+            <demo-edge-config-panel
+              v-model:width="configs.edge.summarized.stroke.width"
+              v-model:color="configs.edge.summarized.stroke.color"
+              v-model:dasharray="configs.edge.summarized.stroke.dasharray"
+              v-model:linecap="configs.edge.summarized.stroke.linecap"
+            />
+          </el-tab-pane>
+          <el-tab-pane label="label">
+            <demo-summarized-edge-label-config-panel
+              v-model:labelFontSize="configs.edge.summarized.label.fontSize"
+              v-model:labelColor="configs.edge.summarized.label.color"
+              v-model:type="configs.edge.summarized.shape.type"
+              v-model:radius="configs.edge.summarized.shape.radius"
+              v-model:width="configs.edge.summarized.shape.width"
+              v-model:height="configs.edge.summarized.shape.height"
+              v-model:borderRadius="configs.edge.summarized.shape.borderRadius"
+              v-model:strokeWidth="configs.edge.summarized.shape.strokeWidth"
+              v-model:strokeColor="configs.edge.summarized.shape.strokeColor"
+              v-model:strokeDasharray="configs.edge.summarized.shape.strokeDasharray"
+              v-model:color="configs.edge.summarized.shape.color"
+            />
+          </el-tab-pane>
+        </el-tabs>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -83,18 +146,29 @@ export default defineComponent({
       node2: { name: "Node 2" },
       node3: { name: "Node 3" },
       node4: { name: "Node 4" },
+      node5: { name: "Node 5" },
     }
     const edges = {
       edge1: { source: "node1", target: "node2" },
       edge2: { source: "node2", target: "node3" },
       edge3: { source: "node3", target: "node4" },
+      edge4: { source: "node3", target: "node4" },
+      edge5: { source: "node4", target: "node5" },
+      edge6: { source: "node4", target: "node5" },
+      edge7: { source: "node4", target: "node5" },
+      edge8: { source: "node4", target: "node5" },
+      edge9: { source: "node4", target: "node5" },
+      edge10: { source: "node4", target: "node5" },
+      edge11: { source: "node4", target: "node5" },
+      edge12: { source: "node4", target: "node5" },
     }
     const layouts = {
       nodes: {
         node1: { x: 0, y: 0 },
-        node2: { x: 50, y: 50 },
-        node3: { x: 100, y: 0 },
-        node4: { x: 150, y: 50 },
+        node2: { x: 80, y: 80 },
+        node3: { x: 160, y: 0 },
+        node4: { x: 240, y: 80 },
+        node5: { x: 320, y: 0 },
       },
     }
 
@@ -111,7 +185,7 @@ export default defineComponent({
           // <-- for type is "rect"
           strokeWidth: 0,
           strokeColor: "#000000",
-          strokeDasharray: "none",
+          strokeDasharray: "0",
           color: "#4466cc",
         },
         hover: {
@@ -124,7 +198,7 @@ export default defineComponent({
           // <-- for type is "rect"
           strokeWidth: 0,
           strokeColor: "#000000",
-          strokeDasharray: "none",
+          strokeDasharray: "0",
           color: "#dd2288",
         },
         selected: {
@@ -137,7 +211,7 @@ export default defineComponent({
           // <-- for type is "rect"
           strokeWidth: 0,
           strokeColor: "#000000",
-          strokeDasharray: "none",
+          strokeDasharray: "0",
           color: "#4466cc",
         },
         label: {
@@ -153,6 +227,53 @@ export default defineComponent({
           width: 4,
           padding: 3,
           color: "#eebb00",
+          dasharray: "0"
+        },
+      },
+      edge: {
+        selectable: true,
+        stroke: {
+          width: 3,
+          color: "#4466cc",
+          dasharray: "0",
+          linecap: "butt",
+        },
+        hover: {
+          width: 4,
+          color: "#3355bb",
+          dasharray: "0",
+          linecap: "butt",
+        },
+        selected: {
+          width: 3,
+          color: "#dd8800",
+          dasharray: "6",
+          linecap: "round",
+        },
+        gap: 3,
+        summarize: true,
+        summarized: {
+          label: {
+            fontSize: 10,
+            color: "#4466cc",
+          },
+          shape: {
+            type: "rect",
+            radius: 6, // for type is "circle"
+            width: 12,
+            height: 12,
+            borderRadius: 3,
+            color: "#ffffff",
+            strokeWidth: 1,
+            strokeColor: "#4466cc",
+            strokeDasharray: "0"
+          },
+          stroke: {
+            width: 5,
+            color: "#4466cc",
+            dasharray: "0",
+            linecap: "butt",
+          },
         },
       }
     })
@@ -161,9 +282,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style scoped lang="scss">
-.demo-tab {
-  width: 100%;
-}
-</style>

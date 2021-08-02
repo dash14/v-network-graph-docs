@@ -21,11 +21,7 @@
     </div>
     <div class="control">
       Color:
-      <el-color-picker
-        v-model="color"
-        color-format="hex"
-        @active-change="color = $event"
-      />
+      <el-color-picker v-model="color" color-format="hex" @active-change="color = $event" />
     </div>
   </div>
   <div class="label-configs">
@@ -126,13 +122,12 @@ export default defineComponent({
 }
 
 :deep(.el-slider) {
-  width: 80px;
-  margin-left: 20px;
+  width: 50px;
+  margin-left: 16px;
   margin-right: 10px;
 }
 
 :deep(.el-color-picker) {
   margin-left: 10px;
 }
-
 </style>

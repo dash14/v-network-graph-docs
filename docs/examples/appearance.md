@@ -1,9 +1,8 @@
 # Appearance Customization
 
-## Specifying styles directly in the configuration
+## Specifying style configurations by values
 
-
-<demo-tabs :demo-height="700">
+<demo-tabs :demo-height="500">
 <template v-slot:demo>
   <DemoDirect />
 </template>

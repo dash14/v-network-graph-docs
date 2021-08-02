@@ -16,11 +16,7 @@
     </div>
     <div class="control">
       Color:
-      <el-color-picker
-        v-model="color"
-        color-format="hex"
-        @active-change="color = $event"
-      />
+      <el-color-picker v-model="color" color-format="hex" @active-change="color = $event" />
     </div>
     <div class="control">
       Dasharray:
@@ -53,8 +49,8 @@ export default defineComponent({
     dasharray: {
       type: String,
       required: false,
-      default: undefined
-    }
+      default: undefined,
+    },
   },
   emits: [
     "update:visible",
@@ -100,8 +96,8 @@ export default defineComponent({
 }
 
 :deep(.el-slider) {
-  width: 80px;
-  margin-left: 20px;
+  width: 50px;
+  margin-left: 16px;
   margin-right: 10px;
 }
 
