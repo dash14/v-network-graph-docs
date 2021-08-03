@@ -14,3 +14,47 @@
     margin: 10px;
   }
 }
+
+.example-list {
+  .example-item {
+    display: grid;
+    grid-template-columns: 242px 1fr;
+    pointer-events: all;
+    margin: 30px 0;
+    p {
+      margin: 0;
+    }
+    p:first-child {
+      img {
+        float: left;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 242px;
+        height: 162px;
+      }
+    }
+    p:last-child {
+      font-size: 18px;
+      a {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        padding-left: 40px;
+        align-items: center;
+        color: var(--c-text);
+      }
+      a:hover {
+        color: #3eaf7c;
+      }
+    }
+  }
+  .example-item:hover {
+    a img {
+      border-color: var(--c-brand);
+    }
+    p:last-child a {
+      color: var(--c-brand);
+      text-decoration: underline;
+    }
+  }
+}
