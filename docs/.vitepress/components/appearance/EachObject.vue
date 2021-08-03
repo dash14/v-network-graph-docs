@@ -59,7 +59,7 @@ export default defineComponent({
     // function.
     const configs = reactive<vNG.UserConfigs<Node, Edge>>({
       node: {
-        shape: {
+        normal: {
           type: "circle",
           radius: node => node.size, // Use the value of each node object
           color: node => node.color,
@@ -77,7 +77,7 @@ export default defineComponent({
         }
       },
       edge: {
-        stroke: {
+        normal: {
           width: edge => edge.width, // Use the value of each edge object
           color: edge => edge.color,
           dasharray: edge => edge.dashed ? "4" : "0"

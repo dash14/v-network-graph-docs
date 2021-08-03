@@ -60,7 +60,7 @@ export default defineComponent({
       },
       edge: {
         selectable: true,
-        stroke: {
+        normal: {
           width: 3,
         }
       },

@@ -5,15 +5,15 @@
         <el-tabs>
           <el-tab-pane label="default">
             <demo-node-config-panel
-              v-model:type="configs.node.shape.type"
-              v-model:radius="configs.node.shape.radius"
-              v-model:width="configs.node.shape.width"
-              v-model:height="configs.node.shape.height"
-              v-model:borderRadius="configs.node.shape.borderRadius"
-              v-model:strokeWidth="configs.node.shape.strokeWidth"
-              v-model:strokeColor="configs.node.shape.strokeColor"
-              v-model:strokeDasharray="configs.node.shape.strokeDasharray"
-              v-model:color="configs.node.shape.color"
+              v-model:type="configs.node.normal.type"
+              v-model:radius="configs.node.normal.radius"
+              v-model:width="configs.node.normal.width"
+              v-model:height="configs.node.normal.height"
+              v-model:borderRadius="configs.node.normal.borderRadius"
+              v-model:strokeWidth="configs.node.normal.strokeWidth"
+              v-model:strokeColor="configs.node.normal.strokeColor"
+              v-model:strokeDasharray="configs.node.normal.strokeDasharray"
+              v-model:color="configs.node.normal.color"
             />
           </el-tab-pane>
           <el-tab-pane label="hover">
@@ -67,10 +67,10 @@
         <el-tabs>
           <el-tab-pane label="default">
             <demo-edge-config-panel
-              v-model:width="configs.edge.stroke.width"
-              v-model:color="configs.edge.stroke.color"
-              v-model:dasharray="configs.edge.stroke.dasharray"
-              v-model:linecap="configs.edge.stroke.linecap"
+              v-model:width="configs.edge.normal.width"
+              v-model:color="configs.edge.normal.color"
+              v-model:dasharray="configs.edge.normal.dasharray"
+              v-model:linecap="configs.edge.normal.linecap"
             />
           </el-tab-pane>
           <el-tab-pane label="hover">
@@ -175,7 +175,7 @@ export default defineComponent({
     const configs = reactive({
       node: {
         selectable: true,
-        shape: {
+        normal: {
           type: "circle",
           radius: 16,
           // for type is "rect" -->
@@ -232,7 +232,7 @@ export default defineComponent({
       },
       edge: {
         selectable: true,
-        stroke: {
+        normal: {
           width: 3,
           color: "#4466cc",
           dasharray: "0",

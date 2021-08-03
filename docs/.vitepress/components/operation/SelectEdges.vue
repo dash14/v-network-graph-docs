@@ -66,7 +66,7 @@ export default defineComponent({
     const configs = reactive(vNG.getFullConfigs())
 
     configs.edge.selectable = true
-    configs.edge.stroke.width = 3
+    configs.edge.normal.width = 3
 
     const limit = ref(-1)
     watch(limit, v => {
