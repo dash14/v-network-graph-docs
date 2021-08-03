@@ -18,6 +18,9 @@
     <el-tab-pane label="Source">
       <slot name="source"></slot>
     </el-tab-pane>
+    <el-tab-pane v-if="useData" label="Data">
+      <slot name="data"></slot>
+    </el-tab-pane>
   </el-tabs>
 </template>
 
@@ -38,6 +41,10 @@ export default defineComponent({
       type: Number,
       default: 300,
     },
+    useData: {
+      type: Boolean,
+      default: false
+    }
   },
 })
 </script>
