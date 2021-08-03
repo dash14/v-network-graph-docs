@@ -128,9 +128,9 @@
   </div>
 
   <v-network-graph
-    :nodes="nodes"
-    :edges="edges"
-    :layouts="layouts"
+    :nodes="data.nodes"
+    :edges="data.edges"
+    :layouts="data.layouts"
     :configs="configs"
   />
 </template>
@@ -138,40 +138,10 @@
 <script lang="ts">
 import { defineComponent, reactive } from "vue"
 import { NodeLabelDirection } from "v-network-graph"
+import data from "./data"
 
 export default defineComponent({
   setup() {
-    const nodes = {
-      node1: { name: "Node 1" },
-      node2: { name: "Node 2" },
-      node3: { name: "Node 3" },
-      node4: { name: "Node 4" },
-      node5: { name: "Node 5" },
-    }
-    const edges = {
-      edge1: { source: "node1", target: "node2" },
-      edge2: { source: "node2", target: "node3" },
-      edge3: { source: "node3", target: "node4" },
-      edge4: { source: "node3", target: "node4" },
-      edge5: { source: "node4", target: "node5" },
-      edge6: { source: "node4", target: "node5" },
-      edge7: { source: "node4", target: "node5" },
-      edge8: { source: "node4", target: "node5" },
-      edge9: { source: "node4", target: "node5" },
-      edge10: { source: "node4", target: "node5" },
-      edge11: { source: "node4", target: "node5" },
-      edge12: { source: "node4", target: "node5" },
-    }
-    const layouts = {
-      nodes: {
-        node1: { x: 0, y: 0 },
-        node2: { x: 80, y: 80 },
-        node3: { x: 160, y: 0 },
-        node4: { x: 240, y: 80 },
-        node5: { x: 320, y: 0 },
-      },
-    }
-
     const configs = reactive({
       node: {
         selectable: true,
@@ -278,7 +248,7 @@ export default defineComponent({
       }
     })
 
-    return { nodes, edges, layouts, configs }
+    return { data, configs }
   },
 })
 </script>

@@ -13,7 +13,7 @@ nodes separately at the same time, and pinch to zoom.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/basic/Minimal.vue
+  <<< @/.vitepress/components/01_basic/Minimal.vue
 
 </template>
 </demo-tabs>
@@ -28,7 +28,7 @@ The positional coordinates of each node can be specified.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/basic/SetLayouts.vue{5,25-32}
+  <<< @/.vitepress/components/01_basic/SetLayouts.vue{5,25-32}
 
 </template>
 </demo-tabs>
@@ -42,7 +42,7 @@ you can get the position changes by dragging nodes reactively.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/basic/SetLayoutsReactive.vue{3,26-33}
+  <<< @/.vitepress/components/01_basic/SetLayoutsReactive.vue{3,26-33}
 
 </template>
 </demo-tabs>
@@ -60,7 +60,7 @@ The current zoom level can be retrieved via two-way binding for
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/basic/PanZoom.vue
+  <<< @/.vitepress/components/01_basic/PanZoom.vue
 
 </template>
 </demo-tabs>
@@ -77,17 +77,17 @@ each be enabled/disabled.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/basic/DisablePanZoom.vue{12,41-49}
+  <<< @/.vitepress/components/01_basic/DisablePanZoom.vue{12,41-49}
 
 </template>
 </demo-tabs>
 
 
 <script setup>
-import BasicMinimal from '../.vitepress/components/basic/Minimal.vue'
-import SetLayouts from '../.vitepress/components/basic/SetLayouts.vue'
-import SetLayoutsReactive from '../.vitepress/components/basic/SetLayoutsReactive.vue'
-import PanZoom from '../.vitepress/components/basic/PanZoom.vue'
-import DisablePanZoom from '../.vitepress/components/basic/DisablePanZoom.vue'
+import BasicMinimal from '../.vitepress/components/01_basic/Minimal.vue'
+import SetLayouts from '../.vitepress/components/01_basic/SetLayouts.vue'
+import SetLayoutsReactive from '../.vitepress/components/01_basic/SetLayoutsReactive.vue'
+import PanZoom from '../.vitepress/components/01_basic/PanZoom.vue'
+import DisablePanZoom from '../.vitepress/components/01_basic/DisablePanZoom.vue'
 </script>
 

@@ -8,13 +8,18 @@ the font size of labels, or the line width of links.
 If you set the `view.scalingObjects` config to `true`, the objects
 will change as you zoom.
 
-<demo-tabs>
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoScaleObjects />
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/layout/ScaleObjects.vue{41-43}
+  <<< @/.vitepress/components/02_layout/01/ScaleObjects.vue{22-26}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/02_layout/01/data.ts
 
 </template>
 </demo-tabs>
@@ -25,13 +30,18 @@ You can change the node positioning strategy in the config.
 An example of modifying the `view.layoutHandler` config and snapping to
 the grid is shown below.
 
-<demo-tabs message="When you drag a node, it will snap to invisible grids of the specified width.">
+<demo-tabs :use-data="true" message="When you drag a node, it will snap to invisible grids of the specified width.">
 <template v-slot:demo>
   <DemoSnapToGrid />
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/layout/SnapToGrid.vue{36-38}
+  <<< @/.vitepress/components/02_layout/02/SnapToGrid.vue{17-21}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/02_layout/02/data.ts
 
 </template>
 </demo-tabs>
@@ -51,7 +61,7 @@ will return it to the position of the d3-force calculation result.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/layout/D3Force.vue{19,57-72}
+  <<< @/.vitepress/components/02_layout/03/D3Force.vue{19,57-72}
 
 </template>
 </demo-tabs>
@@ -64,8 +74,8 @@ $ npm install d3-force
 ```
 
 <script setup>
-import DemoScaleObjects from '../.vitepress/components/layout/ScaleObjects.vue'
-import DemoSnapToGrid from '../.vitepress/components/layout/SnapToGrid.vue'
-import DemoD3Force from '../.vitepress/components/layout/D3Force.vue'
+import DemoScaleObjects from '../.vitepress/components/02_layout/01/ScaleObjects.vue'
+import DemoSnapToGrid from '../.vitepress/components/02_layout/02/SnapToGrid.vue'
+import DemoD3Force from '../.vitepress/components/02_layout/03/D3Force.vue'
 </script>
 

@@ -12,13 +12,18 @@ Specify 2-way binding for `selected-nodes` prop to get an array of
 node IDs selected. It is also possible to control the selection state
 on the network graph by setting a value to the same prop.
 
-<demo-tabs :demo-height="400" hint="To select multiple nodes, Shift+click or hold down the selected node and tap another node.">
+<demo-tabs :demo-height="400" :use-data="true" hint="To select multiple nodes, Shift+click or hold down the selected node and tap another node.">
 <template v-slot:demo>
   <DemoSelectNodes />
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/operation/SelectNodes.vue{29,60-67}
+  <<< @/.vitepress/components/03_operation/01/SelectNodes.vue{29,46-51}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/03_operation/01/data.ts
 
 </template>
 </demo-tabs>
@@ -33,13 +38,18 @@ Specify 2-way binding for `selected-edges` prop to get an array of
 edge IDs selected. It is also possible to control the selection state
 on the network graph by setting a value to the same prop.
 
-<demo-tabs :demo-height="400" hint="To select multiple edges, Shift+click or hold down the selected edge and tap another edge.">
+<demo-tabs :demo-height="400" :use-data="true" hint="To select multiple edges, Shift+click or hold down the selected edge and tap another edge.">
 <template v-slot:demo>
   <DemoSelectEdges />
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/operation/SelectEdges.vue{29,60-67}
+  <<< @/.vitepress/components/03_operation/02/SelectEdges.vue{29,46-51}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/03_operation/02/data.ts
 
 </template>
 </demo-tabs>
@@ -59,7 +69,7 @@ Multiple edges can be placed between the same two nodes.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/operation/AddElements.vue{74-95}
+  <<< @/.vitepress/components/03_operation/03/AddElements.vue{74-95}
 
 </template>
 </demo-tabs>
@@ -79,7 +89,7 @@ possible to select individual summarized edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/operation/SummarizeEdges.vue
+  <<< @/.vitepress/components/03_operation/04/SummarizeEdges.vue
 
 </template>
 </demo-tabs>
@@ -89,8 +99,8 @@ returns a boolean or a boolean value, as specified in the
 configuration `edge.summarize`.
 
 <script setup>
-import DemoSelectNodes from "../.vitepress/components/operation/SelectNodes.vue"
-import DemoSelectEdges from "../.vitepress/components/operation/SelectEdges.vue"
-import DemoAddElements from "../.vitepress/components/operation/AddElements.vue"
-import DemoSummarizeEdges from "../.vitepress/components/operation/SummarizeEdges.vue"
+import DemoSelectNodes from "../.vitepress/components/03_operation/01/SelectNodes.vue"
+import DemoSelectEdges from "../.vitepress/components/03_operation/02/SelectEdges.vue"
+import DemoAddElements from "../.vitepress/components/03_operation/03/AddElements.vue"
+import DemoSummarizeEdges from "../.vitepress/components/03_operation/04/SummarizeEdges.vue"
 </script>
