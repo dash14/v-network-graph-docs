@@ -71,14 +71,6 @@ import { defineComponent, computed, ComputedRef } from "vue"
 
 export default defineComponent({
   props: {
-    gap: {
-      type: Number,
-      required: true,
-    },
-    summarize: {
-      type: Boolean,
-      required: true,
-    },
     labelFontSize: {
       type: Number,
       required: true,
@@ -125,8 +117,6 @@ export default defineComponent({
     },
   },
   emits: [
-    "update:gap",
-    "update:summarize",
     "update:labelFontSize",
     "update:labelColor",
     "update:type",
