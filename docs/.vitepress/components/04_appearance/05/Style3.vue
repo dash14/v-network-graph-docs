@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue"
-import { UserConfigs, NodeLabelDirection } from "v-network-graph"
+import { UserConfigs } from "v-network-graph"
 import data from "./data"
 
 export default defineComponent({
@@ -18,25 +18,28 @@ export default defineComponent({
       node: {
         selectable: true,
         normal: {
-          radius: 16,
-          color: "#6013ad",
+          radius: 10,
+          color: "#ffffff",
+          strokeColor: "#ff00dd",
+          strokeWidth: 3,
         },
         hover: {
-          color: "#430d78",
+          radius: 14,
+          color: "#ffffff",
+          strokeColor: "#ff00dd",
+          strokeWidth: 3,
         },
         label: {
-          fontSize: 11,
-          color: "#ffffff",
-          direction: NodeLabelDirection.CENTER,
+          visible: false
         },
       },
       edge: {
         normal: {
-          width: 3,
-          color: "#58139c",
+          width: 1,
+          color: "#ff00dd",
         },
         hover: {
-          color: "#3a0d66",
+          color: "#ff00dd",
         },
       }
     }

@@ -18,25 +18,33 @@ export default defineComponent({
       node: {
         selectable: true,
         normal: {
-          radius: 16,
-          color: "#6013ad",
+          type: "rect",
+          width: 32,
+          height: 32,
+          borderRadius: 8,
+          color: "#ff6f00",
         },
         hover: {
-          color: "#430d78",
+          color: "#ff5500",
+          width: 36,
+          height: 36,
+          borderRadius: 8,
         },
         label: {
-          fontSize: 11,
-          color: "#ffffff",
-          direction: NodeLabelDirection.CENTER,
+          fontSize: 16,
+          color: "#000000",
+          direction: NodeLabelDirection.NORTH,
         },
       },
       edge: {
         normal: {
-          width: 3,
-          color: "#58139c",
+          width: 2,
+          color: "#ff6f00",
+          dasharray: "4 6",
+          linecap: "round"
         },
         hover: {
-          color: "#3a0d66",
+          color: "#ff5500",
         },
       }
     }

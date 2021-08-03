@@ -37,7 +37,9 @@ UserConfigs, you can specify the argument type of the function.
 </template>
 </demo-tabs>
 
-## Style gallery
+## Style examples
+
+1.
 
 <demo-tabs :use-data="true">
 <template v-slot:demo>
@@ -55,8 +57,46 @@ UserConfigs, you can specify the argument type of the function.
 </template>
 </demo-tabs>
 
+2.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoStyle2 />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/04_appearance/04/Style2.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/04_appearance/04/data.ts
+
+</template>
+</demo-tabs>
+
+3.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoStyle3 />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/04_appearance/05/Style3.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/04_appearance/05/data.ts
+
+</template>
+</demo-tabs>
+
 <script setup>
 import DemoConfigValue from '../.vitepress/components/04_appearance/01/ConfigValue.vue'
 import DemoEachObject from '../.vitepress/components/04_appearance/02/EachObject.vue'
 import DemoStyle1 from '../.vitepress/components/04_appearance/03/Style1.vue'
+import DemoStyle2 from '../.vitepress/components/04_appearance/04/Style2.vue'
+import DemoStyle3 from '../.vitepress/components/04_appearance/05/Style3.vue'
 </script>
