@@ -31,10 +31,5 @@ See below for live examples of various uses.
 [Appearance Customization](./appearance)
 
 </div>
-<div class="example-item">
-
-Make custom layer
-
-</div>
 </div>
 
