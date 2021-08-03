@@ -32,11 +32,16 @@ export default defineComponent({
         label: {
           visible: false
         },
+        focusring: {
+          color: "#ff00dd30" // alpha
+        }
       },
       edge: {
         normal: {
-          width: 1,
+          width: edge => edge.animate ? 2 : 1,
           color: "#ff00dd",
+          dasharray: edge => edge.animate ? "4" : "0",
+          animate: edge => !!edge.animate
         },
         hover: {
           color: "#ff00dd",

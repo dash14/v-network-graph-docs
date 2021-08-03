@@ -21,6 +21,19 @@
       </el-select>
     </div>
   </div>
+  <div class="edge-configs">
+    <div class="control">
+      Animate:
+      <el-checkbox v-model="animate" />
+    </div>
+    <div class="control">
+      Speed:
+      <el-slider v-model="animationSpeed" :min="10" :max="1000" :step="10" />
+    </div>
+    <div class="control">
+      To enable animation, dasharray must also be set to non-zero.
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -30,11 +43,11 @@ export default defineComponent({
   props: {
     width: {
       type: Number,
-      default: 2,
+      required: true,
     },
     color: {
       type: String,
-      default: "#4466cc",
+      required: true,
     },
     dasharray: {
       type: String,
@@ -44,12 +57,22 @@ export default defineComponent({
       type: String,
       default: "butt",
     },
+    animate: {
+      type: Boolean,
+      required: true,
+    },
+    animationSpeed: {
+      type: Number,
+      required: true,
+    },
   },
   emits: [
     "update:width",
     "update:color",
     "update:dasharray",
     "update:linecap",
+    "update:animate",
+    "update:animationSpeed",
   ],
   setup(props, { emit }) {
     const vars: { [name: string]: ComputedRef<any> } = {}

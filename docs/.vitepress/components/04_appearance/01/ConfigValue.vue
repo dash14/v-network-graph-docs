@@ -71,6 +71,8 @@
               v-model:color="configs.edge.normal.color"
               v-model:dasharray="configs.edge.normal.dasharray"
               v-model:linecap="configs.edge.normal.linecap"
+              v-model:animate="configs.edge.normal.animate"
+              v-model:animationSpeed="configs.edge.normal.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="hover">
@@ -79,6 +81,8 @@
               v-model:color="configs.edge.hover.color"
               v-model:dasharray="configs.edge.hover.dasharray"
               v-model:linecap="configs.edge.hover.linecap"
+              v-model:animate="configs.edge.hover.animate"
+              v-model:animationSpeed="configs.edge.hover.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="selected">
@@ -87,6 +91,8 @@
               v-model:color="configs.edge.selected.color"
               v-model:dasharray="configs.edge.selected.dasharray"
               v-model:linecap="configs.edge.selected.linecap"
+              v-model:animate="configs.edge.hover.animate"
+              v-model:animationSpeed="configs.edge.hover.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="multiple edge">
@@ -105,6 +111,8 @@
               v-model:color="configs.edge.summarized.stroke.color"
               v-model:dasharray="configs.edge.summarized.stroke.dasharray"
               v-model:linecap="configs.edge.summarized.stroke.linecap"
+              v-model:animate="configs.edge.summarized.stroke.animate"
+              v-model:animationSpeed="configs.edge.summarized.stroke.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="label">
@@ -207,18 +215,24 @@ export default defineComponent({
           color: "#4466cc",
           dasharray: "0",
           linecap: "butt",
+          animate: false,
+          animationSpeed: 100,
         },
         hover: {
           width: 4,
           color: "#3355bb",
           dasharray: "0",
           linecap: "butt",
+          animate: false,
+          animationSpeed: 100,
         },
         selected: {
           width: 3,
           color: "#dd8800",
           dasharray: "6",
           linecap: "round",
+          animate: false,
+          animationSpeed: 100,
         },
         gap: 3,
         summarize: true,
@@ -243,6 +257,8 @@ export default defineComponent({
             color: "#4466cc",
             dasharray: "0",
             linecap: "butt",
+            animate: false,
+            animationSpeed: 100,
           },
         },
       }
