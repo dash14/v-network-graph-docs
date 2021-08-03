@@ -32,12 +32,24 @@ UserConfigs, you can specify the argument type of the function.
 </template>
 </demo-tabs>
 
+## Style gallery
 
-## Style Gallery
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoStyle1 />
+</template>
+<template v-slot:source>
 
+  <<< @/.vitepress/components/appearance/gallery/Style1.vue
 
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/appearance/gallery/data.ts
+
+</template>
+</demo-tabs>
 
 <script setup>
-import DemoDirect from '../.vitepress/components/appearance/Direct.vue'
-import DemoEachObject from '../.vitepress/components/appearance/EachObject.vue'
+import DemoStyle1 from '../.vitepress/components/appearance/gallery/Style1.vue'
 </script>
