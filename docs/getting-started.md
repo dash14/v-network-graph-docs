@@ -2,6 +2,8 @@
 
 ## Installation
 
+<div class="getting-started-command">
+
 Install with npm
 
 ```bash
@@ -16,6 +18,8 @@ import 'v-network-graph/style.css'
 
 Vue.use(VNetworkGraph)
 ```
+
+</div>
 
 ## Usage
 

@@ -1,3 +1,17 @@
+.getting-started-command {
+  // hide line number
+  .line-numbers-mode {
+    &.language-bash, &.language-js {
+      padding-left: 0;
+      &:before {
+        content: ""
+      }
+    }
+  }
+  .line-numbers-wrapper {
+    display: none;
+  }
+}
 
 .demo-control-panel {
   margin: 10px 10px 0 10px;
