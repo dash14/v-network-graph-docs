@@ -6,7 +6,10 @@
   "volar.tsPlugin": true,
   "cSpell.words": [
     "composables",
+    "dasharray",
+    "draggable",
     "focusring",
+    "linecap",
     "vite",
     "vitejs",
     "vitepress"
