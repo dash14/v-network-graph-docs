@@ -1,15 +1,18 @@
-.getting-started-command {
-  // hide line number
-  .line-numbers-mode {
-    &.language-bash, &.language-js {
-      padding-left: 0;
-      &:before {
-        content: ""
-      }
-    }
-  }
+
+.line-numbers-mode.language-bash {
+  padding-left: 0 !important;
   .line-numbers-wrapper {
     display: none;
+  }
+}
+
+.getting-started-command {
+  // hide line number
+  .line-numbers-mode.language-js {
+    padding-left: 0;
+    .line-numbers-wrapper {
+      display: none;
+    }
   }
 }
 
