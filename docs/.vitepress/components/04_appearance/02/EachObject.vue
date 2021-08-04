@@ -27,19 +27,19 @@ export default defineComponent({
   setup() {
     const nodes: Record<string, Node> = {
       node1: { name: "Node 1", size: 16, color: "gray" },
-      node2: { name: "Node 2", size: 32, color: "pink", label: true },
-      node3: { name: "Node 3", size: 24, color: "lightblue", label: true },
+      node2: { name: "Node 2", size: 32, color: "hotpink", label: true },
+      node3: { name: "Node 3", size: 24, color: "lightskyblue", label: true },
       node4: { name: "Node 4", size: 16, color: "gray" },
-      node5: { name: "Node 5", size: 32, color: "pink", label: true },
+      node5: { name: "Node 5", size: 32, color: "hotpink", label: true },
     }
     const edges: Record<string, Edge> = {
       edge1: { source: "node1", target: "node2", width: 1, color: "black" },
       edge2: { source: "node2", target: "node3", width: 5, color: "gray", dashed: true },
       edge3: { source: "node3", target: "node4", width: 1, color: "black" },
-      edge4: { source: "node3", target: "node4", width: 3, color: "lightblue" },
-      edge5: { source: "node4", target: "node5", width: 3, color: "lightblue" },
+      edge4: { source: "node3", target: "node4", width: 3, color: "skyblue" },
+      edge5: { source: "node4", target: "node5", width: 3, color: "hotpink" },
       edge6: { source: "node4", target: "node5", width: 1, color: "black" },
-      edge7: { source: "node4", target: "node5", width: 3, color: "lightblue" },
+      edge7: { source: "node4", target: "node5", width: 3, color: "skyblue" },
     }
     const layouts = {
       nodes: {
