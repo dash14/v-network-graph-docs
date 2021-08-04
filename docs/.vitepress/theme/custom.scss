@@ -58,3 +58,32 @@
     }
   }
 }
+
+.reference-table {
+  th, td {
+    padding: 8px 10px;
+    font-size: 90%;
+  }
+}
+.reference-attributes-types,
+.reference-configs {
+  // hide line number
+  .line-numbers-mode {
+    &.language-js, &.language-ts {
+      padding-left: 0;
+      &:before {
+        content: ""
+      }
+    }
+  }
+  .line-numbers-wrapper {
+    display: none;
+  }
+  pre {
+    padding: 1rem 1.2rem;
+  }
+  code {
+    font-size: 12px;
+    line-height: 100%;
+  }
+}
