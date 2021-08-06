@@ -16,8 +16,7 @@
 <script lang="ts">
 import { defineComponent, reactive, ref, watchEffect } from "vue"
 import { Nodes, Edges } from "v-network-graph"
-import { ForceLayout } from "v-network-graph/force-layout"
-// import * as d3 from "d3-force"
+import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/force-layout"
 
 function buildNetwork(count: number, nodes: Nodes, edges: Edges) {
   const idNums = [...Array(count)].map((_, i) => i)
@@ -60,9 +59,11 @@ export default defineComponent({
           positionFixedByClickWithAltKey: true,
           // * The following are the default parameters for the simulation.
           // * You can customize it by uncommenting below.
-          // createSimulation: (nodeLayouts, edges) => {
-          //   return d3.forceSimulation(nodeLayouts)
-          //     .force("edge", edges.distance(100))
+          // createSimulation: (d3, nodes, edges) => {
+          //   const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
+          //   return d3
+          //     .forceSimulation(nodes)
+          //     .force("edge", forceLink.distance(100))
           //     .force("charge", d3.forceManyBody())
           //     .force("collide", d3.forceCollide(50).strength(0.2))
           //     .force("center", d3.forceCenter().strength(0.05))
