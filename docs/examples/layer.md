@@ -30,7 +30,7 @@ This is an example of adding an image layer to the background of a network graph
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_layer/01/Background.vue{7,10-19,31-35}
+  <<< @/.vitepress/components/05_layer/01/Background.vue{8,10-19,31-35}
 
 </template>
 <template v-slot:data>
@@ -40,6 +40,27 @@ This is an example of adding an image layer to the background of a network graph
 </template>
 </demo-tabs>
 
+
+## Node's badge layer
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoBadge />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_layer/02/Badge.vue{7,9-23,33-37}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_layer/02/data.ts
+
+</template>
+</demo-tabs>
+
+
 <script setup>
 import DemoBackground from '../.vitepress/components/05_layer/01/Background.vue'
+import DemoBadge from '../.vitepress/components/05_layer/02/Badge.vue'
 </script>

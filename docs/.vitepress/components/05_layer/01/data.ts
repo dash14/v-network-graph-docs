@@ -43,4 +43,16 @@ export default {
       node10: { x: 854, y: 428 },
     },
   },
+  configs: {
+    node: {
+      normal: {
+        type: "circle",
+        radius: 8,
+        color: "#4466cc",
+      },
+      label: {
+        visible: false,
+      },
+    },
+  }
 }

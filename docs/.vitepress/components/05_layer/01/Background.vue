@@ -4,8 +4,8 @@
     :nodes="data.nodes"
     :edges="data.edges"
     :layouts="data.layouts"
+    :configs="data.configs"
     :layers="layers"
-    :configs="configs"
   >
     <!-- Addtional layer -->
     <template #worldmap>
@@ -34,25 +34,12 @@ export default defineComponent({
       worldmap: "background",
     }
 
-    const configs = {
-      node: {
-        normal: {
-          type: "circle",
-          radius: 8,
-          color: "#4466cc",
-        },
-        label: {
-          visible: false,
-        },
-      },
-    }
-
     // ref="graph"
     const graph = ref<InstanceType<typeof VNetworkGraph>>()
     const onLoadImage = () => {
       graph.value?.fitToContents()
     }
-    return { data, layers, configs, graph, onLoadImage, withBase }
+    return { data, layers, graph, onLoadImage, withBase }
   },
 })
 </script>
