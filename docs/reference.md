@@ -104,11 +104,12 @@ Values that are not specified will be used as default values.
 ```ts
 {
   view: {
-    scalingObjects: boolean, // whether to expand the entire object. default: false
-    panEnabled: boolean,     // whether the pan is enabled or not.   default: true
-    zoomEnabled: boolean,    // whether the zoom is enabled or not.  default: true
-    minZoomLevel: number,    // minimum zoom level.                  default: 0.1
-    maxZoomLevel: number,    // maximum zoom level.                  default: 64
+    scalingObjects: boolean, // whether to expand the entire object.    default: false
+    panEnabled: boolean,     // whether the pan is enabled or not.      default: true
+    zoomEnabled: boolean,    // whether the zoom is enabled or not.     default: true
+    minZoomLevel: number,    // minimum zoom level.                     default: 0.1
+    maxZoomLevel: number,    // maximum zoom level.                     default: 64
+    fit: boolean,            // whether to fit the content when loaded. default: false
     layoutHandler: LayoutHandler, // class to control node layout.   default: new SimpleLayout()
     onSvgPanZoomInitialized: undefined | (instance) => void // callback on init svg-pan-zoom. default: undefined
   },
