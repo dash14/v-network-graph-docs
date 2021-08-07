@@ -31,5 +31,11 @@ See below for live examples of various uses.
 [Appearance Customization](./appearance)
 
 </div>
-</div>
+<div class="example-item">
 
+[![Custom Layer](../public/examples/layer.png)](./layer)
+
+[Custom Layer](./layer)
+
+</div>
+</div>

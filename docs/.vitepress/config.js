@@ -34,7 +34,8 @@ module.exports = {
           { text: "Basic Usage", link: "/examples/basic" },
           { text: "Layout / Positioning", link: "/examples/layout" },
           { text: "Operations on Graphs", link: "/examples/operation" },
-          { text: "Appearance Customization", link: "/examples/appearance" }
+          { text: "Appearance Customization", link: "/examples/appearance" },
+          { text: "Custom Layer", link: "/examples/layer" }
         ],
       },
       { text: "Reference", link: "/reference" },
