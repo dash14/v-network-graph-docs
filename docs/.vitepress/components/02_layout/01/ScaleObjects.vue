@@ -1,6 +1,6 @@
 <template>
   <div class="demo-control-panel">
-    <el-checkbox v-model="configs.view.scalingObjects">Scale objects</el-checkbox>
+    <el-checkbox v-model="configs.view.scalingObjects">Scaling objects</el-checkbox>
     <el-slider-custom-zoom v-model="zoomLevel" />
   </div>
 
@@ -14,18 +14,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue"
+import { defineComponent, reactive, ref } from "vue"
 import data from "./data"
 
 export default defineComponent({
   setup() {
-    const configs = {
+    const configs = reactive({
       view: {
         scalingObjects: true
       }
-    }
+    })
 
-    const zoomLevel = ref(2)
+    const zoomLevel = ref(1.5)
 
     return { data, configs, zoomLevel }
   },
