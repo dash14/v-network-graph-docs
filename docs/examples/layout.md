@@ -66,12 +66,8 @@ will return it to the position of the d3-force calculation result.
 </template>
 </demo-tabs>
 
-To use this class, install the `d3-force` package with the following command.
-(Also install `@types/d3-force` if necessary.)
-
-```bash
-$ npm install d3-force
-```
+Currently, the `d3-force` package is bundled, so you do not need
+to install it in your application.
 
 <script setup>
 import DemoScaleObjects from '../.vitepress/components/02_layout/01/ScaleObjects.vue'
