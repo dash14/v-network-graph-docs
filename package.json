@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "run-s docs:link docs:dev:*",
+    "docs:dev": "run-s docs:dev:*",
     "docs:dev:vp": "vitepress dev docs --port 3001",
-    "docs:build": "run-s docs:clean docs:link docs:build:*",
+    "docs:build": "run-s docs:clean docs:build:*",
     "docs:build:ts": "vue-tsc --noEmit",
     "docs:build:vp": "vitepress build docs",
     "docs:link": "npm link v-network-graph",
