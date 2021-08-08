@@ -12,7 +12,7 @@ see [here](/reference#events-with-event-handler).
 If you specify "*" as the event type, all available events will
 be captured.
 
-<demo-tabs :use-data="true" :demo-height="300">
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoAllEvents />
 </template>
@@ -28,11 +28,30 @@ be captured.
 </template>
 </demo-tabs>
 
+## Handle user clicking on a node
 
-## Handle node clicked
+The following is an example of specifying a handler that catches
+only the specified events.  
+In this example, the color of the badge changes when the node is
+clicked.
 
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoBadge />
+</template>
+<template v-slot:source>
 
+  <<< @/.vitepress/components/06_event/02/Badge.vue{8,50-55}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/06_event/02/data.ts
+
+</template>
+</demo-tabs>
 
 <script setup>
 import DemoAllEvents from '../.vitepress/components/06_event/01/AllEvents.vue'
+import DemoBadge from '../.vitepress/components/06_event/02/Badge.vue'
 </script>

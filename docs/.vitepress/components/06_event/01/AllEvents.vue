@@ -50,6 +50,7 @@ export default defineComponent({
 .event-logs {
   position: absolute;
   inset: auto 10px 10px auto;
+  margin-left: 10px;
   padding: 10px;
   background: #ffff0044;
   border-radius: 4px;
@@ -57,6 +58,9 @@ export default defineComponent({
   font-family: monospace;
   line-height: 11px;
   pointer-events: none;
+}
+.event-logs div {
+  word-break: break-all;
 }
 .event-type {
   font-weight: bold;

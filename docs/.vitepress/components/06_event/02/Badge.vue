@@ -1,10 +1,11 @@
 <template>
   <v-network-graph
-    :nodes="data.nodes"
-    :edges="data.edges"
+    :nodes="nodes"
+    :edges="edges"
     :layouts="layouts"
-    :configs="data.configs"
+    :configs="configs"
     :layers="layers"
+    :event-handlers="eventHandlers"
   >
     <!-- Addtional layer -->
     <template #badge="{ scale }">
@@ -18,7 +19,7 @@
         :cx="pos.x + 9 * scale"
         :cy="pos.y - 9 * scale"
         :r="4 * scale"
-        :fill="data.nodes[node].active ? '#00cc00' : '#ff5555'"
+        :fill="nodes[node].active ? '#00cc00' : '#ff5555'"
         style="pointer-events: none;"
       />
     </template>
@@ -27,6 +28,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from "vue"
+import { EventHandlers } from "v-network-graph"
 import data from "./data"
 
 export default defineComponent({
@@ -38,10 +40,21 @@ export default defineComponent({
     }
 
     // wrap with reactive() for immediate response to
-    // position changes
+    // value changes
+    const nodes = reactive(data.nodes)
     const layouts = reactive(data.layouts)
 
-    return { data, layers, layouts }
+    const edges = data.edges
+    const configs = data.configs
+
+    const eventHandlers: EventHandlers = {
+      "node:click": ({ node }) => {
+        // toggle
+        nodes[node].active = !nodes[node].active
+      }
+    }
+
+    return { nodes, edges, configs, layers, layouts, eventHandlers }
   },
 })
 </script>

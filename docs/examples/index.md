@@ -40,7 +40,7 @@ See below for live examples of various uses.
 </div>
 <div class="example-item">
 
-[![Event Handling](/examples/layer.png)](./event)
+[![Event Handling](/examples/event.png)](./event)
 
 [Event Handling](./event)
 
