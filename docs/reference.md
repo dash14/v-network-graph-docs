@@ -261,12 +261,16 @@ The following is a list of events that can be specified for attribute `event-han
 
 <div class="reference-table">
 
-| Method          | Description                                                                 |
-| --------------- | --------------------------------------------------------------------------- |
-| fitToContents() | Perform zooming/panning according to the content size of the network graph. |
-| panToCenter()   | Perform a pan to center the contents of the network graph.                  |
-| zoomIn()        | Perform zoom-in.                                                            |
-| zoomOut()       | Perform zoom-out.                                                           |
-| getAsSvg()      | Get the network-graph contents as SVG text data.                            |
+| Method                     | Description                                                       |
+| -------------------------- | ----------------------------------------------------------------- |
+| fitToContents(): void      | Perform zooming/panning according to the graph size.              |
+| getAsSvg(): string         | Get the network-graph contents as SVG text data.                  |
+| getPan(): {x, y}           | Get pan vector.                                                   |
+| getSizes(): Sizes          | Get all calculate svg dimensions. <br>Sizes: `{width, height, viewBox:{x, y, width, height}}` |
+| panTo(point: {x, y}): void | Pan to a rendered position.                                       |
+| panBy(point: {x, y}): void | Relatively pan the graph by a specified rendered position vector. |
+| panToCenter(): void        | Perform a pan to center the contents of the network graph.        |
+| zoomIn(): void             | Perform zoom-in.                                                  |
+| zoomOut(): void            | Perform zoom-out.                                                 |
 
 </div>
