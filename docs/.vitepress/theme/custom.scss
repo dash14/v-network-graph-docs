@@ -1,4 +1,12 @@
 
+.nav-bar-title:before {
+  content: url(/v-network-graph/head-logo.png);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: 2px;
+}
+
 .line-numbers-mode.language-bash {
   padding-left: 0 !important;
   .line-numbers-wrapper {
