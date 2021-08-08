@@ -76,7 +76,8 @@ export default defineComponent({
     flex: 1;
   }
 }
-.el-tab-pane :deep(.language-vue) {
+.el-tab-pane :deep(.language-vue),
+.el-tab-pane :deep(.language-ts) {
   margin: 0;
 }
 .float-message {

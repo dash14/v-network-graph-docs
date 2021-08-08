@@ -38,4 +38,11 @@ See below for live examples of various uses.
 [Custom Layer](./layer)
 
 </div>
+<div class="example-item">
+
+[![Event Handling](/examples/layer.png)](./event)
+
+[Event Handling](./event)
+
+</div>
 </div>
