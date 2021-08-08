@@ -5,6 +5,7 @@ const path = require("path")
  */
 module.exports = {
   base: "/v-network-graph/",
+  lang: "en-US",
   title: "v-network-graph",
   description: "An interactive network graph visualization library for Vue 3",
   head: [
