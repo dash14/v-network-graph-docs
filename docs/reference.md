@@ -251,8 +251,22 @@ The following is a list of events that can be specified for attribute `event-han
 | "node:dragend"     | node drag ended      | `{ NODE_ID: { x: number; y: number }, ... }` |
 | "node:select"      | node selected        | `[ NODE_ID, ...]`                            |
 | "edge:pointerup"   | pointer up on edge   | `{ edge: string, event: PointerEvent }`      |
-| "edge:pointerdown" | pointer down on edge | `{ edge: string, event: PointerEvent }`     |
-| "edge:click"       | edge clicked         | `{ edge: string, event: PointerEvent }`     |
+| "edge:pointerdown" | pointer down on edge | `{ edge: string, event: PointerEvent }`      |
+| "edge:click"       | edge clicked         | `{ edge: string, event: PointerEvent }`      |
 | "edge:select"      | edge selected        | `[ EDGE_ID, ... ]`                           |
+
+</div>
+
+## Methods
+
+<div class="reference-table">
+
+| Method          | Description                                                                 |
+| --------------- | --------------------------------------------------------------------------- |
+| fitToContents() | Perform zooming/panning according to the content size of the network graph. |
+| panToCenter()   | Perform a pan to center the contents of the network graph.                  |
+| zoomIn()        | Perform zoom-in.                                                            |
+| zoomOut()       | Perform zoom-out.                                                           |
+| getAsSvg()      | Get the network-graph contents as SVG text data.                            |
 
 </div>
