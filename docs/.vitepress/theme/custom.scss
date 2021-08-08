@@ -16,7 +16,8 @@
 
 .getting-started-command {
   // hide line number
-  .line-numbers-mode.language-js {
+  .line-numbers-mode.language-js,
+  .line-numbers-mode.language-vue {
     padding-left: 0;
     .line-numbers-wrapper {
       display: none;

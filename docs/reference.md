@@ -1,4 +1,4 @@
-# Reference for &lt;v-network-graph&gt;
+# Reference
 
 ## Attributes
 
