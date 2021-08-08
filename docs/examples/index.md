@@ -45,4 +45,11 @@ See below for live examples of various uses.
 [Event Handling](./event)
 
 </div>
+<div class="example-item">
+
+[![Miscellaneous](/examples/misc.png)](./misc)
+
+[Miscellaneous](./misc)
+
+</div>
 </div>

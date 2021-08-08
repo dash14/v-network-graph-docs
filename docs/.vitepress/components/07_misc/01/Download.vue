@@ -1,5 +1,9 @@
 <template>
   <div class="demo-control-panel">
+    <el-button type="primary" @click="downloadAsSvg">
+      <i class="el-icon-download"></i>
+      Download SVG
+    </el-button>
     <label>Node:</label>
     <el-button @click="addNode">add</el-button>
     <el-button :disabled="selectedNodes.length == 0" @click="removeNode">remove</el-button>
@@ -9,68 +13,56 @@
   </div>
 
   <v-network-graph
+    ref="graph"
     v-model:selected-nodes="selectedNodes"
     v-model:selected-edges="selectedEdges"
     :nodes="nodes"
     :edges="edges"
-    :layouts="layouts"
-    :configs="configs"
+    :layouts="data.layouts"
+    :configs="data.configs"
   />
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, ref } from "vue"
-import { Nodes, Edges } from "v-network-graph"
+import { VNetworkGraph, Nodes, Edges } from "v-network-graph"
+import data from "./data"
 
 export default defineComponent({
   setup() {
-    const nodes: Nodes = reactive({
-      node1: { name: "N1" },
-      node2: { name: "N2" },
-      node3: { name: "N3" },
-    })
-    const edges: Edges = reactive({
-      edge1: { source: "node1", target: "node2" },
-      edge2: { source: "node2", target: "node3" },
-    })
+    const nodes: Nodes = reactive(data.nodes)
+    const edges: Edges = reactive(data.edges)
     const nextNodeIndex = ref(Object.keys(nodes).length + 1)
     const nextEdgeIndex = ref(Object.keys(edges).length + 1)
-
-    const layouts = {
-      nodes: {
-        node1: { x: 50, y: 0 },
-        node2: { x: 0, y: 75 },
-        node3: { x: 100, y: 75 },
-      },
-    }
 
     const selectedNodes = ref<string[]>([])
     const selectedEdges = ref<string[]>([])
 
-    const configs = {
-      node: {
-        selectable: 2, // up to 2 nodes
-      },
-      edge: {
-        selectable: true,
-        normal: {
-          width: 3,
-        },
-      },
-    }
+    // ref="graph"
+    const graph = ref<InstanceType<typeof VNetworkGraph>>()
 
     return {
+      data,
       nodes,
       edges,
       nextNodeIndex,
       nextEdgeIndex,
-      layouts,
       selectedNodes,
       selectedEdges,
-      configs,
+      graph,
     }
   },
   methods: {
+    downloadAsSvg() {
+      if (!this.graph) return
+      const text = this.graph.getAsSvg()
+      const url = URL.createObjectURL(new Blob([text], { type: "octet/stream" }))
+      const a = document.createElement("a")
+      a.href = url
+      a.download = "network-graph.svg" // filename to download
+      a.click()
+      window.URL.revokeObjectURL(url)
+    },
     addNode() {
       const nodeId = `node${this.nextNodeIndex}`
       const name = `N${this.nextNodeIndex}`

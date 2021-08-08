@@ -54,7 +54,7 @@ export default defineComponent({
     const selectedNodes = ref<string[]>([])
     const selectedEdges = ref<string[]>([])
 
-    const configs = reactive({
+    const configs = {
       node: {
         selectable: 2, // up to 2 nodes
       },
@@ -64,7 +64,7 @@ export default defineComponent({
           width: 3,
         }
       },
-    })
+    }
 
     return {
       nodes,

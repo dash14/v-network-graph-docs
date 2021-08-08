@@ -36,7 +36,8 @@ module.exports = {
           { text: "Operations on Graphs", link: "/examples/operation" },
           { text: "Appearance Customization", link: "/examples/appearance" },
           { text: "Custom Layer", link: "/examples/layer" },
-          { text: "Event Handling", link: "/examples/event" }
+          { text: "Event Handling", link: "/examples/event" },
+          { text: "Miscellaneous", link: "/examples/misc" }
         ],
       },
       { text: "Reference", link: "/reference" },
