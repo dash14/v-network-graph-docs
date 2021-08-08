@@ -1,4 +1,3 @@
-
 import { Nodes, Edges, Layouts } from "v-network-graph"
 
 const nodes: Nodes = {
@@ -32,5 +31,5 @@ const layouts: Layouts = {
 export default {
   nodes,
   edges,
-  layouts
+  layouts,
 }

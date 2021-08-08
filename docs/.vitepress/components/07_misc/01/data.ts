@@ -35,5 +35,5 @@ export default {
   nodes,
   edges,
   layouts,
-  configs
+  configs,
 }

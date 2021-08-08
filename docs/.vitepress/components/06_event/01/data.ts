@@ -22,16 +22,16 @@ const layouts: Layouts = {
 
 const configs: UserConfigs = {
   node: {
-    selectable: true
+    selectable: true,
   },
   edge: {
-    selectable: true
-  }
+    selectable: true,
+  },
 }
 
 export default {
   nodes,
   edges,
   layouts,
-  configs
+  configs,
 }

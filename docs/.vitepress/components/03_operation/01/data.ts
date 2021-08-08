@@ -23,5 +23,5 @@ const layouts: Layouts = {
 export default {
   nodes,
   edges,
-  layouts
+  layouts,
 }
