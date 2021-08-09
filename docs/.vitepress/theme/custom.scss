@@ -1,6 +1,12 @@
 
+.home-hero .image {
+  width: 222px;
+  height: 132px;
+}
+
 .nav-bar-title:before {
-  content: url(/v-network-graph/head-logo.png);
+  content: url(/v-network-graph/head-logo.svg);
+  width: 32px;
   display: inline-block;
   vertical-align: middle;
   position: relative;

@@ -1,7 +1,7 @@
 ---
 home: true
 
-heroImage: /logo.png
+heroImage: /logo.svg
 heroAlt: Logo image
 heroText: v-network-graph
 tagline: An interactive network graph visualization component for Vue 3
