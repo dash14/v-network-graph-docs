@@ -16,5 +16,5 @@ features:
 - title: Fully configurable
   details: You can change the appearance and behavior of the interaction by the configuration.
 
-footer: MIT Licensed | Copyright © 2021 dash14.ack (@dash14ack)
+footer: MIT Licensed | Copyright © 2021 dash14.ack
 ---
