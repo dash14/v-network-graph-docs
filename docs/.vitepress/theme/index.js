@@ -17,6 +17,7 @@ import FocusConfigPanel from "../components/controls/appearance/FocusConfigPanel
 import EdgeConfigPanel from "../components/controls/appearance/EdgeConfigPanel.vue"
 import MultipleEdgeConfigPanel from "../components/controls/appearance/MultipleEdgeConfigPanel.vue"
 import SummarizedEdgeLabelConfigPanel from "../components/controls/appearance/SummarizedEdgeLabelConfigPanel.vue"
+import GridPanel from "../components/controls/misc/GridPanel.vue"
 
 export default {
   ...Theme,
@@ -38,5 +39,6 @@ export default {
     app.component("demo-edge-config-panel", EdgeConfigPanel)
     app.component("demo-multiple-edge-config-panel", MultipleEdgeConfigPanel)
     app.component("demo-summarized-edge-label-config-panel", SummarizedEdgeLabelConfigPanel)
+    app.component("demo-grid-panel", GridPanel)
   },
 }
