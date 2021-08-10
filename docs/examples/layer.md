@@ -10,13 +10,17 @@ The following insertion positions can be specified.
 
 <div class="reference-table">
 
-| position     | description                                              |
-| ------------ | -------------------------------------------------------- |
-| "nodes"      | above the nodes                                          |
-| "focusring"  | above the selection circles of the nodes                 |
-| "edges"      | above the edges                                          |
-| "background" | under all objects                                        |
-| "root"       | the root of the svg element (not target to path or zoom) |
+| position     | description                                                    |
+| ------------ | -------------------------------------------------------------- |
+| "nodes"      | above the nodes                                                |
+| "focusring"  | above the selection circles of the nodes                       |
+| "edges"      | above the edges                                                |
+| "base"       | under all objects                                              |
+| -            | _(When you get SVG text, layers above this will be contained)_ |
+| "grid"       | above the grid                                                 |
+| "background" | under the grid                                                 |
+| -            | _(The layer below this is not target to panning/zooming)_      |
+| "root"       | the root of the svg element                                    |
 
 </div>
 
@@ -30,16 +34,15 @@ This is an example of adding an image layer to the background of a network graph
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_layer/01/Background.vue{8,10-19,31-35}
+<<< @/.vitepress/components/05_layer/01/Background.vue{8,10-19,31-35}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_layer/01/data.ts
+<<< @/.vitepress/components/05_layer/01/data.ts
 
 </template>
 </demo-tabs>
-
 
 ## Node's badge layer
 
@@ -49,16 +52,15 @@ This is an example of adding an image layer to the background of a network graph
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_layer/02/Badge.vue{7,9-23,33-37}
+<<< @/.vitepress/components/05_layer/02/Badge.vue{7,9-23,33-37}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_layer/02/data.ts
+<<< @/.vitepress/components/05_layer/02/data.ts
 
 </template>
 </demo-tabs>
-
 
 <script setup>
 import DemoBackground from '../.vitepress/components/05_layer/01/Background.vue'
