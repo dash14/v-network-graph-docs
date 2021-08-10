@@ -1,9 +1,9 @@
 <template>
   <div class="demo-control-panel">
-    <el-tabs type="border-card" class="demo-tab">
+    <el-tabs type="border-card">
       <el-tab-pane label="Node">
         <el-tabs>
-          <el-tab-pane label="default">
+          <el-tab-pane label="normal">
             <demo-node-config-panel
               v-model:type="configs.node.normal.type"
               v-model:radius="configs.node.normal.radius"
@@ -65,7 +65,7 @@
       </el-tab-pane>
       <el-tab-pane label="Edge">
         <el-tabs>
-          <el-tab-pane label="default">
+          <el-tab-pane label="normal">
             <demo-edge-config-panel
               v-model:width="configs.edge.normal.width"
               v-model:color="configs.edge.normal.color"
