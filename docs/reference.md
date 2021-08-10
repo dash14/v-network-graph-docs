@@ -111,7 +111,22 @@ Values that are not specified will be used as default values.
     maxZoomLevel: number,    // maximum zoom level.                     default: 64
     fit: boolean,            // whether to fit the content when loaded. default: false
     layoutHandler: LayoutHandler, // class to control node layout.   default: new SimpleLayout()
-    onSvgPanZoomInitialized: undefined | (instance) => void // callback on init svg-pan-zoom. default: undefined
+    onSvgPanZoomInitialized: undefined | (instance) => void, // callback on init svg-pan-zoom. default: undefined
+    grid: {
+      visible: boolean,         // whether to show the grid in the background. default: false
+      interval: number,         // grid line spacing.                          default: 10
+      thickIncrements: number,  // increments of ticks to draw thick lines.    default: 5
+      line: {                   // normal line style
+        color: string,          //   default: "#e0e0e0",
+        strokeWidth: number,    //   default: 1
+        strokeDasharray: number //   default: 1
+      },
+      thick: {                 // thick line style
+        color: string,          //   default: "#cccccc",
+        strokeWidth: number,    //   default: 1
+        strokeDasharray: number //   default: 0
+      }
+    }
   },
   node: {
     normal: {
@@ -233,27 +248,28 @@ The following is a list of events that can be specified for attribute `event-han
 
 <div class="reference-table">
 
-| Event type         | Description          | Event value                                  |
-| ------------------ | -------------------- | -------------------------------------------- |
-| "view:load"        | component loaded     | `undefined`                                  |
-| "view:unload"      | component unloaded   | `undefined`                                  |
-| "view:mode"        | mouse mode changed   | `"default"` / `"node"` / `"edge"`            |
-| "view:zoom"        | zoom level changed   | `number` (new zoom level)                    |
-| "view:pan"         | panned               | `{ x: number; y: number }`                   |
-| "view:fit"         | fitted               | `undefined`                                  |
-| "node:click"       | node clicked         | `{ node: string, event: PointerEvent }`      |
-| "node:pointerover" | pointer over on node | `{ node: string, event: PointerEvent }`      |
-| "node:pointerout"  | pointer out on node  | `{ node: string, event: PointerEvent }`      |
-| "node:pointerup"   | pointer up on node   | `{ node: string, event: PointerEvent }`      |
-| "node:pointerdown" | pointer down on node | `{ node: string, event: PointerEvent }`      |
-| "node:dragstart"   | node drag started    | `{ NODE_ID: { x: number; y: number }, ... }` |
-| "node:pointermove" | pointer move on node | `{ node: string, event: PointerEvent }`      |
-| "node:dragend"     | node drag ended      | `{ NODE_ID: { x: number; y: number }, ... }` |
-| "node:select"      | node selected        | `[ NODE_ID, ...]`                            |
-| "edge:pointerup"   | pointer up on edge   | `{ edge: string, event: PointerEvent }`      |
-| "edge:pointerdown" | pointer down on edge | `{ edge: string, event: PointerEvent }`      |
-| "edge:click"       | edge clicked         | `{ edge: string, event: PointerEvent }`      |
-| "edge:select"      | edge selected        | `[ EDGE_ID, ... ]`                           |
+| Event type         | Description          | Event value                                              |
+| ------------------ | -------------------- | -------------------------------------------------------- |
+| "view:load"        | component loaded     | `undefined`                                              |
+| "view:unload"      | component unloaded   | `undefined`                                              |
+| "view:mode"        | mouse mode changed   | `"default"` / `"node"` / `"edge"`                        |
+| "view:zoom"        | zoom level changed   | `number` (new zoom level)                                |
+| "view:pan"         | panned               | `{ x: number, y: number }`                               |
+| "view:fit"         | fitted               | `undefined`                                              |
+| "view:resize"      | container resized    | `{ x: number, y: number, width: number, height: number }`|
+| "node:click"       | node clicked         | `{ node: string, event: PointerEvent }`                  |
+| "node:pointerover" | pointer over on node | `{ node: string, event: PointerEvent }`                  |
+| "node:pointerout"  | pointer out on node  | `{ node: string, event: PointerEvent }`                  |
+| "node:pointerup"   | pointer up on node   | `{ node: string, event: PointerEvent }`                  |
+| "node:pointerdown" | pointer down on node | `{ node: string, event: PointerEvent }`                  |
+| "node:dragstart"   | node drag started    | `{ NODE_ID: { x: number; y: number }, ... }`             |
+| "node:pointermove" | pointer move on node | `{ node: string, event: PointerEvent }`                  |
+| "node:dragend"     | node drag ended      | `{ NODE_ID: { x: number; y: number }, ... }`             |
+| "node:select"      | node selected        | `[ NODE_ID, ...]`                                        |
+| "edge:pointerup"   | pointer up on edge   | `{ edge: string, event: PointerEvent }`                  |
+| "edge:pointerdown" | pointer down on edge | `{ edge: string, event: PointerEvent }`                  |
+| "edge:click"       | edge clicked         | `{ edge: string, event: PointerEvent }`                  |
+| "edge:select"      | edge selected        | `[ EDGE_ID, ... ]`                                       |
 
 </div>
 
@@ -261,16 +277,16 @@ The following is a list of events that can be specified for attribute `event-han
 
 <div class="reference-table">
 
-| Method                     | Description                                                       |
-| -------------------------- | ----------------------------------------------------------------- |
-| fitToContents(): void      | Perform zooming/panning according to the graph size.              |
-| getAsSvg(): string         | Get the network-graph contents as SVG text data.                  |
-| getPan(): {x, y}           | Get pan vector.                                                   |
+| Method                     | Description                                                                                   |
+| -------------------------- | --------------------------------------------------------------------------------------------- |
+| fitToContents(): void      | Perform zooming/panning according to the graph size.                                          |
+| getAsSvg(): string         | Get the network-graph contents as SVG text data.                                              |
+| getPan(): {x, y}           | Get pan vector.                                                                               |
 | getSizes(): Sizes          | Get all calculate svg dimensions. <br>Sizes: `{width, height, viewBox:{x, y, width, height}}` |
-| panTo(point: {x, y}): void | Pan to a rendered position.                                       |
-| panBy(point: {x, y}): void | Relatively pan the graph by a specified rendered position vector. |
-| panToCenter(): void        | Perform a pan to center the contents of the network graph.        |
-| zoomIn(): void             | Perform zoom-in.                                                  |
-| zoomOut(): void            | Perform zoom-out.                                                 |
+| panTo(point: {x, y}): void | Pan to a rendered position.                                                                   |
+| panBy(point: {x, y}): void | Relatively pan the graph by a specified rendered position vector.                             |
+| panToCenter(): void        | Perform a pan to center the contents of the network graph.                                    |
+| zoomIn(): void             | Perform zoom-in.                                                                              |
+| zoomOut(): void            | Perform zoom-out.                                                                             |
 
 </div>
