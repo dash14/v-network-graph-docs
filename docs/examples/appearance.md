@@ -47,12 +47,12 @@ UserConfigs, you can specify the argument type of the function.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_appearance/03/Style1.vue
+  <<< @/.vitepress/components/04_appearance/04/Style1.vue
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/04_appearance/03/data.ts
+  <<< @/.vitepress/components/04_appearance/04/data.ts
 
 </template>
 </demo-tabs>
@@ -65,12 +65,12 @@ UserConfigs, you can specify the argument type of the function.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_appearance/04/Style2.vue
+  <<< @/.vitepress/components/04_appearance/05/Style2.vue
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/04_appearance/04/data.ts
+  <<< @/.vitepress/components/04_appearance/05/data.ts
 
 </template>
 </demo-tabs>
@@ -83,12 +83,12 @@ UserConfigs, you can specify the argument type of the function.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_appearance/05/Style3.vue
+  <<< @/.vitepress/components/04_appearance/06/Style3.vue
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/04_appearance/05/data.ts
+  <<< @/.vitepress/components/04_appearance/06/data.ts
 
 </template>
 </demo-tabs>
@@ -96,7 +96,8 @@ UserConfigs, you can specify the argument type of the function.
 <script setup>
 import DemoConfigValue from '../.vitepress/components/04_appearance/01/ConfigValue.vue'
 import DemoEachObject from '../.vitepress/components/04_appearance/02/EachObject.vue'
-import DemoStyle1 from '../.vitepress/components/04_appearance/03/Style1.vue'
-import DemoStyle2 from '../.vitepress/components/04_appearance/04/Style2.vue'
-import DemoStyle3 from '../.vitepress/components/04_appearance/05/Style3.vue'
+
+import DemoStyle1 from '../.vitepress/components/04_appearance/04/Style1.vue'
+import DemoStyle2 from '../.vitepress/components/04_appearance/05/Style2.vue'
+import DemoStyle3 from '../.vitepress/components/04_appearance/06/Style3.vue'
 </script>
