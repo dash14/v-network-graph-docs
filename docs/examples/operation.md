@@ -63,13 +63,18 @@ The newly added node will be placed in the center of the view area.
 Deleting a node with edges will automatically delete the associated edges as well.  
 Multiple edges can be placed between the same two nodes.
 
-<demo-tabs :demo-height="400">
+<demo-tabs :demo-height="400" :use-data="true">
 <template v-slot:demo>
   <DemoAddElements />
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/03_operation/03/AddElements.vue{74-95}
+  <<< @/.vitepress/components/03_operation/03/AddElements.vue{47-68}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/03_operation/03/data.ts
 
 </template>
 </demo-tabs>
@@ -83,13 +88,18 @@ The summarized edges will be displayed with the number of edges.
 Note: This feature is still under development, so it is not yet
 possible to select individual summarized edges.
 
-<demo-tabs :demo-height="400">
+<demo-tabs :demo-height="400" :use-data="true">
 <template v-slot:demo>
   <DemoSummarizeEdges />
 </template>
 <template v-slot:source>
 
   <<< @/.vitepress/components/03_operation/04/SummarizeEdges.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/03_operation/04/data.ts
 
 </template>
 </demo-tabs>

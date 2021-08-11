@@ -13,61 +13,34 @@
     v-model:selected-edges="selectedEdges"
     :nodes="nodes"
     :edges="edges"
-    :layouts="layouts"
-    :configs="configs"
+    :layouts="data.layouts"
+    :configs="data.configs"
   />
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, ref } from "vue"
 import { Nodes, Edges } from "v-network-graph"
+import data from "./data"
 
 export default defineComponent({
   setup() {
-    const nodes: Nodes = reactive({
-      node1: { name: "N1" },
-      node2: { name: "N2" },
-      node3: { name: "N3" },
-    })
-    const edges: Edges = reactive({
-      edge1: { source: "node1", target: "node2" },
-      edge2: { source: "node2", target: "node3" },
-    })
+    const nodes: Nodes = reactive(data.nodes)
+    const edges: Edges = reactive(data.edges)
     const nextNodeIndex = ref(Object.keys(nodes).length + 1)
     const nextEdgeIndex = ref(Object.keys(edges).length + 1)
-
-    const layouts = {
-      nodes: {
-        node1: { x: 50, y: 0 },
-        node2: { x: 0, y: 75 },
-        node3: { x: 100, y: 75 },
-      },
-    }
 
     const selectedNodes = ref<string[]>([])
     const selectedEdges = ref<string[]>([])
 
-    const configs = {
-      node: {
-        selectable: 2, // up to 2 nodes
-      },
-      edge: {
-        selectable: true,
-        normal: {
-          width: 3,
-        },
-      },
-    }
-
     return {
       nodes,
       edges,
+      data,
       nextNodeIndex,
       nextEdgeIndex,
-      layouts,
       selectedNodes,
       selectedEdges,
-      configs,
     }
   },
   methods: {
