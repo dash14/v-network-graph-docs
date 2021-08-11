@@ -8,19 +8,17 @@
   >
     <!-- Use CSS to define references to external fonts.
          To use CSS within SVG, use <defs>. -->
-    <template #font-defs>
-      <defs>
-        <!-- Cannot use <style> directly due to restrictions of Vue. -->
-        <component is="style">
-          @font-face {
-            font-family: 'Material Icons';
-            font-style: normal;
-            font-weight: 400;
-            src: url(https://fonts.gstatic.com/s/materialicons/v97/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
-          }
-        </component>
-      </defs>
-    </template>
+    <defs>
+      <!-- Cannot use <style> directly due to restrictions of Vue. -->
+      <component is="style">
+        @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(https://fonts.gstatic.com/s/materialicons/v97/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+        }
+      </component>
+    </defs>
 
     <!-- Replace the node component -->
     <template #override-node="{ nodeId, scale, config, ...slotProps }">

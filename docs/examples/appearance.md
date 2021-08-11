@@ -59,7 +59,7 @@ do by using the `override-node-label` slot.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_appearance/03/CustomNode.vue{25-38}
+  <<< @/.vitepress/components/04_appearance/03/CustomNode.vue{23-36}
 
 </template>
 <template v-slot:data>
