@@ -31,7 +31,7 @@ export default defineComponent({
     // additional layers definition
     const layers = {
       // {layername}: {position}
-      worldmap: "background",
+      worldmap: "base",
     }
 
     // ref="graph"

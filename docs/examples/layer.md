@@ -27,17 +27,17 @@ The following insertion positions can be specified.
 The default slot and any slots not defined in the `layers` will be
 included in the root.
 
-## Background layer
+## Map
 
-This is an example of adding an image layer to the background of a network graph.
+This is an example of adding an image layer to the behind of a network graph.
 
 <demo-tabs :use-data="true" :demo-height="400">
 <template v-slot:demo>
-  <DemoBackground />
+  <DemoMap />
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_layer/01/Background.vue{8,10-19,31-35}
+<<< @/.vitepress/components/05_layer/01/Map.vue{8,10-19,31-35}
 
 </template>
 <template v-slot:data>
@@ -47,7 +47,7 @@ This is an example of adding an image layer to the background of a network graph
 </template>
 </demo-tabs>
 
-## Node's badge layer
+## Node's badge
 
 <demo-tabs :use-data="true">
 <template v-slot:demo>
@@ -66,6 +66,6 @@ This is an example of adding an image layer to the background of a network graph
 </demo-tabs>
 
 <script setup>
-import DemoBackground from '../.vitepress/components/05_layer/01/Background.vue'
+import DemoMap from '../.vitepress/components/05_layer/01/Map.vue'
 import DemoBadge from '../.vitepress/components/05_layer/02/Badge.vue'
 </script>
