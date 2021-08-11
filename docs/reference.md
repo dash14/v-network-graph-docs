@@ -273,7 +273,7 @@ The following is a list of events that can be specified for attribute `event-han
 
 </div>
 
-## Methods
+## Instance Methods
 
 <div class="reference-table">
 
