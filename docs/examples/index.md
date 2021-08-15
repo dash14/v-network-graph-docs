@@ -33,7 +33,7 @@ See below for live examples of various uses.
 </div>
 <div class="example-item">
 
-[![Path](/examples/appearance.png)](./path)
+[![Path](/examples/path.png)](./path)
 
 [Path](./path)
 
