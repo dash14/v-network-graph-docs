@@ -270,6 +270,7 @@ The following is a list of events that can be specified for attribute `event-han
 | "edge:pointerdown" | pointer down on edge | `{ edge: string, event: PointerEvent }`                  |
 | "edge:click"       | edge clicked         | `{ edge: string, event: PointerEvent }`                  |
 | "edge:select"      | edge selected        | `[ EDGE_ID, ... ]`                                       |
+| "path:click"       | path clicked         | `{ edges: [EDGE_ID, ...], ... }`                         |
 
 </div>
 
