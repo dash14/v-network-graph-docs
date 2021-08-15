@@ -135,9 +135,10 @@ export default defineComponent({
     for (const key of keys) {
       vars[key] = computed({
         get: () => props[key],
-        set: v => emit(`update:${key}`, v),
+        set: v => emit(`update:${key}` as any, v),
       })
     }
+    console.log("summarize", vars)
     return vars
   },
 })
