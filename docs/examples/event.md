@@ -18,12 +18,12 @@ be captured.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/06_event/01/AllEvents.vue{7,30-42}
+  <<< @/.vitepress/components/07_event/01/AllEvents.vue{7,30-42}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/06_event/01/data.ts
+  <<< @/.vitepress/components/07_event/01/data.ts
 
 </template>
 </demo-tabs>
@@ -41,17 +41,17 @@ clicked.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/06_event/02/Badge.vue{8,50-55}
+  <<< @/.vitepress/components/07_event/02/Badge.vue{8,50-55}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/06_event/02/data.ts
+  <<< @/.vitepress/components/07_event/02/data.ts
 
 </template>
 </demo-tabs>
 
 <script setup>
-import DemoAllEvents from '../.vitepress/components/06_event/01/AllEvents.vue'
-import DemoBadge from '../.vitepress/components/06_event/02/Badge.vue'
+import DemoAllEvents from '../.vitepress/components/07_event/01/AllEvents.vue'
+import DemoBadge from '../.vitepress/components/07_event/02/Badge.vue'
 </script>

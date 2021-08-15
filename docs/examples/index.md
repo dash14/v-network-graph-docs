@@ -33,6 +33,13 @@ See below for live examples of various uses.
 </div>
 <div class="example-item">
 
+[![Path](/examples/appearance.png)](./path)
+
+[Path](./path)
+
+</div>
+<div class="example-item">
+
 [![Custom Layer](/examples/layer.png)](./layer)
 
 [Custom Layer](./layer)
