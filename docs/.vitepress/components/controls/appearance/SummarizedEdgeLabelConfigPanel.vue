@@ -138,7 +138,6 @@ export default defineComponent({
         set: v => emit(`update:${key}` as any, v),
       })
     }
-    console.log("summarize", vars)
     return vars
   },
 })

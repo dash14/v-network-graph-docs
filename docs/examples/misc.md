@@ -11,12 +11,12 @@ In this example, the SVG data is downloaded.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_misc/01/Download.vue{53-62}
+  <<< @/.vitepress/components/09_misc/01/Download.vue{53-62}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/08_misc/01/data.ts
+  <<< @/.vitepress/components/09_misc/01/data.ts
 
 </template>
 </demo-tabs>
@@ -29,19 +29,19 @@ In this example, the SVG data is downloaded.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_misc/02/GridLayer.vue{33-47}
+  <<< @/.vitepress/components/09_misc/02/GridLayer.vue{33-47}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/08_misc/02/data.ts
+  <<< @/.vitepress/components/09_misc/02/data.ts
 
 </template>
 </demo-tabs>
 
 
 <script setup>
-import DemoDownload from '../.vitepress/components/08_misc/01/Download.vue'
-import DemoGridLayer from '../.vitepress/components/08_misc/02/GridLayer.vue'
+import DemoDownload from '../.vitepress/components/09_misc/01/Download.vue'
+import DemoGridLayer from '../.vitepress/components/09_misc/02/GridLayer.vue'
 </script>
 

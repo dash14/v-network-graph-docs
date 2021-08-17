@@ -15,12 +15,12 @@ A simple example is shown below.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_path/01/Basic.vue{6,18-21}
+<<< @/.vitepress/components/06_path/01/Basic.vue{6,18-21}
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/05_path/01/data.ts
+<<< @/.vitepress/components/06_path/01/data.ts
 
 </template>
 </demo-tabs>
@@ -48,12 +48,12 @@ based on the color values in the path data.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_path/02/Color.vue{6-7,18-27,39-45}
+<<< @/.vitepress/components/06_path/02/Color.vue{6-7,18-27,39-45}
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/05_path/02/data.ts
+<<< @/.vitepress/components/06_path/02/data.ts
 
 </template>
 </demo-tabs>
@@ -69,19 +69,19 @@ Paths can also be animated in the same way as in Edge.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_path/03/Animation.vue{37-39}
+<<< @/.vitepress/components/06_path/03/Animation.vue{37-39}
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/05_path/03/data.ts
+<<< @/.vitepress/components/06_path/03/data.ts
 
 </template>
 </demo-tabs>
 
 <script setup>
-import DemoBasic from '../.vitepress/components/05_path/01/Basic.vue'
-import DemoColor from '../.vitepress/components/05_path/02/Color.vue'
-import DemoAnimation from '../.vitepress/components/05_path/03/Animation.vue'
+import DemoBasic from '../.vitepress/components/06_path/01/Basic.vue'
+import DemoColor from '../.vitepress/components/06_path/02/Color.vue'
+import DemoAnimation from '../.vitepress/components/06_path/03/Animation.vue'
 </script>
 
