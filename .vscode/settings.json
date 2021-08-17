@@ -10,6 +10,7 @@
     "draggable",
     "focusring",
     "linecap",
+    "linejoin",
     "vite",
     "vitejs",
     "vitepress"
