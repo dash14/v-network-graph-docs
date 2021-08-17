@@ -1,0 +1,59 @@
+<template>
+  <div class="demo-control-panel">
+    <el-tabs type="border-card">
+      <el-tab-pane label="Content">
+        <div class="control">
+          <label>Field to show on the label:</label>
+          <el-select v-model="configs.node.label.text">
+            <el-option label="id" value="id" />
+            <el-option label="name" value="name" />
+            <el-option label="type" value="type" />
+          </el-select>
+        </div>
+      </el-tab-pane>
+      <el-tab-pane label="Appearance">
+        <demo-label-config-panel
+          v-model:visible="configs.node.label.visible"
+          v-model:fontFamily="configs.node.label.fontFamily"
+          v-model:fontSize="configs.node.label.fontSize"
+          v-model:color="configs.node.label.color"
+          v-model:margin="configs.node.label.margin"
+          v-model:direction="configs.node.label.direction"
+        />
+      </el-tab-pane>
+    </el-tabs>
+  </div>
+
+  <v-network-graph
+    :nodes="data.nodes"
+    :edges="data.edges"
+    :layouts="data.layouts"
+    :configs="configs"
+  />
+</template>
+
+<script lang="ts">
+import { defineComponent, reactive } from "vue"
+import { NodeLabelDirection } from "v-network-graph"
+import data from "./data"
+
+export default defineComponent({
+  setup() {
+    const configs = reactive({
+      node: {
+        label: {
+          visible: true,
+          fontFamily: undefined,
+          fontSize: 11,
+          color: "#000000",
+          margin: 4,
+          direction: NodeLabelDirection.SOUTH,
+          text: "name"
+        },
+      },
+    })
+
+    return { data, configs }
+  },
+})
+</script>
