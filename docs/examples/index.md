@@ -33,9 +33,9 @@ See below for live examples of various uses.
 </div>
 <div class="example-item">
 
-[![Path](/examples/path.png)](./path)
+[![Paths](/examples/paths.png)](./paths)
 
-[Path](./path)
+[Paths](./paths)
 
 </div>
 <div class="example-item">

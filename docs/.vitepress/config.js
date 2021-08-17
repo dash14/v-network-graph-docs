@@ -38,7 +38,7 @@ module.exports = {
           { text: "Layout / Positioning", link: "/examples/layout" },
           { text: "Operations on Graphs", link: "/examples/operation" },
           { text: "Appearance Customization", link: "/examples/appearance" },
-          { text: "Path", link: "/examples/path" },
+          { text: "Paths", link: "/examples/paths" },
           { text: "Custom Layer", link: "/examples/layer" },
           { text: "Event Handling", link: "/examples/event" },
           { text: "Miscellaneous", link: "/examples/misc" }
