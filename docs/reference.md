@@ -153,9 +153,18 @@ Values that are not specified will be used as default values.
     label: {
       // * These fields can also be specified with the function as `(node) => value`.
       visible: boolean,         // whether the node's label is visible or not. default: true
-      fontFamily: string | undefined,  // font family.      default: undefined
-      fontSize: number,                // font size.        default: 11
-      color: string,                   // font color.       default: "#000000"
+      fontFamily: string | undefined,  // font family.       default: undefined
+      fontSize: number,                // font size.         default: 11
+      color: string,                   // font color.        default: "#000000"
+      background: {                    // background config. default: undefined
+        visible: boolean,          // whether the background is visible or not.
+        color: string,             // background color.
+        padding: number | {        // padding.
+          vertical: number,        // vertical padding.
+          horizontal: number,      // horizontal padding.
+        },
+        borderRadius: number       // border radius.
+      } | undefined,
       margin: number,                  // margin from node. default: 4
       direction: NodeLabelDirection,   // node label display direction. default: SOUTH
       text: string    // field name in the node object to use as the label. default: "name"
@@ -222,7 +231,38 @@ Values that are not specified will be used as default values.
         //   animationSpeed: 100
         // }
       }
+    },
+    label: {
+      fontFamily: string | undefined,  // font family.       default: undefined
+      fontSize: number,                // font size.         default: 11
+      color: string,                   // font color.        default: "#000000"
+      background: {                    // background config. default: undefined
+        visible: boolean,          // whether the background is visible or not.
+        color: string,             // background color.
+        padding: number | {        // padding.
+          vertical: number,        // vertical padding.
+          horizontal: number,      // horizontal padding.
+        },
+        borderRadius: number       // border radius.
+      } | undefined,
+      margin: number,              // margin from node. default: 4
     }
+  },
+  path: {
+    visible: boolean,     // whether the paths are visible or not. default: false
+    clickable: boolean,   // whether paths are clickable or not.   default: false
+    curveInNode: boolean, // whether to curve paths within nodes.  default: false
+    path: {
+      // * These fields can also be specified with the function as `(path) => value`.
+      width: number,      // width of path. default: 6
+      color: string,      // path color. default: (Func to select a color from a hash of edges.)
+
+      dasharray: number | string | undefined,         // stroke dash array. default: undefined
+      linecap: "butt" | "round" | "square" | undefined,  // stroke linecap. default: "round"
+      linejoin: "miter" | "round" | "bevel",            // stroke linejoin. default: "round"
+      animate: boolean,                       // whether to animate or not. default: false
+      animationSpeed: number                  // animation speed.           default: 100
+    },
   }
 }
 ```
