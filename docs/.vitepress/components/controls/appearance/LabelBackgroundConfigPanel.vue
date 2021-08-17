@@ -1,26 +1,26 @@
 <template>
-  <div class="focus-configs">
+  <div v-if="visible !== undefined" class="label-configs">
     <div class="control">
       Visible:
       <el-checkbox v-model="visible" />
     </div>
   </div>
-  <div class="focus-configs">
+  <div class="label-configs">
     <div class="control">
-      Width:
-      <el-slider v-model="width" :min="1" :max="32" :step="1" />
+      padding vertical:
+      <el-slider v-model="paddingVertical" :min="0" :max="32" :step="1" />
     </div>
     <div class="control">
-      Padding:
-      <el-slider v-model="padding" :min="1" :max="32" :step="1" />
+      horizontal:
+      <el-slider v-model="paddingHorizontal" :min="0" :max="32" :step="1" />
+    </div>
+    <div class="control">
+      border radius:
+      <el-slider v-model="borderRadius" :min="0" :max="32" :step="1" />
     </div>
     <div class="control">
       Color:
       <el-color-picker v-model="color" color-format="hex" @active-change="color = $event" />
-    </div>
-    <div class="control">
-      Dasharray:
-      <el-input v-model="dasharray" />
     </div>
   </div>
 </template>
@@ -32,13 +32,18 @@ export default defineComponent({
   props: {
     visible: {
       type: Boolean,
-      required: true,
+      required: false,
+      default: undefined
     },
-    width: {
+    paddingVertical: {
       type: Number,
       required: true,
     },
-    padding: {
+    paddingHorizontal: {
+      type: Number,
+      required: true,
+    },
+    borderRadius: {
       type: Number,
       required: true,
     },
@@ -46,18 +51,13 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    dasharray: {
-      type: String,
-      required: false,
-      default: undefined,
-    },
   },
   emits: [
     "update:visible",
-    "update:width",
-    "update:padding",
+    "update:paddingVertical",
+    "update:paddingHorizontal",
+    "update:borderRadius",
     "update:color",
-    "update:dasharray",
   ],
   setup(props, { emit }) {
     const vars: { [name: string]: ComputedRef<any> } = {}
@@ -74,7 +74,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.focus-configs {
+.label-configs {
   width: 100%;
   font-size: 12px;
   display: flex;
@@ -89,12 +89,6 @@ export default defineComponent({
   margin-left: 10px;
 }
 
-:deep(.el-select) {
-  width: 120px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 :deep(.el-slider) {
   width: 50px;
   margin-left: 16px;
@@ -102,11 +96,6 @@ export default defineComponent({
 }
 
 :deep(.el-color-picker) {
-  margin-left: 10px;
-}
-
-:deep(.el-input) {
-  width: 60px;
   margin-left: 10px;
 }
 </style>

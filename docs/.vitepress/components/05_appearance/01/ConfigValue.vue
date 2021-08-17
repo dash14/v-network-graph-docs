@@ -45,14 +45,27 @@
         </el-tabs>
       </el-tab-pane>
       <el-tab-pane label="Label">
-        <demo-label-config-panel
-          v-model:visible="configs.node.label.visible"
-          v-model:fontFamily="configs.node.label.fontFamily"
-          v-model:fontSize="configs.node.label.fontSize"
-          v-model:color="configs.node.label.color"
-          v-model:margin="configs.node.label.margin"
-          v-model:direction="configs.node.label.direction"
-        />
+        <el-tabs>
+          <el-tab-pane label="basic">
+            <demo-label-config-panel
+              v-model:visible="configs.node.label.visible"
+              v-model:fontFamily="configs.node.label.fontFamily"
+              v-model:fontSize="configs.node.label.fontSize"
+              v-model:color="configs.node.label.color"
+              v-model:margin="configs.node.label.margin"
+              v-model:direction="configs.node.label.direction"
+            />
+          </el-tab-pane>
+          <el-tab-pane label="background">
+            <demo-label-background-config-panel
+              v-model:visible="configs.node.label.background.visible"
+              v-model:color="configs.node.label.background.color"
+              v-model:paddingVertical="configs.node.label.background.padding.vertical"
+              v-model:paddingHorizontal="configs.node.label.background.padding.horizontal"
+              v-model:borderRadius="configs.node.label.background.borderRadius"
+            />
+          </el-tab-pane>
+        </el-tabs>
       </el-tab-pane>
       <el-tab-pane label="Focus">
         <demo-focus-config-panel
@@ -199,6 +212,15 @@ export default defineComponent({
           color: "#000000",
           margin: 4,
           direction: NodeLabelDirection.SOUTH,
+          background: {
+            visible: false,
+            color: "#ffffff",
+            padding: {
+              vertical: 1,
+              horizontal: 4,
+            },
+            borderRadius: 2
+          },
         },
         focusring: {
           visible: true,

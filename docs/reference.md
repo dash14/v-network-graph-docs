@@ -268,6 +268,8 @@ The following is a list of events that can be specified for attribute `event-han
 | "node:select"      | node selected        | `[ NODE_ID, ...]`                                        |
 | "edge:pointerup"   | pointer up on edge   | `{ edge: string, event: PointerEvent }`                  |
 | "edge:pointerdown" | pointer down on edge | `{ edge: string, event: PointerEvent }`                  |
+| "edge:pointerover" | pointer over on edge | `{ edge: string, event: PointerEvent }`                  |
+| "edge:pointerout"  | pointer out on edge  | `{ edge: string, event: PointerEvent }`                  |
 | "edge:click"       | edge clicked         | `{ edge: string, event: PointerEvent }`                  |
 | "edge:select"      | edge selected        | `[ EDGE_ID, ... ]`                                       |
 | "path:click"       | path clicked         | `{ edges: [EDGE_ID, ...], ... }`                         |

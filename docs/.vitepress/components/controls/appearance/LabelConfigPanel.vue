@@ -1,5 +1,5 @@
 <template>
-  <div class="label-configs">
+  <div v-if="visible !== undefined" class="label-configs">
     <div class="control">
       Visible:
       <el-checkbox v-model="visible" />
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="label-configs">
-    <div class="control">
+    <div v-if="direction !== undefined" class="control">
       Direction:
       <el-select v-model="direction">
         <el-option label="center" :value="0" />
@@ -39,9 +39,17 @@
         <el-option label="north west" :value="8" />
       </el-select>
     </div>
+    <div v-if="location !== undefined" class="control">
+      Location:
+      <el-select v-model="location">
+        <el-option label="center" value="center" />
+        <el-option label="above" value="above" />
+        <el-option label="below" value="below" />
+      </el-select>
+    </div>
     <div class="control">
       Margin:
-      <el-slider v-model="margin" :min="1" :max="32" :step="1" :disabled="direction == 0" />
+      <el-slider v-model="margin" :min="0" :max="32" :step="1" :disabled="direction == 0" />
     </div>
   </div>
 </template>
@@ -53,7 +61,8 @@ export default defineComponent({
   props: {
     visible: {
       type: Boolean,
-      required: true,
+      required: false,
+      default: undefined
     },
     fontFamily: {
       type: String,
@@ -74,7 +83,13 @@ export default defineComponent({
     },
     direction: {
       type: Number,
-      required: true,
+      required: false,
+      default: undefined
+    },
+    location: {
+      type: String,
+      required: false,
+      default: undefined
     },
   },
   emits: [
@@ -84,6 +99,7 @@ export default defineComponent({
     "update:color",
     "update:margin",
     "update:direction",
+    "update:location",
   ],
   setup(props, { emit }) {
     const vars: { [name: string]: ComputedRef<any> } = {}
@@ -91,7 +107,7 @@ export default defineComponent({
     for (const key of keys) {
       vars[key] = computed({
         get: () => props[key],
-        set: v => emit(`update:${key}`, v),
+        set: v => emit(`update:${key}` as any, v),
       })
     }
     return vars

@@ -26,6 +26,13 @@ See below for live examples of various uses.
 </div>
 <div class="example-item">
 
+[![Labels](/examples/labels.png)](./labels)
+
+[Labels](./labels)
+
+</div>
+<div class="example-item">
+
 [![Appearance Customization](/examples/appearance.png)](./appearance)
 
 [Appearance Customization](./appearance)
@@ -33,9 +40,9 @@ See below for live examples of various uses.
 </div>
 <div class="example-item">
 
-[![Path](/examples/path.png)](./path)
+[![Paths](/examples/paths.png)](./paths)
 
-[Path](./path)
+[Paths](./paths)
 
 </div>
 <div class="example-item">

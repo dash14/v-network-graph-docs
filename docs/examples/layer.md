@@ -37,12 +37,12 @@ This is an example of adding an image layer to the behind of a network graph.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_layer/01/Map.vue{8,10-19,31-35}
+<<< @/.vitepress/components/07_layer/01/Map.vue{8,10-19,31-35}
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/06_layer/01/data.ts
+<<< @/.vitepress/components/07_layer/01/data.ts
 
 </template>
 </demo-tabs>
@@ -55,17 +55,17 @@ This is an example of adding an image layer to the behind of a network graph.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_layer/02/Badge.vue{7,9-23,33-37}
+<<< @/.vitepress/components/07_layer/02/Badge.vue{7,9-23,33-37}
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/06_layer/02/data.ts
+<<< @/.vitepress/components/07_layer/02/data.ts
 
 </template>
 </demo-tabs>
 
 <script setup>
-import DemoMap from '../.vitepress/components/06_layer/01/Map.vue'
-import DemoBadge from '../.vitepress/components/06_layer/02/Badge.vue'
+import DemoMap from '../.vitepress/components/07_layer/01/Map.vue'
+import DemoBadge from '../.vitepress/components/07_layer/02/Badge.vue'
 </script>
