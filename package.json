@@ -1,7 +1,7 @@
 {
   "name": "v-network-graph-docs",
   "description": "Documentation for v-network-graph",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "scripts": {
     "docs:dev": "run-s docs:dev:*",
@@ -18,8 +18,8 @@
     "@types/d3-force": "^3.0.3",
     "@types/lodash-es": "^4.17.4",
     "@types/node": "^16.6.1",
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
     "@vitejs/plugin-vue": "^1.4.0",
     "date-fns": "^2.23.0",
     "element-plus": "^1.0.2-beta.70",
@@ -30,10 +30,10 @@
     "lodash-es": "^4.17.21",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "sass": "^1.37.5",
+    "sass": "^1.38.0",
     "typescript": "^4.3.5",
-    "v-network-graph": "^0.0.4",
+    "v-network-graph": "^0.0.5",
     "vitepress": "^0.16.1",
-    "vue-tsc": "^0.2.2"
+    "vue-tsc": "^0.2.3"
   }
 }
