@@ -9,6 +9,8 @@ npm run docs:build
 # navigate into the build output directory
 cd docs/.vitepress/dist
 
+cat ../../../.gitignore | grep -v ^/ > .gitignore
+
 git init
 git config --global user.name "dash14"
 git config --global user.email "dash14.ack@gmail.com"
