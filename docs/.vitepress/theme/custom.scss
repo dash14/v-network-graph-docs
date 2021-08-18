@@ -50,7 +50,8 @@
 .example-list {
   .example-item {
     display: grid;
-    grid-template-columns: 242px 1fr;
+    grid-template-columns: minmax(30%, 242px) minmax(60%, auto);
+    // grid-template-columns: 242px 1fr;
     pointer-events: all;
     margin: 30px 0;
     p {
@@ -62,7 +63,7 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         width: 242px;
-        height: 162px;
+        height: auto;
       }
     }
     p:last-child {
