@@ -22,7 +22,7 @@
     "@typescript-eslint/parser": "^4.29.2",
     "@vitejs/plugin-vue": "^1.4.0",
     "date-fns": "^2.23.0",
-    "element-plus": "^1.0.2-beta.70",
+    "element-plus": "^1.0.2-beta.71",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
@@ -32,7 +32,7 @@
     "rimraf": "^3.0.2",
     "sass": "^1.38.0",
     "typescript": "^4.3.5",
-    "v-network-graph": "^0.0.5",
+    "v-network-graph": "^0.0.6",
     "vitepress": "^0.16.1",
     "vue-tsc": "^0.2.3"
   }
