@@ -7,6 +7,8 @@ heroText: v-network-graph
 tagline: An interactive network graph visualization component for Vue 3
 actionText: Getting Started
 actionLink: /getting-started
+altActionText: Examples
+altActionLink: /examples/
 
 features:
 - title: SVG based
