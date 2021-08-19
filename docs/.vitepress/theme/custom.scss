@@ -50,7 +50,7 @@
 .example-list {
   .example-item {
     display: grid;
-    grid-template-columns: minmax(30%, 242px) minmax(60%, auto);
+    grid-template-columns: minmax(30%, 242px) minmax(40%, 80%);
     // grid-template-columns: 242px 1fr;
     pointer-events: all;
     margin: 30px 0;
