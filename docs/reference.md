@@ -199,7 +199,10 @@ Values that are not specified will be used as default values.
         //   ... all other values are same as `edge.normal`
         // }
     selectable: boolean,   // whether the edge is selectable or not. default: false
-    gap: number,           // distance between edges. default: 3
+    gap: number | ((edges: Edges, configs: Configs) => number),
+        // number: distance between edges.
+        // func : function to calculate gap from edge list between nodes.
+        // default: 3
     summarize: boolean | ((edges: Edges, configs: Configs) => boolean),
         // true : summarize when the width of the edge becomes larger than the node.
         // false: do not summarize.
