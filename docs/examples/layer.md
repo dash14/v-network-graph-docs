@@ -12,6 +12,7 @@ The following insertion positions can be specified.
 
 | position     | description                                                    |
 | ------------ | -------------------------------------------------------------- |
+| "paths"      | above the paths                                                |
 | "nodes"      | above the nodes                                                |
 | "focusring"  | above the selection circles of the nodes                       |
 | "edges"      | above the edges                                                |

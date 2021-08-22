@@ -67,7 +67,7 @@ See ["Configurations"](#configurations)
 
 ```js
 {
-  "LAYER_ID": POSITION, // "nodes" | "focusring" | "edges" | "background"
+  "LAYER_ID": POSITION, // "paths" | "nodes" | "focusring" | "edges" | "base" | "grid" | "background" | "root"
   ...
 }
 ```
