@@ -5,11 +5,11 @@
       v-model:interval="configs.view.grid.interval"
       v-model:thickIncrements="configs.view.grid.thickIncrements"
       v-model:normalColor="configs.view.grid.line.color"
-      v-model:normalStrokeWidth="configs.view.grid.line.strokeWidth"
-      v-model:normalStrokeDasharray="configs.view.grid.line.strokeDasharray"
+      v-model:normalWidth="configs.view.grid.line.width"
+      v-model:normalDasharray="configs.view.grid.line.dasharray"
       v-model:thickColor="configs.view.grid.thick.color"
-      v-model:thickStrokeWidth="configs.view.grid.thick.strokeWidth"
-      v-model:thickStrokeDasharray="configs.view.grid.thick.strokeDasharray"
+      v-model:thickWidth="configs.view.grid.thick.width"
+      v-model:thickDasharray="configs.view.grid.thick.dasharray"
     />
   </div>
 
@@ -36,13 +36,13 @@ export default defineComponent({
           thickIncrements: 5,
           line: {
             color: "#e0e0e0",
-            strokeWidth: 1,
-            strokeDasharray: 1,
+            width: 1,
+            dasharray: 1,
           },
           thick: {
             color: "#cccccc",
-            strokeWidth: 1,
-            strokeDasharray: 0,
+            width: 1,
+            dasharray: 0,
           },
         },
         layoutHandler: new GridLayout({ grid: 10 }),

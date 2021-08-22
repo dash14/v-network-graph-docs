@@ -24,7 +24,7 @@
         <div class="control">
           Width:
           <el-slider
-            v-model="normalStrokeWidth"
+            v-model="normalWidth"
             :min="0"
             :max="16"
             :step="1"
@@ -42,14 +42,14 @@
         </div>
         <div class="control">
           Dasharray:
-          <el-input v-model="normalStrokeDasharray" :disabled="!visible" />
+          <el-input v-model="normalDasharray" :disabled="!visible" />
         </div>
       </div>
       <div>Thick:</div>
       <div>
         <div class="control">
           Width:
-          <el-slider v-model="thickStrokeWidth" :min="0" :max="16" :step="1" :disabled="!visible" />
+          <el-slider v-model="thickWidth" :min="0" :max="16" :step="1" :disabled="!visible" />
         </div>
         <div class="control">
           Color:
@@ -62,7 +62,7 @@
         </div>
         <div class="control">
           Dasharray:
-          <el-input v-model="thickStrokeDasharray" :disabled="!visible" />
+          <el-input v-model="thickDasharray" :disabled="!visible" />
         </div>
       </div>
     </div>
@@ -90,11 +90,11 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    normalStrokeWidth: {
+    normalWidth: {
       type: Number,
       required: true,
     },
-    normalStrokeDasharray: {
+    normalDasharray: {
       type: [String, Number],
       default: 0,
     },
@@ -102,11 +102,11 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    thickStrokeWidth: {
+    thickWidth: {
       type: Number,
       required: true,
     },
-    thickStrokeDasharray: {
+    thickDasharray: {
       type: [String, Number],
       default: 0,
     },
@@ -116,11 +116,11 @@ export default defineComponent({
     "update:interval",
     "update:thickIncrements",
     "update:normalColor",
-    "update:normalStrokeWidth",
-    "update:normalStrokeDasharray",
+    "update:normalWidth",
+    "update:normalDasharray",
     "update:thickColor",
-    "update:thickStrokeWidth",
-    "update:thickStrokeDasharray",
+    "update:thickWidth",
+    "update:thickDasharray",
   ],
   setup(props, { emit }) {
     const vars: { [name: string]: ComputedRef<any> } = {}

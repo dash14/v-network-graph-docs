@@ -118,13 +118,13 @@ Values that are not specified will be used as default values.
       thickIncrements: number,  // increments of ticks to draw thick lines.    default: 5
       line: {                   // normal line style
         color: string,          //   default: "#e0e0e0",
-        strokeWidth: number,    //   default: 1
-        strokeDasharray: number //   default: 1
+        width: number,          //   default: 1
+        dasharray: number       //   default: 1
       },
-      thick: {                 // thick line style
+      thick: {                  // thick line style
         color: string,          //   default: "#cccccc",
-        strokeWidth: number,    //   default: 1
-        strokeDasharray: number //   default: 0
+        width: number,          //   default: 1
+        dasharray: number       //   default: 0
       }
     }
   },
