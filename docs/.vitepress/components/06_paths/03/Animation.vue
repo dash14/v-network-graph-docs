@@ -36,7 +36,7 @@ export default defineComponent({
           width: 10,
           dasharray: "10 16",
           animate: true,
-          animationSpeed: 500
+          animationSpeed: 40
         },
       },
     }
