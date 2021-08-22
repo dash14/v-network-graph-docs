@@ -155,6 +155,7 @@ Values that are not specified will be used as default values.
       visible: boolean,         // whether the node's label is visible or not. default: true
       fontFamily: string | undefined,  // font family.       default: undefined
       fontSize: number,                // font size.         default: 11
+      lineHeight: number,              // line height (multiplier for font size). default: 1.1
       color: string,                   // font color.        default: "#000000"
       background: {                    // background config. default: undefined
         visible: boolean,          // whether the background is visible or not.
@@ -238,6 +239,7 @@ Values that are not specified will be used as default values.
     label: {
       fontFamily: string | undefined,  // font family.       default: undefined
       fontSize: number,                // font size.         default: 11
+      lineHeight: number,              // line height (multiplier for font size). default: 1.1
       color: string,                   // font color.        default: "#000000"
       background: {                    // background config. default: undefined
         visible: boolean,          // whether the background is visible or not.
