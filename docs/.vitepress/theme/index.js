@@ -4,7 +4,7 @@ import Theme from "vitepress/theme"
 import "./custom.scss"
 
 import ElementPlus from "element-plus"
-import "element-plus/lib/theme-chalk/index.css"
+import "element-plus/theme-chalk/src/index.scss"
 
 import VNetworkGraph from "v-network-graph"
 import "v-network-graph/style.css"
