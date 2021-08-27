@@ -204,6 +204,21 @@ Values that are not specified will be used as default values.
         // number: distance between edges.
         // func : function to calculate gap from edge list between nodes.
         // default: 3
+    marker: {
+      source: {
+        type:  "none" | "array" | "angle" | "circle" | "custom",
+                              // type of marker.                          default: "none"
+        width: number,        // width of marker.                         default: 5
+        height: number,       // height of marker.                        default: 5
+        margin: number,       // distance between marker and end of edge. default: -1
+        units: "strokeWidth" | "userSpaceOnUse",
+                              // units of width, height and margin.            default: "strokeWidth"
+        color: string | null, // color of marker. null: same as edge color.    default: null
+        customId: string | undefined
+                              // custom marker ID for marker type is "custom". default: undefined
+      },
+      target: { /* same structure as `source`. */ }
+    },
     summarize: boolean | ((edges: Edges, configs: Configs) => boolean),
         // true : summarize when the width of the edge becomes larger than the node.
         // false: do not summarize.
@@ -250,7 +265,8 @@ Values that are not specified will be used as default values.
         },
         borderRadius: number       // border radius.
       } | undefined,
-      margin: number,              // margin from node. default: 4
+      margin: number,              // distance from edge stroke. default: 4
+      padding: number              // distance from end node. default: 4
     }
   },
   path: {

@@ -173,7 +173,7 @@ The following configuration items can be specified for
     <td>customId</td>
     <td>
       When <code>"custom"</code> is specified for <code>type</code>, specify the
-      ID of the marker you created in this setting.
+      ID of the marker you created in this config.
     </td>
   </tr>
 </tbody>
