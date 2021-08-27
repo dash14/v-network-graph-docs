@@ -108,19 +108,19 @@ The following configuration items can be specified for
       <table>
         <tr>
           <td>none</td>
-          <td><img src="./arrows/none.svg"></td>
+          <td><img src="/examples/arrows/none.svg"></td>
         </tr>
         <tr>
           <td>arrow</td>
-          <td><img src="./arrows/arrow.svg"></td>
+          <td><img src="/examples/arrows/arrow.svg"></td>
         </tr>
         <tr>
           <td>angle</td>
-          <td><img src="./arrows/angle.svg"></td>
+          <td><img src="/examples/arrows/angle.svg"></td>
         </tr>
         <tr>
           <td>circle</td>
-          <td><img src="./arrows/circle.svg"></td>
+          <td><img src="/examples/arrows/circle.svg"></td>
         </tr>
         <tr>
           <td>custom</td>
