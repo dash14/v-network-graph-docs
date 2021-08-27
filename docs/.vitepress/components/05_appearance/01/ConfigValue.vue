@@ -238,7 +238,7 @@ export default defineComponent({
           dasharray: "0",
           linecap: "butt",
           animate: false,
-          animationSpeed: 100,
+          animationSpeed: 50,
         },
         hover: {
           width: 4,
@@ -246,7 +246,7 @@ export default defineComponent({
           dasharray: "0",
           linecap: "butt",
           animate: false,
-          animationSpeed: 100,
+          animationSpeed: 50,
         },
         selected: {
           width: 3,
@@ -254,7 +254,7 @@ export default defineComponent({
           dasharray: "6",
           linecap: "round",
           animate: false,
-          animationSpeed: 100,
+          animationSpeed: 50,
         },
         gap: 3,
         summarize: true,
@@ -280,7 +280,7 @@ export default defineComponent({
             dasharray: "0",
             linecap: "butt",
             animate: false,
-            animationSpeed: 100,
+            animationSpeed: 50,
           },
         },
       }
