@@ -257,6 +257,42 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 </demo-tabs>
 
+4.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoStyle4 />
+</template>
+<template v-slot:source>
+
+<<< @/.vitepress/components/05_appearance/09/Style4.vue
+
+</template>
+<template v-slot:data>
+
+<<< @/.vitepress/components/05_appearance/09/data.ts
+
+</template>
+</demo-tabs>
+
+5.
+
+<demo-tabs :use-data="true" hint="Click on a node to toggle its state. When both end nodes are active, the edge animation will move.">
+<template v-slot:demo>
+  <DemoStyle5 />
+</template>
+<template v-slot:source>
+
+<<< @/.vitepress/components/05_appearance/10/Style5.vue
+
+</template>
+<template v-slot:data>
+
+<<< @/.vitepress/components/05_appearance/10/data.ts
+
+</template>
+</demo-tabs>
+
 <script setup>
 import DemoConfigValue from '../.vitepress/components/05_appearance/01/ConfigValue.vue'
 import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject.vue'
@@ -266,4 +302,6 @@ import DemoCustomMarker from '../.vitepress/components/05_appearance/05/CustomMa
 import DemoStyle1 from '../.vitepress/components/05_appearance/06/Style1.vue'
 import DemoStyle2 from '../.vitepress/components/05_appearance/07/Style2.vue'
 import DemoStyle3 from '../.vitepress/components/05_appearance/08/Style3.vue'
+import DemoStyle4 from '../.vitepress/components/05_appearance/09/Style4.vue'
+import DemoStyle5 from '../.vitepress/components/05_appearance/10/Style5.vue'
 </script>
