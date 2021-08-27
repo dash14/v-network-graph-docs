@@ -232,7 +232,7 @@ Values that are not specified will be used as default values.
         //   dasharray: undefined,
         //   linecap: undefined,
         //   animate: false,
-        //   animationSpeed: 100
+        //   animationSpeed: 50
         // }
       }
     },
@@ -266,7 +266,7 @@ Values that are not specified will be used as default values.
       linecap: "butt" | "round" | "square" | undefined,  // stroke linecap. default: "round"
       linejoin: "miter" | "round" | "bevel",            // stroke linejoin. default: "round"
       animate: boolean,                       // whether to animate or not. default: false
-      animationSpeed: number                  // animation speed.           default: 100
+      animationSpeed: number                  // animation speed.           default: 50
     },
   }
 }
