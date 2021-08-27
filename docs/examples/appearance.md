@@ -37,7 +37,6 @@ UserConfigs, you can specify the argument type of the function.
 </template>
 </demo-tabs>
 
-
 ## Custom Node
 
 In case you want to change not only the shape of the node, but
@@ -65,6 +64,139 @@ do by using the `override-node-label` slot.
 <template v-slot:data>
 
   <<< @/.vitepress/components/05_appearance/03/data.ts
+
+</template>
+</demo-tabs>
+
+## Arrow on edges
+
+Markers such as arrow head can be specified for edges.
+
+<demo-tabs :use-data="true" :demo-height="550">
+<template v-slot:demo>
+  <DemoArrow />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/04/Arrow.vue{115-132}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/04/data.ts
+
+</template>
+</demo-tabs>
+
+The following configuration items can be specified for
+`configs.edge.marker.source` and `configs.edge.marker.target`.
+
+<div class="reference-table">
+
+<table>
+<thead>
+  <tr>
+    <th>config</th>
+    <th>description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>type</td>
+    <td>
+      Type of marker. The supported values are as follows:
+      <table>
+        <tr>
+          <td>none</td>
+          <td><img src="./arrows/none.svg"></td>
+        </tr>
+        <tr>
+          <td>arrow</td>
+          <td><img src="./arrows/arrow.svg"></td>
+        </tr>
+        <tr>
+          <td>angle</td>
+          <td><img src="./arrows/angle.svg"></td>
+        </tr>
+        <tr>
+          <td>circle</td>
+          <td><img src="./arrows/circle.svg"></td>
+        </tr>
+        <tr>
+          <td>custom</td>
+          <td>Please see <code>customId</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>Horizontal length of the marker when the edge is placed horizontally.</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>Vertical length of the marker when the edge is placed horizontally.</td>
+  </tr>
+  <tr>
+    <td>margin</td>
+    <td>
+      Distance between the marker and the end of the edge.<br />
+      A negative value can also be specified.
+    </td>
+  </tr>
+  <tr>
+    <td>color</td>
+    <td>
+      Color of the marker. If <code>null</code> specified, the marker will be the
+      same color as the edge stroke.<br />
+      In this way, if an edge is selected or mouse hovered over, and the color of
+      the edge changes, the marker will automatically change along with the color
+      of the edge.
+    </td>
+  </tr>
+  <tr>
+    <td>units</td>
+    <td>
+      This config is reflected in the
+      <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/markerUnits" target="_blank" rel="noopener noreferrer"><code>markerUnits</code></a>
+      attribute of the SVG &lt;marker&gt; element.<br />
+      If <code>"strokeWidth"</code> is specified, the width, height, and margin
+      configs of the marker will be applied in units of the current edge's
+      stroke-width value as 1. Therefore, these sizes will also change depending
+      on the thickness of the edge.<br />
+      If <code>"userSpaceOnUse"</code> is specified, the width, height, and
+      margin configs of the marker will be the same as the ordinary coordinate
+      units. It will not be affected by the thickness of the current edge.
+    </td>
+  </tr>
+  <tr>
+    <td>customId</td>
+    <td>
+      When <code>"custom"</code> is specified for <code>type</code>, specify the
+      ID of the marker you created in this setting.
+    </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+
+## Custom markers on edges
+
+In addition to the preset marker types, you can also specify your own markers.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoCustomMarker />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/05/CustomMarker.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/05/data.ts
 
 </template>
 </demo-tabs>
@@ -129,6 +261,8 @@ do by using the `override-node-label` slot.
 import DemoConfigValue from '../.vitepress/components/05_appearance/01/ConfigValue.vue'
 import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject.vue'
 import DemoCustomNode from '../.vitepress/components/05_appearance/03/CustomNode.vue'
+import DemoArrow from '../.vitepress/components/05_appearance/04/Arrow.vue'
+import DemoCustomMarker from '../.vitepress/components/05_appearance/05/CustomMarker.vue'
 import DemoStyle1 from '../.vitepress/components/05_appearance/06/Style1.vue'
 import DemoStyle2 from '../.vitepress/components/05_appearance/07/Style2.vue'
 import DemoStyle3 from '../.vitepress/components/05_appearance/08/Style3.vue'

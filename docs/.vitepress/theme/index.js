@@ -17,6 +17,8 @@ import LabelBackgroundConfigPanel from "../components/controls/appearance/LabelB
 import FocusConfigPanel from "../components/controls/appearance/FocusConfigPanel.vue"
 import EdgeConfigPanel from "../components/controls/appearance/EdgeConfigPanel.vue"
 import MultipleEdgeConfigPanel from "../components/controls/appearance/MultipleEdgeConfigPanel.vue"
+import EdgeMarkerConfigPanel from "../components/controls/appearance/EdgeMarkerConfigPanel.vue"
+import EdgeMarginGapConfigPanel from "../components/controls/appearance/EdgeMarginGapConfigPanel.vue"
 import SummarizedEdgeLabelConfigPanel from "../components/controls/appearance/SummarizedEdgeLabelConfigPanel.vue"
 import GridPanel from "../components/controls/misc/GridPanel.vue"
 
@@ -40,6 +42,8 @@ export default {
     app.component("demo-focus-config-panel", FocusConfigPanel)
     app.component("demo-edge-config-panel", EdgeConfigPanel)
     app.component("demo-multiple-edge-config-panel", MultipleEdgeConfigPanel)
+    app.component("demo-edge-marker-config-panel", EdgeMarkerConfigPanel)
+    app.component("demo-edge-margin-gap-config-panel", EdgeMarginGapConfigPanel)
     app.component("demo-summarized-edge-label-config-panel", SummarizedEdgeLabelConfigPanel)
     app.component("demo-grid-panel", GridPanel)
   },

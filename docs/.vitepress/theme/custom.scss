@@ -45,6 +45,20 @@
     font-size: 13px;
     margin: 10px;
   }
+
+  .demo-marker-panel {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    > div:nth-child(odd) {
+      font-size: 13px;
+      font-weight: bold;
+      background-color: #efefef;
+      border: 1px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .example-list {
