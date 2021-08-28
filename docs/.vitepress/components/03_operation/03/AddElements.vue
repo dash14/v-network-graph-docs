@@ -1,11 +1,15 @@
 <template>
   <div class="demo-control-panel">
-    <label>Node:</label>
-    <el-button @click="addNode">add</el-button>
-    <el-button :disabled="selectedNodes.length == 0" @click="removeNode">remove</el-button>
-    <label>Edge:</label>
-    <el-button :disabled="selectedNodes.length != 2" @click="addEdge">add</el-button>
-    <el-button :disabled="selectedEdges.length == 0" @click="removeEdge">remove</el-button>
+    <div>
+      <label>Node:</label>
+      <el-button @click="addNode">add</el-button>
+      <el-button :disabled="selectedNodes.length == 0" @click="removeNode">remove</el-button>
+    </div>
+    <div>
+      <label>Edge:</label>
+      <el-button :disabled="selectedNodes.length != 2" @click="addEdge">add</el-button>
+      <el-button :disabled="selectedEdges.length == 0" @click="removeEdge">remove</el-button>
+    </div>
   </div>
 
   <v-network-graph

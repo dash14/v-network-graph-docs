@@ -5,7 +5,7 @@
 For node labels, it is possible to show/hide them, specify the data to
 be displayed as labels, and change the display position.
 
-<demo-tabs :demo-height="400" :use-data="true">
+<demo-tabs :demo-height="250" :use-data="true">
 <template v-slot:demo>
   <DemoNodeLabels />
 </template>
@@ -74,7 +74,7 @@ See [here](https://github.com/dash14/v-network-graph/blob/main/src/common/config
 
 For edge labels, use slots similar to custom labels for nodes.
 
-<demo-tabs :demo-height="300" :use-data="true">
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoEdgeLabels />
 </template>
@@ -138,7 +138,7 @@ ID of the edge, and two display the ever-changing data at both ends of the
 edge.  
 The data being displayed is a random number.
 
-<demo-tabs :demo-height="300" :use-data="true">
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoMultipleEdgeLabels />
 </template>
@@ -159,7 +159,7 @@ The data being displayed is a random number.
 If you use `<v-edge-label>` component, the labels of edges can
 be customized from the config like the node labels.
 
-<demo-tabs :demo-height="450" :use-data="true">
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoEdgeLabelsStyle />
 </template>

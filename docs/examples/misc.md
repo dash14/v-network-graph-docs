@@ -5,7 +5,7 @@
 You can obtain the displayed content as SVG text data.  
 In this example, the SVG data is downloaded.
 
-<demo-tabs :demo-height="400" :use-data="true">
+<demo-tabs :demo-height="250" :use-data="true">
 <template v-slot:demo>
   <DemoDownload />
 </template>
@@ -23,7 +23,7 @@ In this example, the SVG data is downloaded.
 
 ## Grid
 
-<demo-tabs :demo-height="500" :use-data="true">
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoGridLayer />
 </template>

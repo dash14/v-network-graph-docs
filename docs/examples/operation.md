@@ -12,7 +12,7 @@ Specify 2-way binding for `selected-nodes` prop to get an array of
 node IDs selected. It is also possible to control the selection state
 on the network graph by setting a value to the same prop.
 
-<demo-tabs :demo-height="400" :use-data="true" hint="To select multiple nodes, Shift+click or hold down the selected node and tap another node.">
+<demo-tabs :use-data="true" hint="To select multiple nodes, Shift+click or hold down the selected node and tap another node.">
 <template v-slot:demo>
   <DemoSelectNodes />
 </template>
@@ -38,7 +38,7 @@ Specify 2-way binding for `selected-edges` prop to get an array of
 edge IDs selected. It is also possible to control the selection state
 on the network graph by setting a value to the same prop.
 
-<demo-tabs :demo-height="400" :use-data="true" hint="To select multiple edges, Shift+click or hold down the selected edge and tap another edge.">
+<demo-tabs :use-data="true" hint="To select multiple edges, Shift+click or hold down the selected edge and tap another edge.">
 <template v-slot:demo>
   <DemoSelectEdges />
 </template>
@@ -63,7 +63,7 @@ The newly added node will be placed in the center of the view area.
 Deleting a node with edges will automatically delete the associated edges as well.  
 Multiple edges can be placed between the same two nodes.
 
-<demo-tabs :demo-height="400" :use-data="true">
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoAddElements />
 </template>
@@ -88,7 +88,7 @@ The summarized edges will be displayed with the number of edges.
 Note: This feature is still under development, so it is not yet
 possible to select individual summarized edges.
 
-<demo-tabs :demo-height="400" :use-data="true">
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoSummarizeEdges />
 </template>

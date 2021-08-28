@@ -1,8 +1,8 @@
 <template>
   <el-tabs type="border-card" value="demo">
     <el-tab-pane label="Demo" :lazy="true">
-      <div class="demo" :style="{ height: `${demoHeight}px` }">
-        <div class="network-graph">
+      <div class="demo">
+        <div class="network-graph" :style="style">
           <slot name="demo"></slot>
         </div>
         <div v-if="message" class="float-message">
@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { computed, defineComponent } from "vue"
 
 export default defineComponent({
   props: {
@@ -38,7 +38,7 @@ export default defineComponent({
       default: "",
     },
     demoHeight: {
-      type: Number,
+      type: [Number, String],
       default: 300,
     },
     useData: {
@@ -46,18 +46,24 @@ export default defineComponent({
       default: false
     }
   },
+  setup(props) {
+    const style = computed<any>(() => {
+      return { '--svg-height': `${props.demoHeight}px`}
+    })
+
+    return { style }
+  }
 })
 </script>
 
 <style lang="scss" scoped>
+
 .demo {
   margin: -15px;
-  height: 300px;
 }
 .network-graph {
   position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   :deep(.demo-control-panel) {
@@ -72,8 +78,9 @@ export default defineComponent({
     }
   }
   :deep(.v-network-graph) {
-    height: 1px;
-    flex: 1;
+    // height: 1px;
+    // flex: 1;
+    height: var(--svg-height);
   }
 }
 .el-tab-pane :deep(.language-vue),

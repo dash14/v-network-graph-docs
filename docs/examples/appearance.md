@@ -2,7 +2,7 @@
 
 ## Specifying style configurations by values
 
-<demo-tabs :use-data="true" :demo-height="500">
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoConfigValue />
 </template>
@@ -72,7 +72,7 @@ do by using the `override-node-label` slot.
 
 Markers such as arrow head can be specified for edges.
 
-<demo-tabs :use-data="true" :demo-height="550">
+<demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoArrow />
 </template>

@@ -11,15 +11,15 @@
     </div>
     <div class="control">
       Width:
-      <el-slider v-model="width" :min="2" :max="16" :step="0.5" :disabled="type === 'none'" />
+      <el-slider v-model="width" :min="2" :max="10" :step="0.5" :disabled="type === 'none'" />
     </div>
     <div class="control">
       Height:
-      <el-slider v-model="height" :min="2" :max="16" :step="0.5" :disabled="type === 'none'" />
+      <el-slider v-model="height" :min="2" :max="10" :step="0.5" :disabled="type === 'none'" />
     </div>
     <div class="control">
       Margin:
-      <el-slider v-model="margin" :min="-8" :max="16" :step="0.5" :disabled="type === 'none'" />
+      <el-slider v-model="margin" :min="-8" :max="10" :step="0.5" :disabled="type === 'none'" />
     </div>
     <div class="control color">
       Color:
@@ -130,8 +130,8 @@ export default defineComponent({
 }
 
 :deep(.el-slider) {
-  width: 50px;
-  margin-left: 16px;
+  width: 45px;
+  margin-left: 14px;
   margin-right: 10px;
 }
 

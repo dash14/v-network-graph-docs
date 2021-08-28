@@ -54,7 +54,7 @@ to the center and perform a zoom that fits the content.
 The current zoom level can be retrieved via two-way binding for
 `zoom-level` prop.
 
-<demo-tabs>
+<demo-tabs :demo-height="250">
 <template v-slot:demo>
   <PanZoom />
 </template>
@@ -71,7 +71,7 @@ The current zoom level can be retrieved via two-way binding for
 Panning, zooming in/out with the mouse wheel, and dragging nodes can
 each be enabled/disabled.
 
-<demo-tabs>
+<demo-tabs :demo-height="250">
 <template v-slot:demo>
   <DisablePanZoom />
 </template>
