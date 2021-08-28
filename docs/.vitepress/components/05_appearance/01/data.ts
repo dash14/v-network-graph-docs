@@ -4,8 +4,8 @@ const nodes: Nodes = {
   node1: { name: "Node 1" },
   node2: { name: "Node 2" },
   node3: { name: "Node 3" },
-  node4: { name: "Node 4" },
-  node5: { name: "Node 5" },
+  node4: { name: "Node 4\nMultiline" },
+  node5: { name: "Node 5\nMultiline" },
 }
 
 const edges: Edges = {

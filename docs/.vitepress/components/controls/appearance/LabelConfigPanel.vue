@@ -51,6 +51,11 @@
       Margin:
       <el-slider v-model="margin" :min="0" :max="32" :step="1" :disabled="direction == 0" />
     </div>
+    <div v-if="lineHeight !== null" class="control">
+      Line height:
+      <el-slider v-model="lineHeight" :min="0.5" :max="3" :step="0.1" />
+      (for multiline)
+    </div>
   </div>
 </template>
 
@@ -72,6 +77,10 @@ export default defineComponent({
     fontSize: {
       type: Number,
       required: true,
+    },
+    lineHeight: {
+      type: Number,
+      default: null,
     },
     color: {
       type: String,
@@ -96,6 +105,7 @@ export default defineComponent({
     "update:visible",
     "update:fontFamily",
     "update:fontSize",
+    "update:lineHeight",
     "update:color",
     "update:margin",
     "update:direction",

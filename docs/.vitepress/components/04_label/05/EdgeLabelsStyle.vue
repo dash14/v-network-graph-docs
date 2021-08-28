@@ -57,6 +57,7 @@ export default defineComponent({
         label: {
           fontFamily: undefined,
           fontSize: 11,
+          lineHeight: 1.1,
           color: "#000000",
           margin: 4,
           background: {

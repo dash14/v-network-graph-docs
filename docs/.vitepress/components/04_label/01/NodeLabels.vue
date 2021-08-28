@@ -16,6 +16,7 @@
           v-model:visible="configs.node.label.visible"
           v-model:fontFamily="configs.node.label.fontFamily"
           v-model:fontSize="configs.node.label.fontSize"
+          v-model:lineHeight="configs.node.label.lineHeight"
           v-model:color="configs.node.label.color"
           v-model:margin="configs.node.label.margin"
           v-model:direction="configs.node.label.direction"
@@ -45,6 +46,7 @@ export default defineComponent({
           visible: true,
           fontFamily: undefined,
           fontSize: 11,
+          lineHeight: 1.1,
           color: "#000000",
           margin: 4,
           direction: NodeLabelDirection.SOUTH,
