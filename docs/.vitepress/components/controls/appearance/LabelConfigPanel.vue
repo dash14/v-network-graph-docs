@@ -21,7 +21,7 @@
     </div>
     <div class="control">
       Color:
-      <el-color-picker v-model="color" color-format="hex" @active-change="color = $event" />
+      <el-color-picker-custom v-model="color" />
     </div>
   </div>
   <div class="label-configs">

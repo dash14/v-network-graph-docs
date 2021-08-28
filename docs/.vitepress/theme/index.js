@@ -11,6 +11,7 @@ import "v-network-graph/style.css"
 
 import DemoTabs from "../components/DemoTabs.vue"
 import SliderZoom from "../components/controls/SliderZoom.vue"
+import ColorPicker from "../components/controls/ColorPicker.vue"
 import NodeConfigPanel from "../components/controls/appearance/NodeConfigPanel.vue"
 import LabelConfigPanel from "../components/controls/appearance/LabelConfigPanel.vue"
 import LabelBackgroundConfigPanel from "../components/controls/appearance/LabelBackgroundConfigPanel.vue"
@@ -36,6 +37,7 @@ export default {
     app.use(VNetworkGraph)
     app.component("demo-tabs", DemoTabs)
     app.component("el-slider-custom-zoom", SliderZoom)
+    app.component("el-color-picker-custom", ColorPicker)
     app.component("demo-node-config-panel", NodeConfigPanel)
     app.component("demo-label-config-panel", LabelConfigPanel)
     app.component("demo-label-background-config-panel", LabelBackgroundConfigPanel)
