@@ -8,7 +8,7 @@ the font size of labels, or the line width of links.
 If you set the `view.scalingObjects` config to `true`, the objects
 will change as you zoom.
 
-<demo-tabs :use-data="true">
+<demo-tabs :demo-height="250" :use-data="true">
 <template v-slot:demo>
   <DemoScaleObjects />
 </template>
@@ -30,7 +30,11 @@ You can change the node positioning strategy in the config.
 An example of modifying the `view.layoutHandler` config and snapping to
 the grid is shown below.
 
-<demo-tabs :use-data="true" message="When you drag a node, it will snap to invisible grids of the specified width.">
+<demo-tabs
+  :demo-height="250"
+  :use-data="true"
+  message="When you drag a node, it will snap to invisible grids of the specified width."
+>
 <template v-slot:demo>
   <DemoSnapToGrid />
 </template>
@@ -55,7 +59,7 @@ In this example, clicking on a node with Alt key pressed will fix
 the position of the node. Clicking the node again with the Alt key
 will return it to the position of the d3-force calculation result.
 
-<demo-tabs :demo-height="450">
+<demo-tabs>
 <template v-slot:demo>
   <DemoD3Force />
 </template>

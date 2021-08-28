@@ -159,8 +159,11 @@ export default defineComponent({
 }
 
 :deep(.el-select) {
+  .el-input {
+    width: 90px;
+  }
   margin-left: 0;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 :deep(.el-slider) {
