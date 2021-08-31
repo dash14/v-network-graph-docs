@@ -94,12 +94,14 @@ The props provided by the `edge-label` slot are as follows:
 
 <div class="reference-table">
 
-| props  | type            | description                               |
-| ------ | --------------- | ----------------------------------------- |
-| edgeId | string          | edge Id                                   |
-| edge   | Edge            | user defined edge object                  |
-| config | EdgeLabelStyle  | style config for edge labels              |
-| area   | {source: {above: 0, below: 0},<br> target: {above: 0, below: 0} } | coordinates of the area to display labels |
+| props    | type            | description                               |
+| -------- | --------------- | ----------------------------------------- |
+| edgeId   | string          | edge Id                                   |
+| edge     | Edge            | user defined edge object                  |
+| config   | EdgeLabelStyle  | style config for edge labels              |
+| area     | {source: {above: 0, below: 0},<br> target: {above: 0, below: 0} } | coordinates of the area to display labels |
+| hovered  | boolean         | whether hovered or not                    |
+| selected | boolean         | whether selected or not                   |
 
 </div>
 
