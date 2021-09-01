@@ -54,10 +54,10 @@ export default defineComponent({
     // In Node and Edge configuration, instead of concrete values,
     // you can specify functions that return a configuration value
     // with each node or edge as an argument.
-    // In addition, by explicitly specifying the Node or Edge type
-    // in UserConfigs, you can specify the argument type of the
-    // function.
-    const configs = reactive<vNG.UserConfigs<Node, Edge>>({
+    // In addition, you can use the `configsWithType` function to
+    // specify the argument type of the callback function by
+    // explicitly specifying a custom type for Node and Edge.
+    const configs = reactive(vNG.configsWithType<Node, Edge>({
       node: {
         normal: {
           type: "circle",
@@ -83,7 +83,7 @@ export default defineComponent({
           dasharray: edge => edge.dashed ? "4" : "0"
         },
       }
-    })
+    }))
 
     return { nodes, edges, layouts, configs }
   },
