@@ -7,7 +7,7 @@ import ElementPlus from "element-plus"
 import "element-plus/theme-chalk/src/index.scss"
 
 import VNetworkGraph from "v-network-graph"
-import "v-network-graph/style.css"
+import "v-network-graph/lib/style.css"
 
 import DemoTabs from "../components/DemoTabs.vue"
 import SliderZoom from "../components/controls/SliderZoom.vue"

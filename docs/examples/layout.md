@@ -65,7 +65,7 @@ will return it to the position of the d3-force calculation result.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/03/D3Force.vue{19,57-72}
+  <<< @/.vitepress/components/02_layout/03/D3Force.vue{19,59-74}
 
 </template>
 </demo-tabs>

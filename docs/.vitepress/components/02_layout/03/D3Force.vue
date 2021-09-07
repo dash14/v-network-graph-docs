@@ -17,6 +17,8 @@
 import { defineComponent, reactive, ref, watchEffect } from "vue"
 import { Nodes, Edges } from "v-network-graph"
 import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/force-layout"
+// If you get an missing "v-network-graph/force-layout",
+// please try importing "v-network-graph/force-layout.es".
 
 function buildNetwork(count: number, nodes: Nodes, edges: Edges) {
   const idNums = [...Array(count)].map((_, i) => i)
