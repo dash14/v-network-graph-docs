@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ComputedRef } from "vue"
+import { defineComponent, computed, WritableComputedRef } from "vue"
 
 export default defineComponent({
   props: {
@@ -30,7 +30,7 @@ export default defineComponent({
     "update:summarize"
   ],
   setup(props, { emit }) {
-    const vars: { [name: string]: ComputedRef<any> } = {}
+    const vars: { [name: string]: WritableComputedRef<any> } = {}
     const keys = Object.keys(props) as (keyof typeof props)[]
     for (const key of keys) {
       vars[key] = computed({
