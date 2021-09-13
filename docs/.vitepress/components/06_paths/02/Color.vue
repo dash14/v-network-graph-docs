@@ -17,11 +17,11 @@ export default defineComponent({
   setup() {
     const paths: Paths = [
       {
-        edges: ["edge1", "edge4", "edge5", "edge7"],
+        edges: ["edge1", "edge3", "edge5", "edge7"],
         color: "#ff00ff66"  // #rrggbbaa <- with alpha
       },
       {
-        edges: ["edge2", "edge3", "edge6", "edge10"],
+        edges: ["edge2", "edge4", "edge6", "edge10"],
         color: "#00aa0066"  // #rrggbbaa <- with alpha
       },
     ]

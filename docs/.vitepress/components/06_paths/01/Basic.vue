@@ -16,8 +16,8 @@ import data from "./data"
 export default defineComponent({
   setup() {
     const paths: Paths = [
-      { edges: ["edge1", "edge4", "edge5", "edge7"] },
-      { edges: ["edge2", "edge3", "edge6", "edge10"] },
+      { edges: ["edge1", "edge3", "edge5", "edge7"] },
+      { edges: ["edge2", "edge4", "edge6", "edge10"] },
     ]
     return { data, paths }
   },
