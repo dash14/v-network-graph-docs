@@ -204,6 +204,7 @@ Values that are not specified will be used as default values.
         // number: distance between edges.
         // func : function to calculate gap from edge list between nodes.
         // default: 3
+    type: "straight" | "curve", // edge type when there are multiple edges between the nodes.
     marker: {
       source: {
         type:  "none" | "array" | "angle" | "circle" | "custom",
@@ -219,11 +220,12 @@ Values that are not specified will be used as default values.
       },
       target: { /* same structure as `source`. */ }
     },
-    summarize: boolean | ((edges: Edges, configs: Configs) => boolean),
+    summarize: boolean | ((edges: Edges, configs: Configs) => boolean | null),
         // true : summarize when the width of the edge becomes larger than the node.
         // false: do not summarize.
         // func : function to determine whether to summarize from edge list between nodes.
-        // default: true
+        // default: func (if type is "curve" then false, otherwise summarize if the edge
+        //                is wider than the node size)
     summarized: { // configs for summarized edge
       label: {
         fontSize: number,  // font size.  default: 10

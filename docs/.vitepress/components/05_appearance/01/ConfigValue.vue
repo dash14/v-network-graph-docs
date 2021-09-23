@@ -112,6 +112,7 @@
           <el-tab-pane label="multiple edge">
             <demo-multiple-edge-config-panel
               v-model:gap="configs.edge.gap"
+              v-model:line-type="configs.edge.type"
               v-model:summarize="configs.edge.summarize"
             />
           </el-tab-pane>
@@ -259,6 +260,7 @@ export default defineComponent({
           animationSpeed: 50,
         },
         gap: 3,
+        type: "straight",
         summarize: true,
         summarized: {
           label: {

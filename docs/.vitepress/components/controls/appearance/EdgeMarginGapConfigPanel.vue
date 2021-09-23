@@ -26,8 +26,15 @@
   <div class="edge-configs">
     <div class="control">
       <label>Gap:</label>
-      <el-slider v-model="gap" :min="1" :max="16" :step="1" />
+      <el-slider v-model="gap" :min="1" :max="32" :step="1" />
       (between multiple edges)
+    </div>
+    <div class="control">
+      <label>Type:</label>
+      <el-select v-model="lineType">
+        <el-option label="straight" value="straight" />
+        <el-option label="curve" value="curve" />
+      </el-select>
     </div>
   </div>
 </template>
@@ -42,6 +49,10 @@ export default defineComponent({
       required: false,
       default: null
     },
+    lineType: {
+      type: String,
+      required: true,
+    },
     gap: {
       type: Number,
       required: true,
@@ -49,6 +60,7 @@ export default defineComponent({
   },
   emits: [
     "update:margin",
+    "update:lineType",
     "update:gap",
   ],
   setup(props, { emit }) {
@@ -98,4 +110,10 @@ export default defineComponent({
     color: var(--c-text);
   }
 }
+:deep(.el-input) {
+  width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 </style>

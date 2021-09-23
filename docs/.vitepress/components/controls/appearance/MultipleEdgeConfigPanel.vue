@@ -5,6 +5,13 @@
       <el-slider v-model="gap" :min="0" :max="16" :step="1" />
     </div>
     <div class="control">
+      Type:
+      <el-select v-model="lineType">
+        <el-option label="straight" value="straight" />
+        <el-option label="curve" value="curve" />
+      </el-select>
+    </div>
+    <div class="control">
       Summarize:
       <el-checkbox v-model="summarize" />
     </div>
@@ -20,6 +27,10 @@ export default defineComponent({
       type: Number,
       required: true,
     },
+    lineType: {
+      type: String,
+      required: true,
+    },
     summarize: {
       type: Boolean,
       required: true,
@@ -27,6 +38,7 @@ export default defineComponent({
   },
   emits: [
     "update:gap",
+    "update:lineType",
     "update:summarize"
   ],
   setup(props, { emit }) {
@@ -47,6 +59,9 @@ export default defineComponent({
 .edge-configs {
   width: 100%;
   font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .control {
@@ -57,9 +72,11 @@ export default defineComponent({
 }
 
 :deep(.el-input) {
-  width: 80px;
+  width: 100px;
   margin-left: 10px;
+  margin-right: 10px;
 }
+
 
 :deep(.el-slider) {
   width: 80px;

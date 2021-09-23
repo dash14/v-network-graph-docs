@@ -21,9 +21,10 @@
           v-model:units="configs.edge.marker.target.units"
         />
       </el-tab-pane>
-      <el-tab-pane label="Edge Margin/Gap">
+      <el-tab-pane label="Edge Margin/Gap/Type">
         <demo-edge-margin-gap-config-panel
           v-model:margin="configs.edge.margin"
+          v-model:lineType="configs.edge.type"
           v-model:gap="configs.edge.gap"
         />
       </el-tab-pane>
@@ -111,6 +112,7 @@ export default defineComponent({
           animationSpeed: 50,
         },
         gap: 5,
+        type: "straight",
         margin: 2,
         marker: {
           source: {
