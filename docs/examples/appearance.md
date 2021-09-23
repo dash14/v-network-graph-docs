@@ -293,6 +293,24 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 </demo-tabs>
 
+6.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoStyle6 />
+</template>
+<template v-slot:source>
+
+<<< @/.vitepress/components/05_appearance/11/Style6.vue
+
+</template>
+<template v-slot:data>
+
+<<< @/.vitepress/components/05_appearance/11/data.ts
+
+</template>
+</demo-tabs>
+
 <script setup>
 import DemoConfigValue from '../.vitepress/components/05_appearance/01/ConfigValue.vue'
 import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject.vue'
@@ -304,4 +322,5 @@ import DemoStyle2 from '../.vitepress/components/05_appearance/07/Style2.vue'
 import DemoStyle3 from '../.vitepress/components/05_appearance/08/Style3.vue'
 import DemoStyle4 from '../.vitepress/components/05_appearance/09/Style4.vue'
 import DemoStyle5 from '../.vitepress/components/05_appearance/10/Style5.vue'
+import DemoStyle6 from '../.vitepress/components/05_appearance/11/Style6.vue'
 </script>
