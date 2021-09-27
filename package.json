@@ -17,12 +17,12 @@
   "devDependencies": {
     "@types/d3-force": "^3.0.3",
     "@types/lodash-es": "^4.17.5",
-    "@types/node": "^16.9.6",
+    "@types/node": "^16.10.1",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
-    "@vitejs/plugin-vue": "^1.9.0",
+    "@vitejs/plugin-vue": "^1.9.2",
     "date-fns": "^2.24.0",
-    "element-plus": "^1.1.0-beta.15",
+    "element-plus": "^1.1.0-beta.17",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -36,6 +36,6 @@
     "vue-tsc": "^0.3.0"
   },
   "dependencies": {
-    "v-network-graph": "^0.2.1"
+    "v-network-graph": "^0.2.2"
   }
 }
