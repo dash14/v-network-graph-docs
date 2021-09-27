@@ -201,6 +201,72 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 </demo-tabs>
 
+
+## Keep order of edges
+
+In some cases, when there are multiple edges between two nodes,
+it is necessary to arrange the order of the edges from top to
+bottom, no matter which node is placed on the left side.  
+It is possible to handle such a case by specifying the
+`edge.keepOrder` config.  
+The following values can be specified for this config.
+
+<div class="reference-table">
+
+<table>
+<thead>
+  <tr>
+    <th>value</th>
+    <th>description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>"clock"</td>
+    <td>
+      Keep the forward/backward when viewed as a clock.
+    </td>
+  </tr>
+  <tr>
+    <td>"vertical"</td>
+    <td>
+      Keep the vertical alignment.<br/>
+      Even if the left and right sides of a node are swapped,
+      the edge on top remains on top.
+    </td>
+  </tr>
+  <tr>
+    <td>"horizontal"</td>
+    <td>
+      Keep the horizontal alignment.<br/>
+      Even if the top and bottom of the node are swapped,
+      the edge on the left remains on the left.
+    </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+
+Note that the basic display order is the order in which the
+edges appear in the given edges.
+
+<demo-tabs :use-data="true" hint="Please try dragging the nodes to swap their positions and observe the behavior.">
+<template v-slot:demo>
+  <DemoEdgesKeepOrder />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/06/EdgesKeepOrder.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/06/data.ts
+
+</template>
+</demo-tabs>
+
 ## Style examples
 
 1.
@@ -317,6 +383,8 @@ import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject
 import DemoCustomNode from '../.vitepress/components/05_appearance/03/CustomNode.vue'
 import DemoArrow from '../.vitepress/components/05_appearance/04/Arrow.vue'
 import DemoCustomMarker from '../.vitepress/components/05_appearance/05/CustomMarker.vue'
+import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/06/EdgesKeepOrder.vue'
+
 import DemoStyle1 from '../.vitepress/components/05_appearance/s01/Style1.vue'
 import DemoStyle2 from '../.vitepress/components/05_appearance/s02/Style2.vue'
 import DemoStyle3 from '../.vitepress/components/05_appearance/s03/Style3.vue'
