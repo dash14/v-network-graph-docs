@@ -211,12 +211,12 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_appearance/06/Style1.vue
+<<< @/.vitepress/components/05_appearance/s01/Style1.vue
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/05_appearance/06/data.ts
+<<< @/.vitepress/components/05_appearance/s01/data.ts
 
 </template>
 </demo-tabs>
@@ -229,12 +229,12 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_appearance/07/Style2.vue
+<<< @/.vitepress/components/05_appearance/s02/Style2.vue
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/05_appearance/07/data.ts
+<<< @/.vitepress/components/05_appearance/s02/data.ts
 
 </template>
 </demo-tabs>
@@ -247,12 +247,12 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_appearance/08/Style3.vue
+<<< @/.vitepress/components/05_appearance/s03/Style3.vue
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/05_appearance/08/data.ts
+<<< @/.vitepress/components/05_appearance/s03/data.ts
 
 </template>
 </demo-tabs>
@@ -265,12 +265,12 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_appearance/09/Style4.vue
+<<< @/.vitepress/components/05_appearance/s04/Style4.vue
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/05_appearance/09/data.ts
+<<< @/.vitepress/components/05_appearance/s04/data.ts
 
 </template>
 </demo-tabs>
@@ -283,12 +283,12 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_appearance/10/Style5.vue
+<<< @/.vitepress/components/05_appearance/s05/Style5.vue
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/05_appearance/10/data.ts
+<<< @/.vitepress/components/05_appearance/s05/data.ts
 
 </template>
 </demo-tabs>
@@ -301,12 +301,12 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/05_appearance/11/Style6.vue
+<<< @/.vitepress/components/05_appearance/s06/Style6.vue
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/05_appearance/11/data.ts
+<<< @/.vitepress/components/05_appearance/s06/data.ts
 
 </template>
 </demo-tabs>
@@ -317,10 +317,10 @@ import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject
 import DemoCustomNode from '../.vitepress/components/05_appearance/03/CustomNode.vue'
 import DemoArrow from '../.vitepress/components/05_appearance/04/Arrow.vue'
 import DemoCustomMarker from '../.vitepress/components/05_appearance/05/CustomMarker.vue'
-import DemoStyle1 from '../.vitepress/components/05_appearance/06/Style1.vue'
-import DemoStyle2 from '../.vitepress/components/05_appearance/07/Style2.vue'
-import DemoStyle3 from '../.vitepress/components/05_appearance/08/Style3.vue'
-import DemoStyle4 from '../.vitepress/components/05_appearance/09/Style4.vue'
-import DemoStyle5 from '../.vitepress/components/05_appearance/10/Style5.vue'
-import DemoStyle6 from '../.vitepress/components/05_appearance/11/Style6.vue'
+import DemoStyle1 from '../.vitepress/components/05_appearance/s01/Style1.vue'
+import DemoStyle2 from '../.vitepress/components/05_appearance/s02/Style2.vue'
+import DemoStyle3 from '../.vitepress/components/05_appearance/s03/Style3.vue'
+import DemoStyle4 from '../.vitepress/components/05_appearance/s04/Style4.vue'
+import DemoStyle5 from '../.vitepress/components/05_appearance/s05/Style5.vue'
+import DemoStyle6 from '../.vitepress/components/05_appearance/s06/Style6.vue'
 </script>
