@@ -253,6 +253,12 @@ Values that are not specified will be used as default values.
         // }
       }
     },
+    keepOrder: "clock" | "vertical" | "horizontal",
+      // orientation to be considered when keeping multiple edge alignments.
+      //   "clock": Keep the forward/backward when viewed as a clock.
+      //   "vertical": Keep the vertical alignment.
+      //   "horizontal": Keep the horizontal alignment.
+      // default: "clock"
     label: {
       fontFamily: string | undefined,  // font family.       default: undefined
       fontSize: number,                // font size.         default: 11
