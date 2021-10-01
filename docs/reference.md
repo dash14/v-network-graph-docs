@@ -176,7 +176,8 @@ Values that are not specified will be used as default values.
       width: number,    // line width of the focus ring.                 default: 4
       padding: number,  // distance between the focus ring and the node. default: 3
       color: string     // fill color.                                   default: "#eebb00"
-    }
+    },
+    transition: string | undefined  // entering/leaving transition.      default: undefined
   },
   edge: {
     normal: {
@@ -292,6 +293,7 @@ Values that are not specified will be used as default values.
       animate: boolean,                       // whether to animate or not. default: false
       animationSpeed: number                  // animation speed.           default: 50
     },
+    transition: string | undefined  // entering/leaving transition.         default: undefined
   }
 }
 ```
