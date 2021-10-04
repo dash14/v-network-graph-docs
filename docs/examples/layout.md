@@ -73,9 +73,31 @@ will return it to the position of the d3-force calculation result.
 Currently, the `d3-force` package is bundled, so you do not need
 to install it in your application.
 
+
+## Fix the position of a specific node in the force layout
+
+If you set `fixed: true` to the node position object in `layouts`,
+the node will be fixed without the effect of force layout.  
+Unfortunately, the `fixed` field is only referenced at
+initialization and is not reflected when changed dynamically.
+This behavior will be revised in the future.
+
+<demo-tabs>
+<template v-slot:demo>
+  <DemoD3ForceFixed />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/02_layout/04/D3ForceFixed.vue{46-54}
+
+</template>
+</demo-tabs>
+
+
 <script setup>
 import DemoScaleObjects from '../.vitepress/components/02_layout/01/ScaleObjects.vue'
 import DemoSnapToGrid from '../.vitepress/components/02_layout/02/SnapToGrid.vue'
 import DemoD3Force from '../.vitepress/components/02_layout/03/D3Force.vue'
+import DemoD3ForceFixed from '../.vitepress/components/02_layout/04/D3ForceFixed.vue'
 </script>
 
