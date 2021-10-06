@@ -80,6 +80,54 @@ Multiple edges can be placed between the same two nodes.
 </demo-tabs>
 
 
+## Specify selectable/draggable for each node
+
+`configs.node.selectable` and `configs.node.draggable` can specify a
+function that takes a node object as an argument and returns a boolean.
+By the return value, it is possible to specify the selectablility/draggability
+of each node.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoNodeSelectable />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/03_operation/04/NodeSelectable.vue{38-43}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/03_operation/04/data.ts
+
+</template>
+</demo-tabs>
+
+
+## Specify selectable for each edge
+
+`configs.edge.selectable` can specify a function that takes a edge
+object as an argument and returns a boolean.
+By the return value, it is possible to specify the selectablility of
+each edge.
+
+<demo-tabs :use-data="true" hint="The edge of [N1=N3] is set to be unselectable">
+<template v-slot:demo>
+  <DemoEdgeSelectable />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/03_operation/05/EdgeSelectable.vue{43}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/03_operation/05/data.ts
+
+</template>
+</demo-tabs>
+
+
 ## Summarize edges between the same nodes
 
 If there are too many edges between nodes to be displayed, they are
@@ -94,12 +142,12 @@ possible to select individual summarized edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/03_operation/04/SummarizeEdges.vue
+  <<< @/.vitepress/components/03_operation/06/SummarizeEdges.vue
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/03_operation/04/data.ts
+  <<< @/.vitepress/components/03_operation/06/data.ts
 
 </template>
 </demo-tabs>
@@ -112,5 +160,7 @@ configuration `edge.summarize`.
 import DemoSelectNodes from "../.vitepress/components/03_operation/01/SelectNodes.vue"
 import DemoSelectEdges from "../.vitepress/components/03_operation/02/SelectEdges.vue"
 import DemoAddElements from "../.vitepress/components/03_operation/03/AddElements.vue"
-import DemoSummarizeEdges from "../.vitepress/components/03_operation/04/SummarizeEdges.vue"
+import DemoNodeSelectable from "../.vitepress/components/03_operation/04/NodeSelectable.vue"
+import DemoEdgeSelectable from "../.vitepress/components/03_operation/05/EdgeSelectable.vue"
+import DemoSummarizeEdges from "../.vitepress/components/03_operation/06/SummarizeEdges.vue"
 </script>

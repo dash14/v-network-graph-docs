@@ -148,8 +148,10 @@ Values that are not specified will be used as default values.
         // }
     selected: { /* same structure as `node.normal`. */ } | undefined,
         // default: undefined
-    draggable: boolean,         // whether the node is draggable or not.  default: true
-    selectable: boolean,        // whether the node is selectable or not. default: false
+    draggable: boolean | (node) => boolean, // whether the node is draggable or not.  default: true
+    selectable: boolean | number | (node) => boolean,
+        // whether the node is selectable or not. default: false
+        // When specified as a number, it means the max number of nodes that can be selected.
     label: {
       // * These fields can also be specified with the function as `(node) => value`.
       visible: boolean,         // whether the node's label is visible or not. default: true
@@ -200,7 +202,9 @@ Values that are not specified will be used as default values.
         //   dasharray: (wider than `normal`),
         //   ... all other values are same as `edge.normal`
         // }
-    selectable: boolean,   // whether the edge is selectable or not. default: false
+    selectable: boolean | number | (edge) => boolean,
+        // whether the edge is selectable or not. default: false
+        // When specified as a number, it means the max number of edges that can be selected.
     gap: number | ((edges: Edges, configs: Configs) => number),
         // number: distance between edges.
         // func : function to calculate gap from edge list between nodes.
