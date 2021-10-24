@@ -79,9 +79,51 @@ Paths can also be animated in the same way as in Edge.
 </template>
 </demo-tabs>
 
+## Customize appearances
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoEndOfPath />
+</template>
+<template v-slot:source>
+
+<<< @/.vitepress/components/06_paths/04/EndOfPath.vue
+
+</template>
+<template v-slot:data>
+
+<<< @/.vitepress/components/06_paths/04/data.ts
+
+</template>
+</demo-tabs>
+
+## With curved edges
+
+Paths can be drawn on curved edges as well.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoCurvedEdge />
+</template>
+<template v-slot:source>
+
+<<< @/.vitepress/components/06_paths/05/CurvedEdge.vue
+
+</template>
+<template v-slot:data>
+
+<<< @/.vitepress/components/06_paths/05/data.ts
+
+</template>
+</demo-tabs>
+
+
+
 <script setup>
 import DemoBasic from '../.vitepress/components/06_paths/01/Basic.vue'
 import DemoColor from '../.vitepress/components/06_paths/02/Color.vue'
 import DemoAnimation from '../.vitepress/components/06_paths/03/Animation.vue'
+import DemoEndOfPath from '../.vitepress/components/06_paths/04/EndOfPath.vue'
+import DemoCurvedEdge from '../.vitepress/components/06_paths/05/CurvedEdge.vue'
 </script>
 
