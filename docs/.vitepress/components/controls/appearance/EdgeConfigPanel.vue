@@ -28,7 +28,7 @@
     </div>
     <div class="control">
       Speed:
-      <el-slider v-model="animationSpeed" :min="10" :max="1000" :step="10" />
+      <el-slider v-model="animationSpeed" :min="10" :max="100" :step="10" />
     </div>
     <div class="control">
       To enable animation, dasharray must also be set to non-zero.

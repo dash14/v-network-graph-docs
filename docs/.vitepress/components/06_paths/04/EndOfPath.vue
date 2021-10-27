@@ -2,6 +2,7 @@
   <div class="demo-control-panel">
     <demo-path-config-panel
       v-model:end="configs.path.end"
+      v-model:margin="configs.path.margin"
       v-model:curveInNode="configs.path.curveInNode"
       v-model:width="configs.path.path.width"
       v-model:color="configs.path.path.color"
@@ -58,6 +59,7 @@ export default defineComponent({
         visible: true,
         curveInNode: false,
         end: "centerOfNode",  // "centerOfNode" or "edgeOfNode"
+        margin: 0,
         path: {
           width: 10,
           color: "#ff800088",

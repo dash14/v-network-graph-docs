@@ -8,6 +8,10 @@
           <el-option label="Edge of the node" value="edgeOfNode" />
         </el-select>
       </div>
+      <div class="control">
+        Margin:
+        <el-slider v-model="margin" :min="0" :max="32" :step="1" />
+      </div>
     </div>
     <div class="path-configs">
       <div class="control">
@@ -45,7 +49,7 @@
       </div>
       <div class="control">
         Speed:
-        <el-slider v-model="animationSpeed" :min="10" :max="1000" :step="10" />
+        <el-slider v-model="animationSpeed" :min="10" :max="100" :step="10" />
       </div>
       <div class="control">To enable animation, dasharray must also be set to non-zero.</div>
     </div>
@@ -59,6 +63,10 @@ export default defineComponent({
   props: {
     end: {
       type: String,
+      required: true,
+    },
+    margin: {
+      type: Number,
       required: true,
     },
     curveInNode: {
