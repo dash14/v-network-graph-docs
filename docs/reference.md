@@ -225,6 +225,9 @@ Values that are not specified will be used as default values.
       },
       target: { /* same structure as `source`. */ }
     },
+    margin: number | null,
+        // margin from end of node (if null, the edge end is the center of node).
+        // default: null
     summarize: boolean | ((edges: Edges, configs: Configs) => boolean | null),
         // true : summarize when the width of the edge becomes larger than the node.
         // false: do not summarize.
@@ -283,9 +286,11 @@ Values that are not specified will be used as default values.
     }
   },
   path: {
-    visible: boolean,     // whether the paths are visible or not. default: false
-    clickable: boolean,   // whether paths are clickable or not.   default: false
-    curveInNode: boolean, // whether to curve paths within nodes.  default: false
+    visible: boolean,     // whether the paths are visible or not.  default: false
+    clickable: boolean,   // whether paths are clickable or not.    default: false
+    curveInNode: boolean, // whether to curve paths within nodes.   default: false
+    end: "centerOfNode" | "edgeOfNode", // position of end of path. default: "centerOfNode"
+    margin: number,       // margin from end of path.               default: 0
     path: {
       // * These fields can also be specified with the function as `(path) => value`.
       width: number,      // width of path. default: 6
