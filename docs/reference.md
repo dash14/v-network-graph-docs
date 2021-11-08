@@ -130,7 +130,7 @@ Values that are not specified will be used as default values.
   },
   node: {
     normal: {
-      // * These fields can also be specified with the function as `(node) => value`.
+      // * These fields can also be specified with the function as `(node: Node) => value`.
       type: "circle" | "rect",  // shape type.            default: "circle"
       radius: number,           // radius of circle.      default: 16
       width: number,            // width of rect.         default: (not specified)
@@ -183,7 +183,7 @@ Values that are not specified will be used as default values.
   },
   edge: {
     normal: {
-      // * These fields can also be specified with the function as `(edge) => value`.
+      // * These fields can also be specified with the function as `(edge: Edge) => value`.
       width: number,           // width of edge.                           default: 2
       color: string,           // line color.                              default: "#4466cc"
       dasharray: number | string | undefined,        // stroke dash array. default: 0
@@ -236,10 +236,14 @@ Values that are not specified will be used as default values.
         //                is wider than the node size)
     summarized: { // configs for summarized edge
       label: {
+        // * These fields can also be specified with the function as
+        //   `(edges: Record<string, Edge>) => value`.
         fontSize: number,  // font size.  default: 10
         color: string      // font color. default: "#4466cc"
       },
       shape: { /* same structure as `node.normal`. */ },
+        // * These fields can also be specified with the function as
+        //   `(edges: Record<string, Edge>) => value`.
         // default: {
         //   type: "rect",
         //   width: 12,
@@ -251,6 +255,8 @@ Values that are not specified will be used as default values.
         //   strokeDasharray: undefined
         // }
       stroke: { /* same structure as `edge.normal`. */ }
+        // * These fields can also be specified with the function as
+        //   `(edges: Record<string, Edge>) => value`.
         // default: {
         //   width: 5,
         //   color: "#4466cc",
