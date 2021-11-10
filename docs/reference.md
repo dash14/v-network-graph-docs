@@ -334,31 +334,31 @@ The following is a list of events that can be specified for attribute `event-han
 
 <div class="reference-table">
 
-| Event type         | Description          | Event value                                              |
-| ------------------ | -------------------- | -------------------------------------------------------- |
-| "view:load"        | component loaded     | `undefined`                                              |
-| "view:unload"      | component unloaded   | `undefined`                                              |
-| "view:mode"        | mouse mode changed   | `"default"` / `"node"` / `"edge"`                        |
-| "view:zoom"        | zoom level changed   | `number` (new zoom level)                                |
-| "view:pan"         | panned               | `{ x: number, y: number }`                               |
-| "view:fit"         | fitted               | `undefined`                                              |
-| "view:resize"      | container resized    | `{ x: number, y: number, width: number, height: number }`|
-| "node:click"       | node clicked         | `{ node: string, event: PointerEvent }`                  |
-| "node:pointerover" | pointer over on node | `{ node: string, event: PointerEvent }`                  |
-| "node:pointerout"  | pointer out on node  | `{ node: string, event: PointerEvent }`                  |
-| "node:pointerup"   | pointer up on node   | `{ node: string, event: PointerEvent }`                  |
-| "node:pointerdown" | pointer down on node | `{ node: string, event: PointerEvent }`                  |
-| "node:dragstart"   | node drag started    | `{ NODE_ID: { x: number; y: number }, ... }`             |
-| "node:pointermove" | pointer move on node | `{ node: string, event: PointerEvent }`                  |
-| "node:dragend"     | node drag ended      | `{ NODE_ID: { x: number; y: number }, ... }`             |
-| "node:select"      | node selected        | `[ NODE_ID, ...]`                                        |
-| "edge:pointerup"   | pointer up on edge   | `{ edge: string, event: PointerEvent }`                  |
-| "edge:pointerdown" | pointer down on edge | `{ edge: string, event: PointerEvent }`                  |
-| "edge:pointerover" | pointer over on edge | `{ edge: string, event: PointerEvent }`                  |
-| "edge:pointerout"  | pointer out on edge  | `{ edge: string, event: PointerEvent }`                  |
-| "edge:click"       | edge clicked         | `{ edge: string, event: PointerEvent }`                  |
-| "edge:select"      | edge selected        | `[ EDGE_ID, ... ]`                                       |
-| "path:click"       | path clicked         | `{ edges: [EDGE_ID, ...], ... }`                         |
+| Event type         | Description          | Event value                                                  |
+| ------------------ | -------------------- | ------------------------------------------------------------ |
+| "view:load"        | component loaded     | `undefined`                                                  |
+| "view:unload"      | component unloaded   | `undefined`                                                  |
+| "view:mode"        | mouse mode changed   | `"default"` / `"node"` / `"edge"`                            |
+| "view:zoom"        | zoom level changed   | `number` (new zoom level)                                    |
+| "view:pan"         | panned               | `{ x: number, y: number }`                                   |
+| "view:fit"         | fitted               | `undefined`                                                  |
+| "view:resize"      | container resized    | `{ x: number, y: number, width: number, height: number }`    |
+| "node:click"       | node clicked         | `{ node: string, event: PointerEvent }`                      |
+| "node:pointerover" | pointer over on node | `{ node: string, event: PointerEvent }`                      |
+| "node:pointerout"  | pointer out on node  | `{ node: string, event: PointerEvent }`                      |
+| "node:pointerup"   | pointer up on node   | `{ node: string, event: PointerEvent }`                      |
+| "node:pointerdown" | pointer down on node | `{ node: string, event: PointerEvent }`                      |
+| "node:dragstart"   | node drag started    | `{ NODE_ID: { x: number; y: number }, ... }`                 |
+| "node:pointermove" | pointer move on node | `{ node: string, event: PointerEvent }`                      |
+| "node:dragend"     | node drag ended      | `{ NODE_ID: { x: number; y: number }, ... }`                 |
+| "node:select"      | node selected        | `[ NODE_ID, ...]`                                            |
+| "edge:pointerup"   | pointer up on edge   | `{ edge: string, event: PointerEvent, summarized: boolean }` |
+| "edge:pointerdown" | pointer down on edge | `{ edge: string, event: PointerEvent, summarized: boolean }` |
+| "edge:pointerover" | pointer over on edge | `{ edge: string, event: PointerEvent, summarized: boolean }` |
+| "edge:pointerout"  | pointer out on edge  | `{ edge: string, event: PointerEvent, summarized: boolean }` |
+| "edge:click"       | edge clicked         | `{ edge: string, event: PointerEvent, summarized: boolean }` |
+| "edge:select"      | edge selected        | `[ EDGE_ID, ... ]`                                           |
+| "path:click"       | path clicked         | `{ edges: [EDGE_ID, ...], ... }`                             |
 
 </div>
 
