@@ -177,10 +177,31 @@ be customized from the config like the node labels.
 </template>
 </demo-tabs>
 
+## Summarized edge labels
+
+Labels for summarized edges use a different slot than for normal edges.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoSummarizedEdgeLabels />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/04_label/06/SummarizedEdgeLabels.vue{12-20,34-37}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/04_label/06/data.ts
+
+</template>
+</demo-tabs>
+
 <script setup>
 import DemoNodeLabels from '../.vitepress/components/04_label/01/NodeLabels.vue'
 import DemoNodeCustomLabels from '../.vitepress/components/04_label/02/NodeCustomLabels.vue'
 import DemoEdgeLabels from '../.vitepress/components/04_label/03/EdgeLabels.vue'
 import DemoMultipleEdgeLabels from '../.vitepress/components/04_label/04/MultipleEdgeLabels.vue'
 import DemoEdgeLabelsStyle from '../.vitepress/components/04_label/05/EdgeLabelsStyle.vue'
+import DemoSummarizedEdgeLabels from '../.vitepress/components/04_label/06/SummarizedEdgeLabels.vue'
 </script>
