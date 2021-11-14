@@ -334,31 +334,167 @@ The following is a list of events that can be specified for attribute `event-han
 
 <div class="reference-table">
 
-| Event type         | Description          | Event value                                                  |
-| ------------------ | -------------------- | ------------------------------------------------------------ |
-| "view:load"        | component loaded     | `undefined`                                                  |
-| "view:unload"      | component unloaded   | `undefined`                                                  |
-| "view:mode"        | mouse mode changed   | `"default"` / `"node"` / `"edge"`                            |
-| "view:zoom"        | zoom level changed   | `number` (new zoom level)                                    |
-| "view:pan"         | panned               | `{ x: number, y: number }`                                   |
-| "view:fit"         | fitted               | `undefined`                                                  |
-| "view:resize"      | container resized    | `{ x: number, y: number, width: number, height: number }`    |
-| "node:click"       | node clicked         | `{ node: string, event: PointerEvent }`                      |
-| "node:pointerover" | pointer over on node | `{ node: string, event: PointerEvent }`                      |
-| "node:pointerout"  | pointer out on node  | `{ node: string, event: PointerEvent }`                      |
-| "node:pointerup"   | pointer up on node   | `{ node: string, event: PointerEvent }`                      |
-| "node:pointerdown" | pointer down on node | `{ node: string, event: PointerEvent }`                      |
-| "node:dragstart"   | node drag started    | `{ NODE_ID: { x: number; y: number }, ... }`                 |
-| "node:pointermove" | pointer move on node | `{ node: string, event: PointerEvent }`                      |
-| "node:dragend"     | node drag ended      | `{ NODE_ID: { x: number; y: number }, ... }`                 |
-| "node:select"      | node selected        | `[ NODE_ID, ...]`                                            |
-| "edge:pointerup"   | pointer up on edge   | `{ edge: string, event: PointerEvent, summarized: boolean }` |
-| "edge:pointerdown" | pointer down on edge | `{ edge: string, event: PointerEvent, summarized: boolean }` |
-| "edge:pointerover" | pointer over on edge | `{ edge: string, event: PointerEvent, summarized: boolean }` |
-| "edge:pointerout"  | pointer out on edge  | `{ edge: string, event: PointerEvent, summarized: boolean }` |
-| "edge:click"       | edge clicked         | `{ edge: string, event: PointerEvent, summarized: boolean }` |
-| "edge:select"      | edge selected        | `[ EDGE_ID, ... ]`                                           |
-| "path:click"       | path clicked         | `{ edges: [EDGE_ID, ...], ... }`                             |
+<table>
+  <thead>
+    <tr>
+      <th>Event type</th>
+      <th>Description</th>
+      <th>Event value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>"view:load"</td>
+      <td>component loaded</td>
+      <td><code>undefined</code></td>
+    </tr>
+    <tr>
+      <td>"view:unload"</td>
+      <td>mouse mode changed</td>
+      <td><code>undefined</code></td>
+    </tr>
+    <tr>
+      <td>"view:mode"</td>
+      <td>component unloaded</td>
+      <td><code>"default"</code> / <code>"node"</code> / <code>"edge"</code></td>
+    </tr>
+    <tr>
+      <td>"view:click"</td>
+      <td>background clicked</td>
+      <td><code>{ event: PointerEvent }</code></td>
+    </tr>
+    <tr>
+      <td>"view:zoom"</td>
+      <td>zoom level changed</td>
+      <td><code>number</code> (new zoom level)</td>
+    </tr>
+    <tr>
+      <td>"view:pan"</td>
+      <td>panned</td>
+      <td><code>{ x: number, y: number }</code></td>
+    </tr>
+    <tr>
+      <td>"view:fit"</td>
+      <td>fitted</td>
+      <td><code>undefined</code></td>
+    </tr>
+    <tr>
+      <td>"view:resize"</td>
+      <td>container resized</td>
+      <td><code>{ x: number, y: number, width: number, height: number }</code></td>
+    </tr>
+    <tr>
+      <td>"view:contextmenu"</td>
+      <td>background right-clicked</td>
+      <td>
+        <code>{ event: MouseEvent }</code><br />
+        (To disable the browser's standard context menu, you have to call
+        <code>event.preventDefault()</code> in the handler.)
+      </td>
+    </tr>
+    <tr>
+      <td>"node:click"</td>
+      <td>node clicked</td>
+      <td rowspan="5"><code>{ node: string, event: PointerEvent }</code></td>
+    </tr>
+    <tr>
+      <td>"node:pointerover"</td>
+      <td>pointer over on node</td>
+    </tr>
+    <tr>
+      <td>"node:pointerout"</td>
+      <td>pointer out on node</td>
+    </tr>
+    <tr>
+      <td>"node:pointerdown"</td>
+      <td>pointer down on node</td>
+    </tr>
+    <tr>
+      <td>"node:pointerup"</td>
+      <td>pointer up on node</td>
+    </tr>
+    <tr>
+      <td>"node:contextmenu"</td>
+      <td>node right-clicked</td>
+      <td>
+        <code>{ node: string, event: MouseEvent }</code><br />
+        (To disable the browser's standard context menu, you have to call
+        <code>event.preventDefault()</code> in the handler.)
+      </td>
+    </tr>
+    <tr>
+      <td>"node:dragstart"</td>
+      <td>node drag started</td>
+      <td><code>{ NODE_ID: { x: number; y: number }, ... }</code></td>
+    </tr>
+    <tr>
+      <td>"node:pointermove"</td>
+      <td>pointer move on node</td>
+      <td><code>{ node: string, event: PointerEvent }</code></td>
+    </tr>
+    <tr>
+      <td>"node:dragend"</td>
+      <td>node drag ended</td>
+      <td><code>{ NODE_ID: { x: number; y: number }, ... }</code></td>
+    </tr>
+    <tr>
+      <td>"node:select"</td>
+      <td>node selected</td>
+      <td><code>[ NODE_ID, ...]</code></td>
+    </tr>
+    <tr>
+      <td>"edge:click"</td>
+      <td>edge clicked</td>
+      <td rowspan="5">
+        not summarized edge:<br/>
+        <code>{ edge: EDGE_ID, edges: [EDGE_ID], event: PointerEvent, summarized: false }</code><br/><br/>
+        summarized edge:<br/>
+        <code>{ edges: [EDGE_ID, ...], event: PointerEvent, summarized: true }</code>
+      </td>
+    </tr>
+    <tr>
+      <td>"edge:pointerover"</td>
+      <td>pointer over on edge</td>
+    </tr>
+    <tr>
+      <td>"edge:pointerout"</td>
+      <td>pointer out on edge</td>
+    </tr>
+    <tr>
+      <td>"edge:pointerdown"</td>
+      <td>pointer down on edge</td>
+    </tr>
+    <tr>
+      <td>"edge:pointerup"</td>
+      <td>pointer up on edge</td>
+    </tr>
+    <tr>
+      <td>"edge:contextmenu"</td>
+      <td>edge right-clicked</td>
+      <td>
+        not summarized edge:<br/>
+        <code>{ edge: EDGE_ID, edges: [EDGE_ID], event: MouseEvent, summarized: false }</code><br/><br/>
+        summarized edge:<br/>
+        <code>{ edges: [EDGE_ID, ...], event: MouseEvent, summarized: true }</code>
+      </td>
+    </tr>
+    <tr>
+      <td>"edge:select"</td>
+      <td>edge selected</td>
+      <td><code>[ EDGE_ID, ... ]</code></td>
+    </tr>
+    <tr>
+      <td>"path:click"</td>
+      <td>path clicked</td>
+      <td><code>{ path: Path, event: MouseEvent }</code></td>
+    </tr>
+    <tr>
+      <td>"path:contextmenu"</td>
+      <td>path right-clicked</td>
+      <td><code>{ path: Path, event: MouseEvent }</code></td>
+    </tr>
+  </tbody>
+</table>
 
 </div>
 
