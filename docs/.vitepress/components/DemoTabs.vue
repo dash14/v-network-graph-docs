@@ -6,11 +6,11 @@
           <slot name="demo"></slot>
         </div>
         <div v-if="message" class="float-message">
-          <i class="el-icon-warning-outline"></i>
+          <el-icon><warning /></el-icon>
           {{ message }}
         </div>
         <div v-if="hint" class="float-message hint">
-          <i class="el-icon-thumb"></i>
+          <el-icon><chat-line-round /></el-icon>
           {{ hint }}
         </div>
       </div>
@@ -26,8 +26,10 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue"
+import { Warning, ChatLineRound } from "@element-plus/icons"
 
 export default defineComponent({
+  components: { Warning, ChatLineRound },
   props: {
     message: {
       type: String,

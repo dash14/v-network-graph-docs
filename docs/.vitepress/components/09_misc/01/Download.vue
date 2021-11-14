@@ -1,7 +1,7 @@
 <template>
   <div class="demo-control-panel">
     <el-button type="primary" @click="downloadAsSvg">
-      <i class="el-icon-download"></i>
+      <el-icon><download /></el-icon>
       Download SVG
     </el-button>
     <label>Node:</label>
@@ -26,9 +26,11 @@
 <script lang="ts">
 import { defineComponent, reactive, ref } from "vue"
 import { VNetworkGraph, Nodes, Edges } from "v-network-graph"
+import { Download } from "@element-plus/icons"
 import data from "./data"
 
 export default defineComponent({
+  components: { Download },
   setup() {
     const nodes: Nodes = reactive(data.nodes)
     const edges: Edges = reactive(data.edges)
