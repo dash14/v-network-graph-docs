@@ -3,7 +3,7 @@ import { Edges, Layouts, UserConfigs } from "v-network-graph"
 const edges: Edges = {
   edge1: { source: "node1", target: "node2" },
   edge2: { source: "node2", target: "node3" },
-  edge3: { source: "node2", target: "node4", animate: true },
+  edge3: { source: "node2", target: "node4" },
   edge4: { source: "node4", target: "node5" },
   edge5: { source: "node4", target: "node6" },
 }

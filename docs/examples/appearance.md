@@ -68,6 +68,26 @@ do by using the `override-node-label` slot.
 </template>
 </demo-tabs>
 
+An example of specifying an image instead of an icon is shown below.  
+The images of the faces ware created https://generated.photos/.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoCustomNodeWithImage />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/04/CustomNodeWithImage.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/04/data.ts
+
+</template>
+</demo-tabs>
+
+
 ## Arrow on edges
 
 Markers such as arrow head can be specified for edges.
@@ -381,6 +401,7 @@ edges appear in the given edges.
 import DemoConfigValue from '../.vitepress/components/05_appearance/01/ConfigValue.vue'
 import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject.vue'
 import DemoCustomNode from '../.vitepress/components/05_appearance/03/CustomNode.vue'
+import DemoCustomNodeWithImage from '../.vitepress/components/05_appearance/04/CustomNodeWithImage.vue'
 import DemoArrow from '../.vitepress/components/05_appearance/05/Arrow.vue'
 import DemoCustomMarker from '../.vitepress/components/05_appearance/06/CustomMarker.vue'
 import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/07/EdgesKeepOrder.vue'

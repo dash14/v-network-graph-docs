@@ -40,7 +40,6 @@
 <script lang="ts">
 import { defineComponent } from "vue"
 import { Nodes, Layers } from "v-network-graph"
-import { withBase } from "vitepress"
 import data from "./data"
 
 export default defineComponent({
@@ -60,7 +59,7 @@ export default defineComponent({
       node6: { name: "N6", icon: "&#xea75" /* Video Settings */ },
     }
 
-    return { data, nodes, layers, withBase }
+    return { data, nodes, layers }
   },
 })
 </script>
