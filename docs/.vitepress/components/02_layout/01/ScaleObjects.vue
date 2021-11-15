@@ -21,7 +21,9 @@ export default defineComponent({
   setup() {
     const configs = reactive({
       view: {
-        scalingObjects: true
+        scalingObjects: true,
+        minZoomLevel: 0.1,
+        maxZoomLevel: 16,
       }
     })
 

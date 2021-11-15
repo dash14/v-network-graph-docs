@@ -13,6 +13,7 @@
     :nodes="nodes"
     :edges="edges"
     :layouts="layouts"
+    :configs="configs"
   />
 </template>
 
@@ -41,13 +42,19 @@ export default defineComponent({
         node4: { x: 150, y: 50 },
       },
     }
+    const configs = {
+      view: {
+        minZoomLevel: 0.1,
+        maxZoomLevel: 16,
+      }
+    }
 
     const zoomLevel = ref(1)
 
     // ref="graph"
     const graph = ref<InstanceType<typeof VNetworkGraph>>()
 
-    return { nodes, edges, layouts, zoomLevel, graph }
+    return { nodes, edges, layouts, configs, zoomLevel, graph }
   },
 })
 </script>
