@@ -212,7 +212,7 @@ Values that are not specified will be used as default values.
     type: "straight" | "curve", // edge type when there are multiple edges between the nodes.
     marker: {
       source: {
-        type:  "none" | "array" | "angle" | "circle" | "custom",
+        type:  "none" | "arrow" | "angle" | "circle" | "custom",
                               // type of marker.                          default: "none"
         width: number,        // width of marker.                         default: 5
         height: number,       // height of marker.                        default: 5
