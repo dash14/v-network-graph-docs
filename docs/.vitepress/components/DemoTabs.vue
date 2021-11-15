@@ -10,7 +10,7 @@
           {{ message }}
         </div>
         <div v-if="hint" class="float-message hint">
-          <el-icon><chat-line-round /></el-icon>
+          <el-icon><pointer /></el-icon>
           {{ hint }}
         </div>
       </div>
@@ -26,10 +26,10 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue"
-import { Warning, ChatLineRound } from "@element-plus/icons"
+import { Warning, Pointer } from "@element-plus/icons"
 
 export default defineComponent({
-  components: { Warning, ChatLineRound },
+  components: { Warning, Pointer },
   props: {
     message: {
       type: String,
