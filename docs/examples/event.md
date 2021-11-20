@@ -76,10 +76,31 @@ the menu.
 </template>
 </demo-tabs>
 
+## Tooltip
+
+By combining event handling and coordinate translation, it is possible
+to represent a combination of DOM elements such as tooltip.
+
+<demo-tabs :use-data="true" hint="Hover the mouse over a node to display a tooltip.">
+<template v-slot:demo>
+  <DemoTooltip />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/08_event/04/Tooltip.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/08_event/04/data.ts
+
+</template>
+</demo-tabs>
 
 
 <script setup>
 import DemoAllEvents from '../.vitepress/components/08_event/01/AllEvents.vue'
 import DemoBadge from '../.vitepress/components/08_event/02/Badge.vue'
 import DemoContextMenu from '../.vitepress/components/08_event/03/ContextMenu.vue'
+import DemoTooltip from '../.vitepress/components/08_event/04/Tooltip.vue'
 </script>
