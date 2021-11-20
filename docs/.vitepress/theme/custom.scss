@@ -115,6 +115,12 @@
   code {
     line-height: 1.8em;
   }
+  .instance-methods {
+    td:first-child {
+      width: 35%;
+      word-break: break-all;
+    }
+  }
 }
 .reference-attributes-types,
 .reference-configs {
