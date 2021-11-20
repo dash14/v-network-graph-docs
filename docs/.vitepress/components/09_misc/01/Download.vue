@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, ref } from "vue"
-import { VNetworkGraph, Nodes, Edges } from "v-network-graph"
+import { VNetworkGraphInstance, Nodes, Edges } from "v-network-graph"
 import { Download } from "@element-plus/icons"
 import data from "./data"
 
@@ -41,7 +41,7 @@ export default defineComponent({
     const selectedEdges = ref<string[]>([])
 
     // ref="graph"
-    const graph = ref<InstanceType<typeof VNetworkGraph>>()
+    const graph = ref<VNetworkGraphInstance>()
 
     return {
       data,

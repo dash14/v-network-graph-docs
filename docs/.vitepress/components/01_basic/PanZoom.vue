@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue"
-import { VNetworkGraph } from "v-network-graph"
+import { VNetworkGraphInstance } from "v-network-graph"
 
 export default defineComponent({
   setup() {
@@ -52,7 +52,7 @@ export default defineComponent({
     const zoomLevel = ref(1)
 
     // ref="graph"
-    const graph = ref<InstanceType<typeof VNetworkGraph>>()
+    const graph = ref<VNetworkGraphInstance>()
 
     return { nodes, edges, layouts, configs, zoomLevel, graph }
   },

@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue"
-import { VNetworkGraph } from "v-network-graph"
+import { VNetworkGraphInstance } from "v-network-graph"
 import { withBase } from "vitepress"
 import data from "./data"
 
@@ -35,7 +35,7 @@ export default defineComponent({
     }
 
     // ref="graph"
-    const graph = ref<InstanceType<typeof VNetworkGraph>>()
+    const graph = ref<VNetworkGraphInstance>()
     const onLoadImage = () => {
       graph.value?.fitToContents()
     }
