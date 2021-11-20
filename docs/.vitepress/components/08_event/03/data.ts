@@ -1,10 +1,10 @@
 import { Nodes, Edges, Layouts, UserConfigs } from "v-network-graph"
 
 const nodes: Nodes = {
-  node1: { name: "Node 1", active: true },
-  node2: { name: "Node 2", active: false },
-  node3: { name: "Node 3", active: true },
-  node4: { name: "Node 4", active: false },
+  node1: { name: "Node 1" },
+  node2: { name: "Node 2" },
+  node3: { name: "Node 3" },
+  node4: { name: "Node 4" },
 }
 
 const edges: Edges = {
