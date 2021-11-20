@@ -67,11 +67,39 @@ the end.
 </template>
 </demo-tabs>
 
+## Coordinates translation
+
+Mutual coordinate translation between the DOM and SVG is
+provided by the methods of the v-network-graph component.
+
+As an example of DOM to SVG coordinate translation, the
+process of adding a new node at the position clicked by
+the user is shown below.
+
+<demo-tabs :use-data="true" hint="Clicking on an empty area will add a new node to that location.">
+<template v-slot:demo>
+  <DemoCoordinates />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/09_misc/04/Coordinates.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/09_misc/04/data.ts
+
+</template>
+</demo-tabs>
+
+For an example of SVG to DOM coordinate translation, please see the
+[Tooltip](https://dash14.github.io/v-network-graph/examples/event.html#tooltip)
+example in Event Handling section.
 
 <script setup>
 import DemoDownload from '../.vitepress/components/09_misc/01/Download.vue'
 import DemoGridLayer from '../.vitepress/components/09_misc/02/GridLayer.vue'
 import DemoDijkstra from '../.vitepress/components/09_misc/03/Dijkstra.vue'
-
+import DemoCoordinates from '../.vitepress/components/09_misc/04/Coordinates.vue'
 </script>
 
