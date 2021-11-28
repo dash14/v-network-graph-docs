@@ -24,6 +24,10 @@ module.exports = {
         activeMatch: "^/examples",
       },
       {
+        text: "Reference",
+        link: "/reference.html",
+      },
+      {
         text: "GitHub",
         link: "https://github.com/dash14/v-network-graph",
       },
@@ -42,14 +46,14 @@ module.exports = {
           { text: "Paths", link: "/examples/paths" },
           { text: "Custom Layer", link: "/examples/layer" },
           { text: "Event Handling", link: "/examples/event" },
-          { text: "Miscellaneous", link: "/examples/misc" }
+          { text: "Miscellaneous", link: "/examples/misc" },
         ],
       },
       { text: "Reference", link: "/reference" },
     ],
   },
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
   },
   vite: {
     build: {
@@ -57,15 +61,15 @@ module.exports = {
       rollupOptions: {
         output: {
           manualChunks: {
-            "element-plus": ['element-plus']
-          }
-        }
-      }
-    }
+            "element-plus": ["element-plus"],
+          },
+        },
+      },
+    },
   },
   server: {
     fs: {
-      allow: [".."]
-    }
-  }
+      allow: [".."],
+    },
+  },
 }
