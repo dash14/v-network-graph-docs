@@ -1,7 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
-.home-hero .image {
-  width: 222px;
-  height: 132px;
+:root {
+  --c-brand: #4065d0;
+  --c-brand-light: #4d75ee;
+}
+
+.home-hero {
+  .image {
+    width: 537px;
+    height: 90px;
+  }
+  .title {
+    display: none;
+  }
+  .tagline {
+    margin-top: 2rem !important;
+  }
+}
+
+.nav-bar-title {
+  font-family: 'Alata', sans-serif;
+  letter-spacing: 0.05em;
+  color: #2d355d !important;
 }
 
 .nav-bar-title:before {
@@ -11,6 +31,9 @@
   vertical-align: middle;
   position: relative;
   top: 2px;
+}
+.action .item {
+  border-radius: 10px !important;
 }
 
 .line-numbers-mode.language-bash {
