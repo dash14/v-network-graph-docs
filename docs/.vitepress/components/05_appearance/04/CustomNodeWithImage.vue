@@ -20,12 +20,11 @@
 
     <!-- Replace the node component -->
     <template #override-node="{ nodeId, scale, config, ...slotProps }">
+      <!-- circle for filling background -->
       <circle
         class="face-circle"
         :r="config.radius * scale"
         fill="#ffffff"
-        stroke="#808080"
-        :stroke-width="1 * scale"
         v-bind="slotProps"
       />
       <!--
@@ -40,6 +39,15 @@
         :height="config.radius * scale * 2"
         :xlink:href="`./faces/${nodes[nodeId].face}`"
         clip-path="url(#faceCircle)"
+      />
+      <!-- circle for drawing stroke -->
+      <circle
+        class="face-circle"
+        :r="config.radius * scale"
+        fill="none"
+        stroke="#808080"
+        :stroke-width="1 * scale"
+        v-bind="slotProps"
       />
     </template>
   </v-network-graph>
