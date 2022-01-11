@@ -83,7 +83,7 @@ function rgba2hex(orig: string) {
     show-alpha
     @active-change="rgbaValue = $event"
   />
-  <el-input v-model="input" @change="hexValue = input" class="input" size="small" />
+  <el-input v-model="input" @change="hexValue = input" class="input" />
 </template>
 
 <style lang="scss" scoped>
