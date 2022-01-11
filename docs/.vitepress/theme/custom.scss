@@ -85,6 +85,17 @@
       justify-content: center;
     }
   }
+
+  &.appearance {
+    > div {
+      display: block;
+      label {
+        display: inline-block;
+        width: 40px;
+        margin: 6px;
+      }
+    }
+  }
 }
 
 .example-list {

@@ -26,7 +26,7 @@ with each node or edge as an argument.
 In addition, by explicitly specifying the Node or Edge type in
 UserConfigs, you can specify the argument type of the function.
 
-<demo-tabs>
+<demo-tabs :demo-height="250">
 <template v-slot:demo>
   <DemoEachObject />
 </template>
@@ -36,6 +36,27 @@ UserConfigs, you can specify the argument type of the function.
 
 </template>
 </demo-tabs>
+
+Adding or removing nodes and links with customized appearance can also
+be reflected by changing the data of reactive data.
+
+
+<demo-tabs :use-data="true" :demo-height="350">
+<template v-slot:demo>
+  <DemoEachObject2 />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/03/EachObject2.vue{45-71}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/03/data.ts
+
+</template>
+</demo-tabs>
+
 
 ## Custom Node
 
@@ -400,6 +421,7 @@ edges appear in the given edges.
 <script setup>
 import DemoConfigValue from '../.vitepress/components/05_appearance/01/ConfigValue.vue'
 import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject.vue'
+import DemoEachObject2 from '../.vitepress/components/05_appearance/03/EachObject2.vue'
 import DemoCustomNode from '../.vitepress/components/05_appearance/04/CustomNode.vue'
 import DemoCustomNodeWithImage from '../.vitepress/components/05_appearance/05/CustomNodeWithImage.vue'
 import DemoArrow from '../.vitepress/components/05_appearance/06/Arrow.vue'
