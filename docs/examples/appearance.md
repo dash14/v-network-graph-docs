@@ -58,12 +58,12 @@ do by using the `override-node-label` slot.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/03/CustomNode.vue{23-36}
+  <<< @/.vitepress/components/05_appearance/04/CustomNode.vue{23-36}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_appearance/03/data.ts
+  <<< @/.vitepress/components/05_appearance/04/data.ts
 
 </template>
 </demo-tabs>
@@ -77,12 +77,12 @@ The images of the faces ware created https://generated.photos/.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/04/CustomNodeWithImage.vue
+  <<< @/.vitepress/components/05_appearance/05/CustomNodeWithImage.vue
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_appearance/04/data.ts
+  <<< @/.vitepress/components/05_appearance/05/data.ts
 
 </template>
 </demo-tabs>
@@ -98,12 +98,12 @@ Markers such as arrow head can be specified for edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/05/Arrow.vue{115-132}
+  <<< @/.vitepress/components/05_appearance/06/Arrow.vue{115-132}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_appearance/05/data.ts
+  <<< @/.vitepress/components/05_appearance/06/data.ts
 
 </template>
 </demo-tabs>
@@ -211,12 +211,12 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/06/CustomMarker.vue
+  <<< @/.vitepress/components/05_appearance/07/CustomMarker.vue
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_appearance/06/data.ts
+  <<< @/.vitepress/components/05_appearance/07/data.ts
 
 </template>
 </demo-tabs>
@@ -277,12 +277,12 @@ edges appear in the given edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/07/EdgesKeepOrder.vue
+  <<< @/.vitepress/components/05_appearance/08/EdgesKeepOrder.vue
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_appearance/07/data.ts
+  <<< @/.vitepress/components/05_appearance/08/data.ts
 
 </template>
 </demo-tabs>
@@ -400,11 +400,11 @@ edges appear in the given edges.
 <script setup>
 import DemoConfigValue from '../.vitepress/components/05_appearance/01/ConfigValue.vue'
 import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject.vue'
-import DemoCustomNode from '../.vitepress/components/05_appearance/03/CustomNode.vue'
-import DemoCustomNodeWithImage from '../.vitepress/components/05_appearance/04/CustomNodeWithImage.vue'
-import DemoArrow from '../.vitepress/components/05_appearance/05/Arrow.vue'
-import DemoCustomMarker from '../.vitepress/components/05_appearance/06/CustomMarker.vue'
-import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/07/EdgesKeepOrder.vue'
+import DemoCustomNode from '../.vitepress/components/05_appearance/04/CustomNode.vue'
+import DemoCustomNodeWithImage from '../.vitepress/components/05_appearance/05/CustomNodeWithImage.vue'
+import DemoArrow from '../.vitepress/components/05_appearance/06/Arrow.vue'
+import DemoCustomMarker from '../.vitepress/components/05_appearance/07/CustomMarker.vue'
+import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/08/EdgesKeepOrder.vue'
 
 import DemoStyle1 from '../.vitepress/components/05_appearance/s01/Style1.vue'
 import DemoStyle2 from '../.vitepress/components/05_appearance/s02/Style2.vue'
