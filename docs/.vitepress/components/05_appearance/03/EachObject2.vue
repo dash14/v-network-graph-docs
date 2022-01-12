@@ -23,121 +23,119 @@
     v-model:selected-edges="selectedEdges"
     :nodes="nodes"
     :edges="edges"
-    :layouts="layouts"
+    :layouts="data.layouts"
     :configs="configs"
   />
 </template>
 
-<script lang="ts">
-import { defineComponent, reactive, ref } from "vue"
+<script setup lang="ts">
+import { reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
 import data, { Node, Edge } from "./data"
 
-export default defineComponent({
-  setup() {
-    // In Node and Edge configuration, instead of concrete values,
-    // you can specify functions that return a configuration value
-    // with each node or edge as an argument.
-    // In addition, you can use the `configsWithType` function to
-    // specify the argument type of the callback function by
-    // explicitly specifying a custom type for Node and Edge.
-    const configs = reactive(
-      vNG.configsWithType<Node, Edge>({
-        node: {
-          normal: {
-            type: "circle",
-            radius: node => node.size, // Use the value of each node object
-            color: node => node.color,
-          },
-          hover: {
-            radius: node => node.size + 2,
-            color: node => node.color,
-          },
-          selectable: true,
-          label: {
-            visible: node => !!node.label,
-          },
-          focusring: {
-            color: "darkgray",
-          },
-        },
-        edge: {
-          normal: {
-            width: edge => edge.width, // Use the value of each edge object
-            color: edge => edge.color,
-            dasharray: edge => (edge.dashed ? "4" : "0"),
-          },
-        },
-      })
-    )
+const nodes = { ...data.nodes }
+const edges = { ...data.edges }
 
-    const nextNodeIndex = ref(Object.keys(data.nodes).length + 1)
-    const nextEdgeIndex = ref(Object.keys(data.edges).length + 1)
-    const selectedNodes = ref<string[]>([])
-    const selectedEdges = ref<string[]>([])
+// In Node and Edge configuration, instead of concrete values,
+// you can specify functions that return a configuration value
+// with each node or edge as an argument.
+// In addition, you can use the `configsWithType` function to
+// specify the argument type of the callback function by
+// explicitly specifying a custom type for Node and Edge.
+const configs = reactive(
+  vNG.configsWithType<Node, Edge>({
+    node: {
+      normal: {
+        type: "circle",
+        radius: node => node.size, // Use the value of each node object
+        color: node => node.color,
+      },
+      hover: {
+        radius: node => node.size + 2,
+        color: node => node.color,
+      },
+      selectable: true,
+      label: {
+        visible: node => !!node.label,
+      },
+      focusring: {
+        color: "darkgray",
+      },
+    },
+    edge: {
+      normal: {
+        width: edge => edge.width, // Use the value of each edge object
+        color: edge => edge.color,
+        dasharray: edge => (edge.dashed ? "4" : "0"),
+      },
+    },
+  })
+)
 
-    return {
-      nodes: data.nodes,
-      edges: data.edges,
-      layouts: data.layouts,
-      configs,
-      nextNodeIndex,
-      nextEdgeIndex,
-      selectedNodes,
-      selectedEdges,
-    }
-  },
+const nextNodeIndex = ref(Object.keys(data.nodes).length + 1)
+const nextEdgeIndex = ref(Object.keys(data.edges).length + 1)
+const selectedNodes = ref<string[]>([])
+const selectedEdges = ref<string[]>([])
 
-  methods: {
-    addSkyBlueNode() {
-      this.addNode({ size: 24, color: "lightskyblue", label: true })
-    },
-    addHotPinkNode() {
-      this.addNode({ size: 32, color: "hotpink", label: true })
-    },
-    addGrayNode() {
-      this.addNode({ size: 16, color: "gray", label: false })
-    },
-    addBlackNode() {
-      this.addNode({ size: 48, color: "black", label: false })
-    },
-    addNode(node: Omit<Node, "name">) {
-      const nodeId = `node${this.nextNodeIndex}`
-      const name = `N${this.nextNodeIndex}`
-      this.nodes[nodeId] = <Node>{ name, ...node }
-      this.nextNodeIndex++
-    },
-    removeNode() {
-      for (const nodeId of this.selectedNodes) {
-        delete this.nodes[nodeId]
-      }
-    },
-    addSkyBlueEdge() {
-      this.addEdge({ width: 3, color: "skyblue" })
-    },
-    addHotPinkEdge() {
-      this.addEdge({ width: 3, color: "hotpink" })
-    },
-    addGrayEdge() {
-      this.addEdge({ width: 5, color: "gray", dashed: true })
-    },
-    addBlackEdge() {
-      this.addEdge({ width: 1, color: "black" })
-    },
-    addEdge(edge: Omit<Edge, "source" | "target">) {
-      if (this.selectedNodes.length !== 2) return
-      const [source, target] = this.selectedNodes
-      const edgeId = `node${this.nextNodeIndex++}`
-      this.edges[edgeId] = <Edge>{ source, target, ...edge }
-    },
-    removeEdge() {
-      for (const edgeId of this.selectedEdges) {
-        delete this.edges[edgeId]
-      }
-    },
-    isEdgeAddable() {
-      return this.selectedNodes.length == 2
-    },
-  },
-})
+function addSkyBlueNode() {
+  addNode({ size: 24, color: "lightskyblue", label: true })
+}
+
+function addHotPinkNode() {
+  addNode({ size: 32, color: "hotpink", label: true })
+}
+
+function addGrayNode() {
+  addNode({ size: 16, color: "gray", label: false })
+}
+
+function addBlackNode() {
+  addNode({ size: 48, color: "black", label: false })
+}
+
+function addNode(node: Omit<Node, "name">) {
+  const nodeId = `node${nextNodeIndex.value}`
+  const name = `N${nextNodeIndex.value}`
+  nodes[nodeId] = <Node>{ name, ...node }
+  nextNodeIndex.value++
+}
+
+function removeNode() {
+  for (const nodeId of selectedNodes.value) {
+    delete nodes[nodeId]
+  }
+}
+
+function addSkyBlueEdge() {
+  addEdge({ width: 3, color: "skyblue" })
+}
+
+function addHotPinkEdge() {
+  addEdge({ width: 3, color: "hotpink" })
+}
+
+function addGrayEdge() {
+  addEdge({ width: 5, color: "gray", dashed: true })
+}
+
+function addBlackEdge() {
+  addEdge({ width: 1, color: "black" })
+}
+
+function addEdge(edge: Omit<Edge, "source" | "target">) {
+  if (selectedNodes.value.length !== 2) return
+  const [source, target] = selectedNodes.value
+  const edgeId = `edge${nextEdgeIndex.value++}`
+  edges[edgeId] = <Edge>{ source, target, ...edge }
+}
+
+function removeEdge() {
+  for (const edgeId of selectedEdges.value) {
+    delete edges[edgeId]
+  }
+}
+
+function isEdgeAddable() {
+  return selectedNodes.value.length == 2
+}
 </script>

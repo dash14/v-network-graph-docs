@@ -32,7 +32,7 @@ UserConfigs, you can specify the argument type of the function.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/02/EachObject.vue
+  <<< @/.vitepress/components/05_appearance/02/EachObject.vue{52-77}
 
 </template>
 </demo-tabs>
@@ -47,7 +47,7 @@ be reflected by changing the data of reactive data.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/03/EachObject2.vue{45-71}
+  <<< @/.vitepress/components/05_appearance/03/EachObject2.vue
 
 </template>
 <template v-slot:data>
@@ -79,7 +79,7 @@ do by using the `override-node-label` slot.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/04/CustomNode.vue{23-36}
+  <<< @/.vitepress/components/05_appearance/04/CustomNode.vue{29-53}
 
 </template>
 <template v-slot:data>
@@ -98,7 +98,7 @@ The images of the faces ware created https://generated.photos/.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/05/CustomNodeWithImage.vue
+  <<< @/.vitepress/components/05_appearance/05/CustomNodeWithImage.vue{29-67}
 
 </template>
 <template v-slot:data>
@@ -119,7 +119,7 @@ Markers such as arrow head can be specified for edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/06/Arrow.vue{115-132}
+  <<< @/.vitepress/components/05_appearance/06/Arrow.vue{40-57}
 
 </template>
 <template v-slot:data>
@@ -298,7 +298,7 @@ edges appear in the given edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/08/EdgesKeepOrder.vue
+  <<< @/.vitepress/components/05_appearance/08/EdgesKeepOrder.vue{24}
 
 </template>
 <template v-slot:data>

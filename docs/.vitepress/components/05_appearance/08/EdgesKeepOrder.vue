@@ -1,3 +1,31 @@
+<script setup lang="ts">
+import { reactive } from "vue"
+import { Edge } from "v-network-graph"
+import data from "./data"
+
+const configs = reactive({
+  node: {
+    normal: {
+      color: "#aabbff",
+    },
+  },
+  edge: {
+    normal: {
+      color: (edge: Edge) => edge.color,
+    },
+    hover: {
+      color: (edge: Edge) => edge.color,
+    },
+    margin: 4,
+    marker: {
+      source: { type: "arrow" },
+    },
+    gap: 10,
+    keepOrder: "clock",
+  },
+})
+</script>
+
 <template>
   <div class="demo-control-panel">
     <label>Keep order:</label>
@@ -15,37 +43,3 @@
     :configs="configs"
   />
 </template>
-
-<script lang="ts">
-import { defineComponent, reactive } from "vue"
-import { Edge } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const configs = reactive({
-      node: {
-        normal: {
-          color: "#aabbff"
-        }
-      },
-      edge: {
-        normal: {
-          color: (edge: Edge) => edge.color
-        },
-        hover: {
-          color: (edge: Edge) => edge.color
-        },
-        margin: 4,
-        marker: {
-          source: { type: "arrow" }
-        },
-        gap: 10,
-        keepOrder: "clock"
-      }
-    })
-
-    return { data, configs }
-  },
-})
-</script>
