@@ -28,15 +28,15 @@
     <div v-if="direction !== undefined" class="control">
       Direction:
       <el-select v-model="direction">
-        <el-option label="center" :value="0" />
-        <el-option label="north" :value="1" />
-        <el-option label="north east" :value="2" />
-        <el-option label="east" :value="3" />
-        <el-option label="south east" :value="4" />
-        <el-option label="south" :value="5" />
-        <el-option label="south west" :value="6" />
-        <el-option label="west" :value="7" />
-        <el-option label="north west" :value="8" />
+        <el-option label="center" value="center" />
+        <el-option label="north" value="north" />
+        <el-option label="north east" value="north-east" />
+        <el-option label="east" value="east" />
+        <el-option label="south east" value="south-east" />
+        <el-option label="south" value="south" />
+        <el-option label="south west" value="south-west" />
+        <el-option label="west" value="west" />
+        <el-option label="north west" value="north-west" />
       </el-select>
     </div>
     <div v-if="location !== undefined" class="control">
@@ -49,7 +49,7 @@
     </div>
     <div class="control">
       Margin:
-      <el-slider v-model="margin" :min="0" :max="32" :step="1" :disabled="direction == 0" />
+      <el-slider v-model="margin" :min="0" :max="32" :step="1" :disabled="direction == 'center'" />
     </div>
     <div v-if="lineHeight !== null" class="control">
       Line height:
@@ -60,14 +60,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, WritableComputedRef } from "vue"
+import { NodeLabelDirectionType } from "v-network-graph"
+import { defineComponent, computed, PropType, WritableComputedRef } from "vue"
 
 export default defineComponent({
   props: {
     visible: {
       type: Boolean,
       required: false,
-      default: undefined
+      default: undefined,
     },
     fontFamily: {
       type: String,
@@ -91,14 +92,14 @@ export default defineComponent({
       required: true,
     },
     direction: {
-      type: Number,
+      type: String as PropType<NodeLabelDirectionType>,
       required: false,
-      default: undefined
+      default: undefined,
     },
     location: {
       type: String,
       required: false,
-      default: undefined
+      default: undefined,
     },
   },
   emits: [
