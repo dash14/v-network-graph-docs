@@ -1,9 +1,9 @@
+<script setup lang="ts">
+import data from "./data"
+</script>
+
 <template>
-  <v-network-graph
-    :nodes="data.nodes"
-    :edges="data.edges"
-    :layouts="data.layouts"
-  >
+  <v-network-graph :nodes="data.nodes" :edges="data.edges" :layouts="data.layouts">
     <template
       #override-node-label="{ nodeId, scale, text, x, y, config, textAnchor, dominantBaseline }"
     >
@@ -28,14 +28,3 @@
     </template>
   </v-network-graph>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    return { data }
-  },
-})
-</script>

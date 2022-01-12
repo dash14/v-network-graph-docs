@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import data from "./data"
+</script>
+
 <template>
   <v-network-graph
     :nodes="data.nodes"
@@ -10,14 +14,3 @@
     </template>
   </v-network-graph>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    return { data }
-  },
-})
-</script>

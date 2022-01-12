@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { Edge } from "v-network-graph"
+import data from "./data"
+
+function summarizedEdgeLabel(edges: Record<string, Edge>) {
+  const edgeList = Object.values(edges)
+  return `${edgeList[0].label}~${edgeList[edgeList.length - 1].label}`
+}
+</script>
+
 <template>
   <v-network-graph
     :nodes="data.nodes"
@@ -20,21 +30,3 @@
     </template>
   </v-network-graph>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue"
-import { Edge } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    return { data }
-  },
-  methods: {
-    summarizedEdgeLabel(edges: Record<string, Edge>) {
-      const edgeList = Object.values(edges)
-      return `${edgeList[0].label}~${edgeList[edgeList.length - 1].label}`
-    }
-  }
-})
-</script>
