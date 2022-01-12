@@ -28,7 +28,7 @@ The positional coordinates of each node can be specified.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/01_basic/SetLayouts.vue{5,25-32}
+  <<< @/.vitepress/components/01_basic/SetLayouts.vue{13-20,27}
 
 </template>
 </demo-tabs>
@@ -42,7 +42,7 @@ you can get the position changes by dragging nodes reactively.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/01_basic/SetLayoutsReactive.vue{3,26-33}
+  <<< @/.vitepress/components/01_basic/SetLayoutsReactive.vue{15-22,30}
 
 </template>
 </demo-tabs>
