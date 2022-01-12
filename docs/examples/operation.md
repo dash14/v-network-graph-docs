@@ -18,7 +18,7 @@ on the network graph by setting a value to the same prop.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/03_operation/01/SelectNodes.vue{29,46-51}
+  <<< @/.vitepress/components/03_operation/01/SelectNodes.vue{8-13,57}
 
 </template>
 <template v-slot:data>
@@ -44,7 +44,7 @@ on the network graph by setting a value to the same prop.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/03_operation/02/SelectEdges.vue{29,46-51}
+  <<< @/.vitepress/components/03_operation/02/SelectEdges.vue{8-13,63}
 
 </template>
 <template v-slot:data>
@@ -69,7 +69,7 @@ Multiple edges can be placed between the same two nodes.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/03_operation/03/AddElements.vue{47-68}
+  <<< @/.vitepress/components/03_operation/03/AddElements.vue{14-39}
 
 </template>
 <template v-slot:data>
@@ -93,7 +93,7 @@ of each node.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/03_operation/04/NodeSelectable.vue{38-43}
+  <<< @/.vitepress/components/03_operation/04/NodeSelectable.vue{8-13}
 
 </template>
 <template v-slot:data>
@@ -117,7 +117,7 @@ each edge.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/03_operation/05/EdgeSelectable.vue{43}
+  <<< @/.vitepress/components/03_operation/05/EdgeSelectable.vue{13}
 
 </template>
 <template v-slot:data>

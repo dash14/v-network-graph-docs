@@ -1,3 +1,44 @@
+<script setup lang="ts">
+import { reactive, ref } from "vue"
+import { Nodes, Edges } from "v-network-graph"
+import data from "./data"
+
+const nodes: Nodes = reactive({ ...data.nodes })
+const edges: Edges = reactive({ ...data.edges })
+const nextNodeIndex = ref(Object.keys(nodes).length + 1)
+const nextEdgeIndex = ref(Object.keys(edges).length + 1)
+
+const selectedNodes = ref<string[]>([])
+const selectedEdges = ref<string[]>([])
+
+function addNode() {
+  const nodeId = `node${nextNodeIndex.value}`
+  const name = `N${nextNodeIndex.value}`
+  nodes[nodeId] = { name }
+  nextNodeIndex.value++
+}
+
+function removeNode() {
+  for (const nodeId of selectedNodes.value) {
+    delete nodes[nodeId]
+  }
+}
+
+function addEdge() {
+  if (selectedNodes.value.length !== 2) return
+  const [source, target] = selectedNodes.value
+  const edgeId = `edge${nextEdgeIndex.value}`
+  edges[edgeId] = { source, target }
+  nextEdgeIndex.value++
+}
+
+function removeEdge() {
+  for (const edgeId of selectedEdges.value) {
+    delete edges[edgeId]
+  }
+}
+</script>
+
 <template>
   <div class="demo-control-panel">
     <div>
@@ -21,55 +62,3 @@
     :configs="data.configs"
   />
 </template>
-
-<script lang="ts">
-import { defineComponent, reactive, ref } from "vue"
-import { Nodes, Edges } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const nodes: Nodes = reactive(data.nodes)
-    const edges: Edges = reactive(data.edges)
-    const nextNodeIndex = ref(Object.keys(nodes).length + 1)
-    const nextEdgeIndex = ref(Object.keys(edges).length + 1)
-
-    const selectedNodes = ref<string[]>([])
-    const selectedEdges = ref<string[]>([])
-
-    return {
-      nodes,
-      edges,
-      data,
-      nextNodeIndex,
-      nextEdgeIndex,
-      selectedNodes,
-      selectedEdges,
-    }
-  },
-  methods: {
-    addNode() {
-      const nodeId = `node${this.nextNodeIndex}`
-      const name = `N${this.nextNodeIndex}`
-      this.nodes[nodeId] = { name }
-      this.nextNodeIndex++
-    },
-    removeNode() {
-      for (const nodeId of this.selectedNodes) {
-        delete this.nodes[nodeId]
-      }
-    },
-    addEdge() {
-      if (this.selectedNodes.length !== 2) return
-      const [source, target] = this.selectedNodes
-      const edgeId = `node${this.nextNodeIndex++}`
-      this.edges[edgeId] = { source, target }
-    },
-    removeEdge() {
-      for (const edgeId of this.selectedEdges) {
-        delete this.edges[edgeId]
-      }
-    },
-  },
-})
-</script>
