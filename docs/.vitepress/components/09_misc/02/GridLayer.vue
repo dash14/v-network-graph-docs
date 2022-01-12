@@ -1,3 +1,30 @@
+<script setup lang="ts">
+import { reactive } from "vue"
+import { GridLayout } from "v-network-graph"
+import data from "./data"
+
+const configs = reactive({
+  view: {
+    grid: {
+      visible: true,
+      interval: 10,
+      thickIncrements: 5,
+      line: {
+        color: "#e0e0e0",
+        width: 1,
+        dasharray: 1,
+      },
+      thick: {
+        color: "#cccccc",
+        width: 1,
+        dasharray: 0,
+      },
+    },
+    layoutHandler: new GridLayout({ grid: 10 }),
+  },
+})
+</script>
+
 <template>
   <div class="demo-control-panel">
     <demo-grid-panel
@@ -20,36 +47,3 @@
     :configs="configs"
   />
 </template>
-
-<script lang="ts">
-import { defineComponent, reactive } from "vue"
-import { GridLayout } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const configs = reactive({
-      view: {
-        grid: {
-          visible: true,
-          interval: 10,
-          thickIncrements: 5,
-          line: {
-            color: "#e0e0e0",
-            width: 1,
-            dasharray: 1,
-          },
-          thick: {
-            color: "#cccccc",
-            width: 1,
-            dasharray: 0,
-          },
-        },
-        layoutHandler: new GridLayout({ grid: 10 }),
-      },
-    })
-
-    return { data, configs }
-  },
-})
-</script>

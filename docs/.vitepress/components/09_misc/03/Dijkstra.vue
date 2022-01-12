@@ -1,21 +1,6 @@
-<template>
-  <v-network-graph
-    :nodes="data.nodes"
-    :edges="data.edges"
-    :paths="paths"
-    :layouts="data.layouts"
-    :configs="data.configs"
-    :event-handlers="eventHandlers"
-  >
-    <template #edge-label="{ edge, ...slotProps }">
-      <v-edge-label :text="`${edge.cost}`" align="center" vertical-align="below" v-bind="slotProps" />
-    </template>
-  </v-network-graph>
-</template>
-
-<script lang="ts">
-import { defineComponent, ref, watchEffect } from "vue"
-import { Edges, VEdgeLabel, EventHandlers, NodeEvent, Paths } from "v-network-graph"
+<script setup lang="ts">
+import { ref, watchEffect } from "vue"
+import { Edges, VEdgeLabel, EventHandlers, Paths } from "v-network-graph"
 import data from "./data"
 
 // -------------------------------------------------------------
@@ -23,12 +8,12 @@ import data from "./data"
 // ref. https://github.com/andrewhayward/dijkstra
 // -------------------------------------------------------------
 
-type GraphMap = {[key: string]: {[key: string]: number}}
-type EdgeMap = {[key: string]: {[key: string]: string}}
+type GraphMap = { [key: string]: { [key: string]: number } }
+type EdgeMap = { [key: string]: { [key: string]: string } }
 
 class Graph {
-  map: GraphMap;
-  edgeMap: EdgeMap;
+  map: GraphMap
+  edgeMap: EdgeMap
 
   _sorter = function (a: string, b: string) {
     return parseFloat(a) - parseFloat(b)
@@ -84,7 +69,8 @@ class Graph {
   }
 
   _extractKeys(obj: object) {
-    const keys = []; let key
+    const keys = []
+    let key
     for (key in obj) {
       Object.prototype.hasOwnProperty.call(obj, key) && keys.push(key)
     }
@@ -94,12 +80,14 @@ class Graph {
   _findPaths(map: GraphMap, start: string, end: string) {
     const costs: { [key: string]: number } = {}
     const open: { [key: string]: string[] } = { 0: [start] }
-    const predecessors: {[key:string]: string} = {}
+    const predecessors: { [key: string]: string } = {}
     let keys
 
     const addToOpen = function (cost: number, vertex: string) {
-      const key = '' + cost
-      if (!open[key]) { open[key] = [] }
+      const key = "" + cost
+      if (!open[key]) {
+        open[key] = []
+      }
       open[key].push(vertex)
     }
 
@@ -107,17 +95,21 @@ class Graph {
 
     // eslint-disable-next-line no-unmodified-loop-condition
     while (open) {
-      if (!(keys = this._extractKeys(open)).length) { break }
+      if (!(keys = this._extractKeys(open)).length) {
+        break
+      }
 
       keys.sort(this._sorter)
 
       const key = keys[0]
       const bucket = open[key]
-      const node = bucket.shift() || ''
+      const node = bucket.shift() || ""
       const currentCost = parseFloat(key)
       const adjacentNodes = map[node] || {}
 
-      if (!bucket.length) { delete open[key] }
+      if (!bucket.length) {
+        delete open[key]
+      }
 
       for (const vertex in adjacentNodes) {
         if (Object.prototype.hasOwnProperty.call(adjacentNodes, vertex)) {
@@ -125,7 +117,7 @@ class Graph {
           const totalCost = cost + currentCost
           const vertexCost = costs[vertex]
 
-          if ((vertexCost === undefined) || (vertexCost > totalCost)) {
+          if (vertexCost === undefined || vertexCost > totalCost) {
             costs[vertex] = totalCost
             addToOpen(totalCost, vertex)
             predecessors[vertex] = node
@@ -141,7 +133,7 @@ class Graph {
     }
   }
 
-  _extractShortest(predecessors: {[key:string]: string}, end: string) {
+  _extractShortest(predecessors: { [key: string]: string }, end: string) {
     const nodes = []
     let u = end
 
@@ -156,14 +148,14 @@ class Graph {
 
   _findShortestPath(map: GraphMap, nodes: string[]) {
     nodes = [...nodes] // copy
-    let start = nodes.shift() || ''
+    let start = nodes.shift() || ""
     let end: string
     let predecessors
     const path: string[] = []
     let shortest
 
     while (nodes.length) {
-      end = nodes.shift() || ''
+      end = nodes.shift() || ""
       predecessors = this._findPaths(map, start, end)
 
       if (predecessors) {
@@ -182,35 +174,42 @@ class Graph {
   }
 }
 
-export default defineComponent({
-  components: { VEdgeLabel },
-  setup() {
-    const paths = ref<Paths>([])
+const paths = ref<Paths>([])
 
-    const targetNode = ref("node12")
-    watchEffect(() => {
-      const graph = new Graph(data.edges)
-      const routeOfNodes = graph.findShortestPath(["node1", targetNode.value])
-      if (routeOfNodes) {
-        const routeOfEdges = graph.convertNodesToEdges(routeOfNodes)
-        paths.value = [
-          { edges: routeOfEdges }
-        ]
-      }
-    })
-
-    const eventHandlers: EventHandlers = {
-      "node:pointerover": ({ node }) => {
-        if (node === "node1") return
-         targetNode.value = node
-      }
-    }
-
-    return {
-      data,
-      paths,
-      eventHandlers,
-    }
-  },
+const targetNode = ref("node12")
+watchEffect(() => {
+  const graph = new Graph(data.edges)
+  const routeOfNodes = graph.findShortestPath(["node1", targetNode.value])
+  if (routeOfNodes) {
+    const routeOfEdges = graph.convertNodesToEdges(routeOfNodes)
+    paths.value = [{ edges: routeOfEdges }]
+  }
 })
+
+const eventHandlers: EventHandlers = {
+  "node:pointerover": ({ node }) => {
+    if (node === "node1") return
+    targetNode.value = node
+  },
+}
 </script>
+
+<template>
+  <v-network-graph
+    :nodes="data.nodes"
+    :edges="data.edges"
+    :paths="paths"
+    :layouts="data.layouts"
+    :configs="data.configs"
+    :event-handlers="eventHandlers"
+  >
+    <template #edge-label="{ edge, ...slotProps }">
+      <v-edge-label
+        :text="`${edge.cost}`"
+        align="center"
+        vertical-align="below"
+        v-bind="slotProps"
+      />
+    </template>
+  </v-network-graph>
+</template>
