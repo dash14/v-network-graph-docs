@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
-import { VNetworkGraphInstance, EventHandlers } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 // ref="graph"
-const graph = ref<VNetworkGraphInstance>()
+const graph = ref<vNG.Instance>()
 
 const nodes = reactive({ ...data.nodes })
 const layouts = reactive(data.layouts)
 let nextNodeIndex = Object.keys(nodes).length + 1
 
-const eventHandlers: EventHandlers = {
+const eventHandlers: vNG.EventHandlers = {
   "view:click": ({ event }) => {
     if (!graph.value) return
 

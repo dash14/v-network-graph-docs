@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { VNetworkGraphInstance } from "v-network-graph"
+import * as vNG from "v-network-graph"
 
 const nodes = {
   node1: { name: "Node 1" },
@@ -21,17 +21,17 @@ const layouts = {
     node4: { x: 150, y: 50 },
   },
 }
-const configs = {
+const configs = vNG.defineConfigs({
   view: {
     minZoomLevel: 0.1,
     maxZoomLevel: 16,
   },
-}
+})
 
 const zoomLevel = ref(1)
 
 // ref="graph"
-const graph = ref<VNetworkGraphInstance>()
+const graph = ref<vNG.Instance>()
 </script>
 
 <template>

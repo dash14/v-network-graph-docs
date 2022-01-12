@@ -6,8 +6,8 @@ import data from "./data"
 const selectedEdges = ref<string[]>([])
 
 // If you want to change the configuration object later,
-// you can use a function (`getFullConfigs()`) that can
-// also get the type information of the configuration object.
+// you can use `getFullConfigs()` that can also get the
+// type information of the configuration object.
 const configs = reactive(vNG.getFullConfigs())
 
 configs.edge.selectable = true

@@ -14,7 +14,7 @@ will change as you zoom.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/01/ScaleObjects.vue{6-10}
+  <<< @/.vitepress/components/02_layout/01/ScaleObjects.vue{6-14}
 
 </template>
 <template v-slot:data>
@@ -65,7 +65,7 @@ will return it to the position of the d3-force calculation result.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/03/D3Force.vue{4,17-34}
+  <<< @/.vitepress/components/02_layout/03/D3Force.vue{4,18-35}
 
 </template>
 </demo-tabs>
@@ -88,7 +88,7 @@ This behavior will be revised in the future.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/04/D3ForceFixed.vue{17-26}
+  <<< @/.vitepress/components/02_layout/04/D3ForceFixed.vue{13-22}
 
 <script setup>
 import DemoScaleObjects from '../.vitepress/components/02_layout/01/ScaleObjects.vue'

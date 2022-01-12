@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { GridLayout } from "v-network-graph"
+import { defineConfigs, GridLayout } from "v-network-graph"
 import data from "./data"
 
-const configs = {
+const configs = defineConfigs({
   view: {
     layoutHandler: new GridLayout({ grid: 15 }),
   },
-}
+})
 </script>
 
 <template>

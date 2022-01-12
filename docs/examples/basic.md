@@ -77,7 +77,7 @@ each be enabled/disabled.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/01_basic/DisablePanZoom.vue{12,40-48}
+  <<< @/.vitepress/components/01_basic/DisablePanZoom.vue{28-36}
 
 </template>
 </demo-tabs>

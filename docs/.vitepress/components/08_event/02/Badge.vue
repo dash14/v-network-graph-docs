@@ -11,8 +11,8 @@ const layers = {
 
 // wrap with reactive() for immediate response to
 // value changes
-const nodes = reactive(data.nodes)
-const layouts = reactive(data.layouts)
+const nodes = reactive({ ...data.nodes })
+const layouts = reactive({ ...data.layouts })
 
 const edges = data.edges
 const configs = data.configs
@@ -34,7 +34,7 @@ const eventHandlers: EventHandlers = {
     :layers="layers"
     :event-handlers="eventHandlers"
   >
-    <!-- Addtional layer -->
+    <!-- Additional layer -->
     <template #badge="{ scale }">
       <!--
         If the `view.scalingObjects` config is `false`(default),

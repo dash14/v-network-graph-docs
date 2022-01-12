@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { VNetworkGraphInstance } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import { withBase } from "vitepress"
 import data from "./data"
 
@@ -11,7 +11,7 @@ const layers = {
 }
 
 // ref="graph"
-const graph = ref<VNetworkGraphInstance>()
+const graph = ref<vNG.Instance>()
 
 function onLoadImage() {
   graph.value?.fitToContents()
@@ -29,13 +29,7 @@ function onLoadImage() {
   >
     <!-- Additional layer -->
     <template #worldmap>
-      <image
-        :href="withBase('/worldmap.svg')"
-        x="0"
-        y="0"
-        width="1000px"
-        @load="onLoadImage"
-      />
+      <image :href="withBase('/worldmap.svg')" x="0" y="0" width="1000px" @load="onLoadImage" />
     </template>
   </v-network-graph>
 </template>

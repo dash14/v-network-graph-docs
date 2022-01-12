@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from "vue"
-import { VNetworkGraphInstance, EventHandlers } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 // ref="graph"
-const graph = ref<VNetworkGraphInstance>()
+const graph = ref<vNG.Instance>()
 // ref="tooltip"
 const tooltip = ref<HTMLDivElement>()
 
@@ -29,7 +29,7 @@ const tooltipPos = computed(() => {
 })
 const tooltipOpacity = ref(0) // 0 or 1
 
-const eventHandlers: EventHandlers = {
+const eventHandlers: vNG.EventHandlers = {
   "node:pointerover": ({ node }) => {
     targetNodeId.value = node
     tooltipOpacity.value = 1 // show

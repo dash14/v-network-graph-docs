@@ -1,33 +1,3 @@
-<template>
-  <div class="demo-control-panel appearance">
-    <div>
-      <label>Node:</label>
-      <el-button @click="addSkyBlueNode">Add SkyBlue</el-button>
-      <el-button @click="addHotPinkNode">Add HotPink</el-button>
-      <el-button @click="addGrayNode">Add Gray</el-button>
-      <el-button @click="addBlackNode">Add Black</el-button>
-      <el-button :disabled="selectedNodes.length == 0" @click="removeNode">Remove</el-button>
-    </div>
-    <div>
-      <label>Edge:</label>
-      <el-button :disabled="!isEdgeAddable()" @click="addSkyBlueEdge">Add SkyBlue</el-button>
-      <el-button :disabled="!isEdgeAddable()" @click="addHotPinkEdge">Add HotPink</el-button>
-      <el-button :disabled="!isEdgeAddable()" @click="addGrayEdge">Add Gray</el-button>
-      <el-button :disabled="!isEdgeAddable()" @click="addBlackEdge">Add Black</el-button>
-      <el-button :disabled="selectedEdges.length == 0" @click="removeEdge">Remove</el-button>
-    </div>
-  </div>
-
-  <v-network-graph
-    v-model:selected-nodes="selectedNodes"
-    v-model:selected-edges="selectedEdges"
-    :nodes="nodes"
-    :edges="edges"
-    :layouts="data.layouts"
-    :configs="configs"
-  />
-</template>
-
 <script setup lang="ts">
 import { reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
@@ -39,11 +9,11 @@ const edges = { ...data.edges }
 // In Node and Edge configuration, instead of concrete values,
 // you can specify functions that return a configuration value
 // with each node or edge as an argument.
-// In addition, you can use the `configsWithType` function to
-// specify the argument type of the callback function by
-// explicitly specifying a custom type for Node and Edge.
+// In addition, custom types for Node and Edge can be explicitly
+// specified in `defineConfigs` to specify the argument types
+// for callback functions.
 const configs = reactive(
-  vNG.configsWithType<Node, Edge>({
+  vNG.defineConfigs<Node, Edge>({
     node: {
       normal: {
         type: "circle",
@@ -139,3 +109,33 @@ function isEdgeAddable() {
   return selectedNodes.value.length == 2
 }
 </script>
+
+<template>
+  <div class="demo-control-panel appearance">
+    <div>
+      <label>Node:</label>
+      <el-button @click="addSkyBlueNode">Add SkyBlue</el-button>
+      <el-button @click="addHotPinkNode">Add HotPink</el-button>
+      <el-button @click="addGrayNode">Add Gray</el-button>
+      <el-button @click="addBlackNode">Add Black</el-button>
+      <el-button :disabled="selectedNodes.length == 0" @click="removeNode">Remove</el-button>
+    </div>
+    <div>
+      <label>Edge:</label>
+      <el-button :disabled="!isEdgeAddable()" @click="addSkyBlueEdge">Add SkyBlue</el-button>
+      <el-button :disabled="!isEdgeAddable()" @click="addHotPinkEdge">Add HotPink</el-button>
+      <el-button :disabled="!isEdgeAddable()" @click="addGrayEdge">Add Gray</el-button>
+      <el-button :disabled="!isEdgeAddable()" @click="addBlackEdge">Add Black</el-button>
+      <el-button :disabled="selectedEdges.length == 0" @click="removeEdge">Remove</el-button>
+    </div>
+  </div>
+
+  <v-network-graph
+    v-model:selected-nodes="selectedNodes"
+    v-model:selected-edges="selectedEdges"
+    :nodes="nodes"
+    :edges="edges"
+    :layouts="data.layouts"
+    :configs="configs"
+  />
+</template>

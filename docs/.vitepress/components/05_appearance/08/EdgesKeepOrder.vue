@@ -1,29 +1,31 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { Edge } from "v-network-graph"
+import { defineConfigs, Edge } from "v-network-graph"
 import data from "./data"
 
-const configs = reactive({
-  node: {
-    normal: {
-      color: "#aabbff",
+const configs = reactive(
+  defineConfigs({
+    node: {
+      normal: {
+        color: "#aabbff",
+      },
     },
-  },
-  edge: {
-    normal: {
-      color: (edge: Edge) => edge.color,
+    edge: {
+      normal: {
+        color: (edge: Edge) => edge.color,
+      },
+      hover: {
+        color: (edge: Edge) => edge.color,
+      },
+      margin: 4,
+      marker: {
+        source: { type: "arrow" },
+      },
+      gap: 10,
+      keepOrder: "clock",
     },
-    hover: {
-      color: (edge: Edge) => edge.color,
-    },
-    margin: 4,
-    marker: {
-      source: { type: "arrow" },
-    },
-    gap: 10,
-    keepOrder: "clock",
-  },
-})
+  })
+)
 </script>
 
 <template>

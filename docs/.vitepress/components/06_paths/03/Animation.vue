@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Paths, UserConfigs } from "v-network-graph"
+import { defineConfigs, Paths } from "v-network-graph"
 import data from "./data"
 
 const paths: Paths = [
@@ -7,7 +7,7 @@ const paths: Paths = [
   { edges: ["edge2", "edge4", "edge6", "edge10"] },
 ]
 
-const configs: UserConfigs = {
+const configs = defineConfigs({
   node: {
     normal: { type: "circle", radius: 20, color: "#99ccff" },
     hover: { color: "#88bbff" },
@@ -26,7 +26,7 @@ const configs: UserConfigs = {
       animationSpeed: 40,
     },
   },
-}
+})
 </script>
 
 <template>

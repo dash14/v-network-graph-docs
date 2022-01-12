@@ -1,34 +1,37 @@
 <script setup lang="ts">
+import { defineConfigs } from "v-network-graph"
 import { reactive, ref } from "vue"
 import data from "./data"
 
 const verticalAlign = ref("above")
 
-const configs = reactive({
-  node: {
-    label: {
-      visible: false,
-    },
-  },
-  edge: {
-    label: {
-      fontFamily: undefined,
-      fontSize: 11,
-      lineHeight: 1.1,
-      color: "#000000",
-      margin: 4,
-      background: {
-        visible: true,
-        color: "#ffffff",
-        padding: {
-          vertical: 1,
-          horizontal: 4,
-        },
-        borderRadius: 2,
+const configs = reactive(
+  defineConfigs({
+    node: {
+      label: {
+        visible: false,
       },
     },
-  },
-})
+    edge: {
+      label: {
+        fontFamily: undefined,
+        fontSize: 11,
+        lineHeight: 1.1,
+        color: "#000000",
+        margin: 4,
+        background: {
+          visible: true,
+          color: "#ffffff",
+          padding: {
+            vertical: 1,
+            horizontal: 4,
+          },
+          borderRadius: 2,
+        },
+      },
+    },
+  })
+)
 </script>
 
 <template>

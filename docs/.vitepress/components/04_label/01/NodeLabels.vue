@@ -1,22 +1,24 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { NodeLabelDirection } from "v-network-graph"
+import { defineConfigs } from "v-network-graph"
 import data from "./data"
 
-const configs = reactive({
-  node: {
-    label: {
-      visible: true,
-      fontFamily: undefined,
-      fontSize: 11,
-      lineHeight: 1.1,
-      color: "#000000",
-      margin: 4,
-      direction: NodeLabelDirection.SOUTH,
-      text: "name",
+const configs = reactive(
+  defineConfigs({
+    node: {
+      label: {
+        visible: true,
+        fontFamily: undefined,
+        fontSize: 11,
+        lineHeight: 1.1,
+        color: "#000000",
+        margin: 4,
+        direction: "south",
+        text: "name",
+      },
     },
-  },
-})
+  })
+)
 </script>
 
 <template>

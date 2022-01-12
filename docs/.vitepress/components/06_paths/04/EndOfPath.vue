@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { Paths } from "v-network-graph"
+import { defineConfigs, Paths } from "v-network-graph"
 import data from "./data"
 
 const paths: Paths = [
@@ -8,43 +8,45 @@ const paths: Paths = [
   { edges: ["edge2", "edge4", "edge6", "edge10"] },
 ]
 
-const configs = reactive({
-  node: {
-    normal: {
-      type: "circle",
-      radius: 20,
-      color: "#99ccff",
+const configs = reactive(
+  defineConfigs({
+    node: {
+      normal: {
+        type: "circle",
+        radius: 20,
+        color: "#99ccff",
+      },
+      hover: {
+        color: "#88bbff",
+      },
+      label: {
+        visible: false,
+        fontSize: 8,
+      },
     },
-    hover: {
-      color: "#88bbff",
+    edge: {
+      gap: 12,
+      normal: {
+        color: "#6699cc",
+      },
     },
-    label: {
-      visible: false,
-      fontSize: 8,
-    },
-  },
-  edge: {
-    gap: 12,
-    normal: {
-      color: "#6699cc",
-    },
-  },
-  path: {
-    visible: true,
-    curveInNode: false,
-    end: "centerOfNode", // "centerOfNode" or "edgeOfNode"
-    margin: 0,
     path: {
-      width: 10,
-      color: "#ff800088",
-      dasharray: "",
-      linecap: "round",
-      linejoin: "round",
-      animate: false,
-      animationSpeed: 50,
+      visible: true,
+      curveInNode: false,
+      end: "centerOfNode", // "centerOfNode" or "edgeOfNode"
+      margin: 0,
+      path: {
+        width: 10,
+        color: "#ff800088",
+        dasharray: "",
+        linecap: "round",
+        linejoin: "round",
+        animate: false,
+        animationSpeed: 50,
+      },
     },
-  },
-})
+  })
+)
 </script>
 
 <template>

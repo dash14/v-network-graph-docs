@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { UserConfigs } from "v-network-graph"
+import { defineConfigs } from "v-network-graph"
 import data from "./data"
 
-const configs: UserConfigs = {
+const configs = defineConfigs({
   node: {
     selectable: true,
     normal: {
@@ -35,7 +35,7 @@ const configs: UserConfigs = {
       color: "#ff00dd",
     },
   },
-}
+})
 </script>
 
 <template>

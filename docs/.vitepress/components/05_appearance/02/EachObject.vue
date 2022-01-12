@@ -45,11 +45,11 @@ const layouts = {
 // In Node and Edge configuration, instead of concrete values,
 // you can specify functions that return a configuration value
 // with each node or edge as an argument.
-// In addition, you can use the `configsWithType` function to
-// specify the argument type of the callback function by
-// explicitly specifying a custom type for Node and Edge.
+// In addition, custom types for Node and Edge can be explicitly
+// specified in `defineConfigs` to specify the argument types
+// for callback functions.
 const configs = reactive(
-  vNG.configsWithType<Node, Edge>({
+  vNG.defineConfigs<Node, Edge>({
     node: {
       normal: {
         type: "circle",

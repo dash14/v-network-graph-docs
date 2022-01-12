@@ -38,7 +38,7 @@ This is an example of adding an image layer to the behind of a network graph.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/07_layer/01/Map.vue{7-11,28,30-39}
+<<< @/.vitepress/components/07_layer/01/Map.vue{7-11,28,30-33}
 
 </template>
 <template v-slot:data>

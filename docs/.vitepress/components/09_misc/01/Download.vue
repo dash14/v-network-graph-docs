@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
-import { VNetworkGraphInstance, Nodes, Edges } from "v-network-graph"
+import * as vNG from "v-network-graph"
+import { Nodes, Edges } from "v-network-graph"
 import { Download } from "@element-plus/icons"
 import data from "./data"
 
@@ -13,7 +14,7 @@ const selectedNodes = ref<string[]>([])
 const selectedEdges = ref<string[]>([])
 
 // ref="graph"
-const graph = ref<VNetworkGraphInstance>()
+const graph = ref<vNG.Instance>()
 
 function downloadAsSvg() {
   if (!graph.value) return

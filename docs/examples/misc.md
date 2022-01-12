@@ -11,7 +11,7 @@ In this example, the SVG data is downloaded.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/09_misc/01/Download.vue{18-27}
+  <<< @/.vitepress/components/09_misc/01/Download.vue{19-28}
 
 </template>
 <template v-slot:data>
@@ -29,7 +29,7 @@ In this example, the SVG data is downloaded.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/09_misc/02/GridLayer.vue{8-22}
+  <<< @/.vitepress/components/09_misc/02/GridLayer.vue{9-23}
 
 </template>
 <template v-slot:data>

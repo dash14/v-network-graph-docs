@@ -84,7 +84,7 @@ Multiple edges can be placed between the same two nodes.
 
 `configs.node.selectable` and `configs.node.draggable` can specify a
 function that takes a node object as an argument and returns a boolean.
-By the return value, it is possible to specify the selectablility/draggability
+By the return value, it is possible to specify the selectability/draggability
 of each node.
 
 <demo-tabs :use-data="true">
@@ -108,7 +108,7 @@ of each node.
 
 `configs.edge.selectable` can specify a function that takes a edge
 object as an argument and returns a boolean.
-By the return value, it is possible to specify the selectablility of
+By the return value, it is possible to specify the selectability of
 each edge.
 
 <demo-tabs :use-data="true" hint="The edge of [N1=N3] is set to be unselectable">
@@ -117,7 +117,7 @@ each edge.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/03_operation/05/EdgeSelectable.vue{13}
+  <<< @/.vitepress/components/03_operation/05/EdgeSelectable.vue{14}
 
 </template>
 <template v-slot:data>

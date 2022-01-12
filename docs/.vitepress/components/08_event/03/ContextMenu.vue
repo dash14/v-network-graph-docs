@@ -19,7 +19,7 @@ function showContextMenu(element: HTMLElement, event: MouseEvent) {
 const viewMenu = ref<HTMLDivElement>()
 function showViewContextMenu(params: ViewEvent<MouseEvent>) {
   const { event } = params
-  // Disable brawser's default context menu
+  // Disable browser's default context menu
   event.stopPropagation()
   event.preventDefault()
   if (viewMenu.value) {
@@ -31,7 +31,7 @@ const nodeMenu = ref<HTMLDivElement>()
 const menuTargetNode = ref("")
 function showNodeContextMenu(params: NodeEvent<MouseEvent>) {
   const { node, event } = params
-  // Disable brawser's default context menu
+  // Disable browser's default context menu
   event.stopPropagation()
   event.preventDefault()
   if (nodeMenu.value) {
@@ -44,7 +44,7 @@ const edgeMenu = ref<HTMLDivElement>()
 const menuTargetEdges = ref<string[]>([])
 function showEdgeContextMenu(params: EdgeEvent<MouseEvent>) {
   const { event } = params
-  // Disable brawser's default context menu
+  // Disable browser's default context menu
   event.stopPropagation()
   event.preventDefault()
   if (edgeMenu.value) {

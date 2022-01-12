@@ -32,7 +32,7 @@ UserConfigs, you can specify the argument type of the function.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/02/EachObject.vue{52-77}
+  <<< @/.vitepress/components/05_appearance/02/EachObject.vue{52-78}
 
 </template>
 </demo-tabs>
@@ -119,7 +119,7 @@ Markers such as arrow head can be specified for edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/06/Arrow.vue{40-57}
+  <<< @/.vitepress/components/05_appearance/06/Arrow.vue{42-59}
 
 </template>
 <template v-slot:data>
@@ -298,7 +298,7 @@ edges appear in the given edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/08/EdgesKeepOrder.vue{24}
+  <<< @/.vitepress/components/05_appearance/08/EdgesKeepOrder.vue{25}
 
 </template>
 <template v-slot:data>

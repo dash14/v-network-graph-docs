@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { UserConfigs } from "v-network-graph"
-import data from "./data"
+import * as vNG from "v-network-graph"
+import { defineConfigs } from "v-network-graph"
+import data, { Edge } from "./data"
 
 const selectedEdges = ref<string[]>([])
 
-const configs: UserConfigs = {
+const configs = defineConfigs<vNG.Node, Edge>({
   edge: {
     normal: {
       width: 3,
     },
     selectable: e => e.selectable,
   },
-}
+})
 </script>
 
 <template>

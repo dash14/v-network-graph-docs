@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { UserConfigs, NodeLabelDirection } from "v-network-graph"
+import { defineConfigs } from "v-network-graph"
 import data from "./data"
 
-const configs: UserConfigs = {
+const configs = defineConfigs({
   node: {
     selectable: true,
     normal: {
@@ -21,7 +21,7 @@ const configs: UserConfigs = {
     label: {
       fontSize: 16,
       color: "#000000",
-      direction: NodeLabelDirection.NORTH,
+      direction: "north",
     },
   },
   edge: {
@@ -35,7 +35,7 @@ const configs: UserConfigs = {
       color: "#ff5500",
     },
   },
-}
+})
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { EventHandlers, UserConfigs } from "v-network-graph"
+import { defineConfigs, EventHandlers } from "v-network-graph"
 import data from "./data"
 
 const ACTIVE = "#00ee00"
@@ -8,7 +8,7 @@ const INACTIVE = "#ff0000"
 
 const nodes = reactive(data.nodes)
 
-const configs: UserConfigs = {
+const configs = defineConfigs({
   node: {
     normal: {
       radius: 16,
@@ -49,7 +49,7 @@ const configs: UserConfigs = {
       },
     },
   },
-}
+})
 
 const eventHandlers: EventHandlers = {
   "node:click": ({ node }) => {

@@ -22,6 +22,7 @@ onMounted(() => {
     }
   }, 1000)
 })
+
 onUnmounted(() => {
   if (timerId) {
     clearInterval(timerId)

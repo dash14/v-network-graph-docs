@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue"
+import { defineConfigs } from "v-network-graph"
 
 const nodes = {
   node1: { name: "Node 1" },
@@ -23,15 +24,17 @@ const layouts = {
   },
 }
 
-const configs = reactive({
-  view: {
-    panEnabled: true,
-    zoomEnabled: true,
-  },
-  node: {
-    draggable: true,
-  },
-})
+const configs = reactive(
+  defineConfigs({
+    view: {
+      panEnabled: true,
+      zoomEnabled: true,
+    },
+    node: {
+      draggable: true,
+    },
+  })
+)
 </script>
 
 <template>

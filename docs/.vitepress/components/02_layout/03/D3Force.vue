@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref, watchEffect } from "vue"
-import { Nodes, Edges } from "v-network-graph"
+import { defineConfigs, Nodes, Edges } from "v-network-graph"
 import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/lib/force-layout"
 
 const nodeCount = ref(20)
@@ -11,31 +11,33 @@ watchEffect(() => {
   buildNetwork(nodeCount.value, nodes, edges)
 })
 
-const configs = reactive({
-  view: {
-    layoutHandler: new ForceLayout({
-      positionFixedByDrag: false,
-      positionFixedByClickWithAltKey: true,
-      // * The following are the default parameters for the simulation.
-      // * You can customize it by uncommenting below.
-      // createSimulation: (d3, nodes, edges) => {
-      //   const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
-      //   return d3
-      //     .forceSimulation(nodes)
-      //     .force("edge", forceLink.distance(100))
-      //     .force("charge", d3.forceManyBody())
-      //     .force("collide", d3.forceCollide(50).strength(0.2))
-      //     .force("center", d3.forceCenter().strength(0.05))
-      //     .alphaMin(0.001)
-      // }
-    }),
-  },
-  node: {
-    label: {
-      visible: false,
+const configs = reactive(
+  defineConfigs({
+    view: {
+      layoutHandler: new ForceLayout({
+        positionFixedByDrag: false,
+        positionFixedByClickWithAltKey: true,
+        // * The following are the default parameters for the simulation.
+        // * You can customize it by uncommenting below.
+        // createSimulation: (d3, nodes, edges) => {
+        //   const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
+        //   return d3
+        //     .forceSimulation(nodes)
+        //     .force("edge", forceLink.distance(100))
+        //     .force("charge", d3.forceManyBody())
+        //     .force("collide", d3.forceCollide(50).strength(0.2))
+        //     .force("center", d3.forceCenter().strength(0.05))
+        //     .alphaMin(0.001)
+        // }
+      }),
     },
-  },
-})
+    node: {
+      label: {
+        visible: false,
+      },
+    },
+  })
+)
 
 function buildNetwork(count: number, nodes: Nodes, edges: Edges) {
   const idNums = [...Array(count)].map((_, i) => i)

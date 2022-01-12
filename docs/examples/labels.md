@@ -11,7 +11,7 @@ be displayed as labels, and change the display position.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/01/NodeLabels.vue{8-17}
+  <<< @/.vitepress/components/04_label/01/NodeLabels.vue{7-20}
 
 </template>
 <template v-slot:data>
@@ -146,7 +146,7 @@ The data being displayed is a random number.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/04/MultipleEdgeLabels.vue{39-57}
+  <<< @/.vitepress/components/04_label/04/MultipleEdgeLabels.vue{40-58}
 
 </template>
 <template v-slot:data>

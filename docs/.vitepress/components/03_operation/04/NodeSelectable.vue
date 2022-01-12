@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { UserConfigs } from "v-network-graph"
-import data from "./data"
+import { defineConfigs } from "v-network-graph"
+import data, { Node } from "./data"
 
 const selectedNodes = ref<string[]>([])
 
-const configs: UserConfigs = {
+const configs = defineConfigs<Node>({
   node: {
     selectable: node => node.selectable,
     draggable: node => node.draggable,
   },
-}
+})
 </script>
 
 <template>

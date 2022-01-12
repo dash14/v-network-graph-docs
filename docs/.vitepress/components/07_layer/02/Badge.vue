@@ -21,7 +21,7 @@ const layouts = reactive(data.layouts)
     :configs="data.configs"
     :layers="layers"
   >
-    <!-- Addtional layer -->
+    <!-- Additional layer -->
     <template #badge="{ scale }">
       <!--
         If the `view.scalingObjects` config is `false`(default),

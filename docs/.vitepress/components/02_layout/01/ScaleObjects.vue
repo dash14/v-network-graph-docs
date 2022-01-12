@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
+import { defineConfigs } from "v-network-graph"
 import data from "./data"
 
-const configs = reactive({
-  view: {
-    scalingObjects: true,
-    minZoomLevel: 0.1,
-    maxZoomLevel: 16,
-  },
-})
+const configs = reactive(
+  defineConfigs({
+    view: {
+      scalingObjects: true,
+      minZoomLevel: 0.1,
+      maxZoomLevel: 16,
+    },
+  })
+)
 
 const zoomLevel = ref(1.5)
 </script>
