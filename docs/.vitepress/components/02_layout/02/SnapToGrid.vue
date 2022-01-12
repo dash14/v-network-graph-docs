@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { GridLayout } from "v-network-graph"
+import data from "./data"
+
+const configs = {
+  view: {
+    layoutHandler: new GridLayout({ grid: 15 }),
+  },
+}
+</script>
+
 <template>
   <v-network-graph
     :nodes="data.nodes"
@@ -6,21 +17,3 @@
     :configs="configs"
   />
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue"
-import { GridLayout } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const configs = {
-      view: {
-        layoutHandler: new GridLayout({ grid: 15 })
-      }
-    }
-
-    return { data, configs }
-  },
-})
-</script>

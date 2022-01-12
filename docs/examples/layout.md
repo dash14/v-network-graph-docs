@@ -14,7 +14,7 @@ will change as you zoom.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/01/ScaleObjects.vue{22-26}
+  <<< @/.vitepress/components/02_layout/01/ScaleObjects.vue{6-10}
 
 </template>
 <template v-slot:data>
@@ -31,7 +31,7 @@ An example of modifying the `view.layoutHandler` config and snapping to
 the grid is shown below.
 
 <demo-tabs
-  :demo-height="250"
+  :demo-height="300"
   :use-data="true"
   message="When you drag a node, it will snap to invisible grids of the specified width."
 >
@@ -40,7 +40,7 @@ the grid is shown below.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/02/SnapToGrid.vue{17-21}
+  <<< @/.vitepress/components/02_layout/02/SnapToGrid.vue{5-9}
 
 </template>
 <template v-slot:data>
@@ -65,7 +65,7 @@ will return it to the position of the d3-force calculation result.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/03/D3Force.vue{14,50-64}
+  <<< @/.vitepress/components/02_layout/03/D3Force.vue{4,17-34}
 
 </template>
 </demo-tabs>
@@ -88,11 +88,7 @@ This behavior will be revised in the future.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/04/D3ForceFixed.vue{47-56}
-
-</template>
-</demo-tabs>
-
+  <<< @/.vitepress/components/02_layout/04/D3ForceFixed.vue{17-26}
 
 <script setup>
 import DemoScaleObjects from '../.vitepress/components/02_layout/01/ScaleObjects.vue'

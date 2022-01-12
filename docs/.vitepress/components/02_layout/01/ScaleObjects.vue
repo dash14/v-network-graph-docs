@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { reactive, ref } from "vue"
+import data from "./data"
+
+const configs = reactive({
+  view: {
+    scalingObjects: true,
+    minZoomLevel: 0.1,
+    maxZoomLevel: 16,
+  },
+})
+
+const zoomLevel = ref(1.5)
+</script>
+
 <template>
   <div class="demo-control-panel">
     <el-checkbox v-model="configs.view.scalingObjects">Scaling objects</el-checkbox>
@@ -12,24 +27,3 @@
     :configs="configs"
   />
 </template>
-
-<script lang="ts">
-import { defineComponent, reactive, ref } from "vue"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const configs = reactive({
-      view: {
-        scalingObjects: true,
-        minZoomLevel: 0.1,
-        maxZoomLevel: 16,
-      }
-    })
-
-    const zoomLevel = ref(1.5)
-
-    return { data, configs, zoomLevel }
-  },
-})
-</script>
