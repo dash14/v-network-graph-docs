@@ -9,7 +9,7 @@ const graph = ref<vNG.Instance>()
 const tooltip = ref<HTMLDivElement>()
 
 // positions of the center of nodes
-const layouts = reactive(data.layouts)
+const layouts = ref(data.layouts)
 
 const NODE_RADIUS = 16
 const targetNodeId = ref("")
@@ -18,7 +18,7 @@ const tooltipPos = computed(() => {
   if (!graph.value || !tooltip.value) return { x: 0, y: 0 }
   if (!targetNodeId.value) return { x: 0, y: 0 }
 
-  const nodePos = layouts.nodes[targetNodeId.value]
+  const nodePos = layouts.value.nodes[targetNodeId.value]
   // translate coordinates: SVG -> DOM
   const domPoint = graph.value.translateFromSvgToDomCoordinates(nodePos)
   // calculates top-left position of the tooltip.

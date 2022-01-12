@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from "vue"
+import { ref } from "vue"
 import data from "./data"
 
 // additional layers definition
@@ -8,9 +8,8 @@ const layers = {
   badge: "nodes",
 }
 
-// wrap with reactive() for immediate response to
-// position changes
-const layouts = reactive(data.layouts)
+// wrap with ref() for immediate response to value changes
+const layouts = ref(data.layouts)
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from "vue"
+import { reactive, ref } from "vue"
 import { defineConfigs, Nodes, Edges } from "v-network-graph"
 import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/lib/force-layout"
 
@@ -9,7 +9,7 @@ const nodes = reactive({})
 const edges = reactive({})
 
 // The fixed position of the node can be specified.
-const layouts = reactive({
+const layouts = ref({
   nodes: {
     node0: {
       x: 0,

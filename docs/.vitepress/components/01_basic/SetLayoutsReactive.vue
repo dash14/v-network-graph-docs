@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, computed } from "vue"
+import { ref, computed } from "vue"
 
 const nodes = {
   node1: { name: "Node 1" },
@@ -12,7 +12,7 @@ const edges = {
   edge2: { source: "node2", target: "node3" },
   edge3: { source: "node3", target: "node4" },
 }
-const layouts = reactive({
+const layouts = ref({
   nodes: {
     node1: { x: 0, y: 0 },
     node2: { x: 50, y: 50 },
@@ -21,7 +21,7 @@ const layouts = reactive({
   },
 })
 const layoutsText = computed(() => {
-  return JSON.stringify(layouts, null, 2)
+  return JSON.stringify(layouts.value, null, 2)
 })
 </script>
 

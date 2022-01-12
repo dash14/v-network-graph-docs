@@ -7,7 +7,7 @@ import data from "./data"
 const graph = ref<vNG.Instance>()
 
 const nodes = reactive({ ...data.nodes })
-const layouts = reactive(data.layouts)
+const layouts = ref({ ...data.layouts })
 let nextNodeIndex = Object.keys(nodes).length + 1
 
 const eventHandlers: vNG.EventHandlers = {
@@ -21,7 +21,7 @@ const eventHandlers: vNG.EventHandlers = {
     // add node and its position
     const nodeId = `node${nextNodeIndex}`
     const name = `N${nextNodeIndex}`
-    layouts.nodes[nodeId] = svgPoint
+    layouts.value.nodes[nodeId] = svgPoint
     nodes[nodeId] = { name }
     nextNodeIndex++
   },

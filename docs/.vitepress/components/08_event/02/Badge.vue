@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from "vue"
+import { reactive, ref } from "vue"
 import { EventHandlers } from "v-network-graph"
 import data from "./data"
 
@@ -9,10 +9,10 @@ const layers = {
   badge: "nodes",
 }
 
-// wrap with reactive() for immediate response to
-// value changes
 const nodes = reactive({ ...data.nodes })
-const layouts = reactive({ ...data.layouts })
+
+// wrap with ref() for immediate response to value changes
+const layouts = ref({ ...data.layouts })
 
 const edges = data.edges
 const configs = data.configs
