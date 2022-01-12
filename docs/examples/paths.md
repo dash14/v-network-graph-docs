@@ -15,7 +15,7 @@ A simple example is shown below.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/01/Basic.vue{6,18-21}
+<<< @/.vitepress/components/06_paths/01/Basic.vue{5-8,16}
 
 </template>
 <template v-slot:data>
@@ -48,7 +48,7 @@ based on the color values in the path data.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/02/Color.vue{6-7,18-27,39-45}
+<<< @/.vitepress/components/06_paths/02/Color.vue{5-14,26-32,41-42}
 
 </template>
 <template v-slot:data>
@@ -69,7 +69,7 @@ Paths can also be animated in the same way as in Edge.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/03/Animation.vue{37-39}
+<<< @/.vitepress/components/06_paths/03/Animation.vue{24-26}
 
 </template>
 <template v-slot:data>
@@ -107,7 +107,7 @@ Paths can be drawn on curved edges as well.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/05/CurvedEdge.vue
+<<< @/.vitepress/components/06_paths/05/CurvedEdge.vue{30}
 
 </template>
 <template v-slot:data>

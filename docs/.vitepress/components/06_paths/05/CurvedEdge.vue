@@ -1,25 +1,50 @@
+<script setup lang="ts">
+import { Paths, UserConfigs } from "v-network-graph"
+import data from "./data"
+
+const paths: Paths = [
+  { edges: ["edge1", "edge3", "edge5"] },
+  { edges: ["edge2", "edge4", "edge6"] },
+]
+
+const configs: UserConfigs = {
+  node: {
+    normal: {
+      type: "circle",
+      radius: 20,
+      color: "#99ccff",
+    },
+    hover: {
+      color: "#88bbff",
+    },
+    label: {
+      visible: false,
+      fontSize: 8,
+    },
+  },
+  edge: {
+    gap: 40,
+    normal: {
+      color: "#6699cc",
+    },
+    type: "curve",
+  },
+  path: {
+    visible: true,
+    curveInNode: true,
+    path: {
+      width: 10,
+    },
+  },
+}
+</script>
+
 <template>
   <v-network-graph
     :nodes="data.nodes"
     :edges="data.edges"
     :layouts="data.layouts"
     :paths="paths"
-    :configs="data.configs"
+    :configs="configs"
   />
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue"
-import { Paths } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const paths: Paths = [
-      { edges: ["edge1", "edge3", "edge5"] },
-      { edges: ["edge2", "edge4", "edge6"] },
-    ]
-    return { data, paths }
-  },
-})
-</script>

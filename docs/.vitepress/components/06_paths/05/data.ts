@@ -1,4 +1,4 @@
-import { Nodes, Edges, Layouts, UserConfigs } from "v-network-graph"
+import { Nodes, Edges, Layouts } from "v-network-graph"
 
 const nodes: Nodes = {
   node1: { name: "Node 1" },
@@ -35,40 +35,8 @@ const layouts: Layouts = {
   },
 }
 
-const configs: UserConfigs = {
-  node: {
-    normal: {
-      type: "circle",
-      radius: 20,
-      color: "#99ccff",
-    },
-    hover: {
-      color: "#88bbff",
-    },
-    label: {
-      visible: false,
-      fontSize: 8,
-    },
-  },
-  edge: {
-    gap: 40,
-    normal: {
-      color: "#6699cc",
-    },
-    type: "curve",
-  },
-  path: {
-    visible: true,
-    curveInNode: true,
-    path: {
-      width: 10,
-    },
-  },
-}
-
 export default {
   nodes,
   edges,
   layouts,
-  configs,
 }
