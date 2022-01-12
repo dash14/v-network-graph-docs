@@ -3,8 +3,8 @@ import { reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
 import data, { Node, Edge } from "./data"
 
-const nodes = { ...data.nodes }
-const edges = { ...data.edges }
+const nodes = reactive({ ...data.nodes })
+const edges = reactive({ ...data.edges })
 
 // In Node and Edge configuration, instead of concrete values,
 // you can specify functions that return a configuration value
