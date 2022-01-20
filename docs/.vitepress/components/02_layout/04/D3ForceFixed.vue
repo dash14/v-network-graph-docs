@@ -13,7 +13,7 @@ import { defineComponent, reactive, ref, watchEffect } from "vue"
 import { Nodes, Edges } from "v-network-graph"
 import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/force-layout"
 // If you get an missing "v-network-graph/force-layout",
-// please try importing "v-network-graph/force-layout.es".
+// please try importing "v-network-graph/lib/force-layout.es".
 
 const NODE_COUNT = 20
 
@@ -52,9 +52,9 @@ export default defineComponent({
         node0: {
           x: 0,
           y: 0,
-          fixed: true  // Unaffected by force
-        }
-      }
+          fixed: true, // Unaffected by force
+        },
+      },
     })
 
     const configs = reactive({
@@ -78,7 +78,7 @@ export default defineComponent({
       },
       node: {
         normal: {
-          color: (n: NodeObject) => n.id === "node0" ? "#ff0000" : "#4466cc"
+          color: (n: NodeObject) => (n.id === "node0" ? "#ff0000" : "#4466cc"),
         },
         label: {
           visible: false,

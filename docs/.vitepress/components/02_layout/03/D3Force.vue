@@ -18,7 +18,7 @@ import { defineComponent, reactive, ref, watchEffect } from "vue"
 import { Nodes, Edges } from "v-network-graph"
 import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/force-layout"
 // If you get an missing "v-network-graph/force-layout",
-// please try importing "v-network-graph/force-layout.es".
+// please try importing "v-network-graph/lib/force-layout.es".
 
 function buildNetwork(count: number, nodes: Nodes, edges: Edges) {
   const idNums = [...Array(count)].map((_, i) => i)
@@ -32,14 +32,12 @@ function buildNetwork(count: number, nodes: Nodes, edges: Edges) {
   const makeEdgeEntry = (id1: number, id2: number) => {
     return [`edge${id1}-${id2}`, { source: `node${id1}`, target: `node${id2}` }]
   }
-  const newEdges = Object.fromEntries(
-    [
-      ...idNums
-        .map(n => [n, (Math.floor(n / 5) * 5) % count])
-        .map(([n, m]) => n === m ? [n, (n + 5) % count] : [n, m])
-        .map(([n, m]) => makeEdgeEntry(n, m)),
-    ]
-  )
+  const newEdges = Object.fromEntries([
+    ...idNums
+      .map(n => [n, (Math.floor(n / 5) * 5) % count])
+      .map(([n, m]) => (n === m ? [n, (n + 5) % count] : [n, m]))
+      .map(([n, m]) => makeEdgeEntry(n, m)),
+  ])
   Object.keys(edges).forEach(id => delete edges[id])
   Object.assign(edges, newEdges)
 }
