@@ -9,11 +9,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, watchEffect } from "vue"
+import { defineComponent, reactive } from "vue"
 import { Nodes, Edges } from "v-network-graph"
-import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/force-layout"
-// If you get an missing "v-network-graph/force-layout",
-// please try importing "v-network-graph/lib/force-layout.es".
+import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/lib/force-layout"
 
 const NODE_COUNT = 20
 

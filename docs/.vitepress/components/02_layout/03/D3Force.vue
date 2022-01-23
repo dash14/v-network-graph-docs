@@ -5,20 +5,13 @@
     <label>(&lt;= 300)</label>
   </div>
 
-  <v-network-graph
-    :zoom-level="0.5"
-    :nodes="nodes"
-    :edges="edges"
-    :configs="configs"
-  />
+  <v-network-graph :zoom-level="0.5" :nodes="nodes" :edges="edges" :configs="configs" />
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, ref, watchEffect } from "vue"
 import { Nodes, Edges } from "v-network-graph"
-import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/force-layout"
-// If you get an missing "v-network-graph/force-layout",
-// please try importing "v-network-graph/lib/force-layout.es".
+import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/lib/force-layout"
 
 function buildNetwork(count: number, nodes: Nodes, edges: Edges) {
   const idNums = [...Array(count)].map((_, i) => i)
