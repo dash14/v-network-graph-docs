@@ -5,7 +5,7 @@ specifying the events and functions to be captured in
 the `event-handlers` attribute.
 
 For a list of events that can be captured,
-see [here](/reference#events-with-event-handler).
+see [here](https://dash14.github.io/v-network-graph/reference.html#events-with-event-handler).
 
 ## Capture all events
 
