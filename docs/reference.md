@@ -104,133 +104,133 @@ Values that are not specified will be used as default values.
 ```ts
 {
   view: {
-    scalingObjects: boolean, // whether to expand the entire object.    default: false
-    panEnabled: boolean,     // whether the pan is enabled or not.      default: true
-    zoomEnabled: boolean,    // whether the zoom is enabled or not.     default: true
-    minZoomLevel: number,    // minimum zoom level.                     default: 0.1
-    maxZoomLevel: number,    // maximum zoom level.                     default: 64
-    doubleClickZoomEnabled: boolean,  // Whether to zoom with double click. default: true
-    mouseWheelZoomEnabled:  boolean,  // Whether to zoom with mouse wheel or not. default: true
-    fit: boolean,            // whether to fit the content when loaded. default: false
-    layoutHandler: LayoutHandler, // class to control node layout.   default: new SimpleLayout()
-    onSvgPanZoomInitialized: undefined | (instance) => void, // callback on init svg-pan-zoom. default: undefined
+    scalingObjects: boolean // whether to expand the entire object.    default: false
+    panEnabled: boolean     // whether the pan is enabled or not.      default: true
+    zoomEnabled: boolean    // whether the zoom is enabled or not.     default: true
+    minZoomLevel: number    // minimum zoom level.                     default: 0.1
+    maxZoomLevel: number    // maximum zoom level.                     default: 64
+    doubleClickZoomEnabled: boolean  // Whether to zoom with double click. default: true
+    mouseWheelZoomEnabled:  boolean  // Whether to zoom with mouse wheel or not. default: true
+    fit: boolean            // whether to fit the content when loaded. default: false
+    layoutHandler: LayoutHandler // class to control node layout.   default: new SimpleLayout()
+    onSvgPanZoomInitialized: undefined | (instance) => void // callback on init svg-pan-zoom. default: undefined
     grid: {
-      visible: boolean,         // whether to show the grid in the background. default: false
-      interval: number,         // grid line spacing.                          default: 10
-      thickIncrements: number,  // increments of ticks to draw thick lines.    default: 5
+      visible: boolean         // whether to show the grid in the background. default: false
+      interval: number         // grid line spacing.                          default: 10
+      thickIncrements: number  // increments of ticks to draw thick lines.    default: 5
       line: {                   // normal line style
-        color: string,          //   default: "#e0e0e0",
-        width: number,          //   default: 1
+        color: string          //   default: "#e0e0e0"
+        width: number          //   default: 1
         dasharray: number       //   default: 1
-      },
+      }
       thick: {                  // thick line style
-        color: string,          //   default: "#cccccc",
-        width: number,          //   default: 1
+        color: string          //   default: "#cccccc"
+        width: number          //   default: 1
         dasharray: number       //   default: 0
       }
     }
-  },
+  }
   node: {
     normal: {
       // * These fields can also be specified with the function as `(node: Node) => value`.
-      type: "circle" | "rect",  // shape type.            default: "circle"
-      radius: number,           // radius of circle.      default: 16
-      width: number,            // width of rect.         default: (not specified)
-      height: number,           // height of rect.        default: (not specified)
-      borderRadius: number,     // border radius of rect. default: (not specified)
-      color: string,            // fill color.            default: "#4466cc"
-      strokeWidth: number,      // stroke width.          default: 0
-      strokeColor: string | undefined,              // stroke color.      default: "#000000"
+      type: "circle" | "rect"  // shape type.            default: "circle"
+      radius: number           // radius of circle.      default: 16
+      width: number            // width of rect.         default: (not specified)
+      height: number           // height of rect.        default: (not specified)
+      borderRadius: number     // border radius of rect. default: (not specified)
+      color: string            // fill color.            default: "#4466cc"
+      strokeWidth: number      // stroke width.          default: 0
+      strokeColor: string | undefined              // stroke color.      default: "#000000"
       strokeDasharray: number | string | undefined  // stroke dash array. default: 0
-    },
-    hover: { /* same structure as `node.normal`. */ } | undefined,
+    }
+    hover: { /* same structure as `node.normal`. */ } | undefined
         // default: {
-        //   color: "#3355bb",
+        //   color: "#3355bb"
         //   ... all other values are same as `normal`
         // }
-    selected: { /* same structure as `node.normal`. */ } | undefined,
+    selected: { /* same structure as `node.normal`. */ } | undefined
         // default: undefined
-    draggable: boolean | (node) => boolean, // whether the node is draggable or not.  default: true
-    selectable: boolean | number | (node) => boolean,
+    draggable: boolean | (node) => boolean // whether the node is draggable or not.  default: true
+    selectable: boolean | number | (node) => boolean
         // whether the node is selectable or not. default: false
-        // When specified as a number, it means the max number of nodes that can be selected.
+        // When specified as a number it means the max number of nodes that can be selected.
     label: {
       // * These fields can also be specified with the function as `(node) => value`.
-      visible: boolean,         // whether the node's label is visible or not. default: true
-      fontFamily: string | undefined,  // font family.       default: undefined
-      fontSize: number,                // font size.         default: 11
-      lineHeight: number,              // line height (multiplier for font size). default: 1.1
-      color: string,                   // font color.        default: "#000000"
+      visible: boolean         // whether the node's label is visible or not. default: true
+      fontFamily: string | undefined  // font family.       default: undefined
+      fontSize: number                // font size.         default: 11
+      lineHeight: number              // line height (multiplier for font size). default: 1.1
+      color: string                   // font color.        default: "#000000"
       background: {                    // background config. default: undefined
-        visible: boolean,          // whether the background is visible or not.
-        color: string,             // background color.
+        visible: boolean          // whether the background is visible or not.
+        color: string             // background color.
         padding: number | {        // padding.
-          vertical: number,        // vertical padding.
-          horizontal: number,      // horizontal padding.
-        },
+          vertical: number        // vertical padding.
+          horizontal: number      // horizontal padding.
+        }
         borderRadius: number       // border radius.
-      } | undefined,
-      margin: number,                  // margin from node. default: 4
-      direction: NodeLabelDirection,   // node label display direction. default: SOUTH
+      } | undefined
+      margin: number                  // margin from node. default: 4
+      direction: NodeLabelDirection   // node label display direction. default: SOUTH
       text: string    // field name in the node object to use as the label. default: "name"
-                      // if function is specified, the return value is string of label.
-    },
+                      // if function is specified the return value is string of label.
+    }
     focusring: {
-      visible: boolean, // whether the focus ring is visible or not.     default: true
-      width: number,    // line width of the focus ring.                 default: 4
-      padding: number,  // distance between the focus ring and the node. default: 3
+      visible: boolean // whether the focus ring is visible or not.     default: true
+      width: number    // line width of the focus ring.                 default: 4
+      padding: number  // distance between the focus ring and the node. default: 3
       color: string     // fill color.                                   default: "#eebb00"
-    },
+    }
     transition: string | undefined  // entering/leaving transition.      default: undefined
-  },
+  }
   edge: {
     normal: {
       // * These fields can also be specified with the function as `(edge: Edge) => value`.
-      width: number,           // width of edge.                           default: 2
-      color: string,           // line color.                              default: "#4466cc"
-      dasharray: number | string | undefined,        // stroke dash array. default: 0
-      linecap: "butt" | "round" | "square" | undefined, // stroke linecap. default: "butt"
-      animate: boolean,        // whether to animate or not.               default: false
+      width: number           // width of edge.                           default: 2
+      color: string           // line color.                              default: "#4466cc"
+      dasharray: number | string | undefined        // stroke dash array. default: 0
+      linecap: "butt" | "round" | "square" | undefined // stroke linecap. default: "butt"
+      animate: boolean        // whether to animate or not.               default: false
       animationSpeed: number   // animation speed.                         default: 100
-    },
-    hover: { /* same structure as `normal`. */ } | undefined,
+    }
+    hover: { /* same structure as `normal`. */ } | undefined
         // default: {
         //   color: "#3355bb",
         //   ... all other values are same as `edge.normal`
         // },
-    selected: { /* same structure as `normal`. */ } | undefined,
+    selected: { /* same structure as `normal`. */ } | undefined
         // default: {
         //   color: "#dd8800",
         //   dasharray: (wider than `normal`),
         //   ... all other values are same as `edge.normal`
         // }
-    selectable: boolean | number | (edge) => boolean,
+    selectable: boolean | number | (edge) => boolean
         // whether the edge is selectable or not. default: false
         // When specified as a number, it means the max number of edges that can be selected.
-    gap: number | ((edges: Edges, configs: Configs) => number),
+    gap: number | ((edges: Edges, configs: Configs) => number)
         // number: distance between edges.
         // func : function to calculate gap from edge list between nodes.
         // default: 3
-    type: "straight" | "curve", // edge type when there are multiple edges between the nodes.
+    type: "straight" | "curve" // edge type when there are multiple edges between the nodes.
     marker: {
       source: {
-        type:  "none" | "arrow" | "angle" | "circle" | "custom",
+        type:  "none" | "arrow" | "angle" | "circle" | "custom"
                               // type of marker.                          default: "none"
-        width: number,        // width of marker.                         default: 5
-        height: number,       // height of marker.                        default: 5
-        margin: number,       // distance between marker and end of edge. default: -1
-        units: "strokeWidth" | "userSpaceOnUse",
+        width: number        // width of marker.                         default: 5
+        height: number       // height of marker.                        default: 5
+        margin: number       // distance between marker and end of edge. default: -1
+        units: "strokeWidth" | "userSpaceOnUse"
                               // units of width, height and margin.            default: "strokeWidth"
-        color: string | null, // color of marker. null: same as edge color.    default: null
+        color: string | null // color of marker. null: same as edge color.    default: null
         customId: string | undefined
                               // custom marker ID for marker type is "custom". default: undefined
-      },
+      }
       target: { /* same structure as `source`. */ }
-    },
-    margin: number | null,
+    }
+    margin: number | null
         // margin from end of node (if null, the edge end is the center of node).
         // default: null
-    summarize: boolean | ((edges: Edges, configs: Configs) => boolean | null),
+    summarize: boolean | ((edges: Edges, configs: Configs) => boolean | null)
         // true : summarize when the width of the edge becomes larger than the node.
         // false: do not summarize.
         // func : function to determine whether to summarize from edge list between nodes.
@@ -240,10 +240,10 @@ Values that are not specified will be used as default values.
       label: {
         // * These fields can also be specified with the function as
         //   `(edges: Record<string, Edge>) => value`.
-        fontSize: number,  // font size.  default: 10
+        fontSize: number  // font size.  default: 10
         color: string      // font color. default: "#4466cc"
-      },
-      shape: { /* same structure as `node.normal`. */ },
+      }
+      shape: { /* same structure as `node.normal`. */ }
         // * These fields can also be specified with the function as
         //   `(edges: Record<string, Edge>) => value`.
         // default: {
@@ -268,48 +268,48 @@ Values that are not specified will be used as default values.
         //   animationSpeed: 50
         // }
       }
-    },
-    keepOrder: "clock" | "vertical" | "horizontal",
+    }
+    keepOrder: "clock" | "vertical" | "horizontal"
       // orientation to be considered when keeping multiple edge alignments.
       //   "clock": Keep the forward/backward when viewed as a clock.
       //   "vertical": Keep the vertical alignment.
       //   "horizontal": Keep the horizontal alignment.
       // default: "clock"
     label: {
-      fontFamily: string | undefined,  // font family.       default: undefined
-      fontSize: number,                // font size.         default: 11
-      lineHeight: number,              // line height (multiplier for font size). default: 1.1
-      color: string,                   // font color.        default: "#000000"
+      fontFamily: string | undefined  // font family.       default: undefined
+      fontSize: number                // font size.         default: 11
+      lineHeight: number              // line height (multiplier for font size). default: 1.1
+      color: string                   // font color.        default: "#000000"
       background: {                    // background config. default: undefined
-        visible: boolean,          // whether the background is visible or not.
-        color: string,             // background color.
+        visible: boolean          // whether the background is visible or not.
+        color: string             // background color.
         padding: number | {        // padding.
-          vertical: number,        // vertical padding.
-          horizontal: number,      // horizontal padding.
-        },
+          vertical: number        // vertical padding.
+          horizontal: number      // horizontal padding.
+        }
         borderRadius: number       // border radius.
-      } | undefined,
-      margin: number,              // distance from edge stroke. default: 4
+      } | undefined
+      margin: number              // distance from edge stroke. default: 4
       padding: number              // distance from end node. default: 4
     }
-  },
+  }
   path: {
-    visible: boolean,     // whether the paths are visible or not.  default: false
-    clickable: boolean,   // whether paths are clickable or not.    default: false
-    curveInNode: boolean, // whether to curve paths within nodes.   default: false
-    end: "centerOfNode" | "edgeOfNode", // position of end of path. default: "centerOfNode"
-    margin: number,       // margin from end of path.               default: 0
+    visible: boolean     // whether the paths are visible or not.  default: false
+    clickable: boolean   // whether paths are clickable or not.    default: false
+    curveInNode: boolean // whether to curve paths within nodes.   default: false
+    end: "centerOfNode" | "edgeOfNode" // position of end of path. default: "centerOfNode"
+    margin: number       // margin from end of path.               default: 0
     path: {
       // * These fields can also be specified with the function as `(path) => value`.
-      width: number,      // width of path. default: 6
-      color: string,      // path color. default: (Func to select a color from a hash of edges.)
+      width: number      // width of path. default: 6
+      color: string      // path color. default: (Func to select a color from a hash of edges.)
 
-      dasharray: number | string | undefined,         // stroke dash array. default: undefined
-      linecap: "butt" | "round" | "square" | undefined,  // stroke linecap. default: "round"
-      linejoin: "miter" | "round" | "bevel",            // stroke linejoin. default: "round"
-      animate: boolean,                       // whether to animate or not. default: false
+      dasharray: number | string | undefined         // stroke dash array. default: undefined
+      linecap: "butt" | "round" | "square" | undefined  // stroke linecap. default: "round"
+      linejoin: "miter" | "round" | "bevel"            // stroke linejoin. default: "round"
+      animate: boolean                       // whether to animate or not. default: false
       animationSpeed: number                  // animation speed.           default: 50
-    },
+    }
     transition: string | undefined  // entering/leaving transition.         default: undefined
   }
 }
