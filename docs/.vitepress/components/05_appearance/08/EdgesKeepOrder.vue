@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { defineConfigs, Edge } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 const configs = reactive(
-  defineConfigs({
+  vNG.defineConfigs({
     node: {
       normal: {
         color: "#aabbff",
@@ -12,10 +12,10 @@ const configs = reactive(
     },
     edge: {
       normal: {
-        color: (edge: Edge) => edge.color,
+        color: edge => edge.color,
       },
       hover: {
-        color: (edge: Edge) => edge.color,
+        color: edge => edge.color,
       },
       margin: 4,
       marker: {

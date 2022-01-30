@@ -232,7 +232,7 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/07/CustomMarker.vue
+  <<< @/.vitepress/components/05_appearance/07/CustomMarker.vue{11-30,43-57}
 
 </template>
 <template v-slot:data>

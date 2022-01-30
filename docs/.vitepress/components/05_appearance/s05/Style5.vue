@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { defineConfigs, EventHandlers } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 const ACTIVE = "#00ee00"
@@ -8,7 +8,7 @@ const INACTIVE = "#ff0000"
 
 const nodes = reactive(data.nodes)
 
-const configs = defineConfigs({
+const configs = vNG.defineConfigs({
   node: {
     normal: {
       radius: 16,
@@ -25,7 +25,8 @@ const configs = defineConfigs({
     normal: {
       width: 2,
       color: "#888888",
-      dasharray: edge => (nodes[edge.source].active && nodes[edge.target].active ? 4 : 0),
+      dasharray: edge =>
+        nodes[edge.source].active && nodes[edge.target].active ? 4 : 0,
       animate: edge => nodes[edge.source].active && nodes[edge.target].active,
     },
     hover: {
@@ -51,7 +52,7 @@ const configs = defineConfigs({
   },
 })
 
-const eventHandlers: EventHandlers = {
+const eventHandlers: vNG.EventHandlers = {
   "node:click": ({ node }) => {
     // toggle
     nodes[node].active = !nodes[node].active

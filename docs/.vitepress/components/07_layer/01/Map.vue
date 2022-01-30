@@ -29,7 +29,13 @@ function onLoadImage() {
   >
     <!-- Additional layer -->
     <template #worldmap>
-      <image :href="withBase('/worldmap.svg')" x="0" y="0" width="1000px" @load="onLoadImage" />
+      <image
+        :href="withBase('/worldmap.svg')"
+        x="0"
+        y="0"
+        width="1000px"
+        @load="onLoadImage"
+      />
     </template>
   </v-network-graph>
 </template>

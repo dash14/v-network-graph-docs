@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { defineConfigs } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data, { Node } from "./data"
 
 const selectedNodes = ref<string[]>([])
 
-const configs = defineConfigs<Node>({
+const configs = vNG.defineConfigs<Node>({
   node: {
     selectable: node => node.selectable,
     draggable: node => node.draggable,
@@ -18,7 +18,12 @@ const configs = defineConfigs<Node>({
     <label>Selected:</label>
     <el-select v-model="selectedNodes" multiple placeholder="Select">
       <template v-for="(node, key) in data.nodes">
-        <el-option v-if="node.selectable" :key="key" :label="node.name" :value="key" />
+        <el-option
+          v-if="node.selectable"
+          :key="key"
+          :label="node.name"
+          :value="key"
+        />
       </template>
     </el-select>
   </div>

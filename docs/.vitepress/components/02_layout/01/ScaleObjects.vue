@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
-import { defineConfigs } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 const configs = reactive(
-  defineConfigs({
+  vNG.defineConfigs({
     view: {
       scalingObjects: true,
       minZoomLevel: 0.1,

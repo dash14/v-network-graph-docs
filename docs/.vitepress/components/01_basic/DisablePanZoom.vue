@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { defineConfigs } from "v-network-graph"
+import * as vNG from "v-network-graph"
 
 const nodes = {
   node1: { name: "Node 1" },
@@ -25,7 +25,7 @@ const layouts = {
 }
 
 const configs = reactive(
-  defineConfigs({
+  vNG.defineConfigs({
     view: {
       panEnabled: true,
       zoomEnabled: true,
@@ -44,5 +44,10 @@ const configs = reactive(
     <el-checkbox v-model="configs.node.draggable">Node draggable</el-checkbox>
   </div>
 
-  <v-network-graph :nodes="nodes" :edges="edges" :layouts="layouts" :configs="configs" />
+  <v-network-graph
+    :nodes="nodes"
+    :edges="edges"
+    :layouts="layouts"
+    :configs="configs"
+  />
 </template>

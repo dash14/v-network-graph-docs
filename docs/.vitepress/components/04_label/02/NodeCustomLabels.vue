@@ -5,7 +5,9 @@ import data from "./data"
 <template>
   <v-network-graph :nodes="data.nodes" :edges="data.edges" :layouts="data.layouts">
     <template
-      #override-node-label="{ nodeId, scale, text, x, y, config, textAnchor, dominantBaseline }"
+      #override-node-label="{
+        nodeId, scale, text, x, y, config, textAnchor, dominantBaseline
+      }"
     >
       <text
         x="0"

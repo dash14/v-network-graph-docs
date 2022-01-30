@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
-import { EventHandlers } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 // additional layers definition
@@ -17,7 +17,7 @@ const layouts = ref({ ...data.layouts })
 const edges = data.edges
 const configs = data.configs
 
-const eventHandlers: EventHandlers = {
+const eventHandlers: vNG.EventHandlers = {
   "node:click": ({ node }) => {
     // toggle
     nodes[node].active = !nodes[node].active

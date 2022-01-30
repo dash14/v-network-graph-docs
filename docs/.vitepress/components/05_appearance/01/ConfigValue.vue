@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { defineConfigs } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 const configs = reactive(
-  defineConfigs({
+  vNG.defineConfigs({
     node: {
       selectable: true,
       normal: {
@@ -195,7 +195,9 @@ const configs = reactive(
               v-model:visible="configs.node.label.background.visible"
               v-model:color="configs.node.label.background.color"
               v-model:paddingVertical="configs.node.label.background.padding.vertical"
-              v-model:paddingHorizontal="configs.node.label.background.padding.horizontal"
+              v-model:paddingHorizontal="
+                configs.node.label.background.padding.horizontal
+              "
               v-model:borderRadius="configs.node.label.background.borderRadius"
             />
           </el-tab-pane>

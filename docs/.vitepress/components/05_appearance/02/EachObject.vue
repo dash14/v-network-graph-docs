@@ -80,5 +80,10 @@ const configs = reactive(
 </script>
 
 <template>
-  <v-network-graph :nodes="nodes" :edges="edges" :layouts="layouts" :configs="configs" />
+  <v-network-graph
+    :nodes="nodes"
+    :edges="edges"
+    :layouts="layouts"
+    :configs="configs"
+  />
 </template>

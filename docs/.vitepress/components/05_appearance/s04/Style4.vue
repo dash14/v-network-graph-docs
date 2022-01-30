@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { defineConfigs } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
-const configs = defineConfigs({
+const configs = vNG.defineConfigs({
   node: {
     selectable: true,
     normal: {

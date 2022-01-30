@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watchEffect } from "vue"
-import { Edges, VEdgeLabel, EventHandlers, Paths } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 // -------------------------------------------------------------
@@ -19,7 +19,7 @@ class Graph {
     return parseFloat(a) - parseFloat(b)
   }
 
-  constructor(edges: Edges) {
+  constructor(edges: vNG.Edges) {
     // var map = {a:{b:3,c:1},b:{a:2,c:1},c:{a:4,b:1}},
     const map: GraphMap = {}
     const edgeMap: EdgeMap = {}
@@ -174,7 +174,7 @@ class Graph {
   }
 }
 
-const paths = ref<Paths>([])
+const paths = ref<vNG.Paths>([])
 
 const targetNode = ref("node12")
 watchEffect(() => {
@@ -186,7 +186,7 @@ watchEffect(() => {
   }
 })
 
-const eventHandlers: EventHandlers = {
+const eventHandlers: vNG.EventHandlers = {
   "node:pointerover": ({ node }) => {
     if (node === "node1") return
     targetNode.value = node

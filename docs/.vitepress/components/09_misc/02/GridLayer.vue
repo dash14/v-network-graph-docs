@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { defineConfigs, GridLayout } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 const configs = reactive(
-  defineConfigs({
+  vNG.defineConfigs({
     view: {
       grid: {
         visible: true,
@@ -21,7 +21,7 @@ const configs = reactive(
           dasharray: 0,
         },
       },
-      layoutHandler: new GridLayout({ grid: 10 }),
+      layoutHandler: new vNG.GridLayout({ grid: 10 }),
     },
   })
 )

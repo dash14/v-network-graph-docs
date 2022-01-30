@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import * as vNG from "v-network-graph"
-import { defineConfigs } from "v-network-graph"
 import data, { Edge } from "./data"
 
 const selectedEdges = ref<string[]>([])
 
-const configs = defineConfigs<vNG.Node, Edge>({
+const configs = vNG.defineConfigs<vNG.Node, Edge>({
   edge: {
     normal: {
       width: 3,

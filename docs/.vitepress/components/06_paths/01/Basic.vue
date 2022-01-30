@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Paths } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
-const paths: Paths = [
+const paths: vNG.Paths = [
   { edges: ["edge1", "edge3", "edge5", "edge7"] },
   { edges: ["edge2", "edge4", "edge6", "edge10"] },
 ]

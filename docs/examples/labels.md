@@ -40,7 +40,7 @@ In the following example, two labels are displayed per node.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/02/NodeCustomLabels.vue{7-28}
+  <<< @/.vitepress/components/04_label/02/NodeCustomLabels.vue{7-30}
 
 </template>
 <template v-slot:data>
@@ -146,7 +146,7 @@ The data being displayed is a random number.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/04/MultipleEdgeLabels.vue{40-58}
+  <<< @/.vitepress/components/04_label/04/MultipleEdgeLabels.vue{40-63}
 
 </template>
 <template v-slot:data>
@@ -167,7 +167,7 @@ be customized from the config like the node labels.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/05/EdgeLabelsStyle.vue
+  <<< @/.vitepress/components/04_label/05/EdgeLabelsStyle.vue{15-32}
 
 </template>
 <template v-slot:data>
@@ -187,7 +187,7 @@ Labels for summarized edges use a different slot than for normal edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/06/SummarizedEdgeLabels.vue{5-8,22-30}
+  <<< @/.vitepress/components/04_label/06/SummarizedEdgeLabels.vue{5-8,27-35}
 
 </template>
 <template v-slot:data>

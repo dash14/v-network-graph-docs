@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { EventHandlers, ViewEvent, NodeEvent, EdgeEvent } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
 function showContextMenu(element: HTMLElement, event: MouseEvent) {
@@ -17,7 +17,7 @@ function showContextMenu(element: HTMLElement, event: MouseEvent) {
 }
 
 const viewMenu = ref<HTMLDivElement>()
-function showViewContextMenu(params: ViewEvent<MouseEvent>) {
+function showViewContextMenu(params: vNG.ViewEvent<MouseEvent>) {
   const { event } = params
   // Disable browser's default context menu
   event.stopPropagation()
@@ -29,7 +29,7 @@ function showViewContextMenu(params: ViewEvent<MouseEvent>) {
 
 const nodeMenu = ref<HTMLDivElement>()
 const menuTargetNode = ref("")
-function showNodeContextMenu(params: NodeEvent<MouseEvent>) {
+function showNodeContextMenu(params: vNG.NodeEvent<MouseEvent>) {
   const { node, event } = params
   // Disable browser's default context menu
   event.stopPropagation()
@@ -42,7 +42,7 @@ function showNodeContextMenu(params: NodeEvent<MouseEvent>) {
 
 const edgeMenu = ref<HTMLDivElement>()
 const menuTargetEdges = ref<string[]>([])
-function showEdgeContextMenu(params: EdgeEvent<MouseEvent>) {
+function showEdgeContextMenu(params: vNG.EdgeEvent<MouseEvent>) {
   const { event } = params
   // Disable browser's default context menu
   event.stopPropagation()
@@ -53,7 +53,7 @@ function showEdgeContextMenu(params: EdgeEvent<MouseEvent>) {
   }
 }
 
-const eventHandlers: EventHandlers = {
+const eventHandlers: vNG.EventHandlers = {
   "view:contextmenu": showViewContextMenu,
   "node:contextmenu": showNodeContextMenu,
   "edge:contextmenu": showEdgeContextMenu,

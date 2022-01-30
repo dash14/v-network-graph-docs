@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
-import { Nodes, Edges } from "v-network-graph"
 import { Download } from "@element-plus/icons"
 import data from "./data"
 
-const nodes: Nodes = reactive({ ...data.nodes })
-const edges: Edges = reactive({ ...data.edges })
+const nodes = reactive<vNG.Nodes>({ ...data.nodes })
+const edges = reactive<vNG.Edges>({ ...data.edges })
 const nextNodeIndex = ref(Object.keys(nodes).length + 1)
 const nextEdgeIndex = ref(Object.keys(edges).length + 1)
 
@@ -62,10 +61,14 @@ function removeEdge() {
     </el-button>
     <label>Node:</label>
     <el-button @click="addNode">add</el-button>
-    <el-button :disabled="selectedNodes.length == 0" @click="removeNode">remove</el-button>
+    <el-button :disabled="selectedNodes.length == 0" @click="removeNode"
+      >remove</el-button
+    >
     <label>Edge:</label>
     <el-button :disabled="selectedNodes.length != 2" @click="addEdge">add</el-button>
-    <el-button :disabled="selectedEdges.length == 0" @click="removeEdge">remove</el-button>
+    <el-button :disabled="selectedEdges.length == 0" @click="removeEdge"
+      >remove</el-button
+    >
   </div>
 
   <v-network-graph

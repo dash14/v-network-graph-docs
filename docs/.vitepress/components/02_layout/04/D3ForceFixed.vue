@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
-import { defineConfigs, Nodes, Edges } from "v-network-graph"
-import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/lib/force-layout"
+import * as vNG from "v-network-graph"
+import {
+  ForceLayout,
+  ForceNodeDatum,
+  ForceEdgeDatum,
+} from "v-network-graph/lib/force-layout"
 
 const NODE_COUNT = 20
 
@@ -20,7 +24,7 @@ const layouts = ref({
 })
 
 const configs = reactive(
-  defineConfigs({
+  vNG.defineConfigs({
     view: {
       layoutHandler: new ForceLayout({
         positionFixedByDrag: false,
@@ -52,7 +56,7 @@ const configs = reactive(
 
 buildNetwork(NODE_COUNT, nodes, edges)
 
-function buildNetwork(count: number, nodes: Nodes, edges: Edges) {
+function buildNetwork(count: number, nodes: vNG.Nodes, edges: vNG.Edges) {
   const idNums = [...Array(count)].map((_, i) => i)
 
   // nodes

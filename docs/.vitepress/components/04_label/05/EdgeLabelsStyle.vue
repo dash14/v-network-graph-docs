@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { defineConfigs } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import { reactive, ref } from "vue"
 import data from "./data"
 
 const verticalAlign = ref("above")
 
 const configs = reactive(
-  defineConfigs({
+  vNG.defineConfigs({
     node: {
       label: {
         visible: false,

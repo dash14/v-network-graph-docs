@@ -14,7 +14,7 @@ will change as you zoom.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/01/ScaleObjects.vue{6-14}
+  <<< @/.vitepress/components/02_layout/01/ScaleObjects.vue{9}
 
 </template>
 <template v-slot:data>
@@ -40,7 +40,7 @@ the grid is shown below.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/02/SnapToGrid.vue{5-9}
+  <<< @/.vitepress/components/02_layout/02/SnapToGrid.vue{7}
 
 </template>
 <template v-slot:data>
@@ -65,7 +65,7 @@ will return it to the position of the d3-force calculation result.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/03/D3Force.vue{4,18-35}
+  <<< @/.vitepress/components/02_layout/03/D3Force.vue{4-8,21-36}
 
 </template>
 </demo-tabs>
@@ -88,7 +88,10 @@ This behavior will be revised in the future.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/04/D3ForceFixed.vue{13-22}
+  <<< @/.vitepress/components/02_layout/04/D3ForceFixed.vue{15-24}
+
+</template>
+</demo-tabs>
 
 <script setup>
 import DemoScaleObjects from '../.vitepress/components/02_layout/01/ScaleObjects.vue'
@@ -96,4 +99,3 @@ import DemoSnapToGrid from '../.vitepress/components/02_layout/02/SnapToGrid.vue
 import DemoD3Force from '../.vitepress/components/02_layout/03/D3Force.vue'
 import DemoD3ForceFixed from '../.vitepress/components/02_layout/04/D3ForceFixed.vue'
 </script>
-

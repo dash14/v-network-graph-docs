@@ -38,7 +38,12 @@ onUnmounted(() => {
     :configs="data.configs"
   >
     <template #edge-label="{ edgeId, edge, scale, ...slotProps }">
-      <v-edge-label :text="edgeId" align="center" vertical-align="below" v-bind="slotProps" />
+      <v-edge-label
+        :text="edgeId"
+        align="center"
+        vertical-align="below"
+        v-bind="slotProps"
+      />
       <v-edge-label
         :text="`${traffics[edge.source][edge.target]} k`"
         align="source"

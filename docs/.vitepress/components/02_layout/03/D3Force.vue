@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { reactive, ref, watchEffect } from "vue"
-import { defineConfigs, Nodes, Edges } from "v-network-graph"
-import { ForceLayout, ForceNodeDatum, ForceEdgeDatum } from "v-network-graph/lib/force-layout"
+import * as vNG from "v-network-graph"
+import {
+  ForceLayout,
+  ForceNodeDatum,
+  ForceEdgeDatum,
+} from "v-network-graph/lib/force-layout"
 
 const nodeCount = ref(20)
 const nodes = reactive({})
@@ -12,7 +16,7 @@ watchEffect(() => {
 })
 
 const configs = reactive(
-  defineConfigs({
+  vNG.defineConfigs({
     view: {
       layoutHandler: new ForceLayout({
         positionFixedByDrag: false,
@@ -39,7 +43,7 @@ const configs = reactive(
   })
 )
 
-function buildNetwork(count: number, nodes: Nodes, edges: Edges) {
+function buildNetwork(count: number, nodes: vNG.Nodes, edges: vNG.Edges) {
   const idNums = [...Array(count)].map((_, i) => i)
 
   // nodes
@@ -69,5 +73,10 @@ function buildNetwork(count: number, nodes: Nodes, edges: Edges) {
     <label>(&lt;= 300)</label>
   </div>
 
-  <v-network-graph :zoom-level="0.5" :nodes="nodes" :edges="edges" :configs="configs" />
+  <v-network-graph
+    :zoom-level="0.5"
+    :nodes="nodes"
+    :edges="edges"
+    :configs="configs"
+  />
 </template>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { defineConfigs, GridLayout } from "v-network-graph"
+import * as vNG from "v-network-graph"
 import data from "./data"
 
-const configs = defineConfigs({
+const configs = vNG.defineConfigs({
   view: {
-    layoutHandler: new GridLayout({ grid: 15 }),
+    layoutHandler: new vNG.GridLayout({ grid: 15 }),
   },
 })
 </script>

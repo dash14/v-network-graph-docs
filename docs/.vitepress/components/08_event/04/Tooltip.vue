@@ -51,13 +51,17 @@ const eventHandlers: vNG.EventHandlers = {
       :event-handlers="eventHandlers"
     />
     <!-- Tooltip -->
-    <div ref="tooltip" class="tooltip" :style="{ ...tooltipPos, opacity: tooltipOpacity }">
+    <div
+      ref="tooltip"
+      class="tooltip"
+      :style="{ ...tooltipPos, opacity: tooltipOpacity }"
+    >
       <div>{{ data.nodes[targetNodeId]?.name ?? "" }}</div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .tooltip-wrapper {
   position: relative;
 }

@@ -41,7 +41,12 @@ watch(limit, v => {
       :multiple-limit="limit"
       placeholder="Select"
     >
-      <el-option v-for="(node, key) in data.nodes" :key="key" :label="node.name" :value="key" />
+      <el-option
+        v-for="(node, key) in data.nodes"
+        :key="key"
+        :label="node.name"
+        :value="key"
+      />
     </el-select>
 
     <label>Limit:</label>

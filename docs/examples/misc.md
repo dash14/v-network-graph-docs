@@ -11,7 +11,7 @@ In this example, the SVG data is downloaded.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/09_misc/01/Download.vue{19-28}
+  <<< @/.vitepress/components/09_misc/01/Download.vue{18-27}
 
 </template>
 <template v-slot:data>

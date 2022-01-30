@@ -17,7 +17,12 @@ function summarizedEdgeLabel(edges: Record<string, Edge>) {
   >
     <!-- The slot for individual edge labels -->
     <template #edge-label="{ edge, ...slotProps }">
-      <v-edge-label :text="edge.label" align="center" vertical-align="above" v-bind="slotProps" />
+      <v-edge-label
+        :text="edge.label"
+        align="center"
+        vertical-align="above"
+        v-bind="slotProps"
+      />
     </template>
     <!-- The slot for summarized edge labels -->
     <template #edges-label="{ edges, ...slotProps }">
