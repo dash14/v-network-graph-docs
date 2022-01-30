@@ -5,6 +5,10 @@
   --c-brand-light: #4d75ee;
 }
 
+.theme > .page > .container {
+  max-width: 56rem;
+}
+
 .home-hero {
   .image {
     width: 537px !important;

@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import { reactive } from "vue"
+import * as vNG from "v-network-graph"
+import data from "./data"
+
+const configs = reactive(
+  vNG.defineConfigs({
+    node: {
+      label: {
+        visible: true,
+        fontFamily: undefined,
+        fontSize: 11,
+        lineHeight: 1.1,
+        color: "#000000",
+        margin: 4,
+        direction: "south",
+        text: "name",
+      },
+    },
+  })
+)
+</script>
+
 <template>
   <div class="demo-control-panel">
     <el-tabs type="border-card">
@@ -32,30 +55,3 @@
     :configs="configs"
   />
 </template>
-
-<script lang="ts">
-import { defineComponent, reactive } from "vue"
-import { NodeLabelDirection } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const configs = reactive({
-      node: {
-        label: {
-          visible: true,
-          fontFamily: undefined,
-          fontSize: 11,
-          lineHeight: 1.1,
-          color: "#000000",
-          margin: 4,
-          direction: NodeLabelDirection.SOUTH,
-          text: "name"
-        },
-      },
-    })
-
-    return { data, configs }
-  },
-})
-</script>

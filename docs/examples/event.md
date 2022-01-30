@@ -18,7 +18,7 @@ be captured.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_event/01/AllEvents.vue{7,30-42}
+  <<< @/.vitepress/components/08_event/01/AllEvents.vue{11-23,32}
 
 </template>
 <template v-slot:data>
@@ -41,7 +41,7 @@ clicked.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_event/02/Badge.vue{8,50-55}
+  <<< @/.vitepress/components/08_event/02/Badge.vue{20-25,35}
 
 </template>
 <template v-slot:data>
@@ -66,7 +66,7 @@ the menu.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_event/03/ContextMenu.vue
+  <<< @/.vitepress/components/08_event/03/ContextMenu.vue{56-60}
 
 </template>
 <template v-slot:data>
@@ -87,7 +87,7 @@ to represent a combination of DOM elements such as tooltip.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_event/04/Tooltip.vue
+  <<< @/.vitepress/components/08_event/04/Tooltip.vue{17-40}
 
 </template>
 <template v-slot:data>

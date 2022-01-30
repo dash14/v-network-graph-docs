@@ -1,3 +1,45 @@
+<script setup lang="ts">
+import { computed, reactive, ref } from "vue"
+import * as vNG from "v-network-graph"
+import data from "./data"
+
+// ref="graph"
+const graph = ref<vNG.Instance>()
+// ref="tooltip"
+const tooltip = ref<HTMLDivElement>()
+
+// positions of the center of nodes
+const layouts = ref(data.layouts)
+
+const NODE_RADIUS = 16
+const targetNodeId = ref("")
+
+const tooltipPos = computed(() => {
+  if (!graph.value || !tooltip.value) return { x: 0, y: 0 }
+  if (!targetNodeId.value) return { x: 0, y: 0 }
+
+  const nodePos = layouts.value.nodes[targetNodeId.value]
+  // translate coordinates: SVG -> DOM
+  const domPoint = graph.value.translateFromSvgToDomCoordinates(nodePos)
+  // calculates top-left position of the tooltip.
+  return {
+    left: domPoint.x - tooltip.value.offsetWidth / 2 + "px",
+    top: domPoint.y - NODE_RADIUS - tooltip.value.offsetHeight - 10 + "px",
+  }
+})
+const tooltipOpacity = ref(0) // 0 or 1
+
+const eventHandlers: vNG.EventHandlers = {
+  "node:pointerover": ({ node }) => {
+    targetNodeId.value = node
+    tooltipOpacity.value = 1 // show
+  },
+  "node:pointerout": _ => {
+    tooltipOpacity.value = 0 // hide
+  },
+}
+</script>
+
 <template>
   <div class="tooltip-wrapper">
     <v-network-graph
@@ -9,70 +51,17 @@
       :event-handlers="eventHandlers"
     />
     <!-- Tooltip -->
-    <div ref="tooltip" class="tooltip" :style="{ ...tooltipPos, opacity: tooltipOcacity }">
+    <div
+      ref="tooltip"
+      class="tooltip"
+      :style="{ ...tooltipPos, opacity: tooltipOpacity }"
+    >
       <div>{{ data.nodes[targetNodeId]?.name ?? "" }}</div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, reactive, ref } from "vue"
-import { VNetworkGraphInstance, EventHandlers } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    // ref="graph"
-    const graph = ref<VNetworkGraphInstance>()
-    // ref="tooltip"
-    const tooltip = ref<HTMLDivElement>()
-
-    // positions of the center of nodes
-    const layouts = reactive(data.layouts)
-
-    const NODE_RADIUS = 16
-    const targetNodeId = ref("")
-
-    const tooltipPos = computed(() => {
-      if (!graph.value || !tooltip.value) return { x: 0, y: 0 }
-      if (!targetNodeId.value) return { x: 0, y: 0 }
-
-      const nodePos = layouts.nodes[targetNodeId.value]
-      // translate coordinates: SVG -> DOM
-      const domPoint = graph.value.translateFromSvgToDomCoordinates(nodePos)
-      // calculates top-left position of the tooltip.
-      return {
-        left: domPoint.x - tooltip.value.offsetWidth / 2 + "px",
-        top: domPoint.y - NODE_RADIUS - tooltip.value.offsetHeight - 10 + "px",
-      }
-    })
-    const tooltipOcacity = ref(0) // 0 or 1
-
-    const eventHandlers: EventHandlers = {
-      "node:pointerover": ({ node }) => {
-        targetNodeId.value = node
-        tooltipOcacity.value = 1 // show
-      },
-      "node:pointerout": _ => {
-        tooltipOcacity.value = 0 // hide
-      }
-    }
-
-    return {
-      graph,
-      tooltip,
-      data,
-      layouts,
-      targetNodeId,
-      tooltipPos,
-      tooltipOcacity,
-      eventHandlers,
-    }
-  },
-})
-</script>
-
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .tooltip-wrapper {
   position: relative;
 }

@@ -1,11 +1,24 @@
+<script setup lang="ts">
+import { ref } from "vue"
+import * as vNG from "v-network-graph"
+import data, { Edge } from "./data"
+
+const selectedEdges = ref<string[]>([])
+
+const configs = vNG.defineConfigs<vNG.Node, Edge>({
+  edge: {
+    normal: {
+      width: 3,
+    },
+    selectable: e => e.selectable,
+  },
+})
+</script>
+
 <template>
   <div class="demo-control-panel">
     <label>Selected:</label>
-    <el-select
-      v-model="selectedEdges"
-      multiple
-      placeholder="Select"
-    >
+    <el-select v-model="selectedEdges" multiple placeholder="Select">
       <template v-for="(edge, key) in data.edges">
         <el-option
           v-if="edge.selectable"
@@ -25,26 +38,3 @@
     :configs="configs"
   />
 </template>
-
-<script lang="ts">
-import { defineComponent, ref } from "vue"
-import { UserConfigs } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const selectedEdges = ref<string[]>([])
-
-    const configs: UserConfigs = {
-      edge: {
-        normal: {
-          width: 3
-        },
-        selectable: (e) => e.selectable
-      }
-    }
-
-    return { data, selectedEdges, configs }
-  },
-})
-</script>

@@ -169,9 +169,12 @@ Values that are not specified will be used as default values.
           horizontal: number      // horizontal padding.
         }
         borderRadius: number       // border radius.
-      } | undefined
-      margin: number                  // margin from node. default: 4
-      direction: NodeLabelDirection   // node label display direction. default: SOUTH
+      } | undefined,
+      margin: number,                  // margin from node. default: 4
+      direction: "center" | "north" | "north-east" |
+                 "east" | "south-east" | "south" |
+                 "south-west" | "west" | "north-west",
+                 // node label display direction. default: "south"
       text: string    // field name in the node object to use as the label. default: "name"
                       // if function is specified the return value is string of label.
     }

@@ -1,4 +1,4 @@
-import { Nodes, Edges, Layouts, UserConfigs } from "v-network-graph"
+import { Nodes, Edges, Layouts, defineConfigs } from "v-network-graph"
 
 const nodes: Nodes = {
   node1: { name: "N1" },
@@ -20,14 +20,14 @@ const layouts: Layouts = {
   },
 }
 
-const configs: UserConfigs = {
+const configs = defineConfigs({
   node: {
     selectable: true,
   },
   edge: {
     selectable: true,
   },
-}
+})
 
 export default {
   nodes,

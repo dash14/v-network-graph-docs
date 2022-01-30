@@ -1,3 +1,36 @@
+<script setup lang="ts">
+import { reactive, ref, watch } from "vue"
+import * as vNG from "v-network-graph"
+import data from "./data"
+
+const selectedNodes = ref<string[]>([])
+
+// If you want to change the configuration object later,
+// you can use `getFullConfigs()` that can also get the
+// type information of the configuration object.
+const configs = reactive(vNG.getFullConfigs())
+
+configs.node.selectable = true
+
+const limit = ref(-1)
+watch(limit, v => {
+  selectedNodes.value = [] // reset
+  switch (v) {
+    case 0: // disabled
+      configs.node.selectable = false
+      break
+    case 1: // limit
+    case 2:
+      configs.node.selectable = v
+      break
+    case -1: // unlimited
+    default:
+      configs.node.selectable = true
+      break
+  }
+})
+</script>
+
 <template>
   <div class="demo-control-panel">
     <label>Selected:</label>
@@ -33,42 +66,3 @@
     :configs="configs"
   />
 </template>
-
-<script lang="ts">
-import { defineComponent, reactive, ref, watch } from "vue"
-import * as vNG from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const selectedNodes = ref<string[]>([])
-
-    // If you want to change the configuration object later,
-    // you can use a function (`getFullConfigs()`) that can
-    // also get the type information of the configuration object.
-    const configs = reactive(vNG.getFullConfigs())
-
-    configs.node.selectable = true
-
-    const limit = ref(-1)
-    watch(limit, v => {
-      selectedNodes.value = [] // reset
-      switch (v) {
-        case 0: // disabled
-          configs.node.selectable = false
-          break
-        case 1: // limit
-        case 2:
-          configs.node.selectable = v
-          break
-        case -1: // unlimited
-        default:
-          configs.node.selectable = true
-          break
-      }
-    })
-
-    return { data, selectedNodes, configs, limit }
-  },
-})
-</script>

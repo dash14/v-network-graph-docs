@@ -1,3 +1,23 @@
+<script setup lang="ts">
+import { Nodes, Layers } from "v-network-graph"
+import data from "./data"
+
+// Add a "font-defs" slot to the SVG root.
+const layers: Layers = {
+  "font-defs": "root",
+}
+
+// icon code point searched from: https://fonts.google.com/icons
+const nodes: Nodes = {
+  node1: { name: "N1", icon: "&#xe320" /* Laptop Mac */ },
+  node2: { name: "N2", icon: "&#xe328" /* Router */ },
+  node3: { name: "N3", icon: "&#xe331" /* Tablet Mac */ },
+  node4: { name: "N4", icon: "&#xe2bd" /* Cloud */ },
+  node5: { name: "N5", icon: "&#xf0e2" /* Support Agent */ },
+  node6: { name: "N6", icon: "&#xea75" /* Video Settings */ },
+}
+</script>
+
 <template>
   <v-network-graph
     :nodes="nodes"
@@ -11,12 +31,9 @@
     <defs>
       <!-- Cannot use <style> directly due to restrictions of Vue. -->
       <component is="style">
-        @font-face {
-          font-family: 'Material Icons';
-          font-style: normal;
-          font-weight: 400;
-          src: url(https://fonts.gstatic.com/s/materialicons/v97/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
-        }
+        @font-face { font-family: 'Material Icons'; font-style: normal; font-weight: 400; src:
+        url(https://fonts.gstatic.com/s/materialicons/v97/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2)
+        format('woff2'); }
       </component>
     </defs>
 
@@ -36,30 +53,3 @@
     </template>
   </v-network-graph>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue"
-import { Nodes, Layers } from "v-network-graph"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    // Add a "font-defs" slot to the SVG root.
-    const layers: Layers = {
-      "font-defs": "root",
-    }
-
-    // icon code point searched from: https://fonts.google.com/icons
-    const nodes: Nodes = {
-      node1: { name: "N1", icon: "&#xe320" /* Laptop Mac */ },
-      node2: { name: "N2", icon: "&#xe328" /* Router */ },
-      node3: { name: "N3", icon: "&#xe331" /* Tablet Mac */ },
-      node4: { name: "N4", icon: "&#xe2bd" /* Cloud */ },
-      node5: { name: "N5", icon: "&#xf0e2" /* Support Agent */ },
-      node6: { name: "N6", icon: "&#xea75" /* Video Settings */ },
-    }
-
-    return { data, nodes, layers }
-  },
-})
-</script>

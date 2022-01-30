@@ -1,3 +1,39 @@
+<script setup lang="ts">
+import * as vNG from "v-network-graph"
+import { reactive, ref } from "vue"
+import data from "./data"
+
+const verticalAlign = ref("above")
+
+const configs = reactive(
+  vNG.defineConfigs({
+    node: {
+      label: {
+        visible: false,
+      },
+    },
+    edge: {
+      label: {
+        fontFamily: undefined,
+        fontSize: 11,
+        lineHeight: 1.1,
+        color: "#000000",
+        margin: 4,
+        background: {
+          visible: true,
+          color: "#ffffff",
+          padding: {
+            vertical: 1,
+            horizontal: 4,
+          },
+          borderRadius: 2,
+        },
+      },
+    },
+  })
+)
+</script>
+
 <template>
   <div class="demo-control-panel">
     <el-tabs type="border-card">
@@ -38,42 +74,3 @@
     </template>
   </v-network-graph>
 </template>
-
-<script lang="ts">
-import { defineComponent, reactive, ref } from "vue"
-import data from "./data"
-
-export default defineComponent({
-  setup() {
-    const verticalAlign = ref("above")
-
-    const configs = reactive({
-      node: {
-        label: {
-          visible: false
-        },
-      },
-      edge: {
-        label: {
-          fontFamily: undefined,
-          fontSize: 11,
-          lineHeight: 1.1,
-          color: "#000000",
-          margin: 4,
-          background: {
-            visible: true,
-            color: "#ffffff",
-            padding: {
-              vertical: 1,
-              horizontal: 4,
-            },
-            borderRadius: 2
-          }
-        }
-      }
-    })
-
-    return { data, verticalAlign, configs }
-  },
-})
-</script>

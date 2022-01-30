@@ -1,4 +1,4 @@
-import { Nodes, Edges, Layouts, UserConfigs } from "v-network-graph"
+import { Nodes, Edges, Layouts, defineConfigs } from "v-network-graph"
 
 const nodes: Nodes = {
   node1: { name: "Source" },
@@ -50,21 +50,21 @@ const layouts: Layouts = {
   },
 }
 
-const configs: UserConfigs = {
+const configs = defineConfigs({
   node: {
     label: {
-      visible: (n) => !!n.name
-    }
+      visible: n => !!n.name,
+    },
   },
   path: {
     visible: true,
     curveInNode: true,
     path: {
       width: 14,
-      color: "#ff000088"
-    }
-  }
-}
+      color: "#ff000088",
+    },
+  },
+})
 
 export default {
   nodes,

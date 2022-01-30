@@ -1,4 +1,4 @@
-import { Nodes, Edges, Layouts, UserConfigs } from "v-network-graph"
+import { Nodes, Edges, Layouts } from "v-network-graph"
 
 const nodes: Nodes = {
   node1: { name: "Node 1" },
