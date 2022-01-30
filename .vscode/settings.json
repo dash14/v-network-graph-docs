@@ -7,10 +7,18 @@
   "cSpell.words": [
     "composables",
     "dasharray",
+    "dblclick",
+    "dragend",
     "draggable",
+    "dragstart",
     "focusring",
     "linecap",
     "linejoin",
+    "pointerdown",
+    "pointermove",
+    "pointerout",
+    "pointerover",
+    "pointerup",
     "vite",
     "vitejs",
     "vitepress"
