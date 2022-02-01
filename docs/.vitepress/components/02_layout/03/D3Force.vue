@@ -70,7 +70,7 @@ function buildNetwork(count: number, nodes: vNG.Nodes, edges: vNG.Edges) {
   <div class="demo-control-panel">
     <label>Node count:</label>
     <el-input-number v-model="nodeCount" :min="3" :max="200" />
-    <label>(&lt;= 300)</label>
+    <label>(&lt;= 200)</label>
   </div>
 
   <v-network-graph
