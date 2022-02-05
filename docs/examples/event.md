@@ -83,11 +83,11 @@ to represent a combination of DOM elements such as tooltip.
 
 <demo-tabs :use-data="true" hint="Hover the mouse over a node to display a tooltip.">
 <template v-slot:demo>
-  <DemoTooltip />
+  <DemoNodeTooltip />
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_event/04/Tooltip.vue{17-40}
+  <<< @/.vitepress/components/08_event/04/NodeTooltip.vue{17-40}
 
 </template>
 <template v-slot:data>
@@ -97,10 +97,30 @@ to represent a combination of DOM elements such as tooltip.
 </template>
 </demo-tabs>
 
+Even though there is no edge position stored in `Layout`,
+we can still create tooltip for edges by using the node positions. 
+
+<demo-tabs :use-data="true" hint="Hover the mouse over an edge to display a tooltip.">
+<template v-slot:demo>
+  <DemoEdgeTooltip />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/08_event/05/EdgeTooltip.vue{14-45}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/08_event/05/data.ts
+
+</template>
+</demo-tabs>
+
 
 <script setup>
 import DemoAllEvents from '../.vitepress/components/08_event/01/AllEvents.vue'
 import DemoBadge from '../.vitepress/components/08_event/02/Badge.vue'
 import DemoContextMenu from '../.vitepress/components/08_event/03/ContextMenu.vue'
-import DemoTooltip from '../.vitepress/components/08_event/04/Tooltip.vue'
+import DemoNodeTooltip from '../.vitepress/components/08_event/04/NodeTooltip.vue'
+import DemoEdgeTooltip from '../.vitepress/components/08_event/05/EdgeTooltip.vue'
 </script>

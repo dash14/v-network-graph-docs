@@ -93,9 +93,26 @@ This behavior will be revised in the future.
 </template>
 </demo-tabs>
 
+## Enable and disable force layout
+
+Force layout is good for demo but sometimes annoying when we
+want to observe a single node. So we can enable it first then disable it later.
+
+<demo-tabs>
+<template v-slot:demo>
+  <DemoLayoutSwitching />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/02_layout/05/LayoutSwitching.vue{18-27,70-70}
+
+</template>
+</demo-tabs>
+
 <script setup>
 import DemoScaleObjects from '../.vitepress/components/02_layout/01/ScaleObjects.vue'
 import DemoSnapToGrid from '../.vitepress/components/02_layout/02/SnapToGrid.vue'
 import DemoD3Force from '../.vitepress/components/02_layout/03/D3Force.vue'
 import DemoD3ForceFixed from '../.vitepress/components/02_layout/04/D3ForceFixed.vue'
+import DemoLayoutSwitching from '../.vitepress/components/02_layout/05/LayoutSwitching.vue'
 </script>
