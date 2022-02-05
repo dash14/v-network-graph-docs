@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref, watchEffect } from "vue"
+import { reactive, ref, watchEffect, computed } from "vue"
 import * as vNG from "v-network-graph"
 import {
   ForceLayout,
@@ -7,7 +7,7 @@ import {
   ForceEdgeDatum,
 } from "v-network-graph/lib/force-layout"
 
-const nodeCount = ref(20)
+const nodeCount = ref(50)
 const nodes = reactive({})
 const edges = reactive({})
 
@@ -15,25 +15,21 @@ watchEffect(() => {
   buildNetwork(nodeCount.value, nodes, edges)
 })
 
+const d3ForceEnabled = computed({
+  get: () => configs.view.layoutHandler instanceof ForceLayout,
+  set: (value: boolean) => {
+    if (value) {
+      configs.view.layoutHandler = new ForceLayout()
+    } else {
+      configs.view.layoutHandler = new vNG.SimpleLayout()
+    }
+  },
+})
+
 const configs = reactive(
   vNG.defineConfigs({
     view: {
-      layoutHandler: new ForceLayout({
-        positionFixedByDrag: false,
-        positionFixedByClickWithAltKey: true,
-        // * The following are the default parameters for the simulation.
-        // * You can customize it by uncommenting below.
-        // createSimulation: (d3, nodes, edges) => {
-        //   const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
-        //   return d3
-        //     .forceSimulation(nodes)
-        //     .force("edge", forceLink.distance(100))
-        //     .force("charge", d3.forceManyBody())
-        //     .force("collide", d3.forceCollide(50).strength(0.2))
-        //     .force("center", d3.forceCenter().strength(0.05))
-        //     .alphaMin(0.001)
-        // }
-      }),
+      layoutHandler: new ForceLayout(),
     },
     node: {
       label: {
@@ -71,6 +67,7 @@ function buildNetwork(count: number, nodes: vNG.Nodes, edges: vNG.Edges) {
     <label>Node count:</label>
     <el-input-number v-model="nodeCount" :min="3" :max="200" />
     <label>(&lt;= 200)</label>
+    <el-checkbox v-model="d3ForceEnabled" label="D3-Force enabled" />
   </div>
 
   <v-network-graph
