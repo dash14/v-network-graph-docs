@@ -149,12 +149,12 @@ Markers such as arrow head can be specified for edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/07/Arrow.vue{42-59}
+  <<< @/.vitepress/components/05_appearance/08/Arrow.vue{42-59}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_appearance/07/data.ts
+  <<< @/.vitepress/components/05_appearance/08/data.ts
 
 </template>
 </demo-tabs>
@@ -262,12 +262,12 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/08/CustomMarker.vue{11-30,43-57}
+  <<< @/.vitepress/components/05_appearance/09/CustomMarker.vue{11-30,43-57}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_appearance/08/data.ts
+  <<< @/.vitepress/components/05_appearance/09/data.ts
 
 </template>
 </demo-tabs>
@@ -328,12 +328,12 @@ edges appear in the given edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/09/EdgesKeepOrder.vue{25}
+  <<< @/.vitepress/components/05_appearance/10/EdgesKeepOrder.vue{25}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_appearance/09/data.ts
+  <<< @/.vitepress/components/05_appearance/10/data.ts
 
 </template>
 </demo-tabs>
@@ -455,9 +455,9 @@ import DemoEachObject2 from '../.vitepress/components/05_appearance/03/EachObjec
 import DemoCustomNode from '../.vitepress/components/05_appearance/04/CustomNode.vue'
 import DemoCustomNodeWithImage from '../.vitepress/components/05_appearance/05/CustomNodeWithImage.vue'
 import DemoZOrder from '../.vitepress/components/05_appearance/06/ZOrder.vue'
-import DemoArrow from '../.vitepress/components/05_appearance/07/Arrow.vue'
-import DemoCustomMarker from '../.vitepress/components/05_appearance/08/CustomMarker.vue'
-import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/09/EdgesKeepOrder.vue'
+import DemoArrow from '../.vitepress/components/05_appearance/08/Arrow.vue'
+import DemoCustomMarker from '../.vitepress/components/05_appearance/09/CustomMarker.vue'
+import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/10/EdgesKeepOrder.vue'
 
 import DemoStyle1 from '../.vitepress/components/05_appearance/s01/Style1.vue'
 import DemoStyle2 from '../.vitepress/components/05_appearance/s02/Style2.vue'
