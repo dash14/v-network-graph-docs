@@ -184,6 +184,12 @@ Values that are not specified will be used as default values.
       padding: number  // distance between the focus ring and the node. default: 3
       color: string     // fill color.                                   default: "#eebb00"
     }
+    zOrder: {
+      enabled: boolean  // whether the z-order control is enable or not. default: false
+      zIndex: number | (node: Node) => number // node's z-index value.   default: 0
+      bringToFrontOnHover: boolean    // whether to bring to front on hover.    default: true
+      bringToFrontOnSelected: boolean // whether to bring to front on selected. default: true
+    }
     transition: string | undefined  // entering/leaving transition.      default: undefined
   }
   edge: {
@@ -294,6 +300,12 @@ Values that are not specified will be used as default values.
       } | undefined
       margin: number              // distance from edge stroke. default: 4
       padding: number              // distance from end node. default: 4
+    }
+    zOrder: {
+      enabled: boolean  // whether the z-order control is enable or not. default: false
+      zIndex: number | (node: Node) => number // node's z-index value.   default: 0
+      bringToFrontOnHover: boolean    // whether to bring to front on hover.    default: true
+      bringToFrontOnSelected: boolean // whether to bring to front on selected. default: true
     }
   }
   path: {
