@@ -14,7 +14,8 @@ const edges: Edges = {
   edge2: { source: "node2", target: "node3" },
   edge3: { source: "node2", target: "node4" },
   edge4: { source: "node4", target: "node5" },
-  edge5: { source: "node4", target: "node6" },
+  edge5: { source: "node5", target: "node4" },
+  edge6: { source: "node4", target: "node6" },
 }
 
 const layouts: Layouts = {
