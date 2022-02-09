@@ -108,14 +108,13 @@ The images of the faces ware created https://generated.photos/.
 </template>
 </demo-tabs>
 
-
 ## Z-order of Nodes
 
 The z-index of nodes can be specified to control the order of the
 nodes in the z-direction.  
 Since there is no concept of z-index in SVG, this feature is
 achieved by sorting the internal node objects. It is disabled by
-default for performance reasons. If `configs.node.zOrder.enable`
+default for performance reasons. If `configs.node.zOrder.enabled`
 is set to `true`, this feature will be enabled.
 
 In addition to specifying the z-index based on the properties of
@@ -124,11 +123,11 @@ it is mouse hovered or selected.
 
 <demo-tabs :use-data="true" :demo-height="250">
 <template v-slot:demo>
-  <DemoZOrder />
+  <DemoZOrderOfNodes />
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/06/ZOrder.vue{25-29}
+  <<< @/.vitepress/components/05_appearance/06/ZOrderOfNodes.vue{25-29}
 
 </template>
 <template v-slot:data>
@@ -138,6 +137,26 @@ it is mouse hovered or selected.
 </template>
 </demo-tabs>
 
+## Z-order of Edges
+
+It is also possible to control the z-order of the edges as well
+as the nodes.
+
+<demo-tabs :use-data="true" :demo-height="250">
+<template v-slot:demo>
+  <DemoZOrderOfEdges />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/07/ZOrderOfEdges.vue{23-28}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/07/data.ts
+
+</template>
+</demo-tabs>
 
 ## Arrow on edges
 
@@ -454,7 +473,8 @@ import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject
 import DemoEachObject2 from '../.vitepress/components/05_appearance/03/EachObject2.vue'
 import DemoCustomNode from '../.vitepress/components/05_appearance/04/CustomNode.vue'
 import DemoCustomNodeWithImage from '../.vitepress/components/05_appearance/05/CustomNodeWithImage.vue'
-import DemoZOrder from '../.vitepress/components/05_appearance/06/ZOrder.vue'
+import DemoZOrderOfNodes from '../.vitepress/components/05_appearance/06/ZOrderOfNodes.vue'
+import DemoZOrderOfEdges from '../.vitepress/components/05_appearance/07/ZOrderOfEdges.vue'
 import DemoArrow from '../.vitepress/components/05_appearance/08/Arrow.vue'
 import DemoCustomMarker from '../.vitepress/components/05_appearance/09/CustomMarker.vue'
 import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/10/EdgesKeepOrder.vue'

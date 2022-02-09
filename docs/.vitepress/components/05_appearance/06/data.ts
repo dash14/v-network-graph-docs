@@ -2,8 +2,8 @@ import { Nodes, Edges, Layouts } from "v-network-graph"
 
 const nodes: Nodes = {
   node1: { name: "Node 1", zIndex: 1, color: "#4466cc", radius: 24 },
-  node2: { name: "Node 2", zIndex: 2, color: "#ee4444", radius: 36 },
-  node3: { name: "Node 3", zIndex: 2, color: "#ee4444", radius: 36 },
+  node2: { name: "Node 2", zIndex: 2, color: "#44cccc", radius: 36 },
+  node3: { name: "Node 3", zIndex: 2, color: "#44cccc", radius: 36 },
   node4: { name: "Node 4", zIndex: 1, color: "#4466cc", radius: 24 },
 }
 

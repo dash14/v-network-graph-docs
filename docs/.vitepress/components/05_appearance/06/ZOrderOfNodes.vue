@@ -15,17 +15,18 @@ const configs = reactive(
         strokeColor: n => darker(n.color, 20),
       },
       hover: {
-        color: n => darker(n.color, 20),
-        strokeColor: n => darker(n.color, 40),
+        color: n => darker(n.color, 10),
+        strokeColor: n => darker(n.color, 30),
       },
       label: {
         text: n => `z-index: ${n.zIndex}`,
         fontSize: 12,
       },
       zOrder: {
+        enabled: true,
         zIndex: n => n.zIndex,
-        toTopOnHovered: true,
-        toTopOnSelected: true,
+        bringToFrontOnHover: true,
+        bringToFrontOnSelected: true,
       },
     },
   })
@@ -40,11 +41,11 @@ function darker(hex: string, level: number) {
 
 <template>
   <div class="demo-control-panel">
-    <el-checkbox v-model="configs.node.zOrder.toTopOnHovered"
-      >To top on hovered</el-checkbox
+    <el-checkbox v-model="configs.node.zOrder.bringToFrontOnHover"
+      >Bring to front on hover</el-checkbox
     >
-    <el-checkbox v-model="configs.node.zOrder.toTopOnSelected"
-      >To top on selected</el-checkbox
+    <el-checkbox v-model="configs.node.zOrder.bringToFrontOnSelected"
+      >Bring to front on selected</el-checkbox
     >
   </div>
 
