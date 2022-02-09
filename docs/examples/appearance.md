@@ -109,6 +109,36 @@ The images of the faces ware created https://generated.photos/.
 </demo-tabs>
 
 
+## Z-order of Nodes
+
+The z-index of nodes can be specified to control the order of the
+nodes in the z-direction.  
+Since there is no concept of z-index in SVG, this feature is
+achieved by sorting the internal node objects. It is disabled by
+default for performance reasons. If `configs.node.zOrder.enable`
+is set to `true`, this feature will be enabled.
+
+In addition to specifying the z-index based on the properties of
+the node itself, it is also possible to move to the topmost when
+it is mouse hovered or selected.
+
+<demo-tabs :use-data="true" :demo-height="250">
+<template v-slot:demo>
+  <DemoZOrder />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/06/ZOrder.vue{25-29}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/06/data.ts
+
+</template>
+</demo-tabs>
+
+
 ## Arrow on edges
 
 Markers such as arrow head can be specified for edges.
@@ -424,7 +454,7 @@ import DemoEachObject from '../.vitepress/components/05_appearance/02/EachObject
 import DemoEachObject2 from '../.vitepress/components/05_appearance/03/EachObject2.vue'
 import DemoCustomNode from '../.vitepress/components/05_appearance/04/CustomNode.vue'
 import DemoCustomNodeWithImage from '../.vitepress/components/05_appearance/05/CustomNodeWithImage.vue'
-
+import DemoZOrder from '../.vitepress/components/05_appearance/06/ZOrder.vue'
 import DemoArrow from '../.vitepress/components/05_appearance/07/Arrow.vue'
 import DemoCustomMarker from '../.vitepress/components/05_appearance/08/CustomMarker.vue'
 import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/09/EdgesKeepOrder.vue'
