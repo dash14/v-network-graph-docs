@@ -15,7 +15,7 @@ A simple example is shown below.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/01/Basic.vue{5-8,16}
+<<< @/.vitepress/components/06_paths/01/Basic.vue{5-16,24}
 
 </template>
 <template v-slot:data>
