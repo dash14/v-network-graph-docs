@@ -2,10 +2,10 @@
 import * as vNG from "v-network-graph"
 import data from "./data"
 
-const paths: vNG.Paths = [
-  { edges: ["edge1", "edge3", "edge5"] },
-  { edges: ["edge2", "edge4", "edge6"] },
-]
+const paths: vNG.Paths = {
+  path1: { edges: ["edge1", "edge3", "edge5"] },
+  path2: { edges: ["edge2", "edge4", "edge6"] },
+}
 
 const configs = vNG.defineConfigs({
   node: {
