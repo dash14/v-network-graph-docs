@@ -8,9 +8,11 @@
 | -------------- | ------------------------------- | ------------- | -------- | ------- | ------ |
 | nodes          | nodes in the graph              | Nodes         | true     | -       | no     |
 | edges          | edges in the graph              | Edges         | true     | -       | no     |
+| paths          | paths                           | Paths         | false    | {}      | no     |
 | layouts        | positions of the nodes          | Layouts       | false    | {}      | yes    |
 | selected-nodes | node ID list user selected      | string[]      | false    | []      | yes    |
 | selected-edges | edge ID list user selected      | string[]      | false    | []      | yes    |
+| selected-paths | path ID list user selected      | string[]      | false    | []      | yes    |
 | zoom-level     | zoom level                      | number        | false    | 1.0     | yes    |
 | configs        | configurations                  | UserConfigs   | false    | {}      | no     |
 | layers         | additional layers               | Layers        | false    | {}      | no     |
@@ -43,6 +45,19 @@ See below for definitions of the original interface types listed in the Type col
     source: "SOURCE_NODE_ID",
     target: "TARGET_NODE_ID",
     /* with arbitrary information of this edge */
+  },
+  ...
+}
+```
+
+### Paths:
+
+```js
+{
+  "PATH_ID": {
+    /* The edge IDs through which the path passes: */
+    edges: [ "EDGE_ID1", "EDGE_ID2", ... ]
+    /* with arbitrary information of this node */
   },
   ...
 }
@@ -204,13 +219,15 @@ Values that are not specified will be used as default values.
     }
     hover: { /* same structure as `normal`. */ } | undefined
         // default: {
+        //   width: () => {normal's value} + 1
         //   color: "#3355bb",
         //   ... all other values are same as `edge.normal`
         // },
     selected: { /* same structure as `normal`. */ } | undefined
         // default: {
+        //   width: () => {normal's value} + 1
         //   color: "#dd8800",
-        //   dasharray: (wider than `normal`),
+        //   dasharray: (wider than normal's value),
         //   ... all other values are same as `edge.normal`
         // }
     selectable: boolean | number | (edge) => boolean
@@ -303,29 +320,50 @@ Values that are not specified will be used as default values.
     }
     zOrder: {
       enabled: boolean  // whether the z-order control is enable or not. default: false
-      zIndex: number | (node: Node) => number // node's z-index value.   default: 0
+      zIndex: number | (node: Node) => number // edge's z-index value.   default: 0
       bringToFrontOnHover: boolean    // whether to bring to front on hover.    default: true
       bringToFrontOnSelected: boolean // whether to bring to front on selected. default: true
     }
   }
   path: {
     visible: boolean     // whether the paths are visible or not.  default: false
-    clickable: boolean   // whether paths are clickable or not.    default: false
+    clickable: boolean | (path) => boolean  // whether paths are clickable or not. default: false
+    hoverable: boolean | (path) => boolean  // whether paths are hoverable or not. default: false
+    selectable: boolean | number | (path) => boolean
+        // whether the path is selectable or not. default: false
+        // When specified as a number, it means the max number of paths that can be selected.
     curveInNode: boolean // whether to curve paths within nodes.   default: false
     end: "centerOfNode" | "edgeOfNode" // position of end of path. default: "centerOfNode"
     margin: number       // margin from end of path.               default: 0
-    path: {
+    path: { /* @deprecated */ }
+    normal: {
       // * These fields can also be specified with the function as `(path) => value`.
       width: number      // width of path. default: 6
       color: string      // path color. default: (Func to select a color from a hash of edges.)
-
       dasharray: number | string | undefined         // stroke dash array. default: undefined
       linecap: "butt" | "round" | "square" | undefined  // stroke linecap. default: "round"
       linejoin: "miter" | "round" | "bevel"            // stroke linejoin. default: "round"
       animate: boolean                       // whether to animate or not. default: false
       animationSpeed: number                  // animation speed.           default: 50
     }
-    transition: string | undefined  // entering/leaving transition.         default: undefined
+    hover: { /* same structure as `normal`. */ } | undefined
+        // default: {
+        //   width: () => {normal's value} + 2
+        //   ... all other values are same as `path.normal`
+        // },
+    selected: { /* same structure as `normal`. */ }
+        // default: {
+        //   width: () => {normal's value} + 2
+        //   dasharray: "6 12",
+        //   ... all other values are same as `path.normal`
+        // }
+    zOrder: {
+      enabled: boolean  // whether the z-order control is enable or not. default: false
+      zIndex: number | (node: Node) => number // path's z-index value.   default: 0
+      bringToFrontOnHover: boolean    // whether to bring to front on hover.    default: true
+      bringToFrontOnSelected: boolean // whether to bring to front on selected. default: true
+    }
+    transition: string | undefined  // entering/leaving transition. default: undefined
   }
 }
 ```
@@ -341,6 +379,7 @@ Values that are not specified will be used as default values.
 | update:zoomLevel     | update zoom level     |
 | update:selectedNodes | update selected nodes |
 | update:selectedEdges | update selected edges |
+| update:selectedPaths | update selected paths |
 | update:layouts       | update layouts        |
 
 </div>
@@ -555,9 +594,33 @@ The following is a list of events that can be specified for attribute `event-han
       <td>path double clicked</td>
     </tr>
     <tr>
+      <td>"path:pointerover"</td>
+      <td>pointer over on path</td>
+      <td rowspan="4">
+        <code>{ path: PATH_ID, event: PointerEvent }</code>
+      </td>
+    </tr>
+    <tr>
+      <td>"path:pointerout"</td>
+      <td>pointer out on path</td>
+    </tr>
+    <tr>
+      <td>"path:pointerdown"</td>
+      <td>pointer down on path</td>
+    </tr>
+    <tr>
+      <td>"path:pointerup"</td>
+      <td>pointer up on path</td>
+    </tr>
+    <tr>
       <td>"path:contextmenu"</td>
       <td>path right-clicked</td>
       <td><code>{ path: Path, event: MouseEvent }</code></td>
+    </tr>
+    <tr>
+      <td>"path:select"</td>
+      <td>path selected</td>
+      <td><code>[ PATH_ID, ... ]</code></td>
     </tr>
   </tbody>
 </table>
