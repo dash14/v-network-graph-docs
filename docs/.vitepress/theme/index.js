@@ -22,6 +22,7 @@ import EdgeMarkerConfigPanel from "../components/controls/appearance/EdgeMarkerC
 import EdgeMarginGapConfigPanel from "../components/controls/appearance/EdgeMarginGapConfigPanel.vue"
 import SummarizedEdgeLabelConfigPanel from "../components/controls/appearance/SummarizedEdgeLabelConfigPanel.vue"
 import PathConfigPanel from "../components/controls/paths/PathConfigPanel.vue"
+import PathStrokeConfigPanel from "../components/controls/paths/PathStrokeConfigPanel.vue"
 import GridPanel from "../components/controls/misc/GridPanel.vue"
 
 export default {
@@ -49,6 +50,7 @@ export default {
     app.component("demo-edge-margin-gap-config-panel", EdgeMarginGapConfigPanel)
     app.component("demo-summarized-edge-label-config-panel", SummarizedEdgeLabelConfigPanel)
     app.component("demo-path-config-panel", PathConfigPanel)
+    app.component("demo-path-stroke-config-panel", PathStrokeConfigPanel)
     app.component("demo-grid-panel", GridPanel)
   },
 }
