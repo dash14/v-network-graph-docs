@@ -12,6 +12,7 @@
     "draggable",
     "dragstart",
     "focusring",
+    "hoverable",
     "linecap",
     "linejoin",
     "pointerdown",
