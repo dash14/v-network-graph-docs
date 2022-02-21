@@ -32,7 +32,7 @@ const configs = vNG.defineConfigs({
   path: {
     visible: true,
     curveInNode: true,
-    path: {
+    normal: {
       width: 10,
     },
   },

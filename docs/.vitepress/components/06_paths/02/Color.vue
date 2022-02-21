@@ -25,7 +25,7 @@ const configs = vNG.defineConfigs({
   },
   path: {
     visible: true,
-    path: {
+    normal: {
       width: 10,
       color: p => p.color,
     },

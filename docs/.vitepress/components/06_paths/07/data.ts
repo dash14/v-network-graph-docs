@@ -7,10 +7,6 @@ const nodes: Nodes = {
   node4: { name: "Node 4" },
   node5: { name: "Node 5" },
   node6: { name: "Node 6" },
-  node7: { name: "Node 7" },
-  node8: { name: "Node 8" },
-  node9: { name: "Node 9" },
-  node10: { name: "Node 10" },
 }
 
 const edges: Edges = {
@@ -20,10 +16,8 @@ const edges: Edges = {
   edge4: { source: "node2", target: "node4" },
   edge5: { source: "node4", target: "node5" },
   edge6: { source: "node4", target: "node6" },
-  edge7: { source: "node5", target: "node7" },
-  edge8: { source: "node5", target: "node8" },
-  edge9: { source: "node6", target: "node9" },
-  edge10: { source: "node6", target: "node10" },
+  edge7: { source: "node3", target: "node2" },
+  edge8: { source: "node4", target: "node5" },
 }
 
 const layouts: Layouts = {
