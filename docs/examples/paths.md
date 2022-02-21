@@ -15,7 +15,7 @@ A simple example is shown below.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/01/Basic.vue{5-16,24}
+<<< @/.vitepress/components/06_paths/01/Basic.vue{5-8,16}
 
 </template>
 <template v-slot:data>
@@ -87,12 +87,21 @@ Paths can also be animated in the same way as in Edge.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/04/EndOfPath.vue
+<<< @/.vitepress/components/06_paths/05/EndOfPath.vue
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/06_paths/04/data.ts
+<<< @/.vitepress/components/06_paths/05/data.ts
+
+</template>
+</demo-tabs>
+
+
+</template>
+<template v-slot:data>
+
+<<< @/.vitepress/components/06_paths/06/data.ts
 
 </template>
 </demo-tabs>
@@ -107,12 +116,12 @@ Paths can be drawn on curved edges as well.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/05/CurvedEdge.vue{30}
+<<< @/.vitepress/components/06_paths/07/CurvedEdge.vue{30}
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/06_paths/05/data.ts
+<<< @/.vitepress/components/06_paths/07/data.ts
 
 </template>
 </demo-tabs>
@@ -123,7 +132,9 @@ Paths can be drawn on curved edges as well.
 import DemoBasic from '../.vitepress/components/06_paths/01/Basic.vue'
 import DemoColor from '../.vitepress/components/06_paths/02/Color.vue'
 import DemoAnimation from '../.vitepress/components/06_paths/03/Animation.vue'
+import DemoEndOfPath from '../.vitepress/components/06_paths/05/EndOfPath.vue'
 import DemoEndOfPath from '../.vitepress/components/06_paths/04/EndOfPath.vue'
 import DemoCurvedEdge from '../.vitepress/components/06_paths/05/CurvedEdge.vue'
+import DemoCurvedEdge from '../.vitepress/components/06_paths/07/CurvedEdge.vue'
 </script>
 

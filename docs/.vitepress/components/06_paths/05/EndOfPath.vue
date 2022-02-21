@@ -35,7 +35,7 @@ const configs = reactive(
       curveInNode: false,
       end: "centerOfNode", // "centerOfNode" or "edgeOfNode"
       margin: 0,
-      path: {
+      normal: {
         width: 10,
         color: "#ff800088",
         dasharray: "",
@@ -55,12 +55,12 @@ const configs = reactive(
       v-model:end="configs.path.end"
       v-model:margin="configs.path.margin"
       v-model:curveInNode="configs.path.curveInNode"
-      v-model:width="configs.path.path.width"
-      v-model:color="configs.path.path.color"
-      v-model:dasharray="configs.path.path.dasharray"
-      v-model:linecap="configs.path.path.linecap"
-      v-model:animate="configs.path.path.animate"
-      v-model:animationSpeed="configs.path.path.animationSpeed"
+      v-model:width="configs.path.normal.width"
+      v-model:color="configs.path.normal.color"
+      v-model:dasharray="configs.path.normal.dasharray"
+      v-model:linecap="configs.path.normal.linecap"
+      v-model:animate="configs.path.normal.animate"
+      v-model:animationSpeed="configs.path.normal.animationSpeed"
     />
   </div>
 
