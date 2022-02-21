@@ -174,7 +174,7 @@ class Graph {
   }
 }
 
-const paths = ref<vNG.Paths>([])
+const paths = ref<vNG.Paths>({})
 
 const targetNode = ref("node12")
 watchEffect(() => {
@@ -182,7 +182,7 @@ watchEffect(() => {
   const routeOfNodes = graph.findShortestPath(["node1", targetNode.value])
   if (routeOfNodes) {
     const routeOfEdges = graph.convertNodesToEdges(routeOfNodes)
-    paths.value = [{ edges: routeOfEdges }]
+    paths.value = { shortestPath: { edges: routeOfEdges } }
   }
 })
 
