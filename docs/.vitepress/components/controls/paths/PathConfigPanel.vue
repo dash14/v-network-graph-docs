@@ -1,59 +1,36 @@
 <template>
-  <el-card class="path-configs">
-    <div class="path-configs">
-      <div class="control">
-        End of the path:
-        <el-select v-model="end" class="end-path">
-          <el-option label="Center of the node" value="centerOfNode" />
-          <el-option label="Edge of the node" value="edgeOfNode" />
-        </el-select>
-      </div>
-      <div class="control">
-        Margin:
-        <el-slider v-model="margin" :min="0" :max="32" :step="1" />
-      </div>
+  <div class="path-configs">
+    <div class="control">
+      End of the path:
+      <el-select v-model="end" class="end-path">
+        <el-option label="Center of the node" value="centerOfNode" />
+        <el-option label="Edge of the node" value="edgeOfNode" />
+      </el-select>
     </div>
-    <div class="path-configs">
-      <div class="control">
-        Curve in the node:
-        <el-checkbox v-model="curveInNode" />
-      </div>
-      <div class="control">* Smoothes the path in the node.</div>
+    <div class="control">
+      Margin:
+      <el-slider v-model="margin" :min="0" :max="32" :step="1" />
     </div>
-    <div class="path-configs">
-      <div class="control">
-        Width:
-        <el-slider v-model="width" :min="1" :max="16" :step="1" />
-      </div>
-      <div class="control">
-        Color:
-        <el-color-picker-custom v-model="color" />
-      </div>
-      <div class="control">
-        Dasharray:
-        <el-input v-model="dasharray" />
-      </div>
-      <div class="control">
-        Line cap:
-        <el-select v-model="linecap">
-          <el-option label="butt" value="butt" />
-          <el-option label="round" value="round" />
-          <el-option label="square" value="square" />
-        </el-select>
-      </div>
+  </div>
+  <div class="path-configs">
+    <div class="control">
+      Curve in the node:
+      <el-checkbox v-model="curveInNode" />
     </div>
-    <div class="path-configs">
-      <div class="control">
-        Animate:
-        <el-checkbox v-model="animate" />
-      </div>
-      <div class="control">
-        Speed:
-        <el-slider v-model="animationSpeed" :min="10" :max="100" :step="10" />
-      </div>
-      <div class="control">To enable animation, dasharray must also be set to non-zero.</div>
+    <div class="control">* Smoothes the path in the node.</div>
+  </div>
+  <div class="path-configs">
+    <div class="control">Event handling:</div>
+    <div class="control">
+      <el-checkbox v-model="clickable">Clickable</el-checkbox>
     </div>
-  </el-card>
+    <div class="control">
+      <el-checkbox v-model="hoverable">Hoverable</el-checkbox>
+    </div>
+    <div class="control">
+      <el-checkbox v-model="selectable">Selectable</el-checkbox>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -73,38 +50,26 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
-    width: {
-      type: Number,
-      required: true,
-    },
-    color: {
-      type: String,
-      required: true,
-    },
-    dasharray: {
-      type: String,
-      default: "0",
-    },
-    linecap: {
-      type: String,
-      default: "butt",
-    },
-    animate: {
+    clickable: {
       type: Boolean,
       required: true,
     },
-    animationSpeed: {
-      type: Number,
+    hoverable: {
+      type: Boolean,
+      required: true,
+    },
+    selectable: {
+      type: Boolean,
       required: true,
     },
   },
   emits: [
-    "update:width",
-    "update:color",
-    "update:dasharray",
-    "update:linecap",
-    "update:animate",
-    "update:animationSpeed",
+    "update:end",
+    "update:margin",
+    "update:curveInNode",
+    "update:clickable",
+    "update:hoverable",
+    "update:selectable",
   ],
   setup(props, { emit }) {
     const vars: { [name: string]: WritableComputedRef<any> } = {}
@@ -123,13 +88,10 @@ export default defineComponent({
 <style lang="scss" scoped>
 .path-configs {
   width: 100%;
-  div.path-configs {
-    width: 100%;
-    font-size: 12px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .control {
@@ -153,7 +115,7 @@ export default defineComponent({
       width: 85px;
     }
     &.end-path {
-      .el-input{
+      .el-input {
         width: 160px;
       }
     }

@@ -118,11 +118,11 @@ Also, to enable mouse hover response, set `configs.path.hoverable` to true.
 
 <demo-tabs :use-data="true">
 <template v-slot:demo>
-  <DemoEndOfPath />
+  <DemoAppearances />
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/05/EndOfPath.vue
+<<< @/.vitepress/components/06_paths/05/Appearances.vue
 
 </template>
 <template v-slot:data>
@@ -188,7 +188,7 @@ import DemoBasic from '../.vitepress/components/06_paths/01/Basic.vue'
 import DemoColor from '../.vitepress/components/06_paths/02/Color.vue'
 import DemoAnimation from '../.vitepress/components/06_paths/03/Animation.vue'
 import DemoSelect from '../.vitepress/components/06_paths/04/Select.vue'
-import DemoEndOfPath from '../.vitepress/components/06_paths/05/EndOfPath.vue'
+import DemoAppearances from '../.vitepress/components/06_paths/05/Appearances.vue'
 import DemoZOrder from '../.vitepress/components/06_paths/06/ZOrder.vue'
 import DemoCurvedEdge from '../.vitepress/components/06_paths/07/CurvedEdge.vue'
 </script>
