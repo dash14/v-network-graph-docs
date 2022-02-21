@@ -18,24 +18,6 @@ nodes separately at the same time, and pinch to zoom.
 </template>
 </demo-tabs>
 
-## Specifying nodes/edges by lists
-
-In the previous example, nodes and edges were specified as objects,
-but it is also possible to specify them as lists.  
-The object of an element of the list must have an `id` field and
-it must be unique within the list.
-
-<demo-tabs :demo-height="250">
-<template v-slot:demo>
-  <BasicMinimal2 />
-</template>
-<template v-slot:source>
-
-  <<< @/.vitepress/components/01_basic/Minimal2.vue{2-13}
-
-</template>
-</demo-tabs>
-
 ## Node positions
 
 The positional coordinates of each node can be specified.
@@ -103,7 +85,6 @@ each be enabled/disabled.
 
 <script setup>
 import BasicMinimal from '../.vitepress/components/01_basic/Minimal.vue'
-import BasicMinimal2 from '../.vitepress/components/01_basic/Minimal2.vue'
 import SetLayouts from '../.vitepress/components/01_basic/SetLayouts.vue'
 import SetLayoutsReactive from '../.vitepress/components/01_basic/SetLayoutsReactive.vue'
 import PanZoom from '../.vitepress/components/01_basic/PanZoom.vue'
