@@ -96,10 +96,60 @@ For an example of SVG to DOM coordinate translation, please see the
 [Tooltip](https://dash14.github.io/v-network-graph/examples/event.html#tooltip)
 example in Event Handling section.
 
+
+## Centering on Load
+
+This example pans centered on the specified coordinates when loaded.  
+By default, the content is centered according to the content on load.
+If you want to pan to any position on load, disable this with the
+`configs.view.autoPanAndZoomOnLoad` config.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoCenteredOnLoad />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/09_misc/05/CenteredOnLoad.vue{11-21,25-27}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/09_misc/05/data.ts
+
+</template>
+</demo-tabs>
+
+
+## Auto panning on resize
+
+By default, it automatically pans to keep the display area
+centered when it is resized. To disable this behavior, set
+`configs.view.autoPanOnResize` to false.
+
+<demo-tabs demo-height="100%" :use-data="true" hint="Can be resized by dragging the lower right corner">
+<template v-slot:demo>
+  <DemoResize />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/09_misc/06/Resize.vue{8-10}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/09_misc/06/data.ts
+
+</template>
+</demo-tabs>
+
+
 <script setup>
 import DemoDownload from '../.vitepress/components/09_misc/01/Download.vue'
 import DemoGridLayer from '../.vitepress/components/09_misc/02/GridLayer.vue'
 import DemoDijkstra from '../.vitepress/components/09_misc/03/Dijkstra.vue'
 import DemoCoordinates from '../.vitepress/components/09_misc/04/Coordinates.vue'
+import DemoCenteredOnLoad from '../.vitepress/components/09_misc/05/CenteredOnLoad.vue'
+import DemoResize from '../.vitepress/components/09_misc/06/Resize.vue'
 </script>
 
