@@ -126,7 +126,15 @@ Values that are not specified will be used as default values.
     maxZoomLevel: number    // maximum zoom level.                     default: 64
     doubleClickZoomEnabled: boolean  // Whether to zoom with double click. default: true
     mouseWheelZoomEnabled:  boolean  // Whether to zoom with mouse wheel or not. default: true
-    fit: boolean            // whether to fit the content when loaded. default: false
+    autoPanAndZoomOnLoad: false | "center-zero" | "center-content" | "fit-content"
+                            // whether to automatically perform pan and zoom on loading.
+                            // - false: do not perform pan and zoom
+                            // - "center-zero"    : perform pan to center the (0, 0)
+                            // - "center-content" : perform pan to center the content
+                            // - "fit-content"    : perform pan and zoom to fit the content
+                            // default: "center-content"
+    autoPanOnResize: boolean // whether to pan automatically to keep the center when resizing.
+                             // default: true
     layoutHandler: LayoutHandler // class to control node layout.   default: new SimpleLayout()
     onSvgPanZoomInitialized: undefined | (instance) => void // callback on init svg-pan-zoom. default: undefined
     grid: {

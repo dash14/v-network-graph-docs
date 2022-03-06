@@ -45,21 +45,24 @@ export default defineComponent({
     },
     useData: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   setup(props) {
     const style = computed<any>(() => {
-      return { '--svg-height': `${props.demoHeight}px`}
+      let height = props.demoHeight.toString()
+      if (/^\d+$/.exec(height)) {
+        height += "px"
+      }
+      return { "--svg-height": height }
     })
 
     return { style }
-  }
+  },
 })
 </script>
 
 <style lang="scss" scoped>
-
 .demo {
   margin: -15px;
 }
