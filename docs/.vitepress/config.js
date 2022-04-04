@@ -66,6 +66,7 @@ module.exports = {
         },
       },
     },
+    css: { preprocessorOptions: { scss: { charset: false } } },
   },
   server: {
     fs: {
