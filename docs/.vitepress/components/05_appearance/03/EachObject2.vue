@@ -65,7 +65,7 @@ function addBlackNode() {
 
 function addNode(node: Omit<Node, "name">) {
   const nodeId = `node${nextNodeIndex.value}`
-  const name = `N${nextNodeIndex.value}`
+  const name = `Node ${nextNodeIndex.value}`
   nodes[nodeId] = <Node>{ name, ...node }
   nextNodeIndex.value++
 }
@@ -118,15 +118,27 @@ function isEdgeAddable() {
       <el-button @click="addHotPinkNode">Add HotPink</el-button>
       <el-button @click="addGrayNode">Add Gray</el-button>
       <el-button @click="addBlackNode">Add Black</el-button>
-      <el-button :disabled="selectedNodes.length == 0" @click="removeNode">Remove</el-button>
+      <el-button :disabled="selectedNodes.length == 0" @click="removeNode"
+        >Remove</el-button
+      >
     </div>
     <div>
       <label>Edge:</label>
-      <el-button :disabled="!isEdgeAddable()" @click="addSkyBlueEdge">Add SkyBlue</el-button>
-      <el-button :disabled="!isEdgeAddable()" @click="addHotPinkEdge">Add HotPink</el-button>
-      <el-button :disabled="!isEdgeAddable()" @click="addGrayEdge">Add Gray</el-button>
-      <el-button :disabled="!isEdgeAddable()" @click="addBlackEdge">Add Black</el-button>
-      <el-button :disabled="selectedEdges.length == 0" @click="removeEdge">Remove</el-button>
+      <el-button :disabled="!isEdgeAddable()" @click="addSkyBlueEdge"
+        >Add SkyBlue</el-button
+      >
+      <el-button :disabled="!isEdgeAddable()" @click="addHotPinkEdge"
+        >Add HotPink</el-button
+      >
+      <el-button :disabled="!isEdgeAddable()" @click="addGrayEdge"
+        >Add Gray</el-button
+      >
+      <el-button :disabled="!isEdgeAddable()" @click="addBlackEdge"
+        >Add Black</el-button
+      >
+      <el-button :disabled="selectedEdges.length == 0" @click="removeEdge"
+        >Remove</el-button
+      >
     </div>
   </div>
 
