@@ -11,11 +11,23 @@
     <div class="grid-base-config">
       <div class="control">
         Interval:
-        <el-slider v-model="interval" :min="5" :max="100" :step="5" :disabled="!visible" />
+        <el-slider
+          v-model="interval"
+          :min="5"
+          :max="100"
+          :step="5"
+          :disabled="!visible"
+        />
       </div>
       <div class="control">
         Thick Increments:
-        <el-slider v-model="thickIncrements" :min="0" :max="20" :step="1" :disabled="!visible" />
+        <el-slider
+          v-model="thickIncrements"
+          :min="0"
+          :max="20"
+          :step="1"
+          :disabled="!visible"
+        />
       </div>
     </div>
     <div class="grid-line-configs">
@@ -49,7 +61,13 @@
       <div>
         <div class="control">
           Width:
-          <el-slider v-model="thickWidth" :min="0" :max="16" :step="1" :disabled="!visible" />
+          <el-slider
+            v-model="thickWidth"
+            :min="0"
+            :max="16"
+            :step="1"
+            :disabled="!visible"
+          />
         </div>
         <div class="control">
           Color:
@@ -131,7 +149,7 @@ export default defineComponent({
         set: v => emit(`update:${key}` as any, v),
       })
     }
-    return vars
+    return vars as Record<keyof typeof props, WritableComputedRef<any>>
   },
 })
 </script>
