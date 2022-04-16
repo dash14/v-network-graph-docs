@@ -117,10 +117,48 @@ we can still create tooltip for edges by using the node positions.
 </demo-tabs>
 
 
+## Set raw event handlers to the node elements.
+
+This section shows how to set raw event handlers to a node when
+the event mechanism with `event-handlers` is insufficient.
+
+The handling process of mousedown/up events in `event-handlers`
+is implemented with consideration to avoid situations where only
+one of `node:pointerdown` and `node:pointerup` can occur.
+This means that `node:pointerup` occurs only for the node where
+`node:pointerdown` occurs, and conversely, `node:pointerup` occurs
+for a node where `node:pointerdown` occurs even if the mouse button
+is released on another element in the browser.  
+This behavior may not be desirable, for example, if you want to
+be able to drag a node to specify a start point to an end point.
+
+In such cases, it is possible to expose Node's visual elements
+in the following way, so please specify directly the own handler
+you want to set.
+
+<demo-tabs :use-data="true" message="Disabled dragging of background and nodes so that mouse down/up events can be tested inside/outside the node.">
+<template v-slot:demo>
+  <DemoRawEvents />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/08_event/06/RawEvents.vue{3,32-42}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/08_event/06/data.ts
+
+</template>
+</demo-tabs>
+
+
+
 <script setup>
 import DemoAllEvents from '../.vitepress/components/08_event/01/AllEvents.vue'
 import DemoBadge from '../.vitepress/components/08_event/02/Badge.vue'
 import DemoContextMenu from '../.vitepress/components/08_event/03/ContextMenu.vue'
 import DemoNodeTooltip from '../.vitepress/components/08_event/04/NodeTooltip.vue'
 import DemoEdgeTooltip from '../.vitepress/components/08_event/05/EdgeTooltip.vue'
+import DemoRawEvents from '../.vitepress/components/08_event/06/RawEvents.vue'
 </script>
