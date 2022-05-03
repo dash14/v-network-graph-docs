@@ -15,6 +15,7 @@
     "hoverable",
     "linecap",
     "linejoin",
+    "nuxt",
     "pointerdown",
     "pointermove",
     "pointerout",
