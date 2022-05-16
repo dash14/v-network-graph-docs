@@ -694,6 +694,17 @@ The following is a list of events that can be specified for attribute `event-han
       <td>zoomOut(): void</td>
       <td>Perform zoom-out.</td>
     </tr>
+    <tr>
+      <td>getViewBox(): Box</td>
+      <td>
+        Get the coordinates of the area being displayed.<br />
+        Box: <code>{ top: number, bottom: number, left: number, right: number }</code>
+      </td>
+    </tr>
+    <tr>
+      <td>setViewBox(box: Box): void</td>
+      <td>Set the coordinates of the area being displayed.</td>
+    </tr>
   </tbody>
 </table>
 
