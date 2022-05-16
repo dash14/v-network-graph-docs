@@ -144,6 +144,35 @@ centered when it is resized. To disable this behavior, set
 </demo-tabs>
 
 
+## Get and set the viewing area
+
+The coordinates of the currently displayed area can be get and set.
+When setting, the zoom and pan to display the specified area will be
+automatically calculated.  
+If the aspect ratio of the area to be set differs from that of the
+`<v-network-graph>` element size on the screen, the position will
+be adjusted so that the center position remains the same.
+
+By using this function, the display position at a certain point in
+time can be restored later.
+
+<demo-tabs demo-height="423" :use-data="true" hint="Please try to pan and zoom to save or restore the area.">
+<template v-slot:demo>
+  <DemoViewBox />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/09_misc/07/ViewBox.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/09_misc/07/data.ts
+
+</template>
+</demo-tabs>
+
+
 <script setup>
 import DemoDownload from '../.vitepress/components/09_misc/01/Download.vue'
 import DemoGridLayer from '../.vitepress/components/09_misc/02/GridLayer.vue'
@@ -151,5 +180,6 @@ import DemoDijkstra from '../.vitepress/components/09_misc/03/Dijkstra.vue'
 import DemoCoordinates from '../.vitepress/components/09_misc/04/Coordinates.vue'
 import DemoCenteredOnLoad from '../.vitepress/components/09_misc/05/CenteredOnLoad.vue'
 import DemoResize from '../.vitepress/components/09_misc/06/Resize.vue'
+import DemoViewBox from '../.vitepress/components/09_misc/07/ViewBox.vue'
 </script>
 
