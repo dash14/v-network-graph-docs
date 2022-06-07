@@ -109,10 +109,38 @@ want to observe a single node. So we can enable it first then disable it later.
 </template>
 </demo-tabs>
 
+
+## Automatic layout
+
+Since node position is an input to `<v-network-graph>`, layout such
+as node arrangement/alignment is out of scope of this library.  
+Node layout can be achieved by writing the x,y coordinates of each
+node given in the `layouts` property of `<v-network-graph>` according
+to the layout desired to be realized in the application.  
+The following is an example of using an external library to automatically
+layout the tree structure of a directed graph.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoLayout />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/02_layout/06/Layout.vue{38-99}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/02_layout/06/data.ts
+
+</template>
+</demo-tabs>
+
 <script setup>
 import DemoScaleObjects from '../.vitepress/components/02_layout/01/ScaleObjects.vue'
 import DemoSnapToGrid from '../.vitepress/components/02_layout/02/SnapToGrid.vue'
 import DemoD3Force from '../.vitepress/components/02_layout/03/D3Force.vue'
 import DemoD3ForceFixed from '../.vitepress/components/02_layout/04/D3ForceFixed.vue'
 import DemoLayoutSwitching from '../.vitepress/components/02_layout/05/LayoutSwitching.vue'
+import DemoLayout from '../.vitepress/components/02_layout/06/Layout.vue'
 </script>
