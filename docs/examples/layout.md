@@ -117,8 +117,9 @@ as node arrangement/alignment is out of scope of this library.
 Node layout can be achieved by writing the x,y coordinates of each
 node given in the `layouts` property of `<v-network-graph>` according
 to the layout desired to be realized in the application.  
-The following is an example of using an external library to automatically
-layout the tree structure of a directed graph.
+The following is an example of using an external library (dagre:
+Directed graph layout for JavaScript) to automatically layout the
+tree structure of a directed graph.
 
 <demo-tabs :use-data="true">
 <template v-slot:demo>
@@ -135,6 +136,16 @@ layout the tree structure of a directed graph.
 
 </template>
 </demo-tabs>
+
+:::info
+dagre: Directed graph layout for JavaScript  
+https://github.com/dagrejs/dagre/wiki  
+*It can be installed with the following command:
+
+```bash
+$ npm install dagre
+```
+:::
 
 <script setup>
 import DemoScaleObjects from '../.vitepress/components/02_layout/01/ScaleObjects.vue'
