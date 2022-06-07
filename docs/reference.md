@@ -705,6 +705,17 @@ The following is a list of events that can be specified for attribute `event-han
       <td>setViewBox(box: Box): void</td>
       <td>Set the coordinates of the area being displayed.</td>
     </tr>
+    <tr>
+      <td>
+        transitionWhile(func: () => void | Promise&lt;void&gt;, duration: number = 300, timingFunction: string = "linear"): void
+      </td>
+      <td>
+        When the position of a node changes within the function specified by the argument,
+        a transition animation is triggered.<br />
+        <code>duration</code> in milliseconds.
+      </td>
+    </tr>
+
   </tbody>
 </table>
 
