@@ -172,6 +172,33 @@ time can be restored later.
 </template>
 </demo-tabs>
 
+## Specify function in view config
+
+The library does not provide an interface to specify a function
+for the value of `configs.view.*`.
+However, it is possible to specify a function by using
+[getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
+of JavaScript.
+
+In the following example, the configuration specifies a function
+that changes whether panning/zooming is enabled depending on the
+the state of shift/ctrl key presses.
+
+<demo-tabs :demo-height="250" :use-data="true">
+<template v-slot:demo>
+  <DemoViewPropGetter />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/09_misc/08/ViewPropGetter.vue{29-34}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/09_misc/08/data.ts
+
+</template>
+</demo-tabs>
 
 <script setup>
 import DemoDownload from '../.vitepress/components/09_misc/01/Download.vue'
@@ -181,5 +208,5 @@ import DemoCoordinates from '../.vitepress/components/09_misc/04/Coordinates.vue
 import DemoCenteredOnLoad from '../.vitepress/components/09_misc/05/CenteredOnLoad.vue'
 import DemoResize from '../.vitepress/components/09_misc/06/Resize.vue'
 import DemoViewBox from '../.vitepress/components/09_misc/07/ViewBox.vue'
+import DemoViewPropGetter from '../.vitepress/components/09_misc/08/ViewPropGetter.vue'
 </script>
-
