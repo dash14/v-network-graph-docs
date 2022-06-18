@@ -291,6 +291,35 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 </demo-tabs>
 
+## Place any object at the edge
+
+The markers shown above can only be displayed at the terminate point
+of an edge.  
+To place any object except at the terminate point of an edge, it can
+be achieved by applying `slot` for displaying labels.  
+In the following example, a triangle toward the target is displayed
+at the center of the edge.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoPlaceObjectAtEdge />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/10/PlaceObjectAtEdge.vue{60-68}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/10/data.ts
+
+</template>
+</demo-tabs>
+
+:::info
+This example uses the edge label feature, but in the future a dedicated
+feature may be provided for this case.
+:::
 
 ## Keep order of edges
 
@@ -478,6 +507,7 @@ import DemoZOrderOfEdges from '../.vitepress/components/05_appearance/07/ZOrderO
 import DemoArrow from '../.vitepress/components/05_appearance/08/Arrow.vue'
 import DemoCustomMarker from '../.vitepress/components/05_appearance/09/CustomMarker.vue'
 import DemoPlaceObjectAtEdge from '../.vitepress/components/05_appearance/10/PlaceObjectAtEdge.vue'
+import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/11/EdgesKeepOrder.vue'
 
 import DemoStyle1 from '../.vitepress/components/05_appearance/s01/Style1.vue'
 import DemoStyle2 from '../.vitepress/components/05_appearance/s02/Style2.vue'
