@@ -347,12 +347,12 @@ edges appear in the given edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/10/EdgesKeepOrder.vue{25}
+  <<< @/.vitepress/components/05_appearance/11/EdgesKeepOrder.vue{25}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/05_appearance/10/data.ts
+  <<< @/.vitepress/components/05_appearance/11/data.ts
 
 </template>
 </demo-tabs>
@@ -477,7 +477,7 @@ import DemoZOrderOfNodes from '../.vitepress/components/05_appearance/06/ZOrderO
 import DemoZOrderOfEdges from '../.vitepress/components/05_appearance/07/ZOrderOfEdges.vue'
 import DemoArrow from '../.vitepress/components/05_appearance/08/Arrow.vue'
 import DemoCustomMarker from '../.vitepress/components/05_appearance/09/CustomMarker.vue'
-import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/10/EdgesKeepOrder.vue'
+import DemoPlaceObjectAtEdge from '../.vitepress/components/05_appearance/10/PlaceObjectAtEdge.vue'
 
 import DemoStyle1 from '../.vitepress/components/05_appearance/s01/Style1.vue'
 import DemoStyle2 from '../.vitepress/components/05_appearance/s02/Style2.vue'
