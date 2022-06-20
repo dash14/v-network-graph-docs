@@ -141,15 +141,23 @@ Values that are not specified will be used as default values.
       visible: boolean         // whether to show the grid in the background. default: false
       interval: number         // grid line spacing.                          default: 10
       thickIncrements: number  // increments of ticks to draw thick lines.    default: 5
-      line: {                   // normal line style
+      line: {                  // normal line style.
         color: string          //   default: "#e0e0e0"
         width: number          //   default: 1
-        dasharray: number       //   default: 1
+        dasharray: string | number //   default: 1
       }
-      thick: {                  // thick line style
+      thick: {                 // thick line style.
         color: string          //   default: "#cccccc"
         width: number          //   default: 1
-        dasharray: number       //   default: 0
+        dasharray: string | number //   default: 0
+      }
+    }
+    selection: {
+      box: {                  // rectangle of selection box style.
+        color: string         //   background color. default: "#0000ff20"
+        strokeWidth: number   //   stroke width. default: 1
+        strokeColor: string   //   stroke color. default: "#aaaaff"
+        strokeDasharray: string | number  // stroke dasharray. default: 0
       }
     }
   }
