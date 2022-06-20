@@ -679,6 +679,31 @@ The following is a list of events that can be specified for attribute `event-han
       <td>Perform a pan to center the contents of the network graph.</td>
     </tr>
     <tr>
+      <td>startBoxSelection(options: BoxSelectionOption): void</td>
+      <td>
+        Start the box-selection mode to select nodes within the dragged rectangle range.
+        <br/>
+        BoxSelectionOption:
+        <pre><code>{
+  stop?: "pointerup" | "click" | "manual"
+  type?: "append" | "invert"
+  withShiftKey?: "append" | "invert" | "same"
+}</code></pre>
+        <ul>
+          <li>stop: Trigger to stop mode (default: "pointerup")</li>
+          <li>type: Selection type (default: "append")</li>
+          <li>
+            withShiftKey: Selection type if shift key pressed at drag start
+            (default: "same")
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>stopBoxSelection(): void</td>
+      <td>Stop the box-selection mode.</td>
+    </tr>
+    <tr>
       <td>translateFromDomToSvgCoordinates(point: {x, y}): {x, y}</td>
       <td>Translate from DOM to SVG coordinates.</td>
     </tr>
