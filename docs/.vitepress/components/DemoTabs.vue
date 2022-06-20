@@ -81,6 +81,10 @@ export default defineComponent({
         padding-right: 10px;
       }
     }
+    .el-input {
+      margin-top: 1px;
+      margin-bottom: 1px;
+    }
   }
   :deep(.v-network-graph) {
     // height: 1px;

@@ -87,8 +87,8 @@ function rgba2hex(orig: string) {
 </template>
 
 <style lang="scss" scoped>
-.input {
-  width: 80px;
+.el-color-picker + .input {
+  width: 86px;
   margin-left: 2px;
   :deep(.el-input__inner) {
     padding: 0 5px;
