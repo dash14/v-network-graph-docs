@@ -28,6 +28,13 @@ on the network graph by setting a value to the same prop.
 </template>
 </demo-tabs>
 
+:::tip
+It is also available to select nodes by enclosing them in a rectangle
+by dragging.
+See [below](#select-nodes-at-once-with-a-rectangle) for details.
+:::
+
+
 ## Select edges
 
 Set `configs.edge.selectable` to true to make the node selectable by
@@ -156,6 +163,79 @@ Whether or not to aggregate can be specified by a function that
 returns a boolean or a boolean value, as specified in the
 configuration `edge.summarize`.
 
+## Select nodes at once with a rectangle
+
+There is a feature that enables selection of nodes within the
+rectangle of the dragged area at once. This is accomplished
+by changing to a different mode ("box-selection" mode) than
+normal to distinguish it from dragging for panning operations.
+
+In the following example, when the dragging pointer is released
+(pointerup) or the Escape key is pressed, the mode is exited and
+the mode returns to accepting regular pointer operations.
+
+In addition, the appearance of rectangle can be customized in the
+configuration.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoBoxSelection1 />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/03_operation/07/BoxSelection1.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/03_operation/07/data.ts
+
+</template>
+</demo-tabs>
+
+## Select nodes with a rectangle (Consecutive selection)
+
+In the example above, the "box-selection" mode was automatically
+exited when the user finished dragging, but in the example below,
+the mode will continue until the user intentionally performs a
+exit operation.
+
+"box-selection" mode exit operation:
+* Click on the view area
+* Press the Escape key
+* Call `stopBoxSelection()` which is `<v-network-graph>` instance method
+
+In addition, in the example below, holding down the Shift key
+while dragging inverts the selection state of the nodes within
+the rectangle (i.e., it selects those that are not selected
+and deselects those that are selected).
+
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoBoxSelection2 />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/03_operation/08/BoxSelection2.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/03_operation/08/data.ts
+
+</template>
+</demo-tabs>
+
+:::tip
+If you do not want to exit "box-selection" mode even by clicking or
+pressing the Escape key, specify `{ stop: "manual" }` to the
+`startBoxSelection()` method.
+In this way it will not be exited "box-selection" mode unless you
+call the `stopBoxSelection()` method.
+:::
+
+
 <script setup>
 import DemoSelectNodes from "../.vitepress/components/03_operation/01/SelectNodes.vue"
 import DemoSelectEdges from "../.vitepress/components/03_operation/02/SelectEdges.vue"
@@ -163,4 +243,6 @@ import DemoAddElements from "../.vitepress/components/03_operation/03/AddElement
 import DemoNodeSelectable from "../.vitepress/components/03_operation/04/NodeSelectable.vue"
 import DemoEdgeSelectable from "../.vitepress/components/03_operation/05/EdgeSelectable.vue"
 import DemoSummarizeEdges from "../.vitepress/components/03_operation/06/SummarizeEdges.vue"
+import DemoBoxSelection1 from "../.vitepress/components/03_operation/07/BoxSelection1.vue"
+import DemoBoxSelection2 from "../.vitepress/components/03_operation/08/BoxSelection2.vue"
 </script>
