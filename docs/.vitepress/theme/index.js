@@ -3,7 +3,6 @@ import { watch } from "vue"
 import Theme from "vitepress/theme"
 import "./custom.scss"
 
-import ElementPlus from "element-plus"
 import "element-plus/theme-chalk/src/index.scss"
 
 import VNetworkGraph from "v-network-graph"
@@ -26,6 +25,21 @@ import PathConfigPanel from "../components/controls/paths/PathConfigPanel.vue"
 import PathStrokeConfigPanel from "../components/controls/paths/PathStrokeConfigPanel.vue"
 import GridPanel from "../components/controls/misc/GridPanel.vue"
 
+import {
+  ElButton,
+  ElCard,
+  ElCheckbox,
+  ElColorPicker,
+  ElInput,
+  ElInputNumber,
+  ElOption,
+  ElSelect,
+  ElSlider,
+  ElTabs,
+  ElTabPane,
+  ElIcon,
+} from "element-plus"
+
 export default {
   ...Theme,
 
@@ -36,8 +50,23 @@ export default {
         gtag("config", window.GA_MEASUREMENT_ID, { page_path: router.route.path })
       })
 
-    app.use(ElementPlus, { size: "default" })
+    // app.use(ElementPlus, { size: "default" })
     app.use(VNetworkGraph)
+    // element-plus
+    app.component("el-button", ElButton)
+    app.component("el-card", ElCard)
+    app.component("el-checkbox", ElCheckbox)
+    app.component("el-color-picker", ElColorPicker)
+    app.component("el-input", ElInput)
+    app.component("el-input-number", ElInputNumber)
+    app.component("el-option", ElOption)
+    app.component("el-select", ElSelect)
+    app.component("el-slider", ElSlider)
+    app.component("el-tabs", ElTabs)
+    app.component("el-tab-pane", ElTabPane)
+    app.component("el-icon", ElIcon)
+
+    // custom components
     app.component("demo-tabs", DemoTabs)
     app.component("el-slider-custom-zoom", SliderZoom)
     app.component("el-color-picker-custom", ColorPicker)
@@ -50,7 +79,10 @@ export default {
     app.component("demo-multiple-edge-config-panel", MultipleEdgeConfigPanel)
     app.component("demo-edge-marker-config-panel", EdgeMarkerConfigPanel)
     app.component("demo-edge-margin-gap-config-panel", EdgeMarginGapConfigPanel)
-    app.component("demo-summarized-edge-label-config-panel", SummarizedEdgeLabelConfigPanel)
+    app.component(
+      "demo-summarized-edge-label-config-panel",
+      SummarizedEdgeLabelConfigPanel
+    )
     app.component("demo-path-config-panel", PathConfigPanel)
     app.component("demo-path-stroke-config-panel", PathStrokeConfigPanel)
     app.component("demo-grid-panel", GridPanel)
