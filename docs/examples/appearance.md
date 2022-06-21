@@ -291,7 +291,7 @@ In addition to the preset marker types, you can also specify your own markers.
 </template>
 </demo-tabs>
 
-## Place any object at the edge
+## Place any object on the edge
 
 The markers shown above can only be displayed at the terminate point
 of an edge.  
