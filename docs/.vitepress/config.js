@@ -1,9 +1,12 @@
-const path = require("path")
+import { defineConfig } from "vitepress"
+import { visualizer } from "rollup-plugin-visualizer"
+
+ANALYZE_BUNDLE = false
 
 /**
  * @type {import('vitepress').UserConfig}
  */
-module.exports = {
+ export default defineConfig({
   base: "/v-network-graph/",
   lang: "en-US",
   title: "v-network-graph",
@@ -67,6 +70,16 @@ module.exports = {
       },
     },
     css: { preprocessorOptions: { scss: { charset: false } } },
+    plugins: [
+      ElementPlus(),
+      // analyze bundle sizes
+      ANALYZE_BUNDLE && visualizer({
+        open: true,
+        filename: "docs/.vitepress/dist/stats.html",
+        gzipSize: true,
+        brotliSize: true,
+      }),
+    ],
   },
   server: {
     fs: {
@@ -74,3 +87,4 @@ module.exports = {
     },
   },
 }
+})
