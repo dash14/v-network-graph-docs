@@ -93,4 +93,4 @@ const edges = {
 
 For detailed usage, please check out the following:
 * [Examples](./examples/)
-* [Reference](./reference)
+* [Reference](./reference/)
