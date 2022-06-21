@@ -23,13 +23,14 @@ ANALYZE_BUNDLE = false
     nav: [
       { text: "Getting Started", link: "/getting-started" },
       {
-        text: "Examples ",
+        text: "Examples",
         link: "/examples/",
         activeMatch: "^/examples",
       },
       {
         text: "Reference",
-        link: "/reference.html",
+        link: "/reference/",
+        activeMatch: "^/reference",
       },
       {
         text: "GitHub",
@@ -53,7 +54,16 @@ ANALYZE_BUNDLE = false
           { text: "Miscellaneous", link: "/examples/misc" },
         ],
       },
-      { text: "Reference", link: "/reference" },
+      {
+        text: "Reference",
+        link: "/reference/",
+        children: [
+          { text: "Props", link: "/reference/props" },
+          { text: "Configurations", link: "/reference/configurations" },
+          { text: "Methods", link: "/reference/methods" },
+          { text: "Events", link: "/reference/events" }
+        ]
+      },
     ],
   },
   markdown: {
