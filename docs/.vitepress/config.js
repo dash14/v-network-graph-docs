@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress"
+import ElementPlus from "unplugin-element-plus/vite"
 import { visualizer } from "rollup-plugin-visualizer"
 
 ANALYZE_BUNDLE = false
@@ -80,11 +81,13 @@ ANALYZE_BUNDLE = false
         brotliSize: true,
       }),
     ],
+    ssr: {
+      noExternal: ["element-plus", "lodash-es"]
+    }
   },
   server: {
     fs: {
       allow: [".."],
     },
-  },
-}
+  }
 })
