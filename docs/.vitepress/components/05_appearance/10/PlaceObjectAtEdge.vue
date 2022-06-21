@@ -52,6 +52,7 @@ function makeTransform(area: vNG.EdgeLabelArea, scale: number) {
         .marker {
           fill: {{ configs.edge.normal.color }};
           transition: fill 0.1s linear;
+          pointer-events: none;
         }
         .marker.hovered { fill: {{ configs.edge.hover.color }}; }
         .marker.selected { fill: {{ configs.edge.selected.color }}; }
