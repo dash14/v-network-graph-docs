@@ -17,6 +17,12 @@ Values that are not specified will be used as default values.
     maxZoomLevel: number    // maximum zoom level.                     default: 64
     doubleClickZoomEnabled: boolean  // Whether to zoom with double click. default: true
     mouseWheelZoomEnabled:  boolean  // Whether to zoom with mouse wheel or not. default: true
+    boxSelectionEnabled:    boolean
+                            // Whether to enable box-selection with special key down.
+                            // default: false
+                            // * `node.selectable` must also be true.
+                            // * The special key is specified in `view.selection.detector`
+                            //   as a function with detection process.
     autoPanAndZoomOnLoad: false | "center-zero" | "center-content" | "fit-content"
                             // whether to automatically perform pan and zoom on loading.
                             // - false: do not perform pan and zoom
@@ -49,7 +55,15 @@ Values that are not specified will be used as default values.
         strokeWidth: number   //   stroke width. default: 1
         strokeColor: string   //   stroke color. default: "#aaaaff"
         strokeDasharray: string | number  // stroke dasharray. default: 0
-      }
+      },
+      detector: (event: KeyboardEvent) => boolean
+          // process for detecting special key down and up, to be used if
+          // `boxSelectionEnabled` is true.
+          // The argument is passed the keydown and keyup events. By returning
+          // true for each, it is assumed that a down/up event has occurred
+          // with the key.
+          // default:
+          //   Process to detect Ctrl key down/up (If Mac OS, detect Cmd key).
     }
   }
   node: {
