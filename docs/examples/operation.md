@@ -170,9 +170,13 @@ rectangle of the dragged area at once. This is accomplished
 by changing to a different mode ("box-selection" mode) than
 normal to distinguish it from dragging for panning operations.
 
-In the following example, when the dragging pointer is released
+In the following example, clicking the "Start to select" button
+starts the "box-selection" mode. Then, dragging pointer is released
 (pointerup) or the Escape key is pressed, the mode is exited and
 the mode returns to accepting regular pointer operations.
+If "Start with Ctrl/Cmd key" is checked, pressing the Cmd key on
+a Mac or Ctrl key otherwise will automatically start "box-selection"
+mode.
 
 In addition, the appearance of rectangle can be customized in the
 configuration.
