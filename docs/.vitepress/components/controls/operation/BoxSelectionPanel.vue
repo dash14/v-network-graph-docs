@@ -2,7 +2,10 @@
   <div class="config" :class="{ selecting }">
     <div class="button">
       <el-button type="primary" :disabled="selecting" @click="emit('button-click')"
-        >Start to<br />select</el-button
+        >Start to select</el-button
+      >
+      <el-checkbox v-model="startWithKeyDown" :disabled="selecting"
+        >Start with Ctrl/Cmd key</el-checkbox
       >
     </div>
     <div class="card">
@@ -59,12 +62,17 @@ export default defineComponent({
       type: String,
       default: "none",
     },
+    startWithKeyDown: {
+      type: Boolean,
+      required: true,
+    },
   },
   emits: [
     "update:color",
     "update:strokeWidth",
     "update:strokeColor",
     "update:strokeDasharray",
+    "update:startWithKeyDown",
     "button-click",
   ],
   setup(props, { emit }) {
@@ -88,8 +96,17 @@ export default defineComponent({
   flex-direction: row;
   align-items: center;
   .button {
+    display: flex;
+    flex-direction: column;
     padding-left: 10px;
     padding-right: 20px;
+    :deep(label.el-checkbox) {
+      margin: 0;
+      font-weight: normal;
+      .el-checkbox__label {
+        font-size: 12px;
+      }
+    }
     .el-button {
       height: 50px;
       font-weight: bold;

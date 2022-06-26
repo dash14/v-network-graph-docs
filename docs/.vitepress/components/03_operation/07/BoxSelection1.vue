@@ -8,6 +8,7 @@ const graph = ref<VNetworkGraphInstance>()
 const configs = reactive(
   defineConfigs({
     view: {
+      boxSelectionEnabled: false,
       selection: {
         box: {
           color: "#0000ff20",
@@ -44,6 +45,7 @@ function startBoxSelection() {
       v-model:strokeWidth="configs.view.selection.box.strokeWidth"
       v-model:strokeColor="configs.view.selection.box.strokeColor"
       v-model:strokeDasharray="configs.view.selection.box.strokeDasharray"
+      v-model:startWithKeyDown="configs.view.boxSelectionEnabled"
       @button-click="startBoxSelection"
     />
   </div>
