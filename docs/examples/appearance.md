@@ -316,10 +316,29 @@ at the center of the edge.
 </template>
 </demo-tabs>
 
-:::info
-This example uses the edge label feature, but in the future a dedicated
-feature may be provided for this case.
-:::
+The `"edge-overlay"` slot properties contains the length of the edge
+and a function to get the coordinates of the specified length from
+the source side. By using these properties, any object can be drawn
+on the path of the edge.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoPlaceObjectAtEdge2 />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/11/PlaceObjectAtEdge2.vue{40-41,48,59-60,67}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/11/data.ts
+
+</template>
+</demo-tabs>
+
+
+
 
 ## Keep order of edges
 
@@ -507,6 +526,7 @@ import DemoZOrderOfEdges from '../.vitepress/components/05_appearance/07/ZOrderO
 import DemoArrow from '../.vitepress/components/05_appearance/08/Arrow.vue'
 import DemoCustomMarker from '../.vitepress/components/05_appearance/09/CustomMarker.vue'
 import DemoPlaceObjectAtEdge from '../.vitepress/components/05_appearance/10/PlaceObjectAtEdge.vue'
+import DemoPlaceObjectAtEdge2 from '../.vitepress/components/05_appearance/11/PlaceObjectAtEdge2.vue'
 import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/12/EdgesKeepOrder.vue'
 
 import DemoStyle1 from '../.vitepress/components/05_appearance/s01/Style1.vue'
