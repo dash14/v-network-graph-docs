@@ -20,17 +20,15 @@ const configs = vNG.defineConfigs({
  * @param area - label area calculated by v-network-graph
  * @param scale - zooming scale
  */
-function makeTransform(area: vNG.EdgeLabelArea, scale: number) {
-  const x = (area.source.above.x + area.target.below.x) / 2
-  const y = (area.source.above.y + area.target.below.y) / 2
+function makeTransform(center: vNG.Point, edgePos: vNG.EdgePosition, scale: number) {
   const radian = Math.atan2(
-    area.target.above.y - area.source.above.y,
-    area.target.above.x - area.source.above.x
+    edgePos.target.y - edgePos.source.y,
+    edgePos.target.x - edgePos.source.x
   )
   const degree = (radian * 180.0) / Math.PI
 
   return [
-    `translate(${x} ${y})`,
+    `translate(${center.x} ${center.y})`,
     `scale(${scale}, ${scale})`,
     `rotate(${degree})`,
   ].join(" ")
@@ -58,13 +56,13 @@ function makeTransform(area: vNG.EdgeLabelArea, scale: number) {
         .marker.selected { fill: {{ configs.edge.selected.color }}; }
       </component>
     </defs>
-    <template #edge-label="{ scale, area, hovered, selected }">
-      <!-- Triangle -->
+    <template #edge-overlay="{ scale, center, position, hovered, selected }">
+      <!-- Place the triangle at the center of the edge -->
       <path
         class="marker"
         :class="{ hovered, selected }"
         d="M-5 -5 L5 0 L-5 5 Z"
-        :transform="makeTransform(area, scale)"
+        :transform="makeTransform(center, position, scale)"
       />
     </template>
   </v-network-graph>
