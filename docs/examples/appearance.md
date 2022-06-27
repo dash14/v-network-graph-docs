@@ -295,8 +295,8 @@ In addition to the preset marker types, you can also specify your own markers.
 
 The markers shown above can only be displayed at the terminate point
 of an edge.  
-To place any object except at the terminate point of an edge, it can
-be achieved by applying `slot` for displaying labels.  
+Placing an object besides the endpoint of an edge can be achieved by
+using an `"edge-overlay"` slot.  
 In the following example, a triangle toward the target is displayed
 at the center of the edge.
 
@@ -306,7 +306,7 @@ at the center of the edge.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/10/PlaceObjectAtEdge.vue{60-68}
+  <<< @/.vitepress/components/05_appearance/10/PlaceObjectAtEdge.vue{59-67}
 
 </template>
 <template v-slot:data>
