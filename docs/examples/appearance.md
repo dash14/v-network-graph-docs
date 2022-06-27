@@ -79,7 +79,7 @@ do by using the `override-node-label` slot.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/04/CustomNode.vue{29-53}
+  <<< @/.vitepress/components/05_appearance/04/CustomNode.vue{23-48}
 
 </template>
 <template v-slot:data>
@@ -98,7 +98,7 @@ The images of the faces ware created https://generated.photos/.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/05/CustomNodeWithImage.vue{29-67}
+  <<< @/.vitepress/components/05_appearance/05/CustomNodeWithImage.vue{23-66}
 
 </template>
 <template v-slot:data>
