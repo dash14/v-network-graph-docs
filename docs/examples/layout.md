@@ -65,7 +65,7 @@ will return it to the position of the d3-force calculation result.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/03/D3Force.vue{4-8,21-36}
+  <<< @/.vitepress/components/02_layout/03/D3Force.vue{4-8,24-39}
 
 </template>
 </demo-tabs>
@@ -104,7 +104,7 @@ want to observe a single node. So we can enable it first then disable it later.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/05/LayoutSwitching.vue{18-27,70-70}
+  <<< @/.vitepress/components/02_layout/05/LayoutSwitching.vue{21-30}
 
 </template>
 </demo-tabs>
