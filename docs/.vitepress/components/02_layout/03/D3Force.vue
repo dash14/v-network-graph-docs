@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref, watchEffect } from "vue"
+import { reactive, ref, watch } from "vue"
 import * as vNG from "v-network-graph"
 import {
   ForceLayout,
@@ -11,7 +11,10 @@ const nodeCount = ref(20)
 const nodes = reactive({})
 const edges = reactive({})
 
-watchEffect(() => {
+// initialize network
+buildNetwork(nodeCount.value, nodes, edges)
+
+watch(nodeCount, () => {
   buildNetwork(nodeCount.value, nodes, edges)
 })
 
