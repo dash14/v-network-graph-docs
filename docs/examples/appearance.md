@@ -327,7 +327,7 @@ on the path of the edge.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/11/PlaceObjectAtEdge2.vue{40-41,48,59-60,67}
+  <<< @/.vitepress/components/05_appearance/11/PlaceObjectAtEdge2.vue{43-85}
 
 </template>
 <template v-slot:data>
