@@ -66,7 +66,7 @@ function addBlackNode() {
 function addNode(node: Omit<Node, "name">) {
   const nodeId = `node${nextNodeIndex.value}`
   const name = `Node ${nextNodeIndex.value}`
-  nodes[nodeId] = <Node>{ name, ...node }
+  nodes[nodeId] = { name, ...node } as Node
   nextNodeIndex.value++
 }
 
@@ -96,7 +96,7 @@ function addEdge(edge: Omit<Edge, "source" | "target">) {
   if (selectedNodes.value.length !== 2) return
   const [source, target] = selectedNodes.value
   const edgeId = `edge${nextEdgeIndex.value++}`
-  edges[edgeId] = <Edge>{ source, target, ...edge }
+  edges[edgeId] = { source, target, ...edge } as Edge
 }
 
 function removeEdge() {

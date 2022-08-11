@@ -16,10 +16,10 @@ const configs = defineConfigs({
   },
 })
 
-const icons = <Record<string, string>>{
+const icons = {
   on: "&#xe63e", // wifi
   off: "&#xe648", // wifi off
-}
+} as Record<string, string>
 </script>
 
 <template>
