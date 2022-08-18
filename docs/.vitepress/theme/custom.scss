@@ -187,3 +187,8 @@
     line-height: 100%;
   }
 }
+
+// Fix temporarily: Address chrome highlighting gaps.
+[class*='language-'] pre {
+  font-size: 12px;
+}
