@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress"
 import ElementPlus from "unplugin-element-plus/vite"
 import { visualizer } from "rollup-plugin-visualizer"
 
-ANALYZE_BUNDLE = false
+const ANALYZE_BUNDLE = false
 
 /**
  * @type {import('vitepress').UserConfig}
