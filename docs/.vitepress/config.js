@@ -17,7 +17,16 @@ const ANALYZE_BUNDLE = false
       [ "meta", { name: "google-site-verification", content: "0nPNAdUYrhvg27b84hgrPPPsjIDmMIBIKz3hNd23mXA" } ],
       // Google Analytics
       [ 'script', { src: 'https://www.googletagmanager.com/gtag/js?id=G-TVV8JY0JNE', async: true } ],
-      [ 'script', {}, `window.GA_MEASUREMENT_ID = 'G-TVV8JY0JNE';window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`]
+      [ 'script', {}, `window.GA_MEASUREMENT_ID = 'G-TVV8JY0JNE';window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`],
+      // Image for SNS
+      [ "meta", { property: "og:type", content: "website" } ],
+      [ "meta", { property: "og:url", content: "https://dash14.github.io/v-network-graph/" } ],
+      [ "meta", { property: "og:title", content: "v-network-graph" } ],
+      [ "meta", { property: "og:description", content: "An interactive network graph visualization component for Vue 3" } ],
+      [ "meta", { property: "og:image", content: "/v-network-graph/site-image.png" } ],
+      [ "meta", { property: "og:image:alt", content: "v-network-graph" } ],
+      [ "meta", { property: "og:image:width", content: "1200" } ],
+      [ "meta", { property: "og:image:height", content: "630" } ],
   ],
   themeConfig: {
     nav: [
