@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, reactive, ref } from "vue"
+import { computed, ref, watch } from "vue"
 import * as vNG from "v-network-graph"
 import data from "./data"
+import { Point } from "v-network-graph"
 
 // ref="graph"
 const graph = ref<vNG.Instance>()
@@ -12,22 +13,31 @@ const tooltip = ref<HTMLDivElement>()
 const layouts = ref(data.layouts)
 
 const NODE_RADIUS = 16
-const targetNodeId = ref("")
-
-const tooltipPos = computed(() => {
-  if (!graph.value || !tooltip.value) return { x: 0, y: 0 }
-  if (!targetNodeId.value) return { x: 0, y: 0 }
-
-  const nodePos = layouts.value.nodes[targetNodeId.value]
-  // translate coordinates: SVG -> DOM
-  const domPoint = graph.value.translateFromSvgToDomCoordinates(nodePos)
-  // calculates top-left position of the tooltip.
-  return {
-    left: domPoint.x - tooltip.value.offsetWidth / 2 + "px",
-    top: domPoint.y - NODE_RADIUS - tooltip.value.offsetHeight - 10 + "px",
-  }
-})
+const targetNodeId = ref<string>("")
 const tooltipOpacity = ref(0) // 0 or 1
+const tooltipPos = ref({ left: "0px", top: "0px" })
+
+const targetNodePos = computed(() => {
+  const nodePos = layouts.value.nodes[targetNodeId.value]
+  return nodePos || { x: 0, y: 0 }
+})
+
+// Update `tooltipPos`
+watch(
+  () => [targetNodePos.value, tooltipOpacity.value],
+  () => {
+    if (!graph.value || !tooltip.value) return
+
+    // translate coordinates: SVG -> DOM
+    const domPoint = graph.value.translateFromSvgToDomCoordinates(targetNodePos.value)
+    // calculates top-left position of the tooltip.
+    tooltipPos.value = {
+      left: domPoint.x - tooltip.value.offsetWidth / 2 + "px",
+      top: domPoint.y - NODE_RADIUS - tooltip.value.offsetHeight - 10 + "px",
+    }
+  },
+  { deep: true }
+)
 
 const eventHandlers: vNG.EventHandlers = {
   "node:pointerover": ({ node }) => {

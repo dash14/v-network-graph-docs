@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, reactive, ref } from "vue"
+import { computed, ref, watch } from "vue"
 import * as vNG from "v-network-graph"
 import data from "./data"
 
@@ -13,26 +13,38 @@ const layouts = ref(data.layouts)
 
 const EDGE_MARGIN_TOP = 2
 const targetEdgeId = ref("")
+const tooltipOpacity = ref(0) // 0 or 1
+const tooltipPos = ref({ left: "0px", top: "0px" })
 
-const tooltipPos = computed(() => {
-  if (!graph.value || !tooltip.value) return { x: 0, y: 0 }
-  if (!targetEdgeId.value) return { x: 0, y: 0 }
+const edgeCenterPos = computed(() => {
+  const edge = data.edges[targetEdgeId.value]
+  if (!edge) return { x: 0, y: 0 }
 
   const sourceNode = data.edges[targetEdgeId.value].source
   const targetNode = data.edges[targetEdgeId.value].target
-  const edgePos = {
+  return {
     x: (layouts.value.nodes[sourceNode].x + layouts.value.nodes[targetNode].x) / 2,
     y: (layouts.value.nodes[sourceNode].y + layouts.value.nodes[targetNode].y) / 2,
   }
-  // translate coordinates: SVG -> DOM
-  const domPoint = graph.value.translateFromSvgToDomCoordinates(edgePos)
-  // calculates top-left position of the tooltip.
-  return {
-    left: domPoint.x - tooltip.value.offsetWidth / 2 + "px",
-    top: domPoint.y - EDGE_MARGIN_TOP - tooltip.value.offsetHeight - 10 + "px",
-  }
 })
-const tooltipOpacity = ref(0) // 0 or 1
+
+// Update `tooltipPos`
+watch(
+  () => [edgeCenterPos.value, tooltipOpacity.value],
+  () => {
+    if (!graph.value || !tooltip.value) return { x: 0, y: 0 }
+    if (!targetEdgeId.value) return { x: 0, y: 0 }
+
+    // translate coordinates: SVG -> DOM
+    const domPoint = graph.value.translateFromSvgToDomCoordinates(edgeCenterPos.value)
+    // calculates top-left position of the tooltip.
+    tooltipPos.value = {
+      left: domPoint.x - tooltip.value.offsetWidth / 2 + "px",
+      top: domPoint.y - EDGE_MARGIN_TOP - tooltip.value.offsetHeight - 10 + "px",
+    }
+  },
+  { deep: true }
+)
 
 const eventHandlers: vNG.EventHandlers = {
   "edge:pointerover": ({ edge }) => {

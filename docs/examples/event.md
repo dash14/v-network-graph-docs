@@ -87,7 +87,7 @@ to represent a combination of DOM elements such as tooltip.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_event/04/NodeTooltip.vue{17-40}
+  <<< @/.vitepress/components/08_event/04/NodeTooltip.vue{15-40}
 
 </template>
 <template v-slot:data>
@@ -106,7 +106,7 @@ we can still create tooltip for edges by using the node positions.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_event/05/EdgeTooltip.vue{14-45}
+  <<< @/.vitepress/components/08_event/05/EdgeTooltip.vue{14-47}
 
 </template>
 <template v-slot:data>
