@@ -216,6 +216,13 @@ Values that are not specified will be used as default values.
         // }
       }
     }
+    selfLoop: {
+      // * These fields can also be specified with the function as `(edge: Edge) => value`.
+      radius: number       // radius of edge. default: 12
+      isClockwise: boolean // whether the arc is clockwise or not. default: true
+      offset: number       // distance to node. default: 10
+      angle:               // angle from node to be displayed. default: 270
+    },
     keepOrder: "clock" | "vertical" | "horizontal"
       // orientation to be considered when keeping multiple edge alignments.
       //   "clock": Keep the forward/backward when viewed as a clock.
