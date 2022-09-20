@@ -405,6 +405,38 @@ edges appear in the given edges.
 </template>
 </demo-tabs>
 
+## Self-loop edge
+
+If the source and target of an edge are the same node, the edge is
+displayed as an arc.  
+Configuration regarding self-loop `configs.edge.selfLoop` can also
+specify a function that takes an edge as an argument.
+
+This implementation is a simplified one and, different from normal
+edges, has the following limitations.
+
+* No label can be displayed.
+* Multiple edges cannot be summarized on a single line.
+* Supports only circle as node type
+
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoSelfLoopEdge />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/05_appearance/13/SelfLoopEdge.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/05_appearance/13/data.ts
+
+</template>
+</demo-tabs>
+
+
 ## Style examples
 
 1.
@@ -528,6 +560,7 @@ import DemoCustomMarker from '../.vitepress/components/05_appearance/09/CustomMa
 import DemoPlaceObjectAtEdge from '../.vitepress/components/05_appearance/10/PlaceObjectAtEdge.vue'
 import DemoPlaceObjectAtEdge2 from '../.vitepress/components/05_appearance/11/PlaceObjectAtEdge2.vue'
 import DemoEdgesKeepOrder from '../.vitepress/components/05_appearance/12/EdgesKeepOrder.vue'
+import DemoSelfLoopEdge from '../.vitepress/components/05_appearance/13/SelfLoopEdge.vue'
 
 import DemoStyle1 from '../.vitepress/components/05_appearance/s01/Style1.vue'
 import DemoStyle2 from '../.vitepress/components/05_appearance/s02/Style2.vue'

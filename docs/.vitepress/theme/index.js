@@ -21,6 +21,7 @@ import MultipleEdgeConfigPanel from "../components/controls/appearance/MultipleE
 import EdgeMarkerConfigPanel from "../components/controls/appearance/EdgeMarkerConfigPanel.vue"
 import EdgeMarginGapConfigPanel from "../components/controls/appearance/EdgeMarginGapConfigPanel.vue"
 import SummarizedEdgeLabelConfigPanel from "../components/controls/appearance/SummarizedEdgeLabelConfigPanel.vue"
+import EdgeSelfLoopPanel from "../components/controls/appearance/EdgeSelfLoopPanel.vue"
 import PathConfigPanel from "../components/controls/paths/PathConfigPanel.vue"
 import PathStrokeConfigPanel from "../components/controls/paths/PathStrokeConfigPanel.vue"
 import GridPanel from "../components/controls/misc/GridPanel.vue"
@@ -83,6 +84,7 @@ export default {
       "demo-summarized-edge-label-config-panel",
       SummarizedEdgeLabelConfigPanel
     )
+    app.component("demo-edge-self-loop-config-panel", EdgeSelfLoopPanel)
     app.component("demo-path-config-panel", PathConfigPanel)
     app.component("demo-path-stroke-config-panel", PathStrokeConfigPanel)
     app.component("demo-grid-panel", GridPanel)
