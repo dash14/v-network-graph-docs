@@ -200,6 +200,36 @@ the state of shift/ctrl key presses.
 </template>
 </demo-tabs>
 
+
+## Node expand/collapse
+
+For the implementation of node expand and collapse, the structure of node
+relationships is a tree structure, which is a type of graph structure.
+This means that the parent-child relationship needs to be included in the
+data, and there are restrictions such as not circulating edges in the part
+of tree structure.  
+To keep the generality and simplicity of the library, please handle these
+things on the application.
+
+The following is an example of creating a partially tree-structured graph and
+passing it to v-network-graph so that the parent node can collapse its child nodes.
+
+<demo-tabs :demo-height="400" :use-data="true" hint="Please click on the node with the badge.">
+<template v-slot:demo>
+  <DemoNodeCollapse />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/09_misc/09/NodeCollapse.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/09_misc/09/data.ts
+
+</template>
+</demo-tabs>
+
 <script setup>
 import DemoDownload from '../.vitepress/components/09_misc/01/Download.vue'
 import DemoGridLayer from '../.vitepress/components/09_misc/02/GridLayer.vue'
@@ -209,4 +239,5 @@ import DemoCenteredOnLoad from '../.vitepress/components/09_misc/05/CenteredOnLo
 import DemoResize from '../.vitepress/components/09_misc/06/Resize.vue'
 import DemoViewBox from '../.vitepress/components/09_misc/07/ViewBox.vue'
 import DemoViewPropGetter from '../.vitepress/components/09_misc/08/ViewPropGetter.vue'
+import DemoNodeCollapse from '../.vitepress/components/09_misc/09/NodeCollapse.vue'
 </script>
