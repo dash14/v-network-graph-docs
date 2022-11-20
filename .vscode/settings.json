@@ -3,7 +3,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "volar.tsPlugin": true,
   "cSpell.words": [
     "composables",
     "dasharray",
@@ -34,19 +33,20 @@
     ".prettierrc",
     ".eslintrc.js"
   ],
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
     "editor.tabSize": 4,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
   },
   "[vue]": {
     "editor.tabSize": 4,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
   },
   "[json]": {
     "editor.tabSize": 4,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
   }
 }
