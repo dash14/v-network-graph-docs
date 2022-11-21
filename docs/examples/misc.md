@@ -29,12 +29,12 @@ In this example, the SVG data is downloaded.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/09_misc/02/GridLayer.vue{9-23}
+  <<< @/.vitepress/components/09_misc/03/GridLayer.vue{9-23}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/09_misc/02/data.ts
+  <<< @/.vitepress/components/09_misc/03/data.ts
 
 </template>
 </demo-tabs>
@@ -232,7 +232,7 @@ the end.
 
 <script setup>
 import DemoDownload from '../.vitepress/components/09_misc/01/Download.vue'
-import DemoGridLayer from '../.vitepress/components/09_misc/02/GridLayer.vue'
+import DemoGridLayer from '../.vitepress/components/09_misc/03/GridLayer.vue'
 import DemoCoordinates from '../.vitepress/components/09_misc/04/Coordinates.vue'
 import DemoCenteredOnLoad from '../.vitepress/components/09_misc/05/CenteredOnLoad.vue'
 import DemoResize from '../.vitepress/components/09_misc/06/Resize.vue'
