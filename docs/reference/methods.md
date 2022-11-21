@@ -19,8 +19,22 @@ Instance methods of `<v-network-graph>` component shown below.
       <td>Perform zooming/panning according to the graph size.</td>
     </tr>
     <tr>
-      <td>getAsSvg(): string</td>
-      <td>Get the network-graph contents as SVG text data.</td>
+      <td>exportAsSvgText(options: ExportOptions): Promise&lt;string&gt;</td>
+      <td>
+        Export the network-graph contents as SVG text data.<br/>
+        ExportOptions: <code>{ embedImages?: boolean }</code>
+      </td>
+    </tr>
+    <tr>
+      <td>exportAsSvgElement(options: ExportOptions): Promise&lt;SVGElement&gt;</td>
+      <td>
+        Export the network-graph contents as cloned SVG element data.<br/>
+        ExportOptions: <code>{ embedImages?: boolean }</code>
+      </td>
+    </tr>
+    <tr>
+      <td><em>[Deprecated]</em><br/>getAsSvg(): string</td>
+      <td><em>[Deprecated]</em><br/>Get the network-graph contents as SVG text data.</td>
     </tr>
     <tr>
       <td>getPan(): {x, y}</td>
