@@ -15,9 +15,9 @@ const selectedEdges = ref<string[]>([])
 // ref="graph"
 const graph = ref<vNG.Instance>()
 
-function downloadAsSvg() {
+async function downloadAsSvg() {
   if (!graph.value) return
-  const text = graph.value.getAsSvg()
+  const text = await graph.value.exportAsSvgText()
   const url = URL.createObjectURL(new Blob([text], { type: "octet/stream" }))
   const a = document.createElement("a")
   a.href = url
@@ -61,14 +61,16 @@ function removeEdge() {
     </el-button>
     <label>Node:</label>
     <el-button @click="addNode">add</el-button>
-    <el-button :disabled="selectedNodes.length == 0" @click="removeNode"
-      >remove</el-button
-    >
+    <el-button
+      :disabled="selectedNodes.length == 0"
+      @click="removeNode"
+    >remove</el-button>
     <label>Edge:</label>
     <el-button :disabled="selectedNodes.length != 2" @click="addEdge">add</el-button>
-    <el-button :disabled="selectedEdges.length == 0" @click="removeEdge"
-      >remove</el-button
-    >
+    <el-button
+      :disabled="selectedEdges.length == 0"
+      @click="removeEdge"
+    >remove</el-button>
   </div>
 
   <v-network-graph

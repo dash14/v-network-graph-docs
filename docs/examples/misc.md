@@ -7,11 +7,11 @@ In this example, the SVG data is downloaded.
 
 <demo-tabs :demo-height="250" :use-data="true">
 <template v-slot:demo>
-  <DemoDownload />
+  <DemoExportSvg />
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/09_misc/01/Download.vue{18-27}
+  <<< @/.vitepress/components/09_misc/01/ExportSvg.vue{18-27}
 
 </template>
 <template v-slot:data>
@@ -20,6 +20,44 @@ In this example, the SVG data is downloaded.
 
 </template>
 </demo-tabs>
+
+The above example saves the XML data as it is drawn as SVG.  
+If the SVG contains image elements (`<image />` tag), the URLs
+specified will be still included. If relative URLs are specified,
+it would be no longer valid.  
+Therefore, by passing the `{ embedImages: true }` argument to
+the `exportAsSvgText()` function, the URL of the `<image />`
+elements can be converted to the data-url(base64) format and
+the embedded text can be retrieved in the SVG document.  
+However, whether or not this format can be displayed depends on
+the software that opens the exported SVG file.
+(Google Chrome can display it).
+
+Below is an example of exporting with embedded images.
+An example using images also shown in
+[Appearance Customization](appearance.html#custom-node).
+
+<demo-tabs :demo-height="250" :use-data="true">
+<template v-slot:demo>
+  <DemoExportSvgWithImage />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/09_misc/02/ExportSvgWithImage.vue{22}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/09_misc/02/data.ts
+
+</template>
+</demo-tabs>
+
+:::tip
+Performing `exportAsSvgData()` instead of `exportAsSvgText()` will get a DOM object.
+After manipulating the DOM (e.g., removing unwanted elements or rewriting attributes),
+you can retrieve the SVG string from `outerHTML`.
+:::
 
 ## Grid
 
@@ -231,7 +269,8 @@ the end.
 </demo-tabs>
 
 <script setup>
-import DemoDownload from '../.vitepress/components/09_misc/01/Download.vue'
+import DemoExportSvg from '../.vitepress/components/09_misc/01/ExportSvg.vue'
+import DemoExportSvgWithImage from '../.vitepress/components/09_misc/02/ExportSvgWithImage.vue'
 import DemoGridLayer from '../.vitepress/components/09_misc/03/GridLayer.vue'
 import DemoCoordinates from '../.vitepress/components/09_misc/04/Coordinates.vue'
 import DemoCenteredOnLoad from '../.vitepress/components/09_misc/05/CenteredOnLoad.vue'
