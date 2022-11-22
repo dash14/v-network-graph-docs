@@ -25,10 +25,10 @@ The above example saves the XML data as it is drawn as SVG.
 If the SVG contains image elements (`<image />` tag), the URLs
 specified will be still included. If relative URLs are specified,
 it would be no longer valid.  
-Therefore, by passing the `{ embedImages: true }` argument to
-the `exportAsSvgText()` function, the URL of the `<image />`
-elements can be converted to the data-url(base64) format and
-the embedded text can be retrieved in the SVG document.  
+As measures to address this problem, by passing the
+`{ embedImages: true }` argument to the `exportAsSvgText()`
+function, the URLs in the `<image />` elements can be converted
+to the data-url(base64) format and embed them in the SVG document.
 However, whether or not this format can be displayed depends on
 the software that opens the exported SVG file.
 (Google Chrome can display it).
