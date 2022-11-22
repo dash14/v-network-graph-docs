@@ -3,22 +3,21 @@ import { reactive } from "vue"
 import * as vNG from "v-network-graph"
 import data from "./data"
 
-const configs = reactive(
-  vNG.defineConfigs({
-    node: {
-      label: {
-        visible: true,
-        fontFamily: undefined,
-        fontSize: 11,
-        lineHeight: 1.1,
-        color: "#000000",
-        margin: 4,
-        direction: "south",
-        text: "name",
-      },
+const initialConfigs = vNG.defineConfigs({
+  node: {
+    label: {
+      visible: true,
+      fontFamily: undefined,
+      fontSize: 11,
+      lineHeight: 1.1,
+      color: "#000000",
+      margin: 4,
+      direction: "south",
+      text: "name",
     },
-  })
-)
+  },
+})
+const configs = reactive(initialConfigs)
 </script>
 
 <template>

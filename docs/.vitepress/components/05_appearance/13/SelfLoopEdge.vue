@@ -3,29 +3,28 @@ import { reactive } from "vue"
 import * as vNG from "v-network-graph"
 import data from "./data"
 
-const configs = reactive(
-  vNG.defineConfigs({
-    node: {
-      normal: {
-        radius: 20,
-      },
-      label: {
-        visible: false,
-      },
+const initialConfigs = vNG.defineConfigs({
+  node: {
+    normal: {
+      radius: 20,
     },
-    edge: {
-      marker: {
-        target: { type: "arrow" },
-      },
-      selfLoop: {
-        radius: 14,
-        offset: 16,
-        angle: 180,
-        isClockwise: true,
-      },
+    label: {
+      visible: false,
     },
-  })
-)
+  },
+  edge: {
+    marker: {
+      target: { type: "arrow" },
+    },
+    selfLoop: {
+      radius: 14,
+      offset: 16,
+      angle: 180,
+      isClockwise: true,
+    },
+  },
+})
+const configs = reactive(initialConfigs)
 </script>
 
 <template>

@@ -3,29 +3,28 @@ import { reactive } from "vue"
 import * as vNG from "v-network-graph"
 import data from "./data"
 
-const configs = reactive(
-  vNG.defineConfigs({
-    node: {
-      normal: {
-        color: "#aabbff",
-      },
+const initialConfigs = vNG.defineConfigs({
+  node: {
+    normal: {
+      color: "#aabbff",
     },
-    edge: {
-      normal: {
-        color: edge => edge.color,
-      },
-      hover: {
-        color: edge => edge.color,
-      },
-      margin: 4,
-      marker: {
-        source: { type: "arrow" },
-      },
-      gap: 10,
-      keepOrder: "clock",
+  },
+  edge: {
+    normal: {
+      color: (edge: vNG.Edge) => edge.color,
     },
-  })
-)
+    hover: {
+      color: (edge: vNG.Edge) => edge.color,
+    },
+    margin: 4,
+    marker: {
+      source: { type: "arrow" },
+    },
+    gap: 10,
+    keepOrder: "clock",
+  },
+})
+const configs = reactive(initialConfigs)
 </script>
 
 <template>

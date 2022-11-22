@@ -11,7 +11,7 @@ be displayed as labels, and change the display position.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/01/NodeLabels.vue{7-20}
+  <<< @/.vitepress/components/04_label/01/NodeLabels.vue{6-19}
 
 </template>
 <template v-slot:data>
