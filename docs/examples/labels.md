@@ -177,6 +177,28 @@ be customized from the config like the node labels.
 </template>
 </demo-tabs>
 
+## Modify the style of edge labels when hovering/selecting edges
+
+The edge-label slot prop contains a flag to get the edge selection/hover
+state. This can be combined with the style of the edge-label.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoModifyEdgeLabelStyle />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/04_label/06/ModifyEdgeLabelStyle.vue{29,31,42-53}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/04_label/06/data.ts
+
+</template>
+</demo-tabs>
+
+
 ## Summarized edge labels
 
 Labels for summarized edges use a different slot than for normal edges.
@@ -187,12 +209,12 @@ Labels for summarized edges use a different slot than for normal edges.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/06/SummarizedEdgeLabels.vue{5-8,27-35}
+  <<< @/.vitepress/components/04_label/07/SummarizedEdgeLabels.vue{5-8,27-35}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/04_label/06/data.ts
+  <<< @/.vitepress/components/04_label/07/data.ts
 
 </template>
 </demo-tabs>
@@ -203,5 +225,6 @@ import DemoNodeCustomLabels from '../.vitepress/components/04_label/02/NodeCusto
 import DemoEdgeLabels from '../.vitepress/components/04_label/03/EdgeLabels.vue'
 import DemoMultipleEdgeLabels from '../.vitepress/components/04_label/04/MultipleEdgeLabels.vue'
 import DemoEdgeLabelsStyle from '../.vitepress/components/04_label/05/EdgeLabelsStyle.vue'
-import DemoSummarizedEdgeLabels from '../.vitepress/components/04_label/06/SummarizedEdgeLabels.vue'
+import DemoModifyEdgeLabelStyle from '../.vitepress/components/04_label/06/ModifyEdgeLabelStyle.vue'
+import DemoSummarizedEdgeLabels from '../.vitepress/components/04_label/07/SummarizedEdgeLabels.vue'
 </script>

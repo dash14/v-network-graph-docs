@@ -1,4 +1,4 @@
-import { Nodes, Edges, Layouts, defineConfigs } from "v-network-graph"
+import { Nodes, Edges, Layouts } from "v-network-graph"
 
 const nodes: Nodes = {
   node1: { name: "Node 1" },
@@ -8,25 +8,10 @@ const nodes: Nodes = {
 }
 
 const edges: Edges = {
-  edge1: { source: "node1", target: "node2", label: "edge 1" },
-  edge2: { source: "node2", target: "node3", label: "edge 2" },
-  edge3: { source: "node2", target: "node3", label: "edge 3" },
-  edge4: { source: "node2", target: "node3", label: "edge 4" },
-  edge5: { source: "node2", target: "node3", label: "edge 5" },
-  edge6: { source: "node2", target: "node3", label: "edge 6" },
-  edge7: { source: "node2", target: "node3", label: "edge 7" },
-  edge8: { source: "node2", target: "node3", label: "edge 8" },
-  edge9: { source: "node2", target: "node3", label: "edge 9" },
-  edge10: { source: "node2", target: "node4", label: "edge 10" },
+  edge1: { source: "node1", target: "node2", label: "1 Gbps" },
+  edge2: { source: "node2", target: "node3", label: "100 Mbps" },
+  edge3: { source: "node2", target: "node4", label: "100 Mbps" },
 }
-
-const configs = defineConfigs({
-  node: {
-    label: {
-      visible: false,
-    },
-  },
-})
 
 const layouts: Layouts = {
   nodes: {
@@ -40,6 +25,5 @@ const layouts: Layouts = {
 export default {
   nodes,
   edges,
-  configs,
   layouts,
 }
