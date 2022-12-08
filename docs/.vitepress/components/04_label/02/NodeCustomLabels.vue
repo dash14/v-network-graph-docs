@@ -16,17 +16,16 @@ import data from "./data"
         text-anchor="middle"
         dominant-baseline="central"
         fill="#ffffff"
-        >{{ nodeId }}</text
-      >
+      >{{ nodeId }}</text>
       <text
-        :x="x"
-        :y="y"
+        x="0"
+        y="0"
         :font-size="config.fontSize * scale"
         :text-anchor="textAnchor"
         :dominant-baseline="dominantBaseline"
         :fill="config.color"
-        >{{ text }}</text
-      >
+        :transform="`translate(${x} ${y})`"
+      >{{ text }}</text>
     </template>
   </v-network-graph>
 </template>

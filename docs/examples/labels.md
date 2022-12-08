@@ -40,7 +40,7 @@ In the following example, two labels are displayed per node.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/02/NodeCustomLabels.vue{7-30}
+  <<< @/.vitepress/components/04_label/02/NodeCustomLabels.vue{7-29}
 
 </template>
 <template v-slot:data>
