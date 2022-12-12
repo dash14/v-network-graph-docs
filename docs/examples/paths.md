@@ -102,7 +102,7 @@ Also, to enable mouse hover response, set `configs.path.hoverable` to true.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/06_paths/04/Select.vue{23-25,32,79}
+<<< @/.vitepress/components/06_paths/04/Select.vue{23-25,33,80}
 
 </template>
 <template v-slot:data>

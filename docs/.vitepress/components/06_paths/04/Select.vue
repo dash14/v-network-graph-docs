@@ -8,28 +8,27 @@ const paths: vNG.Paths = {
   path2: { edges: ["edge2", "edge4", "edge6", "edge10"] },
 }
 
-const configs = reactive(
-  vNG.defineConfigs({
-    node: {
-      normal: { type: "circle", radius: 20, color: "#99ccff" },
-      hover: { color: "#88bbff" },
-      label: { visible: false, fontSize: 8 },
+const initialConfigs = vNG.defineConfigs({
+  node: {
+    normal: { type: "circle", radius: 20, color: "#99ccff" },
+    hover: { color: "#88bbff" },
+    label: { visible: false, fontSize: 8 },
+  },
+  edge: {
+    gap: 12,
+    normal: { color: "#6699cc" },
+  },
+  path: {
+    visible: true,
+    selectable: true as boolean | number,
+    clickable: true,
+    hoverable: true,
+    normal: {
+      width: 10,
     },
-    edge: {
-      gap: 12,
-      normal: { color: "#6699cc" },
-    },
-    path: {
-      visible: true,
-      selectable: true as boolean | number,
-      clickable: true,
-      hoverable: true,
-      normal: {
-        width: 10,
-      },
-    },
-  })
-)
+  },
+})
+const configs = reactive(initialConfigs)
 
 const selectedPaths = ref<string[]>([])
 
