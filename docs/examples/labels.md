@@ -70,6 +70,73 @@ See [here](https://github.com/dash14/v-network-graph/blob/main/src/common/config
 
 </div>
 
+## Automatic adjustment position
+
+Depending on the positional relationship of the nodes, labels may
+overlap with edges and become difficult to read.
+For such cases, it is possible to automatically adjust the position
+of the label display according to the positional relationship of
+the nodes.
+
+If `configs.node.label.directionAutoAdjustment` is set to `true`,
+the node label will try to avoid overlapping with edges.
+If it is determined that the edge overlaps at any position, it will
+be displayed at the position specified in `configs.node.label.direction`.
+
+<demo-tabs :demo-height="250" :use-data="true">
+<template v-slot:demo>
+  <DemoAutoAdjustment />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/04_label/03/AutoAdjustment.vue{11}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/04_label/03/data.ts
+
+</template>
+</demo-tabs>
+
+:::tip
+The default implementation determines the display position by
+determining the possibility of overlap between the edge to
+which its own node is connected and own node label. It does
+not determine if the label overlaps with edges between other
+nodes to which the node is not connected.
+
+To specify the display position of a label in a different way
+from the default, specify a function that implemented the ideal
+processing in the `configs.node.label.directionAutoAdjustment`.
+
+This function is executed for each node, and the arguments and
+return value are as follows.
+
+Arguments:
+
+```typescript
+{
+    nodeId: string;
+    pos: { x: number, y: number};
+    oppositeNodes: {
+      [edgeId]: {
+        nodeId: string,
+        pos: { x: number, y: number}
+      }
+    };
+}
+```
+
+Return value:
+
+```typescript
+"center" | "north" | "north-east" | "east"
+| "south-east" | "south" | "south-west" | "west" | "north-west"
+| null
+```
+:::
+
 ## Edge labels
 
 For edge labels, use slots similar to custom labels for nodes.
@@ -222,6 +289,7 @@ Labels for summarized edges use a different slot than for normal edges.
 <script setup>
 import DemoNodeLabels from '../.vitepress/components/04_label/01/NodeLabels.vue'
 import DemoNodeCustomLabels from '../.vitepress/components/04_label/02/NodeCustomLabels.vue'
+import DemoAutoAdjustment from '../.vitepress/components/04_label/03/AutoAdjustment.vue'
 import DemoEdgeLabels from '../.vitepress/components/04_label/04/EdgeLabels.vue'
 import DemoMultipleEdgeLabels from '../.vitepress/components/04_label/05/MultipleEdgeLabels.vue'
 import DemoEdgeLabelsStyle from '../.vitepress/components/04_label/06/EdgeLabelsStyle.vue'

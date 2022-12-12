@@ -111,6 +111,8 @@ Values that are not specified will be used as default values.
                  "east" | "south-east" | "south" |
                  "south-west" | "west" | "north-west",
                  // node label display direction. default: "south"
+      directionAutoAdjustment: boolean | (params: NodeLabelDirectionHandlerParams) => NodeLabelDirectionType
+                 // whether auto adjustment node label display position. default: false
       text: string    // field name in the node object to use as the label. default: "name"
                       // if function is specified the return value is string of label.
     }
