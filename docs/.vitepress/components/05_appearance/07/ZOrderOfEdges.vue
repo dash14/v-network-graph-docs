@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue"
+import { reactive } from "vue"
 import ColorConvert from "color-convert"
 import * as vNG from "v-network-graph"
 import data from "./data"
@@ -39,12 +39,8 @@ function darker(hex: string, level: number) {
 
 <template>
   <div class="demo-control-panel">
-    <el-checkbox v-model="configs.edge.zOrder.bringToFrontOnHover"
-      >Bring to front on hover</el-checkbox
-    >
-    <el-checkbox v-model="configs.edge.zOrder.bringToFrontOnSelected"
-      >Bring to front on selected</el-checkbox
-    >
+    <el-checkbox v-model="configs.edge.zOrder.bringToFrontOnHover">Bring to front on hover</el-checkbox>
+    <el-checkbox v-model="configs.edge.zOrder.bringToFrontOnSelected">Bring to front on selected</el-checkbox>
   </div>
 
   <v-network-graph
