@@ -64,7 +64,10 @@ Values that are not specified will be used as default values.
           // with the key.
           // default:
           //   Process to detect Ctrl key down/up (If Mac OS, detect Cmd key).
-    }
+    },
+    builtInLayerOrder: LayerName[]
+        // The built-in layers which are to be reordered.
+        // default: [] (Display in default order)
   }
   node: {
     normal: {
