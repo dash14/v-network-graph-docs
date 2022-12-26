@@ -30,7 +30,7 @@ const initialConfig = defineConfigs({
     visible: true,
     path: {
       width: 10,
-      color: "#ffaa88cc",
+      color: "#eeaa88aa",
     },
     curveInNode: true,
   },

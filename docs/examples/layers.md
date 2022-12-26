@@ -1,4 +1,4 @@
-# Layer
+# Layers
 
 ## Custom layer
 
@@ -42,12 +42,12 @@ This is an example of adding an image layer to the behind of a network graph.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/07_layer/01/Map.vue{7-11,28,30-39}
+<<< @/.vitepress/components/07_layers/01/Map.vue{7-11,28,30-39}
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/07_layer/01/data.ts
+<<< @/.vitepress/components/07_layers/01/data.ts
 
 </template>
 </demo-tabs>
@@ -62,12 +62,12 @@ This is an example of adding an SVG layer to the foreground of the nodes layer.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/07_layer/02/Badge.vue{5-9,22,24-39}
+<<< @/.vitepress/components/07_layers/02/Badge.vue{5-9,22,24-39}
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/07_layer/02/data.ts
+<<< @/.vitepress/components/07_layers/02/data.ts
 
 </template>
 </demo-tabs>
@@ -105,19 +105,19 @@ will be configured so that it is directly above the `"paths"` layer.
 </template>
 <template v-slot:source>
 
-<<< @/.vitepress/components/07_layer/03/ChangeOrder.vue{12}
+<<< @/.vitepress/components/07_layers/03/ChangeOrder.vue{12}
 
 </template>
 <template v-slot:data>
 
-<<< @/.vitepress/components/07_layer/03/data.ts
+<<< @/.vitepress/components/07_layers/03/data.ts
 
 </template>
 </demo-tabs>
 
 
 <script setup>
-import DemoMap from '../.vitepress/components/07_layer/01/Map.vue'
-import DemoBadge from '../.vitepress/components/07_layer/02/Badge.vue'
-import DemoChangeOrder from '../.vitepress/components/07_layer/03/ChangeOrder.vue'
+import DemoMap from '../.vitepress/components/07_layers/01/Map.vue'
+import DemoBadge from '../.vitepress/components/07_layers/02/Badge.vue'
+import DemoChangeOrder from '../.vitepress/components/07_layers/03/ChangeOrder.vue'
 </script>

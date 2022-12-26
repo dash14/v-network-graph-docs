@@ -47,9 +47,9 @@ See below for live examples of various uses.
 </div>
 <div class="example-item">
 
-[![Custom Layer](/examples/layer.png)](./layer)
+[![Layers](/examples/layer.png)](./layers)
 
-[Custom Layer](./layer)
+[Layers](./layers)
 
 </div>
 <div class="example-item">

@@ -58,7 +58,7 @@ const ANALYZE_BUNDLE = false
           { text: "Labels", link: "/examples/labels" },
           { text: "Appearance Customization", link: "/examples/appearance" },
           { text: "Paths", link: "/examples/paths" },
-          { text: "Layer", link: "/examples/layer" },
+          { text: "Layers", link: "/examples/layers" },
           { text: "Event Handling", link: "/examples/event" },
           { text: "Miscellaneous", link: "/examples/misc" },
         ],
