@@ -2,7 +2,6 @@
 import { computed, ref, watch } from "vue"
 import * as vNG from "v-network-graph"
 import data from "./data"
-import { Point } from "v-network-graph"
 
 // ref="graph"
 const graph = ref<vNG.Instance>()
@@ -54,9 +53,9 @@ const eventHandlers: vNG.EventHandlers = {
   <div class="tooltip-wrapper">
     <v-network-graph
       ref="graph"
+      v-model:layouts="layouts"
       :nodes="data.nodes"
       :edges="data.edges"
-      v-model:layouts="layouts"
       :configs="data.configs"
       :event-handlers="eventHandlers"
     />
@@ -89,5 +88,6 @@ const eventHandlers: vNG.EventHandlers = {
   border: 1px solid #ffb950;
   box-shadow: 2px 2px 2px #aaa;
   transition: opacity 0.2s linear;
+  pointer-events: none;
 }
 </style>
