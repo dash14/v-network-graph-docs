@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@800');
 
 :root {
   --c-brand: #4065d0;
@@ -26,9 +26,11 @@
 }
 
 .nav-bar-title {
-  font-family: 'Alata', sans-serif;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 800 !important;
+  text-shadow: 2px 2px 1px #dce2ec;
   letter-spacing: 0.05em;
-  color: #2d355d !important;
+  color: #2f355a !important;
 }
 
 .nav-bar-title:before {
