@@ -16,8 +16,8 @@ const ANALYZE_BUNDLE = false
       // Google Search Console
       [ "meta", { name: "google-site-verification", content: "0nPNAdUYrhvg27b84hgrPPPsjIDmMIBIKz3hNd23mXA" } ],
       // Google Analytics
-      [ 'script', { src: 'https://www.googletagmanager.com/gtag/js?id=G-TVV8JY0JNE', async: true } ],
-      [ 'script', {}, `window.GA_MEASUREMENT_ID = 'G-TVV8JY0JNE';window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`],
+      [ "script", { src: 'https://www.googletagmanager.com/gtag/js?id=G-TVV8JY0JNE', async: true } ],
+      [ "script", {}, `window.GA_MEASUREMENT_ID = 'G-TVV8JY0JNE';window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`],
       // Image for SNS
       [ "meta", { property: "og:type", content: "website" } ],
       [ "meta", { property: "og:url", content: "https://dash14.github.io/v-network-graph/" } ],
