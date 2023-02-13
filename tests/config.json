@@ -1,0 +1,9 @@
+{
+    "baseUrl": "http://localhost:3001/v-network-graph/",
+    "snapshot": {
+        "fullPage": true
+    },
+    "match": {
+        "threshold": 0.075
+    }
+}
