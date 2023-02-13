@@ -5,9 +5,9 @@ See below for live examples of various uses.
 <div class="example-list">
 <div class="example-item">
 
-[![Basic usage](/examples/basic.png)](./basic)
+[![Basic Usage](/examples/basic.png)](./basic)
 
-[Basic usage](./basic)
+[Basic Usage](./basic)
 
 </div>
 <div class="example-item">
