@@ -6,6 +6,8 @@ test("VRT: Examples", async ({ page }) => {
   await page.goto(config.baseUrl)
   await page.locator(".home-hero").getByRole("link", { name: "Examples" }).click()
 
+  await page.waitForSelector(".next-and-prev-link")
+
   expect(await page.screenshot(config.snapshot)).toMatchSnapshot(
     "examples.png",
     config.match
@@ -89,11 +91,11 @@ Object.entries(pages).forEach(([key, { name, url }]) => {
 
       await openSourceTabs(page)
 
-      const threshold = 0.2
+      const maxDiffPixelRatio = 0.1
 
       expect(await page.screenshot(config.snapshot)).toMatchSnapshot(
         `examples-${key}-sources.png`,
-        { threshold }
+        { maxDiffPixelRatio }
       )
     })
   })

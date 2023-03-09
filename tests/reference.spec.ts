@@ -5,6 +5,8 @@ test("VRT: Reference", async ({ page }) => {
   await page.goto(config.baseUrl)
   await page.getByRole("link", { name: "Reference" }).click()
 
+  await page.waitForSelector(".next-and-prev-link")
+
   expect(await page.screenshot(config.snapshot)).toMatchSnapshot(
     "reference.png",
     config.match
@@ -30,6 +32,8 @@ Object.entries(pages).forEach(([key, { name }]) => {
   test(`VRT: Reference: ${name}`, async ({ page }) => {
     await page.goto(`${config.baseUrl}reference/`)
     await page.locator(".content").getByRole("link", { name }).click()
+
+    await page.waitForSelector(".next-and-prev-link")
 
     expect(await page.screenshot(config.snapshot)).toMatchSnapshot(
       `reference-${key}.png`,

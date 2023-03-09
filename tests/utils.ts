@@ -9,4 +9,5 @@ export async function openSourceTabs(page: Page) {
   await sourceTabs.evaluateAll(elements => {
     elements.forEach(element => (element as HTMLElement).click())
   })
+  await page.waitForTimeout(1000)
 }
