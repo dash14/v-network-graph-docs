@@ -10,7 +10,7 @@ Install with npm
 npm install v-network-graph
 ```
 
-and setup in main.ts
+and setup in `main.ts`
 
 ```ts
 // main.ts
@@ -24,6 +24,22 @@ const app = createApp(App)
 app.use(VNetworkGraph)
 app.mount("#app")
 ```
+
+
+:::info
+It is also possible to load it in other components without setting it
+in `main.ts`, as shown below.
+
+```vue
+<!-- YourVueComponent.vue -->
+<script setup lang="ts">
+  import { VNetworkGraph } from "v-network-graph"
+  import "v-network-graph/lib/style.css"
+  ...
+</script>
+```
+:::
+
 
 </div>
 
