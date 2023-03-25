@@ -86,7 +86,7 @@ const ANALYZE_BUNDLE = false
       rollupOptions: {
         output: {
           manualChunks: {
-            "element-plus": ["element-plus"],
+            "ui": ["element-plus", "v-network-graph"],
           },
         },
       },
@@ -103,7 +103,7 @@ const ANALYZE_BUNDLE = false
       }),
     ],
     ssr: {
-      noExternal: ["element-plus", "lodash-es"]
+      noExternal: ["element-plus", "lodash-es", "v-network-graph"]
     }
   },
   server: {
