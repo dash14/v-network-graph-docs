@@ -55,6 +55,12 @@ the grid is shown below.
 This component also provide a layout strategy with simulating
 physical forces on particles with [d3-force](https://github.com/d3/d3-force).
 
+d3-force is an optional dependency and should be added to your project manually.
+
+```bash
+npm install d3-force
+```
+
 In this example, clicking on a node with Alt key pressed will fix
 the position of the node. Clicking the node again with the Alt key
 will return it to the position of the d3-force calculation result.
@@ -143,7 +149,7 @@ https://github.com/dagrejs/dagre/wiki
 *It can be installed with the following command:
 
 ```bash
-$ npm install dagre
+npm install dagre
 ```
 :::
 

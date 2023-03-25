@@ -103,7 +103,7 @@ const ANALYZE_BUNDLE = false
       }),
     ],
     ssr: {
-      noExternal: ["element-plus", "lodash-es", "v-network-graph"]
+      noExternal: ["element-plus", "lodash-es", "d3-force", "v-network-graph"]
     }
   },
   server: {
