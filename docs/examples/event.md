@@ -51,6 +51,24 @@ clicked.
 </template>
 </demo-tabs>
 
+:::tip
+The handler for mouse events such as click are also passed a raw event object.
+By using this event object, it is possible to check if a modifier key
+(Ctrl, Alt, etc.) is pressed or not.
+
+```ts
+import { EventHandlers } from "v-network-graph"
+const eventHandlers: EventHandlers = {
+  "node:click": ({ node, event }) => {
+    if (event.ctrlKey) {
+      // ...
+    }
+  }
+}
+```
+
+:::
+
 ## Context menu
 
 v-network-graph does not have the ability to show a context menu,
