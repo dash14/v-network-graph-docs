@@ -166,6 +166,7 @@ Values that are not specified will be used as default values.
     type: "straight" | "curve" // edge type when there are multiple edges between the nodes.
     marker: {
       source: {
+        // * These fields can also be specified with the function as `([edge: Edge, stroke: StrokeStyle]) => value`.
         type:  "none" | "arrow" | "angle" | "circle" | "custom"
                               // type of marker.                          default: "none"
         width: number        // width of marker.                         default: 5
