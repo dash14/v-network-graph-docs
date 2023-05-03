@@ -17,7 +17,8 @@ const configs = vNG.defineConfigs({
 
 /**
  * Make `transform` value of the object placing on the edge.
- * @param area - label area calculated by v-network-graph
+ * @param center - center position
+ * @param edgePos - edge source and target positions
  * @param scale - zooming scale
  */
 function makeTransform(center: vNG.Point, edgePos: vNG.EdgePosition, scale: number) {
@@ -48,9 +49,9 @@ function makeTransform(center: vNG.Point, edgePos: vNG.EdgePosition, scale: numb
       <component is="style">
         <!-- prettier-ignore -->
         .marker {
-          fill: {{ configs.edge.normal.color }};
-          transition: fill 0.1s linear;
-          pointer-events: none;
+        fill: {{ configs.edge.normal.color }};
+        transition: fill 0.1s linear;
+        pointer-events: none;
         }
         .marker.hovered { fill: {{ configs.edge.hover.color }}; }
         .marker.selected { fill: {{ configs.edge.selected.color }}; }

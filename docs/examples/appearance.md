@@ -306,7 +306,7 @@ at the center of the edge.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/05_appearance/10/PlaceObjectAtEdge.vue{59-67}
+  <<< @/.vitepress/components/05_appearance/10/PlaceObjectAtEdge.vue{60-68}
 
 </template>
 <template v-slot:data>
