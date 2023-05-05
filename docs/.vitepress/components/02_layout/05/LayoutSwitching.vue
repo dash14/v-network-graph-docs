@@ -29,10 +29,12 @@ const d3ForceEnabled = computed({
   },
 })
 
+const layoutHandler: vNG.LayoutHandler = new ForceLayout()
+
 const configs = reactive(
   vNG.defineConfigs({
     view: {
-      layoutHandler: new ForceLayout(),
+      layoutHandler,
     },
     node: {
       label: {
