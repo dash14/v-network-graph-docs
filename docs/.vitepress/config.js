@@ -31,6 +31,7 @@ const ANALYZE_BUNDLE = false
       [ "meta", { property: "og:image:height", content: "630" } ],
   ],
   themeConfig: {
+    logo: "header-logo.svg",
     nav: [
       { text: "Getting Started", link: "/getting-started" },
       {

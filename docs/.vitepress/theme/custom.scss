@@ -23,23 +23,16 @@
   }
 }
 
-.nav-bar-title {
-  font-family: 'Sarabun', sans-serif;
-  font-weight: 800 !important;
-  text-shadow: 2px 2px 1px #dce2ec;
-  letter-spacing: 0.05em;
-  color: #2f355a !important;
+.nav-bar .nav-bar-title {
+  img {
+    height: 2.2rem;
+  }
+  width: 208px;
+  overflow: hidden;
+  white-space: nowrap;
+  justify-content: flex-start;
 }
 
-.nav-bar-title:before {
-  content: url(/v-network-graph/head-logo.svg);
-  width: 32px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  top: 5px;
-  margin-right: 6px;
-}
 .action .item {
   border-radius: 10px !important;
 }
