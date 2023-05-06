@@ -1,40 +1,109 @@
 :root {
-  --c-brand: #4065d0;
-  --c-brand-light: #4d75ee;
+  // -------------------------------------------------------
+  // VitePress
+  // -------------------------------------------------------
+  --vp-c-brand: #4065d0;
+  --vp-c-brand-light: #4d75ee;
+  --vp-c-bg-soft: #f6f8ff;
+  --vp-c-bg-soft-up: #fbfcff;
+
+  --vp-button-brand-border: #4162c5;
+  --vp-button-brand-hover-border: #4162c5;
+  --vp-button-brand-active-border: #4162c5;
+
+  --vp-button-brand-hover-bg: #3050b1;
+  --vp-button-brand-active-bg: #244095;
+
+  // TIP
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-text-2);
+  --vp-custom-block-tip-bg: var(--vp-c-bg-soft-up);
+  --vp-custom-block-tip-code-bg: #e7e9f3;
+
+  // INFO
+  --vp-custom-block-info-border: var(--vp-c-brand);
+  --vp-custom-block-info-text: var(--vp-c-text-2);
+  --vp-custom-block-info-bg: var(--vp-c-bg-soft-up);
+  --vp-custom-block-info-code-bg: #e7e9f3;
 }
 
-.theme > .page > .container {
-  max-width: 56rem;
+body {
+  // -------------------------------------------------------
+  // element-plus
+  // -------------------------------------------------------
+  --el-color-primary: var(--vp-c-text-2);
+  .el-button {
+    --el-button-hover-bg-color: #eeeeee;
+    --el-button-hover-border-color: #b5b5b5;
+    --el-button-active-bg-color: #e0e0e0;
+    --el-button-active-border-color: #999999;
+  }
+  .el-button--primary {
+    --el-button-bg-color: var(--vp-c-brand);
+    --el-button-border-color: var(--vp-button-brand-border);
+    --el-button-hover-bg-color: var(--vp-button-brand-hover-bg);
+    --el-button-hover-border-color: var(--vp-button-brand-hover-border);
+    --el-button-active-bg-color: var(--vp-button-brand-active-bg);
+    --el-button-active-border-color: var(--vp-button-brand-active-border);
+  }
+  .el-button--primary.is-disabled {
+    --el-button-disabled-bg-color: #a3b5eb;
+    --el-button-disabled-border-color: #a3b5eb;
+  }
 }
 
-.home-hero {
-  .image {
-    width: 537px !important;
+.Layout:has(.VPHome) .VPImage.logo {
+  display: none;
+}
+
+.VPNavBar .VPNavBarTitle {
+  .VPImage.logo {
+    width: 208px;
     height: auto;
-    margin-top: 14vh !important;
-    margin-bottom: 8vh !important;
-  }
-  .title {
-    display: none;
-  }
-  .tagline {
-    margin-top: 2rem !important;
-    margin-bottom: 1vh !important;
+    position: relative;
+    left: -14px;
   }
 }
 
-.nav-bar .nav-bar-title {
-  img {
-    height: 2.2rem;
+.VPHero {
+  .container .main {
+    .name {
+      margin: 0 auto;
+      .clip {
+        display: none;
+      }
+    }
+    .name::before {
+      content: url(/v-network-graph/logo.svg);
+      pointer-events: all;
+    }
+    .tagline {
+      margin: 0 auto;
+      max-width: initial;
+      text-align: center;
+    }
+    .actions {
+      justify-content: center;
+      .action {
+        padding: 6px 10px;
+      }
+      .VPButton.medium {
+        line-height: 40px;
+      }
+    }
   }
-  width: 208px;
-  overflow: hidden;
-  white-space: nowrap;
-  justify-content: flex-start;
 }
 
-.action .item {
-  border-radius: 10px !important;
+.VPSidebar {
+  .indicator {
+    width: 4px;
+  }
+  .VPSidebarItem.is-active {
+    > .item > .indicator {
+      border-radius: 2px;
+      background-color: var(--vp-c-brand);
+    }
+  }
 }
 
 .line-numbers-mode.language-bash {
@@ -44,11 +113,11 @@
   }
 }
 
-.getting-started-command {
+.vp-doc .getting-started-command {
   // hide line number
-  .line-numbers-mode.language-ts,
-  .line-numbers-mode.language-js,
-  .line-numbers-mode.language-vue {
+  .language-ts.line-numbers-mode,
+  .language-js.line-numbers-mode,
+  .language-vue.line-numbers-mode {
     padding-left: 0;
     .line-numbers-wrapper {
       display: none;
@@ -125,7 +194,7 @@
         width: 100%;
         padding-left: 40px;
         align-items: center;
-        color: var(--c-text);
+        color: var(--vp-c-text);
       }
       a:hover {
         color: #3eaf7c;
@@ -134,10 +203,10 @@
   }
   .example-item:hover {
     a img {
-      border-color: var(--c-brand);
+      border-color: var(--vp-c-brand);
     }
     p:last-child a {
-      color: var(--c-brand);
+      color: var(--vp-c-brand);
       text-decoration: underline;
     }
   }
@@ -159,30 +228,32 @@
     }
   }
 }
-.reference-props-types,
-.reference-configs {
-  // hide line number
-  .line-numbers-mode {
-    &.language-js, &.language-ts {
-      padding-left: 0;
-      &:before {
-        content: ""
+.vp-doc {
+  .reference-props-types,
+  .reference-configs {
+    // hide line number
+    .line-numbers-mode {
+      &.language-js, &.language-ts {
+        padding-left: 0;
+        &:before {
+          content: ""
+        }
       }
     }
-  }
-  .line-numbers-wrapper {
-    display: none;
-  }
-  pre {
-    padding: 1rem 1.2rem;
-  }
-  code {
-    font-size: 12px;
-    line-height: 100%;
+    .line-numbers-wrapper {
+      display: none;
+    }
+    code {
+      font-size: 12px;
+      line-height: 120%;
+    }
   }
 }
 
-// Fix temporarily: Address chrome highlighting gaps.
-[class*='language-'] pre {
-  font-size: 12px;
+.custom-block {
+  &.tip .custom-block-title,
+  &.info .custom-block-title {
+    color: var(--vp-c-brand);
+  }
 }
+
