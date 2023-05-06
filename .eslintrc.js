@@ -42,7 +42,6 @@ module.exports = {
     ],
   },
   settings: {
-    "import/resolver": { typescript: [] },
-  },
-  "ignorePatterns": ["!.vitepress"]
+    "import/resolver": { typescript: {} },
+  }
 }
