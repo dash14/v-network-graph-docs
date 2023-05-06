@@ -133,12 +133,12 @@ tree structure of a directed graph.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/06/Layout.vue{38-99}
+  <<< @/.vitepress/components/02_layout/07/Layout.vue{38-99}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/02_layout/06/data.ts
+  <<< @/.vitepress/components/02_layout/07/data.ts
 
 </template>
 </demo-tabs>
@@ -159,5 +159,5 @@ import DemoSnapToGrid from '../.vitepress/components/02_layout/02/SnapToGrid.vue
 import DemoD3Force from '../.vitepress/components/02_layout/03/D3Force.vue'
 import DemoD3ForceFixed from '../.vitepress/components/02_layout/04/D3ForceFixed.vue'
 import DemoLayoutSwitching from '../.vitepress/components/02_layout/05/LayoutSwitching.vue'
-import DemoLayout from '../.vitepress/components/02_layout/06/Layout.vue'
+import DemoLayout from '../.vitepress/components/02_layout/07/Layout.vue'
 </script>
