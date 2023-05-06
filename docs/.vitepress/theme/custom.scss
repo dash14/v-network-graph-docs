@@ -65,10 +65,10 @@ body {
   }
 }
 
-.VPHero {
-  .container .main {
+.VPHome {
+  .VPHero .container .main {
     .name {
-      margin: 0 auto;
+      margin: 0 auto 1.5rem auto;
       .clip {
         display: none;
       }
@@ -83,15 +83,20 @@ body {
       text-align: center;
     }
     .actions {
+      padding-top: 38px;
       justify-content: center;
       .action {
         padding: 6px 10px;
       }
       .VPButton.medium {
-        line-height: 40px;
+        line-height: 50px;
+        padding: 0 30px;
+        border-radius: 25px;
+        font-size: 16px;
       }
     }
   }
+  padding-bottom: 20px !important;
 }
 
 .VPSidebar {
