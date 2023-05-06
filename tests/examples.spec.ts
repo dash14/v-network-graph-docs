@@ -4,9 +4,9 @@ import { openSourceTabs, waitForPreviewVNetworkGraph } from "./utils"
 
 test("VRT: Examples", async ({ page }) => {
   await page.goto(config.baseUrl)
-  await page.locator(".home-hero").getByRole("link", { name: "Examples" }).click()
+  await page.locator(".VPHome").getByRole("link", { name: "Examples" }).click()
 
-  await page.waitForSelector(".next-and-prev-link")
+  await page.waitForSelector(".prev-next")
 
   expect(await page.screenshot(config.snapshot)).toMatchSnapshot(
     "examples.png",
@@ -62,7 +62,7 @@ Object.entries(pages).forEach(([key, { name, url }]) => {
   test.describe("VRT: Examples: Preview", () => {
     test(name, async ({ page }) => {
       await page.goto(`${config.baseUrl}examples/`)
-      await page.locator(".content").getByRole("link", { name }).click()
+      await page.locator("#VPContent .main").getByText(name).click()
       await waitForPreviewVNetworkGraph(page)
 
       if (key === "layout") {
