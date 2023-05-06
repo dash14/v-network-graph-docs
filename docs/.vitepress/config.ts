@@ -72,15 +72,15 @@ const ANALYZE_BUNDLE = false
           { text: "Props", link: "/reference/props" },
           { text: "Configurations", link: "/reference/configurations" },
           { text: "Methods", link: "/reference/methods" },
-          { text: "Events", link: "/reference/events" }
-        ]
+          { text: "Events", link: "/reference/events" },
+        ],
       },
     ],
     footer: {
-      copyright: "MIT Licensed | Copyright © 2021-2023 dash14.ack"
+      copyright: "MIT Licensed | Copyright © 2021-2023 dash14.ack",
     },
     search: {
-      provider: "local"
+      provider: "local",
     },
   },
   markdown: {
@@ -109,7 +109,7 @@ const ANALYZE_BUNDLE = false
       }),
     ],
     ssr: {
-      noExternal: ["element-plus", "lodash-es", "d3-force", "v-network-graph"]
-    }
-  }
+      noExternal: ["element-plus", "lodash-es", "d3-force", "v-network-graph"],
+    },
+  },
 })
