@@ -116,6 +116,36 @@ want to observe a single node. So we can enable it first then disable it later.
 </demo-tabs>
 
 
+## Customize d3-force parameters: advance the specified tick first
+
+This example shows how to customize the d3-force parameter and how to perform
+the coordinate calculation by d3-force for the specified ticks.  
+In the previous d3-force examples, the nodes move after being displayed,
+but in this example, the nodes stop and are displayed after the coordinates
+are calculated.
+
+Also, in this example, d3-force is set to not recalculate even if nodes are
+dragged or network changes occur. This behavior can be customized.
+Please check the example source code for details.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoD3Customize />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/02_layout/06/D3Customize.vue
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/02_layout/06/data.ts
+
+</template>
+</demo-tabs>
+
+
+
 ## Automatic layout
 
 Since node position is an input to `<v-network-graph>`, layout such
@@ -159,5 +189,6 @@ import DemoSnapToGrid from '../.vitepress/components/02_layout/02/SnapToGrid.vue
 import DemoD3Force from '../.vitepress/components/02_layout/03/D3Force.vue'
 import DemoD3ForceFixed from '../.vitepress/components/02_layout/04/D3ForceFixed.vue'
 import DemoLayoutSwitching from '../.vitepress/components/02_layout/05/LayoutSwitching.vue'
+import DemoD3Customize from '../.vitepress/components/02_layout/06/D3Customize.vue'
 import DemoLayout from '../.vitepress/components/02_layout/07/Layout.vue'
 </script>
