@@ -3,5 +3,6 @@ node_modules
 lib
 *.local
 /docs/.vitepress/dist
+/docs/.vitepress/cache
 /tests/*.spec.ts-snapshots
 /test-results

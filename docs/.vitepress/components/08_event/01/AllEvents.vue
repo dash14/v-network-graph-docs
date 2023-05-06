@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive } from "vue"
 import * as vNG from "v-network-graph"
-import format from "date-fns/format"
+import format from "date-fns/format/index"
 import data from "./data"
 
 const EVENTS_COUNT = 6

@@ -12,6 +12,7 @@ const ANALYZE_BUNDLE = false
   lang: "en-US",
   title: "v-network-graph",
   description: "An interactive network graph visualization library for Vue 3",
+  appearance: false,
   head: [
       // Google Search Console
       [ "meta", { name: "google-site-verification", content: "0nPNAdUYrhvg27b84hgrPPPsjIDmMIBIKz3hNd23mXA" } ],
@@ -32,6 +33,7 @@ const ANALYZE_BUNDLE = false
   ],
   themeConfig: {
     logo: "header-logo.svg",
+    siteTitle: false,
     nav: [
       { text: "Getting Started", link: "/getting-started" },
       {
@@ -54,7 +56,7 @@ const ANALYZE_BUNDLE = false
       {
         text: "Examples",
         link: "/examples/",
-        children: [
+        items: [
           { text: "Basic Usage", link: "/examples/basic" },
           { text: "Layout / Positioning", link: "/examples/layout" },
           { text: "Operations on Graphs", link: "/examples/operation" },
@@ -69,7 +71,7 @@ const ANALYZE_BUNDLE = false
       {
         text: "Reference",
         link: "/reference/",
-        children: [
+        items: [
           { text: "Props", link: "/reference/props" },
           { text: "Configurations", link: "/reference/configurations" },
           { text: "Methods", link: "/reference/methods" },
@@ -77,6 +79,9 @@ const ANALYZE_BUNDLE = false
         ]
       },
     ],
+    footer: {
+      copyright: "MIT Licensed | Copyright © 2021-2023 dash14.ack"
+    }
   },
   markdown: {
     lineNumbers: true,
