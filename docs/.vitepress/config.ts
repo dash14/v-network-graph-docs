@@ -44,10 +44,9 @@ const ANALYZE_BUNDLE = false
         link: "/reference/",
         activeMatch: "^/reference",
       },
-      {
-        text: "GitHub",
-        link: "https://github.com/dash14/v-network-graph",
-      },
+    ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/dash14/v-network-graph' },
     ],
     sidebar: [
       { text: "Getting Started", link: "/getting-started" },
