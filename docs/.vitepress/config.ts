@@ -15,7 +15,7 @@ const ANALYZE_BUNDLE = false
       // Google Search Console
       [ "meta", { name: "google-site-verification", content: "0nPNAdUYrhvg27b84hgrPPPsjIDmMIBIKz3hNd23mXA" } ],
       // Google Analytics
-      [ "script", { src: 'https://www.googletagmanager.com/gtag/js?id=G-TVV8JY0JNE', async: true } ],
+      [ "script", { src: 'https://www.googletagmanager.com/gtag/js?id=G-TVV8JY0JNE', async: "true" } ],
       [ "script", {}, `window.GA_MEASUREMENT_ID = 'G-TVV8JY0JNE';window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`],
       // Google Fonts
       [ "link", { href: "https://fonts.googleapis.com/css2?family=Sarabun:wght@800", rel: "stylesheet" } ],
@@ -81,7 +81,7 @@ const ANALYZE_BUNDLE = false
     },
     search: {
       provider: "local"
-    }
+    },
   },
   markdown: {
     lineNumbers: true,
@@ -111,10 +111,5 @@ const ANALYZE_BUNDLE = false
     ssr: {
       noExternal: ["element-plus", "lodash-es", "d3-force", "v-network-graph"]
     }
-  },
-  server: {
-    fs: {
-      allow: [".."],
-    },
   }
 })
