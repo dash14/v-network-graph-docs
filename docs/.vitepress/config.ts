@@ -1,12 +1,10 @@
 import { defineConfig } from "vitepress"
-import ElementPlus from "unplugin-element-plus/vite"
 import { visualizer } from "rollup-plugin-visualizer"
+// @ts-ignore
+import ElementPlus from "unplugin-element-plus/vite"
 
 const ANALYZE_BUNDLE = false
 
-/**
- * @type {import('vitepress').UserConfig}
- */
  export default defineConfig({
   base: "/v-network-graph/",
   lang: "en-US",
@@ -81,7 +79,7 @@ const ANALYZE_BUNDLE = false
     ],
     footer: {
       copyright: "MIT Licensed | Copyright © 2021-2023 dash14.ack"
-    }
+    },
   },
   markdown: {
     lineNumbers: true,
