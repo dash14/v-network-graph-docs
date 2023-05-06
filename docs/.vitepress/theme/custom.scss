@@ -69,13 +69,20 @@ body {
   .VPHero .container .main {
     .name {
       margin: 0 auto 1.5rem auto;
+      text-align: center;
       .clip {
         display: none;
       }
     }
     .name::before {
-      content: url(/v-network-graph/logo.svg);
-      pointer-events: all;
+      content: "";
+      display: inline-block;
+      width: 540px;
+      max-width: 100%;
+      aspect-ratio: 540 / 100;
+      background-image: url(/v-network-graph/logo.svg);
+      background-size: contain;
+      vertical-align: middle;
     }
     .tagline {
       margin: 0 auto;
