@@ -80,6 +80,9 @@ const ANALYZE_BUNDLE = false
     footer: {
       copyright: "MIT Licensed | Copyright © 2021-2023 dash14.ack"
     },
+    search: {
+      provider: "local"
+    }
   },
   markdown: {
     lineNumbers: true,
