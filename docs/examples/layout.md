@@ -71,7 +71,7 @@ will return it to the position of the d3-force calculation result.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/03/D3Force.vue{4-8,24-39}
+  <<< @/.vitepress/components/02_layout/03/D3Force.vue{4-8,24-46}
 
 </template>
 </demo-tabs>
@@ -110,13 +110,13 @@ want to observe a single node. So we can enable it first then disable it later.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/05/LayoutSwitching.vue{21-30}
+  <<< @/.vitepress/components/02_layout/05/LayoutSwitching.vue{17-26}
 
 </template>
 </demo-tabs>
 
 
-## Customize d3-force parameters: advance the specified tick first
+## Customize d3-force parameters: advance the specified ticks first
 
 This example shows how to customize the d3-force parameter and how to perform
 the coordinate calculation by d3-force for the specified ticks.  
@@ -134,7 +134,7 @@ Please check the example source code for details.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/06/D3Customize.vue
+  <<< @/.vitepress/components/02_layout/06/D3Customize.vue{17-19,32-33}
 
 </template>
 <template v-slot:data>

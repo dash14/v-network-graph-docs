@@ -24,18 +24,26 @@ const configs = reactive(
       layoutHandler: new ForceLayout({
         positionFixedByDrag: false,
         positionFixedByClickWithAltKey: true,
-        // * The following are the default parameters for the simulation.
-        // * You can customize it by uncommenting below.
-        // createSimulation: (d3, nodes, edges) => {
-        //   const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
-        //   return d3
-        //     .forceSimulation(nodes)
-        //     .force("edge", forceLink.distance(100))
-        //     .force("charge", d3.forceManyBody())
-        //     .force("collide", d3.forceCollide(50).strength(0.2))
-        //     .force("center", d3.forceCenter().strength(0.05))
-        //     .alphaMin(0.001)
-        // }
+        createSimulation: (d3, nodes, edges) => {
+          // d3-force parameters
+          const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
+          return d3
+            .forceSimulation(nodes)
+            .force("edge", forceLink.distance(40).strength(0.5))
+            .force("charge", d3.forceManyBody().strength(-800))
+            .force("center", d3.forceCenter().strength(0.05))
+            .alphaMin(0.001)
+
+            // * The following are the default parameters for the simulation.
+            // const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
+            // return d3
+            //   .forceSimulation(nodes)
+            //   .force("edge", forceLink.distance(100))
+            //   .force("charge", d3.forceManyBody())
+            //   .force("collide", d3.forceCollide(50).strength(0.2))
+            //   .force("center", d3.forceCenter().strength(0.05))
+            //   .alphaMin(0.001)
+        }
       }),
     },
     node: {
@@ -60,8 +68,8 @@ function buildNetwork(count: number, nodes: vNG.Nodes, edges: vNG.Edges) {
   }
   const newEdges = Object.fromEntries([
     ...idNums
-      .map(n => [n, (Math.floor(n / 5) * 5) % count])
-      .map(([n, m]) => (n === m ? [n, (n + 5) % count] : [n, m]))
+      .map(n => [n, (Math.floor(n / 4) * 4) % count])
+      .map(([n, m]) => (n === m ? [n, (n + 4) % count] : [n, m]))
       .map(([n, m]) => makeEdgeEntry(n, m)),
   ])
   Object.keys(edges).forEach(id => delete edges[id])

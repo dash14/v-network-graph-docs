@@ -45,7 +45,7 @@
     "sass": "^1.62.1",
     "typescript": "^5.0.4",
     "unplugin-element-plus": "^0.7.1",
-    "v-network-graph": "^0.9.2",
+    "v-network-graph": "^0.9.3",
     "vitepress": "^1.0.0-alpha.75",
     "vue-tsc": "^1.6.4"
   }

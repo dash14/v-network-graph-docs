@@ -29,18 +29,15 @@ const configs = reactive(
       layoutHandler: new ForceLayout({
         positionFixedByDrag: false,
         positionFixedByClickWithAltKey: true,
-        // * The following are the default parameters for the simulation.
-        // * You can customize it by uncommenting below.
-        // createSimulation: (d3, nodes, edges) => {
-        //   const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
-        //   return d3
-        //     .forceSimulation(nodes)
-        //     .force("edge", forceLink.distance(100))
-        //     .force("charge", d3.forceManyBody())
-        //     .force("collide", d3.forceCollide(50).strength(0.2))
-        //     .force("center", d3.forceCenter().strength(0.05))
-        //     .alphaMin(0.001)
-        // }
+        createSimulation: (d3, nodes, edges) => {
+          // d3-force parameters
+          const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
+          return d3
+            .forceSimulation(nodes)
+            .force("edge", forceLink.distance(60).strength(0.2))
+            .force("charge", d3.forceManyBody().strength(-120))
+            .alphaMin(0.001)
+        }
       }),
     },
     node: {
