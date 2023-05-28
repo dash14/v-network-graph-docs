@@ -160,12 +160,12 @@ you want to set.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_event/06/RawEvents.vue{3,32-42}
+  <<< @/.vitepress/components/08_event/07/RawEvents.vue{3,32-42}
 
 </template>
 <template v-slot:data>
 
-  <<< @/.vitepress/components/08_event/06/data.ts
+  <<< @/.vitepress/components/08_event/07/data.ts
 
 </template>
 </demo-tabs>
@@ -178,5 +178,5 @@ import DemoBadge from '../.vitepress/components/08_event/02/Badge.vue'
 import DemoContextMenu from '../.vitepress/components/08_event/03/ContextMenu.vue'
 import DemoNodeTooltip from '../.vitepress/components/08_event/04/NodeTooltip.vue'
 import DemoEdgeTooltip from '../.vitepress/components/08_event/05/EdgeTooltip.vue'
-import DemoRawEvents from '../.vitepress/components/08_event/06/RawEvents.vue'
+import DemoRawEvents from '../.vitepress/components/08_event/07/RawEvents.vue'
 </script>
