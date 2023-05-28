@@ -135,7 +135,31 @@ we can still create tooltip for edges by using the node positions.
 </demo-tabs>
 
 
-## Set raw event handlers to the node elements.
+## Keyboard events
+
+v-network-graph does not support key events, but they can be obtained
+using the standard HTML/Vue ways.  
+Below is an example of deleting a selected node/edge using the
+`keyup` event of `delete` key.
+
+<demo-tabs :use-data="true">
+<template v-slot:demo>
+  <DemoKeyboardEvents />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/08_event/06/KeyboardEvents.vue{11-25,31,38}
+
+</template>
+<template v-slot:data>
+
+  <<< @/.vitepress/components/08_event/06/data.ts
+
+</template>
+</demo-tabs>
+
+
+## Set raw event handlers to the node elements
 
 This section shows how to set raw event handlers to a node when
 the event mechanism with `event-handlers` is insufficient.
@@ -178,5 +202,6 @@ import DemoBadge from '../.vitepress/components/08_event/02/Badge.vue'
 import DemoContextMenu from '../.vitepress/components/08_event/03/ContextMenu.vue'
 import DemoNodeTooltip from '../.vitepress/components/08_event/04/NodeTooltip.vue'
 import DemoEdgeTooltip from '../.vitepress/components/08_event/05/EdgeTooltip.vue'
+import DemoKeyboardEvents from '../.vitepress/components/08_event/06/KeyboardEvents.vue'
 import DemoRawEvents from '../.vitepress/components/08_event/07/RawEvents.vue'
 </script>
