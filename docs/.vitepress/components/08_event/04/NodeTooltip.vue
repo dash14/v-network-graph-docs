@@ -81,7 +81,8 @@ const eventHandlers: vNG.EventHandlers = {
   position: absolute;
   width: 80px;
   height: 36px;
-  padding: 10px;
+  display: grid;
+  place-content: center;
   text-align: center;
   font-size: 12px;
   background-color: #fff0bd;
