@@ -66,6 +66,38 @@ The current zoom level can be retrieved via two-way binding for
 </demo-tabs>
 
 
+## Pan and zoom when initial display
+
+The behavior of panning and zooming in the initial layout can be changed with `configs.view.autoPanAndZoomOnLoad`.  
+The available options are as follows:
+
+<div class="reference-table">
+
+|value|description|
+|-----|-----------|
+|`"center-content"`|**(default)**<br>Pan the specified network graph so that its center is at the center of the display area|
+|`"fit-content"`|Adjust the pan and zoom so that the specified network graph fits into the display area|
+|`"center-zero"`|Pan coordinates (0, 0) to the center of the display area|
+|`false`|It does not automatically pan or zoom, so the upper left corner of the display area is at coordinates (0, 0)|
+
+</div>
+
+The `configs.view.autoPanAndZoomOnLoad` config takes effect on load,
+so if you change the select box, press the "Recreate" button to reconstruct
+the component.
+
+<demo-tabs :demo-height="250">
+<template v-slot:demo>
+  <InitialDisplay />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/01_basic/InitialDisplay.vue
+
+</template>
+</demo-tabs>
+
+
 ## Disable mouse operations
 
 Panning, zooming in/out with the mouse wheel, and dragging nodes can
@@ -88,6 +120,7 @@ import BasicMinimal from '../.vitepress/components/01_basic/Minimal.vue'
 import SetLayouts from '../.vitepress/components/01_basic/SetLayouts.vue'
 import SetLayoutsReactive from '../.vitepress/components/01_basic/SetLayoutsReactive.vue'
 import PanZoom from '../.vitepress/components/01_basic/PanZoom.vue'
+import InitialDisplay from '../.vitepress/components/01_basic/InitialDisplay.vue'
 import DisablePanZoom from '../.vitepress/components/01_basic/DisablePanZoom.vue'
 </script>
 
