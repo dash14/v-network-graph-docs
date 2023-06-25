@@ -98,6 +98,28 @@ the component.
 </demo-tabs>
 
 
+## Asynchronous processing before initial display
+
+Note that when performing asynchronous processing such as dynamic loading
+of network information, pan/zoom for initial display is not applied to
+the data after the asynchronous processing is complete.  
+The `configs.view.onBeforeInitialDisplay` config specifies the functions
+to be called before the initial display, which can be asynchronous
+functions or functions returning a Promise, to delay the initial display
+until their completion.
+
+<demo-tabs :demo-height="250" hint="The asynchronous processing is performed for 1 seconds when loading">
+<template v-slot:demo>
+  <InitialDisplayAsync />
+</template>
+<template v-slot:source>
+
+  <<< @/.vitepress/components/01_basic/InitialDisplayAsync.vue{50-53}
+
+</template>
+</demo-tabs>
+
+
 ## Disable mouse operations
 
 Panning, zooming in/out with the mouse wheel, and dragging nodes can
@@ -121,6 +143,7 @@ import SetLayouts from '../.vitepress/components/01_basic/SetLayouts.vue'
 import SetLayoutsReactive from '../.vitepress/components/01_basic/SetLayoutsReactive.vue'
 import PanZoom from '../.vitepress/components/01_basic/PanZoom.vue'
 import InitialDisplay from '../.vitepress/components/01_basic/InitialDisplay.vue'
+import InitialDisplayAsync from '../.vitepress/components/01_basic/InitialDisplayAsync.vue'
 import DisablePanZoom from '../.vitepress/components/01_basic/DisablePanZoom.vue'
 </script>
 
