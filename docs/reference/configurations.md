@@ -55,7 +55,7 @@ Values that are not specified will be used as default values.
         strokeWidth: number   //   stroke width. default: 1
         strokeColor: string   //   stroke color. default: "#aaaaff"
         strokeDasharray: string | number  // stroke dasharray. default: 0
-      },
+      }
       detector: (event: KeyboardEvent) => boolean
           // process for detecting special key down and up, to be used if
           // `boxSelectionEnabled` is true.
@@ -64,9 +64,9 @@ Values that are not specified will be used as default values.
           // with the key.
           // default:
           //   Process to detect Ctrl key down/up (If Mac OS, detect Cmd key).
-    },
+    }
     builtInLayerOrder: LayerName[]
-        // The built-in layers which are to be reordered.
+        // built-in layers which are to be reordered.
         // default: [] (Display in default order)
     onBeforeInitialDisplay?: (() => Promise<any>) | (() => any)
         // hook called before initial display. default: undefined
@@ -110,11 +110,11 @@ Values that are not specified will be used as default values.
           horizontal: number      // horizontal padding.
         }
         borderRadius: number       // border radius.
-      } | undefined,
+      } | undefined
       margin: number,                  // margin from node. default: 4
       direction: "center" | "north" | "north-east" |
                  "east" | "south-east" | "south" |
-                 "south-west" | "west" | "north-west",
+                 "south-west" | "west" | "north-west"
                  // node label display direction. default: "south"
       directionAutoAdjustment: boolean | (params: NodeLabelDirectionHandlerParams) => NodeLabelDirectionType
                  // whether auto adjustment node label display position. default: false
@@ -150,7 +150,7 @@ Values that are not specified will be used as default values.
         //   width: () => {normal's value} + 1
         //   color: "#3355bb",
         //   ... all other values are same as `edge.normal`
-        // },
+        // }
     selected: { /* same structure as `normal`. */ } | undefined
         // default: {
         //   width: () => {normal's value} + 1
@@ -222,7 +222,6 @@ Values that are not specified will be used as default values.
         //   animate: false,
         //   animationSpeed: 50
         // }
-      }
     }
     selfLoop: {
       // * These fields can also be specified with the function as `(edge: Edge) => value`.
@@ -230,7 +229,7 @@ Values that are not specified will be used as default values.
       isClockwise: boolean // whether the arc is clockwise or not. default: true
       offset: number       // distance to node. default: 10
       angle:               // angle from node to be displayed. default: 270
-    },
+    }
     keepOrder: "clock" | "vertical" | "horizontal"
       // orientation to be considered when keeping multiple edge alignments.
       //   "clock": Keep the forward/backward when viewed as a clock.
@@ -286,7 +285,7 @@ Values that are not specified will be used as default values.
         // default: {
         //   width: () => {normal's value} + 2
         //   ... all other values are same as `path.normal`
-        // },
+        // }
     selected: { /* same structure as `normal`. */ }
         // default: {
         //   width: () => {normal's value} + 2
