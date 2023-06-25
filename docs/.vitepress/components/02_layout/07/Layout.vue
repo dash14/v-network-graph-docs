@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue"
+import { ref } from "vue"
 import * as vNG from "v-network-graph"
 import data from "./data"
 
@@ -11,6 +11,10 @@ import dagre from "dagre/dist/dagre.min.js"
 const nodeSize = 40
 
 const configs = vNG.defineConfigs({
+  view: {
+    autoPanAndZoomOnLoad: "fit-content",
+    onBeforeInitialDisplay: () => layout("TB"),
+  },
   node: {
     normal: { radius: nodeSize / 2 },
     label: { direction: "center", color: "#fff" },
@@ -32,8 +36,6 @@ const configs = vNG.defineConfigs({
 })
 
 const graph = ref<vNG.VNetworkGraphInstance>()
-
-onMounted(() => layout("TB"))
 
 function layout(direction: "TB" | "LR") {
   if (Object.keys(data.nodes).length <= 1 || Object.keys(data.edges).length == 0) {
@@ -67,28 +69,12 @@ function layout(direction: "TB" | "LR") {
 
   dagre.layout(g)
 
-  const box: Record<string, number | undefined> = {}
   g.nodes().forEach((nodeId: string) => {
     // update node position
     const x = g.node(nodeId).x
     const y = g.node(nodeId).y
     data.layouts.nodes[nodeId] = { x, y }
-
-    // calculate bounding box size
-    box.top = box.top ? Math.min(box.top, y) : y
-    box.bottom = box.bottom ? Math.max(box.bottom, y) : y
-    box.left = box.left ? Math.min(box.left, x) : x
-    box.right = box.right ? Math.max(box.right, x) : x
   })
-
-  const graphMargin = nodeSize * 2
-  const viewBox = {
-    top: (box.top ?? 0) - graphMargin,
-    bottom: (box.bottom ?? 0) + graphMargin,
-    left: (box.left ?? 0) - graphMargin,
-    right: (box.right ?? 0) + graphMargin,
-  }
-  graph.value?.setViewBox(viewBox)
 }
 
 function updateLayout(direction: "TB" | "LR") {

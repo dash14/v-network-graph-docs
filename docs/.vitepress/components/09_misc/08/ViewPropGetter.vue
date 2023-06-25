@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref, onMounted, onUnmounted } from "vue"
+import { ref, onMounted, onUnmounted } from "vue"
 import * as vNG from "v-network-graph"
 
 import data from "./data"

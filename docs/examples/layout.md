@@ -163,7 +163,7 @@ tree structure of a directed graph.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/02_layout/07/Layout.vue{38-99}
+  <<< @/.vitepress/components/02_layout/07/Layout.vue{16,40-85}
 
 </template>
 <template v-slot:data>
