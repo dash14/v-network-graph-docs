@@ -68,7 +68,7 @@ Values that are not specified will be used as default values.
     builtInLayerOrder: LayerName[]
         // built-in layers which are to be reordered.
         // default: [] (Display in default order)
-    onBeforeInitialDisplay?: (() => Promise<any>) | (() => any)
+    onBeforeInitialDisplay: (() => Promise<any>) | (() => any) | undefined
         // hook called before initial display. default: undefined
   }
   node: {
