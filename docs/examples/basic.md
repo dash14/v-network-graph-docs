@@ -108,7 +108,7 @@ to be called before the initial display, which can be asynchronous
 functions or functions returning a Promise, to delay the initial display
 until their completion.
 
-<demo-tabs :demo-height="250" hint="The asynchronous processing is performed for 1 seconds when loading">
+<demo-tabs :demo-height="250" hint="The asynchronous processing is performed for 1 second when loading">
 <template v-slot:demo>
   <InitialDisplayAsync />
 </template>
