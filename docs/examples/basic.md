@@ -68,7 +68,8 @@ The current zoom level can be retrieved via two-way binding for
 
 ## Pan and zoom when initial display
 
-The behavior of panning and zooming in the initial layout can be changed with `configs.view.autoPanAndZoomOnLoad`.  
+The behavior of pan and zoom in the initial layout can be changed with
+`configs.view.autoPanAndZoomOnLoad`.  
 The available options are as follows:
 
 <div class="reference-table">
@@ -98,15 +99,17 @@ the component.
 </demo-tabs>
 
 
-## Asynchronous processing before initial display
+## Processing before initial display
 
-Note that when performing asynchronous processing such as dynamic loading
-of network information, pan/zoom for initial display is not applied to
-the data after the asynchronous processing is complete.  
-The `configs.view.onBeforeInitialDisplay` config specifies the functions
-to be called before the initial display, which can be asynchronous
-functions or functions returning a Promise, to delay the initial display
-until their completion.
+If you want to do some processing before displaying the network graph,
+use the hook specified in `configs.view.onBeforeInitialDisplay`.  
+Asynchronous functions can also be specified as hooks. If you specify
+an asynchronous function, the display can be delayed until it completes.
+
+The following is an example assuming asynchronous processing of network
+data from a server. After the data is applied by the process specified
+in `configs.view.onBeforeInitialDisplay`, the initial pan and zoom
+values specified in `configs.view.autoPanAndZoomOnLoad` are applied.
 
 <demo-tabs :demo-height="250" hint="The asynchronous processing is performed for 1 second when loading">
 <template v-slot:demo>
