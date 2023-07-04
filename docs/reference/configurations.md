@@ -237,6 +237,7 @@ Values that are not specified will be used as default values.
       //   "horizontal": Keep the horizontal alignment.
       // default: "clock"
     label: {
+      // * These fields can also be specified with the function as `(edge: Edge) => value`.
       fontFamily: string | undefined  // font family.       default: undefined
       fontSize: number                // font size.         default: 11
       lineHeight: number              // line height (multiplier for font size). default: 1.1
