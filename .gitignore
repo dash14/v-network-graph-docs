@@ -6,3 +6,4 @@ lib
 /docs/.vitepress/cache
 /tests/*.spec.ts-snapshots
 /test-results
+/playwright-report
