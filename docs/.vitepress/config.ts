@@ -99,7 +99,7 @@ const ANALYZE_BUNDLE = false
     },
     css: { preprocessorOptions: { scss: { charset: false } } },
     plugins: [
-      ElementPlus(),
+      ElementPlus({}),
       // analyze bundle sizes
       ANALYZE_BUNDLE && visualizer({
         open: true,

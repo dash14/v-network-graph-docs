@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test"
-import config from "./config.json"
+import config from "./config.json" assert { type: "json" }
 import { openSourceTabs, waitForPreviewVNetworkGraph } from "./utils"
 
 test("VRT: Examples", async ({ page }) => {

@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test"
-import config from "./config.json"
+import config from "./config.json" assert { type: "json" }
 
 test("VRT: Getting Started", async ({ page }) => {
   await page.goto(config.baseUrl)
