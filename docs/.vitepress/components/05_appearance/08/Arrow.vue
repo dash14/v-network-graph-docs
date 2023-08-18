@@ -44,6 +44,7 @@ const initialConfigs = vNG.defineConfigs({
         width: 4,
         height: 4,
         margin: -1,
+        offset: 0,
         units: "strokeWidth",
         color: null,
       },
@@ -52,6 +53,7 @@ const initialConfigs = vNG.defineConfigs({
         width: 4,
         height: 4,
         margin: -1,
+        offset: 0,
         units: "strokeWidth",
         color: null,
       },
@@ -71,6 +73,7 @@ const configs = reactive(initialConfigs)
           v-model:width="configs.edge.marker.source.width"
           v-model:height="configs.edge.marker.source.height"
           v-model:margin="configs.edge.marker.source.margin"
+          v-model:offset="configs.edge.marker.source.offset"
           v-model:color="configs.edge.marker.source.color"
           v-model:units="configs.edge.marker.source.units"
         />
@@ -80,6 +83,7 @@ const configs = reactive(initialConfigs)
           v-model:width="configs.edge.marker.target.width"
           v-model:height="configs.edge.marker.target.height"
           v-model:margin="configs.edge.marker.target.margin"
+          v-model:offset="configs.edge.marker.target.offset"
           v-model:color="configs.edge.marker.target.color"
           v-model:units="configs.edge.marker.target.units"
         />

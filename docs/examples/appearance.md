@@ -235,6 +235,13 @@ The following configuration items can be specified for
     </td>
   </tr>
   <tr>
+    <td>offset</td>
+    <td>
+      Offset perpendicular to the edge line.<br />
+      When the edge faces up, offset to the right if this value is positive and to the left if it is negative.
+    </td>
+  </tr>
+  <tr>
     <td>color</td>
     <td>
       Color of the marker. If <code>null</code> specified, the marker will be the

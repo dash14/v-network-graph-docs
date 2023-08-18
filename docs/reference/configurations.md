@@ -174,6 +174,8 @@ Values that are not specified will be used as default values.
         width: number        // width of marker.                         default: 5
         height: number       // height of marker.                        default: 5
         margin: number       // distance between marker and end of edge. default: -1
+        offset: number       // offset perpendicular to the line.
+                             // (It does not support custom markers.)    default: 0
         units: "strokeWidth" | "userSpaceOnUse"
                               // units of width, height and margin.            default: "strokeWidth"
         color: string | null // color of marker. null: same as edge color.    default: null

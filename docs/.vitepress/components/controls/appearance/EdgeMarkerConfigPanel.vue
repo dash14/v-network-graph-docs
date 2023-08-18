@@ -9,6 +9,7 @@
         <el-option label="circle" value="circle" />
       </el-select>
     </div>
+    <div class="break"></div>
     <div class="control">
       Width:
       <el-slider v-model="width" :min="2" :max="10" :step="0.5" :disabled="type === 'none'" />
@@ -20,6 +21,10 @@
     <div class="control">
       Margin:
       <el-slider v-model="margin" :min="-8" :max="10" :step="0.5" :disabled="type === 'none'" />
+    </div>
+    <div class="control">
+      Offset:
+      <el-slider v-model="offset" :min="-10" :max="10" :step="0.5" :disabled="type === 'none'" />
     </div>
     <div class="control color">
       Color:
@@ -68,6 +73,10 @@ export default defineComponent({
       type: Number,
       required: true,
     },
+    offset: {
+      type: Number,
+      required: true,
+    },
     color: {
       type: String,
       required: false,
@@ -83,6 +92,7 @@ export default defineComponent({
     "update:width",
     "update:height",
     "update:margin",
+    "update:offset",
     "update:color",
     "update:units",
   ],
@@ -122,7 +132,9 @@ export default defineComponent({
     margin-right: 20px;
   }
 }
-
+.break {
+  width: 100%;
+}
 :deep(.el-select) {
   width: 90px;
   margin-left: 8px;
