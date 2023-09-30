@@ -58,7 +58,7 @@ body {
 
 .VPNavBar .VPNavBarTitle {
   .VPImage.logo {
-    width: 208px;
+    width: 207px;
     height: auto;
     position: relative;
     left: -14px;
@@ -80,7 +80,11 @@ body {
       width: 540px;
       max-width: 100%;
       aspect-ratio: 540 / 100;
-      background-image: url(/v-network-graph/logo.svg);
+      // background-image: url(/v-network-graph/logo.svg);
+      background-image: image-set(
+        url("/v-network-graph/logo.png") 1x,
+        url("/v-network-graph/logo@2x.png") 2x);
+
       background-size: contain;
       vertical-align: middle;
     }
