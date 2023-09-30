@@ -16,7 +16,9 @@
     "docs:publish": "./docs/.vitepress/publish.sh",
     "docs:clean": "rimraf docs/.vitepress/dist",
     "vrt:update": "playwright test --update-snapshots",
-    "vrt": "playwright test"
+    "vrt": "playwright test",
+    "vrt:chromium": "playwright test --project='chromium'",
+    "vrt:chromium:update": "playwright test --update-snapshots --project='chromium'"
   },
   "devDependencies": {
     "@element-plus/icons": "^0.0.11",
