@@ -37,10 +37,10 @@ See [below](#select-nodes-at-once-with-a-rectangle) for details.
 
 ## Select edges
 
-Set `configs.edge.selectable` to true to make the node selectable by
+Set `configs.edge.selectable` to true to make the edge selectable by
 clicking or touching.
 If you specify a number instead of `true`, it will be taken as the
-maximum number of selectable nodes.  
+maximum number of selectable edges.  
 Specify 2-way binding for `selected-edges` prop to get an array of
 edge IDs selected. It is also possible to control the selection state
 on the network graph by setting a value to the same prop.
