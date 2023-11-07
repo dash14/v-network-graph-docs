@@ -30,10 +30,20 @@ Values that are not specified will be used as default values.
                             // - "center-content" : perform pan to center the content
                             // - "fit-content"    : perform pan and zoom to fit the content
                             // default: "center-content"
-    autoPanOnResize: boolean // whether to pan automatically to keep the center when resizing.
-                             // default: true
-    layoutHandler: LayoutHandler // class to control node layout.   default: new SimpleLayout()
-    onSvgPanZoomInitialized: undefined | (instance) => void // callback on init svg-pan-zoom. default: undefined
+    fitContentMargin:     number | "${number}%" | "${number}px"
+                          | {
+                              top?:    number | `${number}%` | `${number}px`,
+                              left?:   number | `${number}%` | `${number}px`,
+                              right?:  number | `${number}%` | `${number}px`,
+                              bottom?: number | `${number}%` | `${number}px`
+                            }
+                            // Margin to be applied when "fit-content" is set to
+                            // autoPanAndZoomOnLoad. default: "8%"
+    autoPanOnResize: boolean // whether to pan automatically to keep the center when
+                             // resizing. default: true
+    layoutHandler: LayoutHandler // class to control node layout. default: new SimpleLayout()
+    onSvgPanZoomInitialized: undefined | (instance) => void
+                               // callback on init svg-pan-zoom. default: undefined
     grid: {
       visible: boolean         // whether to show the grid in the background. default: false
       interval: number         // grid line spacing.                          default: 10
@@ -170,15 +180,15 @@ Values that are not specified will be used as default values.
       source: {
         // * These fields can also be specified with the function as `(args: [Edge, StrokeStyle]) => value`.
         type:  "none" | "arrow" | "angle" | "circle" | "custom"
-                              // type of marker.                          default: "none"
+                             // type of marker.                          default: "none"
         width: number        // width of marker.                         default: 5
         height: number       // height of marker.                        default: 5
         margin: number       // distance between marker and end of edge. default: -1
         offset: number       // offset perpendicular to the line.
                              // (It does not support custom markers.)    default: 0
         units: "strokeWidth" | "userSpaceOnUse"
-                              // units of width, height and margin.            default: "strokeWidth"
-        color: string | null // color of marker. null: same as edge color.    default: null
+                             // units of width, height and margin.         default: "strokeWidth"
+        color: string | null // color of marker. null: same as edge color. default: null
         customId: string | undefined
                               // custom marker ID for marker type is "custom". default: undefined
       }
@@ -244,17 +254,17 @@ Values that are not specified will be used as default values.
       fontSize: number                // font size.         default: 11
       lineHeight: number              // line height (multiplier for font size). default: 1.1
       color: string                   // font color.        default: "#000000"
-      background: {                    // background config. default: undefined
+      background: {                   // background config. default: undefined
         visible: boolean          // whether the background is visible or not.
         color: string             // background color.
-        padding: number | {        // padding.
+        padding: number | {       // padding.
           vertical: number        // vertical padding.
           horizontal: number      // horizontal padding.
         }
-        borderRadius: number       // border radius.
+        borderRadius: number      // border radius.
       } | undefined
       margin: number              // distance from edge stroke. default: 4
-      padding: number              // distance from end node. default: 4
+      padding: number             // distance from end node.    default: 4
     }
     zOrder: {
       enabled: boolean  // whether the z-order control is enable or not. default: false
@@ -279,10 +289,10 @@ Values that are not specified will be used as default values.
       width: number      // width of path. default: 6
       color: string      // path color. default: (Func to select a color from a hash of edges.)
       dasharray: number | string | undefined         // stroke dash array. default: undefined
-      linecap: "butt" | "round" | "square" | undefined  // stroke linecap. default: "round"
+      linecap: "butt" | "round" | "square" | undefined // stroke linecap.  default: "round"
       linejoin: "miter" | "round" | "bevel"            // stroke linejoin. default: "round"
       animate: boolean                       // whether to animate or not. default: false
-      animationSpeed: number                  // animation speed.           default: 50
+      animationSpeed: number                 // animation speed.           default: 50
     }
     hover: { /* same structure as `normal`. */ } | undefined
         // default: {

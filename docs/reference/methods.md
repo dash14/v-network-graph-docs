@@ -15,8 +15,20 @@ Instance methods of `<v-network-graph>` component shown below.
   </thead>
   <tbody>
     <tr>
-      <td>fitToContents(): void</td>
-      <td>Perform zooming/panning according to the graph size.</td>
+      <td>fitToContents(options?: FitOptions): void</td>
+      <td>
+        Perform zooming/panning according to the graph size.<br/>
+        FitOptions: <code>{ margin?: FitContentMargin }</code><br/>
+        FitContentMargin:
+        <pre class="code">number | "${number}%" | "${number}px"
+| {
+    top?:    number | `${number}%` | `${number}px`,
+    left?:   number | `${number}%` | `${number}px`,
+    right?:  number | `${number}%` | `${number}px`,
+    bottom?: number | `${number}%` | `${number}px`
+  }</pre>
+        If margin is not specified, the <code>configs.view.fitContentMargin</code> configuration will be used. (default: "8%")
+      </td>
     </tr>
     <tr>
       <td>exportAsSvgText(options: ExportOptions): Promise&lt;string&gt;</td>
@@ -65,11 +77,11 @@ Instance methods of `<v-network-graph>` component shown below.
         Start the box-selection mode to select nodes within the dragged rectangle range.
         <br/>
         BoxSelectionOption:
-        <pre><code>{
+        <pre class="code">{
   stop?: "pointerup" | "click" | "manual"
   type?: "append" | "invert"
   withShiftKey?: "append" | "invert" | "same"
-}</code></pre>
+}</pre>
         <ul>
           <li>stop: Trigger to stop mode (default: "pointerup")</li>
           <li>type: Selection type (default: "append")</li>
