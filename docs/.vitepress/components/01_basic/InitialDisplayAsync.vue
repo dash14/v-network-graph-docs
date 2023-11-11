@@ -50,7 +50,8 @@ const initialConfigs = vNG.defineConfigs({
     autoPanAndZoomOnLoad: "fit-content",
     onBeforeInitialDisplay: async () => {
       await loadNetworkAsync()
-    }
+    },
+    fitContentMargin: "20%",
   },
 })
 const configs = reactive(initialConfigs)
