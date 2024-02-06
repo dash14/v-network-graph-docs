@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive } from "vue"
 import { VShape } from "v-network-graph"
-import format from "date-fns/format/index"
+import { format } from "date-fns/format"
 import data from "./data"
 
 const EVENTS_COUNT = 5
