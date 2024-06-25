@@ -50,6 +50,9 @@ body {
     --el-button-disabled-bg-color: #a3b5eb;
     --el-button-disabled-border-color: #a3b5eb;
   }
+  .el-select {
+    --el-select-width: 190px;
+  }
 }
 
 .Layout:has(.VPHome) .VPImage.logo {
