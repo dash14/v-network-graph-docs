@@ -33,9 +33,9 @@ Object.entries(pages).forEach(([key, { name }]) => {
     await page.goto(`${config.baseUrl}reference/`)
     await page.locator("#VPContent .main").getByRole('link', { name, exact: true }).click()
 
-    await page.waitForSelector(".prev-next")
+    await expect(page.getByRole("heading", { name, level: 1 })).toBeVisible()
 
-    expect(await page.screenshot(config.snapshot)).toMatchSnapshot(
+    await expect(await page.screenshot(config.snapshot)).toMatchSnapshot(
       `reference-${key}.png`,
       config.match
     )
