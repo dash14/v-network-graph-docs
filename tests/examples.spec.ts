@@ -65,13 +65,11 @@ Object.entries(pages).forEach(([key, { name, url }]) => {
       await page.locator("#VPContent .main").getByText(name).click()
       await waitForPreviewVNetworkGraph(page)
 
-      if (key === "basic") {
-        // Wait for transition to be stable.
-        await page.waitForTimeout(1500)
-      }
+      // Wait for transition to be stable.
+      await page.waitForTimeout(1500)
+
       if (key === "layout") {
-        // Wait for layout to be stable.
-        await page.waitForTimeout(3000)
+        await page.waitForTimeout(1500)
       }
 
       // Ignore timestamp field for event handling example
