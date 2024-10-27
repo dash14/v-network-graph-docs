@@ -100,7 +100,14 @@ const ANALYZE_BUNDLE = false
         },
       },
     },
-    css: { preprocessorOptions: { scss: { charset: false } } },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler",
+          charset: false
+        }
+      }
+    },
     plugins: [
       ElementPlus({}),
       // analyze bundle sizes
