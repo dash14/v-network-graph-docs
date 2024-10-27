@@ -83,10 +83,7 @@ to install it in your application.
 ## Fix the position of a specific node in the force layout
 
 If you set `fixed: true` to the node position object in `layouts`,
-the node will be fixed without the effect of force layout.  
-Unfortunately, the `fixed` field is only referenced at
-initialization and is not reflected when changed dynamically.
-This behavior will be revised in the future.
+the node will be fixed without the effect of force layout.
 
 <demo-tabs>
 <template v-slot:demo>

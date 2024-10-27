@@ -18,7 +18,7 @@ const layouts = ref({
     node0: {
       x: 0,
       y: 0,
-      fixed: true, // Unaffected by force
+      fixed: true,
     },
   },
 })
