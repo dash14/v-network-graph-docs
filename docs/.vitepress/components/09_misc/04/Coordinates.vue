@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue"
+import { ref } from "vue"
 import * as vNG from "v-network-graph"
 import data from "./data"
 
 // ref="graph"
 const graph = ref<vNG.Instance>()
 
-const nodes = reactive({ ...data.nodes })
+const nodes = ref({ ...data.nodes })
 const layouts = ref({ ...data.layouts })
 let nextNodeIndex = Object.keys(nodes).length + 1
 
@@ -22,7 +22,7 @@ const eventHandlers: vNG.EventHandlers = {
     const nodeId = `node${nextNodeIndex}`
     const name = `N${nextNodeIndex}`
     layouts.value.nodes[nodeId] = svgPoint
-    nodes[nodeId] = { name }
+    nodes.value[nodeId] = { name }
     nextNodeIndex++
   },
 }
