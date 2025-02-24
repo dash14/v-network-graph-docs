@@ -196,26 +196,28 @@ The following configuration items can be specified for
     <td>
       Type of marker. The supported values are as follows:
       <table>
-        <tr>
-          <td>none</td>
-          <td><img src="/examples/arrows/none.svg"></td>
-        </tr>
-        <tr>
-          <td>arrow</td>
-          <td><img src="/examples/arrows/arrow.svg"></td>
-        </tr>
-        <tr>
-          <td>angle</td>
-          <td><img src="/examples/arrows/angle.svg"></td>
-        </tr>
-        <tr>
-          <td>circle</td>
-          <td><img src="/examples/arrows/circle.svg"></td>
-        </tr>
-        <tr>
-          <td>custom</td>
-          <td>Please see <code>customId</code></td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>none</td>
+            <td><img src="/examples/arrows/none.svg"></td>
+          </tr>
+          <tr>
+            <td>arrow</td>
+            <td><img src="/examples/arrows/arrow.svg"></td>
+          </tr>
+          <tr>
+            <td>angle</td>
+            <td><img src="/examples/arrows/angle.svg"></td>
+          </tr>
+          <tr>
+            <td>circle</td>
+            <td><img src="/examples/arrows/circle.svg"></td>
+          </tr>
+          <tr>
+            <td>custom</td>
+            <td>Please see <code>customId</code></td>
+          </tr>
+        </tbody>
       </table>
     </td>
   </tr>
