@@ -47,7 +47,7 @@
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.24.1",
     "unplugin-element-plus": "^0.9.1",
-    "v-network-graph": "^0.9.18",
+    "v-network-graph": "^0.9.20",
     "vitepress": "^1.6.3",
     "vue-tsc": "^2.2.4"
   }
