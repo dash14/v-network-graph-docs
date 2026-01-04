@@ -87,8 +87,8 @@ importers:
         specifier: ^0.11.2
         version: 0.11.2
       v-network-graph:
-        specifier: ^0.9.21
-        version: 0.9.21(d3-force@3.0.0)(vue@3.5.26(typescript@5.9.3))
+        specifier: ^0.9.22
+        version: 0.9.22(d3-force@3.0.0)(vue@3.5.26(typescript@5.9.3))
       vite:
         specifier: ^7.3.0
         version: 7.3.0(@types/node@24.10.4)(jiti@2.6.1)(sass@1.97.1)
@@ -2778,8 +2778,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  v-network-graph@0.9.21:
-    resolution: {integrity: sha512-/KjaKtBMTg5TBI98N0Gf7gvtl6+6Q3tv14cJRYmzNb66iYtciET4gyagReZ0GwMt+X1EzUAnSezwqEuhH7Ya3w==}
+  v-network-graph@0.9.22:
+    resolution: {integrity: sha512-kgG3uiGF6DSA9DrjNEWmD6yy4/AP0jf/uhkq2yVkfub3mJavxcXU0ow2y5z5jFyFlA9L+uzzIZVTSY2iJLMv1w==}
     peerDependencies:
       d3-force: ^3.0.0
       vue: ^3.5.13
@@ -5795,7 +5795,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  v-network-graph@0.9.21(d3-force@3.0.0)(vue@3.5.26(typescript@5.9.3)):
+  v-network-graph@0.9.22(d3-force@3.0.0)(vue@3.5.26(typescript@5.9.3)):
     dependencies:
       '@dash14/svg-pan-zoom': 3.6.9
       lodash-es: 4.17.22
