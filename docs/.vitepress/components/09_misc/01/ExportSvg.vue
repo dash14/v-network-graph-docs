@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
-import { Download } from "@element-plus/icons"
+import { Download } from "@element-plus/icons-vue"
 import data from "./data"
 
 const nodes = reactive<vNG.Nodes>({ ...data.nodes })

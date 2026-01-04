@@ -8,9 +8,9 @@ importers:
 
   .:
     devDependencies:
-      '@element-plus/icons':
-        specifier: ^0.0.11
-        version: 0.0.11
+      '@element-plus/icons-vue':
+        specifier: ^2.3.2
+        version: 2.3.2(vue@3.5.26(typescript@5.9.3))
       '@playwright/test':
         specifier: ^1.57.0
         version: 1.57.0
@@ -231,10 +231,6 @@ packages:
     resolution: {integrity: sha512-OzIuTaIfC8QXEPmJvB4Y4kw34rSXdCJzxcD1kFStBvr8bK6X1zQAYDo0CNMjojnfTqRQCJ0I7prlErcoRiET2A==}
     peerDependencies:
       vue: ^3.2.0
-
-  '@element-plus/icons@0.0.11':
-    resolution: {integrity: sha512-iKQXSxXu131Ai+I9Ymtcof9WId7kaXvB1+WRfAfpQCW7UiAMYgdNDqb/u0hgTo2Yq3MwC4MWJnNuTBEpG8r7+A==}
-    deprecated: Please use @element-plus/icons-vue instead.
 
   '@emnapi/core@1.7.1':
     resolution: {integrity: sha512-o1uhUASyo921r2XtHYOHy7gdkGLge8ghBEQHMWmyJFoXlpU58kIrhhN3w26lpQb6dspetweapMn2CSNwQ8I4wg==}
@@ -3134,8 +3130,6 @@ snapshots:
   '@element-plus/icons-vue@2.3.2(vue@3.5.26(typescript@5.9.3))':
     dependencies:
       vue: 3.5.26(typescript@5.9.3)
-
-  '@element-plus/icons@0.0.11': {}
 
   '@emnapi/core@1.7.1':
     dependencies:

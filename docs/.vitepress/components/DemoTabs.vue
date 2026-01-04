@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue"
-import { Warning, Pointer } from "@element-plus/icons"
+import { Warning, Pointer } from "@element-plus/icons-vue"
 
 export default defineComponent({
   components: { Warning, Pointer },
