@@ -1,5 +1,8 @@
 minimumReleaseAge: 4320
 
+minimumReleaseAgeExclude:
+  - v-network-graph
+
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
