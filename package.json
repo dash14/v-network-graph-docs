@@ -4,6 +4,12 @@
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": "24.12.0",
+    "pnpm": "10",
+    "npm": "please_use_pnpm_instead"
+  },
+  "packageManager": "pnpm@10.27.0",
   "scripts": {
     "lint": "eslint -c eslint.config.js ./docs/**/*.vue ./docs/**/*.ts",
     "docs:dev": "run-s docs:dev:*",
@@ -48,7 +54,9 @@
     "typescript-eslint": "^8.51.0",
     "unplugin-element-plus": "^0.11.2",
     "v-network-graph": "^0.9.21",
+    "vite": "^7.3.0",
     "vitepress": "^1.6.4",
+    "vue": "^3.5.26",
     "vue-tsc": "^3.2.1"
   }
 }
