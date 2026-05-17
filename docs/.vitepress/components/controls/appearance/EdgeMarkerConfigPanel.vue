@@ -105,7 +105,7 @@ export default defineComponent({
         set: v => emit(`update:${key}` as any, v),
       })
     }
-    return vars
+    return vars as Record<keyof typeof props, WritableComputedRef<any>>
   },
 })
 </script>
