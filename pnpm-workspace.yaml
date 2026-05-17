@@ -14,3 +14,14 @@ allowBuilds:
   esbuild: false
   unrs-resolver: false
   vue-demi: false
+
+overrides:
+  brace-expansion@<1.1.13: ^1.1.13
+  defu@<=6.1.4: ^6.1.5
+  esbuild@<=0.24.2: ^0.24.3
+  flatted@<3.4.0: ^3.4.0
+  flatted@<=3.4.1: ^3.4.2
+  picomatch@<2.3.2: ^2.3.2
+  preact@>=10.28.0 <10.28.2: ^10.28.2
+  rollup@>=4.0.0 <4.59.0: ^4.59.0
+  vite@<=6.4.1: ^6.4.2
