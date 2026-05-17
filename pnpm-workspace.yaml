@@ -3,8 +3,14 @@ minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
   - v-network-graph
 
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - esbuild
-  - unrs-resolver
-  - vue-demi
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - "chokidar@4.0.3"
+  - "semver@5.7.2 || 6.3.1"
+  - "vite@5.4.21"
+
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: false
+  unrs-resolver: false
+  vue-demi: false

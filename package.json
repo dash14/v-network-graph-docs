@@ -5,11 +5,21 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": "24.12.0",
-    "pnpm": "10",
     "npm": "please_use_pnpm_instead"
   },
-  "packageManager": "pnpm@10.27.0",
+  "packageManager": "pnpm@11.1.2",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.12.0",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.1.2",
+      "onFail": "download"
+    }
+  },
   "scripts": {
     "lint": "eslint -c eslint.config.js ./docs/**/*.vue ./docs/**/*.ts",
     "docs:dev": "run-s docs:dev:*",
