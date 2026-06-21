@@ -17,10 +17,10 @@ and setup in `main.ts`
 import { createApp } from "vue"
 import VNetworkGraph from "v-network-graph"
 import "v-network-graph/lib/style.css"
+// Or `@use "v-network-graph"` in SCSS
 import App from "./App.vue"
 
 const app = createApp(App)
-
 app.use(VNetworkGraph)
 app.mount("#app")
 ```
