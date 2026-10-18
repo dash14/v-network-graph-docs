@@ -148,7 +148,7 @@ Below is an example of deleting a selected node/edge using the
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/08_event/06/KeyboardEvents.vue{11-25,31,38}
+  <<< @/.vitepress/components/08_event/06/KeyboardEvents.vue{11-25,33,38}
 
 </template>
 <template v-slot:data>

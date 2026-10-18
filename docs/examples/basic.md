@@ -117,7 +117,7 @@ values specified in `configs.view.autoPanAndZoomOnLoad` are applied.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/01_basic/InitialDisplayAsync.vue{50-53}
+  <<< @/.vitepress/components/01_basic/InitialDisplayAsync.vue{51-54}
 
 </template>
 </demo-tabs>

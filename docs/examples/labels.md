@@ -147,7 +147,7 @@ For edge labels, use slots similar to custom labels for nodes.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/04_label/04/EdgeLabels.vue{12-14}
+  <<< @/.vitepress/components/04_label/04/EdgeLabels.vue{12-19}
 
 </template>
 <template v-slot:data>
