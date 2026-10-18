@@ -200,7 +200,7 @@ the state of shift/ctrl key presses.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/09_misc/08/ViewPropGetter.vue{29-34}
+  <<< @/.vitepress/components/09_misc/08/ViewPropGetter.vue{28-33}
 
 </template>
 <template v-slot:data>

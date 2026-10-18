@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive, ref } from "vue"
 import data, { Node, Edge } from "./data"
 
 const nodes = reactive({ ...data.nodes })
@@ -130,9 +130,7 @@ function isEdgeAddable() {
       <el-button :disabled="!isEdgeAddable()" @click="addHotPinkEdge"
         >Add HotPink</el-button
       >
-      <el-button :disabled="!isEdgeAddable()" @click="addGrayEdge"
-        >Add Gray</el-button
-      >
+      <el-button :disabled="!isEdgeAddable()" @click="addGrayEdge">Add Gray</el-button>
       <el-button :disabled="!isEdgeAddable()" @click="addBlackEdge"
         >Add Black</el-button
       >

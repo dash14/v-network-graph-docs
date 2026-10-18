@@ -29,15 +29,15 @@
     <div class="control color">
       Color:
       <el-color-picker
-        :modelValue="color"
+        :model-value="color"
         color-format="hex"
         :disabled="color === null || type === 'none'"
         @active-change="color !== null ? $emit('update:color', $event) : null"
       />
       <el-checkbox
-        :modelValue="color === null"
+        :model-value="color === null"
         :disabled="type === 'none'"
-        @update:modelValue="$emit('update:color', $event ? null : '#000000')"
+        @update:model-value="$emit('update:color', $event ? null : '#000000')"
       >
         Same as stroke
       </el-checkbox>
@@ -80,7 +80,7 @@ export default defineComponent({
     color: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     units: {
       type: String,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive } from "vue"
 import data from "./data"
 
 const initialConfigs = vNG.defineConfigs({
@@ -91,7 +91,7 @@ const configs = reactive(initialConfigs)
       <el-tab-pane label="Edge Margin/Gap/Type">
         <demo-edge-margin-gap-config-panel
           v-model:margin="configs.edge.margin"
-          v-model:lineType="configs.edge.type"
+          v-model:line-type="configs.edge.type"
           v-model:gap="configs.edge.gap"
         />
       </el-tab-pane>
@@ -104,7 +104,7 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.edge.normal.dasharray"
               v-model:linecap="configs.edge.normal.linecap"
               v-model:animate="configs.edge.normal.animate"
-              v-model:animationSpeed="configs.edge.normal.animationSpeed"
+              v-model:animation-speed="configs.edge.normal.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="hover">
@@ -114,7 +114,7 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.edge.hover.dasharray"
               v-model:linecap="configs.edge.hover.linecap"
               v-model:animate="configs.edge.hover.animate"
-              v-model:animationSpeed="configs.edge.hover.animationSpeed"
+              v-model:animation-speed="configs.edge.hover.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="selected">
@@ -124,7 +124,7 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.edge.selected.dasharray"
               v-model:linecap="configs.edge.selected.linecap"
               v-model:animate="configs.edge.hover.animate"
-              v-model:animationSpeed="configs.edge.hover.animationSpeed"
+              v-model:animation-speed="configs.edge.hover.animationSpeed"
             />
           </el-tab-pane>
         </el-tabs>

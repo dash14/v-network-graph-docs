@@ -89,15 +89,15 @@ export const edges: vNG.Edges = {
 
 export const layouts: vNG.Layouts = {
   nodes: {
-    "groupA": { x: 0.0, y: -60.0 },
+    groupA: { x: 0.0, y: -60.0 },
     "groupA/node1": { x: -86.8, y: -115.5 },
     "groupA/node2": { x: 0.8, y: -163.7 },
     "groupA/node3": { x: 87.2, y: -113.3 },
-    "groupB": { x: -53.0, y: 32.0 },
+    groupB: { x: -53.0, y: 32.0 },
     "groupB/node1": { x: -143.1, y: -15.2 },
     "groupB/node2": { x: -140.5, y: 84.7 },
     "groupB/node3": { x: -53.4, y: 133.8 },
-    "groupC": { x: 53.0, y: 32.0 },
+    groupC: { x: 53.0, y: 32.0 },
     "groupC/node1": { x: 140.7, y: -22.1 },
     "groupC/node2": { x: 144.3, y: 77.8 },
     "groupC/node3": { x: 50.3, y: 132.2 },

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref, watch } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive, ref, watch } from "vue"
 import data from "./data"
 
 const selectedNodes = ref<string[]>([])

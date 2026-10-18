@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { reactive, ref, watch, computed } from "vue"
 import * as vNG from "v-network-graph"
 import { ForceLayout } from "v-network-graph/lib/force-layout"
+import { reactive, ref, watch, computed } from "vue"
 
 const nodeCount = ref(15)
 const nodes = reactive({})

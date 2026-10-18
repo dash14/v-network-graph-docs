@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive } from "vue"
 import data from "./data"
 
 const initialConfigs = vNG.defineConfigs({
@@ -17,7 +17,9 @@ const configs = reactive(initialConfigs)
 
 <template>
   <div class="demo-control-panel">
-    <el-checkbox v-model="configs.node.label.directionAutoAdjustment">Enable auto adjustment</el-checkbox>
+    <el-checkbox v-model="configs.node.label.directionAutoAdjustment"
+      >Enable auto adjustment</el-checkbox
+    >
   </div>
 
   <v-network-graph

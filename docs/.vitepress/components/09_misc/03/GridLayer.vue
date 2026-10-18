@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive } from "vue"
 import data from "./data"
 
 const configs = reactive(
@@ -32,13 +32,13 @@ const configs = reactive(
     <demo-grid-panel
       v-model:visible="configs.view.grid.visible"
       v-model:interval="configs.view.grid.interval"
-      v-model:thickIncrements="configs.view.grid.thickIncrements"
-      v-model:normalColor="configs.view.grid.line.color"
-      v-model:normalWidth="configs.view.grid.line.width"
-      v-model:normalDasharray="configs.view.grid.line.dasharray"
-      v-model:thickColor="configs.view.grid.thick.color"
-      v-model:thickWidth="configs.view.grid.thick.width"
-      v-model:thickDasharray="configs.view.grid.thick.dasharray"
+      v-model:thick-increments="configs.view.grid.thickIncrements"
+      v-model:normal-color="configs.view.grid.line.color"
+      v-model:normal-width="configs.view.grid.line.width"
+      v-model:normal-dasharray="configs.view.grid.line.dasharray"
+      v-model:thick-color="configs.view.grid.thick.color"
+      v-model:thick-width="configs.view.grid.thick.width"
+      v-model:thick-dasharray="configs.view.grid.thick.dasharray"
     />
   </div>
 

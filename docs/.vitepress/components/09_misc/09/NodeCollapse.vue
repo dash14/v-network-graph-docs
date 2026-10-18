@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { computed, reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
 import { ForceLayout } from "v-network-graph/lib/force-layout"
-
+import { computed, reactive, ref } from "vue"
 import { TreeNodes, TreeNode } from "./data"
 import * as data from "./data"
 
@@ -83,6 +82,7 @@ function walkExpandedNodes(nodes: TreeNodes, cb: (node: TreeNode) => void) {
 
 <template>
   <v-network-graph
+    v-model:zoom-level="zoomLevel"
     class="graph"
     :nodes="nodes"
     :edges="edges"
@@ -90,7 +90,6 @@ function walkExpandedNodes(nodes: TreeNodes, cb: (node: TreeNode) => void) {
     :layers="layers"
     :layouts="layouts"
     :event-handlers="eventHandlers"
-    v-model:zoomLevel="zoomLevel"
   >
     <!-- +/- badge layer -->
     <template #badge="{ scale }">

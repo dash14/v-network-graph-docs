@@ -14,16 +14,16 @@ test("VRT: Reference", async ({ page }) => {
 })
 
 const pages = {
-  "props": {
+  props: {
     name: "Props",
   },
-  "configurations": {
+  configurations: {
     name: "Configurations",
   },
-  "methods": {
+  methods: {
     name: "Methods",
   },
-  "events": {
+  events: {
     name: "Events",
   },
 }
@@ -31,7 +31,10 @@ const pages = {
 Object.entries(pages).forEach(([key, { name }]) => {
   test(`VRT: Reference: ${name}`, async ({ page }) => {
     await page.goto(`${config.baseUrl}reference/`)
-    await page.locator("#VPContent .main").getByRole('link', { name, exact: true }).click()
+    await page
+      .locator("#VPContent .main")
+      .getByRole("link", { name, exact: true })
+      .click()
 
     await expect(page.getByRole("heading", { name, level: 1 })).toBeVisible()
 

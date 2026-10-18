@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive } from "vue"
 import data from "./data"
 
 const paths: vNG.Paths = {
@@ -76,7 +76,7 @@ const configs = reactive(initialConfigs)
         <demo-path-config-panel
           v-model:end="configs.path.end"
           v-model:margin="configs.path.margin"
-          v-model:curveInNode="configs.path.curveInNode"
+          v-model:curve-in-node="configs.path.curveInNode"
           v-model:clickable="configs.path.clickable"
           v-model:hoverable="configs.path.hoverable"
           v-model:selectable="configs.path.selectable"
@@ -91,7 +91,7 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.path.normal.dasharray"
               v-model:linecap="configs.path.normal.linecap"
               v-model:animate="configs.path.normal.animate"
-              v-model:animationSpeed="configs.path.normal.animationSpeed"
+              v-model:animation-speed="configs.path.normal.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="hover">
@@ -101,8 +101,8 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.path.hover.dasharray"
               v-model:linecap="configs.path.hover.linecap"
               v-model:animate="configs.path.hover.animate"
-              v-model:animationSpeed="configs.path.hover.animationSpeed"
-            /></el-tab-pane>
+              v-model:animation-speed="configs.path.hover.animationSpeed"
+          /></el-tab-pane>
           <el-tab-pane label="selected">
             <demo-path-stroke-config-panel
               v-model:width="configs.path.selected.width"
@@ -110,8 +110,8 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.path.selected.dasharray"
               v-model:linecap="configs.path.selected.linecap"
               v-model:animate="configs.path.selected.animate"
-              v-model:animationSpeed="configs.path.selected.animationSpeed"
-            /></el-tab-pane>
+              v-model:animation-speed="configs.path.selected.animationSpeed"
+          /></el-tab-pane>
         </el-tabs>
       </el-tab-pane>
     </el-tabs>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue"
-import * as vNG from "v-network-graph"
 import { Download } from "@element-plus/icons-vue"
+import * as vNG from "v-network-graph"
+import { reactive, ref } from "vue"
 import data from "./data"
 
 const nodes = reactive<vNG.Nodes>({ ...data.nodes })
@@ -61,16 +61,14 @@ function removeEdge() {
     </el-button>
     <label>Node:</label>
     <el-button @click="addNode">add</el-button>
-    <el-button
-      :disabled="selectedNodes.length == 0"
-      @click="removeNode"
-    >remove</el-button>
+    <el-button :disabled="selectedNodes.length == 0" @click="removeNode"
+      >remove</el-button
+    >
     <label>Edge:</label>
     <el-button :disabled="selectedNodes.length != 2" @click="addEdge">add</el-button>
-    <el-button
-      :disabled="selectedEdges.length == 0"
-      @click="removeEdge"
-    >remove</el-button>
+    <el-button :disabled="selectedEdges.length == 0" @click="removeEdge"
+      >remove</el-button
+    >
   </div>
 
   <v-network-graph

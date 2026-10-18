@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive, ref } from "vue"
 
 const nodes = ref({})
 const edges = ref({})
 const layouts = ref({ nodes: {} })
 
-const sleep = (seconds: number) => new Promise(resolve => {
-  setTimeout(resolve, seconds * 1000)
-})
+const sleep = (seconds: number) =>
+  new Promise(resolve => {
+    setTimeout(resolve, seconds * 1000)
+  })
 
 async function loadNetworkAsync() {
   // Emulate loading network information from a server.
@@ -37,7 +38,7 @@ async function loadNetworkAsync() {
         node3: { x: 100, y: 0 },
         node4: { x: 150, y: 50 },
       },
-    }
+    },
   }
 
   nodes.value = network.nodes

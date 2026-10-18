@@ -46,8 +46,8 @@ function makeTransform(center: vNG.Point, edgePos: vNG.EdgePosition, scale: numb
     <!-- To use CSS within SVG, use <defs>. -->
     <defs>
       <!-- Cannot use <style> directly due to restrictions of Vue. -->
+      <!-- prettier-ignore -->
       <component is="style">
-        <!-- prettier-ignore -->
         .marker {
         fill: {{ configs.edge.normal.color }};
         transition: fill 0.1s linear;

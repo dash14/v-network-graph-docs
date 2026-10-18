@@ -3,12 +3,12 @@
     <div class="control">
       <label>Margin:</label>
       <el-slider
-        :modelValue="margin !== null ? margin : 0"
+        :model-value="margin !== null ? margin : 0"
         :min="-8"
         :max="32"
         :step="1"
         :disabled="margin === null"
-        @update:modelValue="(margin !== null) ? $emit('update:margin', $event) : null"
+        @update:model-value="margin !== null ? $emit('update:margin', $event) : null"
       />
       (between node and edge)
     </div>
@@ -16,8 +16,8 @@
   <div class="edge-configs">
     <div class="control">
       <el-checkbox
-        :modelValue="margin === null"
-        @update:modelValue="$emit('update:margin', $event ? null : 0)"
+        :model-value="margin === null"
+        @update:model-value="$emit('update:margin', $event ? null : 0)"
       >
         Unset margin (connect the centers of the nodes if marker types are null)
       </el-checkbox>
@@ -47,7 +47,7 @@ export default defineComponent({
     margin: {
       type: Number,
       required: false,
-      default: null
+      default: null,
     },
     lineType: {
       type: String,
@@ -58,11 +58,7 @@ export default defineComponent({
       required: true,
     },
   },
-  emits: [
-    "update:margin",
-    "update:lineType",
-    "update:gap",
-  ],
+  emits: ["update:margin", "update:lineType", "update:gap"],
   setup(props, { emit }) {
     const vars: { [name: string]: WritableComputedRef<any> } = {}
     const keys = Object.keys(props) as (keyof typeof props)[]
@@ -115,5 +111,4 @@ export default defineComponent({
   margin-left: 10px;
   margin-right: 10px;
 }
-
 </style>

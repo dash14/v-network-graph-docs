@@ -35,10 +35,7 @@ export async function waitForImagesAndFonts(page: Page) {
   await page.evaluate(() => {
     const svgImages = Array.from(document.querySelectorAll("svg image"), element => {
       const image = new Image()
-      image.src = new URL(
-        (element as SVGImageElement).href.baseVal,
-        location.href
-      ).href
+      image.src = new URL((element as SVGImageElement).href.baseVal, location.href).href
       return image
     })
     return Promise.all([

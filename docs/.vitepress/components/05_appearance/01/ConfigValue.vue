@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive } from "vue"
 import data from "./data"
 
 const initialConfigs = vNG.defineConfigs({
@@ -141,10 +141,10 @@ const configs = reactive(initialConfigs)
               v-model:radius="configs.node.normal.radius"
               v-model:width="configs.node.normal.width"
               v-model:height="configs.node.normal.height"
-              v-model:borderRadius="configs.node.normal.borderRadius"
-              v-model:strokeWidth="configs.node.normal.strokeWidth"
-              v-model:strokeColor="configs.node.normal.strokeColor"
-              v-model:strokeDasharray="configs.node.normal.strokeDasharray"
+              v-model:border-radius="configs.node.normal.borderRadius"
+              v-model:stroke-width="configs.node.normal.strokeWidth"
+              v-model:stroke-color="configs.node.normal.strokeColor"
+              v-model:stroke-dasharray="configs.node.normal.strokeDasharray"
               v-model:color="configs.node.normal.color"
             />
           </el-tab-pane>
@@ -154,10 +154,10 @@ const configs = reactive(initialConfigs)
               v-model:radius="configs.node.hover.radius"
               v-model:width="configs.node.hover.width"
               v-model:height="configs.node.hover.height"
-              v-model:borderRadius="configs.node.hover.borderRadius"
-              v-model:strokeWidth="configs.node.hover.strokeWidth"
-              v-model:strokeColor="configs.node.hover.strokeColor"
-              v-model:strokeDasharray="configs.node.hover.strokeDasharray"
+              v-model:border-radius="configs.node.hover.borderRadius"
+              v-model:stroke-width="configs.node.hover.strokeWidth"
+              v-model:stroke-color="configs.node.hover.strokeColor"
+              v-model:stroke-dasharray="configs.node.hover.strokeDasharray"
               v-model:color="configs.node.hover.color"
             />
           </el-tab-pane>
@@ -167,10 +167,10 @@ const configs = reactive(initialConfigs)
               v-model:radius="configs.node.selected.radius"
               v-model:width="configs.node.selected.width"
               v-model:height="configs.node.selected.height"
-              v-model:borderRadius="configs.node.selected.borderRadius"
-              v-model:strokeWidth="configs.node.selected.strokeWidth"
-              v-model:strokeColor="configs.node.selected.strokeColor"
-              v-model:strokeDasharray="configs.node.selected.strokeDasharray"
+              v-model:border-radius="configs.node.selected.borderRadius"
+              v-model:stroke-width="configs.node.selected.strokeWidth"
+              v-model:stroke-color="configs.node.selected.strokeColor"
+              v-model:stroke-dasharray="configs.node.selected.strokeDasharray"
               v-model:color="configs.node.selected.color"
             />
           </el-tab-pane>
@@ -181,9 +181,9 @@ const configs = reactive(initialConfigs)
           <el-tab-pane label="basic">
             <demo-label-config-panel
               v-model:visible="configs.node.label.visible"
-              v-model:fontFamily="configs.node.label.fontFamily"
-              v-model:fontSize="configs.node.label.fontSize"
-              v-model:lineHeight="configs.node.label.lineHeight"
+              v-model:font-family="configs.node.label.fontFamily"
+              v-model:font-size="configs.node.label.fontSize"
+              v-model:line-height="configs.node.label.lineHeight"
               v-model:color="configs.node.label.color"
               v-model:margin="configs.node.label.margin"
               v-model:direction="configs.node.label.direction"
@@ -193,11 +193,11 @@ const configs = reactive(initialConfigs)
             <demo-label-background-config-panel
               v-model:visible="configs.node.label.background.visible"
               v-model:color="configs.node.label.background.color"
-              v-model:paddingVertical="configs.node.label.background.padding.vertical"
-              v-model:paddingHorizontal="
+              v-model:padding-vertical="configs.node.label.background.padding.vertical"
+              v-model:padding-horizontal="
                 configs.node.label.background.padding.horizontal
               "
-              v-model:borderRadius="configs.node.label.background.borderRadius"
+              v-model:border-radius="configs.node.label.background.borderRadius"
             />
           </el-tab-pane>
         </el-tabs>
@@ -220,7 +220,7 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.edge.normal.dasharray"
               v-model:linecap="configs.edge.normal.linecap"
               v-model:animate="configs.edge.normal.animate"
-              v-model:animationSpeed="configs.edge.normal.animationSpeed"
+              v-model:animation-speed="configs.edge.normal.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="hover">
@@ -230,7 +230,7 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.edge.hover.dasharray"
               v-model:linecap="configs.edge.hover.linecap"
               v-model:animate="configs.edge.hover.animate"
-              v-model:animationSpeed="configs.edge.hover.animationSpeed"
+              v-model:animation-speed="configs.edge.hover.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="selected">
@@ -240,7 +240,7 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.edge.selected.dasharray"
               v-model:linecap="configs.edge.selected.linecap"
               v-model:animate="configs.edge.hover.animate"
-              v-model:animationSpeed="configs.edge.hover.animationSpeed"
+              v-model:animation-speed="configs.edge.hover.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="multiple edge">
@@ -261,21 +261,21 @@ const configs = reactive(initialConfigs)
               v-model:dasharray="configs.edge.summarized.stroke.dasharray"
               v-model:linecap="configs.edge.summarized.stroke.linecap"
               v-model:animate="configs.edge.summarized.stroke.animate"
-              v-model:animationSpeed="configs.edge.summarized.stroke.animationSpeed"
+              v-model:animation-speed="configs.edge.summarized.stroke.animationSpeed"
             />
           </el-tab-pane>
           <el-tab-pane label="label">
             <demo-summarized-edge-label-config-panel
-              v-model:labelFontSize="configs.edge.summarized.label.fontSize"
-              v-model:labelColor="configs.edge.summarized.label.color"
+              v-model:label-font-size="configs.edge.summarized.label.fontSize"
+              v-model:label-color="configs.edge.summarized.label.color"
               v-model:type="configs.edge.summarized.shape.type"
               v-model:radius="configs.edge.summarized.shape.radius"
               v-model:width="configs.edge.summarized.shape.width"
               v-model:height="configs.edge.summarized.shape.height"
-              v-model:borderRadius="configs.edge.summarized.shape.borderRadius"
-              v-model:strokeWidth="configs.edge.summarized.shape.strokeWidth"
-              v-model:strokeColor="configs.edge.summarized.shape.strokeColor"
-              v-model:strokeDasharray="configs.edge.summarized.shape.strokeDasharray"
+              v-model:border-radius="configs.edge.summarized.shape.borderRadius"
+              v-model:stroke-width="configs.edge.summarized.shape.strokeWidth"
+              v-model:stroke-color="configs.edge.summarized.shape.strokeColor"
+              v-model:stroke-dasharray="configs.edge.summarized.shape.strokeDasharray"
               v-model:color="configs.edge.summarized.shape.color"
             />
           </el-tab-pane>

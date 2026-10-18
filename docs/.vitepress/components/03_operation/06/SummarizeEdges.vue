@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue"
 import { Nodes, Edges } from "v-network-graph"
+import { reactive, ref } from "vue"
 import data from "./data"
 
 const nodes: Nodes = reactive({ ...data.nodes })
@@ -50,9 +50,7 @@ function removeEdge() {
     </div>
     <div>
       <label>Edge:</label>
-      <el-button :disabled="selectedNodes.length != 2" @click="addEdge"
-        >add</el-button
-      >
+      <el-button :disabled="selectedNodes.length != 2" @click="addEdge">add</el-button>
       <el-button :disabled="selectedEdges.length == 0" @click="removeEdge"
         >remove</el-button
       >

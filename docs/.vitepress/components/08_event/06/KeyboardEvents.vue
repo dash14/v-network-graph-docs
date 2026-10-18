@@ -28,13 +28,13 @@ function onDeleteKeyUp() {
 <template>
   <!-- The `tabindex` attribute is required to fire key events. -->
   <v-network-graph
+    v-model:selected-nodes="selectedNodes"
+    v-model:selected-edges="selectedEdges"
     tabindex="0"
     :nodes="nodes"
     :edges="edges"
     :layouts="data.layouts"
     :configs="data.configs"
-    v-model:selectedNodes="selectedNodes"
-    v-model:selectedEdges="selectedEdges"
     @keyup.delete="onDeleteKeyUp"
   />
 </template>

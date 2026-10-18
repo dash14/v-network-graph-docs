@@ -3,11 +3,11 @@
     <label>Zoom level:</label>
     <el-slider
       :model-value="modelValue"
-      @update:modelValue="update"
       :min="0.1"
       :max="16"
       :step="0.1"
       :show-tooltip="false"
+      @update:model-value="update"
     />
     <span>{{ modelValue.toFixed(1) }}</span>
   </div>

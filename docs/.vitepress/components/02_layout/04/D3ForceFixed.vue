@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
 import {
   ForceLayout,
   ForceNodeDatum,
   ForceEdgeDatum,
 } from "v-network-graph/lib/force-layout"
+import { reactive, ref } from "vue"
 
 const NODE_COUNT = 20
 
@@ -31,13 +31,15 @@ const configs = reactive(
         positionFixedByClickWithAltKey: true,
         createSimulation: (d3, nodes, edges) => {
           // d3-force parameters
-          const forceLink = d3.forceLink<ForceNodeDatum, ForceEdgeDatum>(edges).id(d => d.id)
+          const forceLink = d3
+            .forceLink<ForceNodeDatum, ForceEdgeDatum>(edges)
+            .id(d => d.id)
           return d3
             .forceSimulation(nodes)
             .force("edge", forceLink.distance(60).strength(0.2))
             .force("charge", d3.forceManyBody().strength(-120))
             .alphaMin(0.001)
-        }
+        },
       }),
     },
     node: {

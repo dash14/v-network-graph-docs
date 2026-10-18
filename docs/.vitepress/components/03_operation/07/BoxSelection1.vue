@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue"
 import { defineConfigs, VNetworkGraphInstance, EventHandlers } from "v-network-graph"
+import { reactive, ref } from "vue"
 import data from "./data"
 
 const graph = ref<VNetworkGraphInstance>()
@@ -40,12 +40,12 @@ function startBoxSelection() {
 <template>
   <div class="demo-control-panel">
     <demo-box-selection-panel
-      :selecting="isBoxSelectionMode"
       v-model:color="configs.view.selection.box.color"
-      v-model:strokeWidth="configs.view.selection.box.strokeWidth"
-      v-model:strokeColor="configs.view.selection.box.strokeColor"
-      v-model:strokeDasharray="configs.view.selection.box.strokeDasharray"
-      v-model:startWithKeyDown="configs.view.boxSelectionEnabled"
+      v-model:stroke-width="configs.view.selection.box.strokeWidth"
+      v-model:stroke-color="configs.view.selection.box.strokeColor"
+      v-model:stroke-dasharray="configs.view.selection.box.strokeDasharray"
+      v-model:start-with-key-down="configs.view.boxSelectionEnabled"
+      :selecting="isBoxSelectionMode"
       @button-click="startBoxSelection"
     />
   </div>

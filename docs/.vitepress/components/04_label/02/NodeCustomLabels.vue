@@ -5,9 +5,7 @@ import data from "./data"
 <template>
   <v-network-graph :nodes="data.nodes" :edges="data.edges" :layouts="data.layouts">
     <template
-      #override-node-label="{
-        nodeId, scale, text, x, y, config, textAnchor, dominantBaseline
-      }"
+      #override-node-label="{ nodeId, scale, text, x, y, config, textAnchor, dominantBaseline }"
     >
       <text
         x="0"
@@ -16,7 +14,8 @@ import data from "./data"
         text-anchor="middle"
         dominant-baseline="central"
         fill="#ffffff"
-      >{{ nodeId }}</text>
+        >{{ nodeId }}</text
+      >
       <text
         x="0"
         y="0"
@@ -25,7 +24,8 @@ import data from "./data"
         :dominant-baseline="dominantBaseline"
         :fill="config.color"
         :transform="`translate(${x} ${y})`"
-      >{{ text }}</text>
+        >{{ text }}</text
+      >
     </template>
   </v-network-graph>
 </template>

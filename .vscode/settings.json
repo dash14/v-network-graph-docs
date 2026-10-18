@@ -1,6 +1,7 @@
 {
   "eslint.run": "onType",
   "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit",
     "source.fixAll.eslint": "explicit"
   },
   "cSpell.words": [
@@ -30,23 +31,23 @@
     "node_modules",
     "package.json",
     "package-lock.json",
-    ".prettierrc",
-    ".eslintrc.js"
+    ".oxfmtrc.json",
+    ".oxlintrc.json"
   ],
   "[javascript]": {
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   },
   "[typescript]": {
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   },
   "[vue]": {
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   },
   "[json]": {
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   }
 }

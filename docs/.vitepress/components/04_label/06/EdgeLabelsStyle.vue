@@ -39,8 +39,8 @@ const configs = reactive(
     <el-tabs type="border-card">
       <el-tab-pane label="Label">
         <demo-label-config-panel
-          v-model:fontFamily="configs.edge.label.fontFamily"
-          v-model:fontSize="configs.edge.label.fontSize"
+          v-model:font-family="configs.edge.label.fontFamily"
+          v-model:font-size="configs.edge.label.fontSize"
           v-model:color="configs.edge.label.color"
           v-model:margin="configs.edge.label.margin"
           v-model:location="verticalAlign"
@@ -49,10 +49,10 @@ const configs = reactive(
       <el-tab-pane label="Background">
         <demo-label-background-config-panel
           v-model:visible="configs.edge.label.background.visible"
-          v-model:paddingVertical="configs.edge.label.background.padding.vertical"
-          v-model:paddingHorizontal="configs.edge.label.background.padding.horizontal"
+          v-model:padding-vertical="configs.edge.label.background.padding.vertical"
+          v-model:padding-horizontal="configs.edge.label.background.padding.horizontal"
           v-model:color="configs.edge.label.background.color"
-          v-model:borderRadius="configs.edge.label.background.borderRadius"
+          v-model:border-radius="configs.edge.label.background.borderRadius"
         />
       </el-tab-pane>
     </el-tabs>

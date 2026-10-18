@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, watchEffect } from "vue"
 import * as vNG from "v-network-graph"
+import { ref, watchEffect } from "vue"
 import data from "./data"
 
 // -------------------------------------------------------------
@@ -72,7 +72,7 @@ class Graph {
     const keys = []
     let key
     for (key in obj) {
-      Object.prototype.hasOwnProperty.call(obj, key) && keys.push(key)
+      if (Object.prototype.hasOwnProperty.call(obj, key)) keys.push(key)
     }
     return keys
   }
@@ -93,7 +93,6 @@ class Graph {
 
     costs[start] = 0
 
-    // eslint-disable-next-line no-unmodified-loop-condition
     while (open) {
       if (!(keys = this._extractKeys(open)).length) {
         break
@@ -161,7 +160,7 @@ class Graph {
       if (predecessors) {
         shortest = this._extractShortest(predecessors, end)
         if (nodes.length) {
-          path.push.apply(path, shortest.slice(0, -1))
+          path.push(...shortest.slice(0, -1))
         } else {
           return path.concat(shortest)
         }

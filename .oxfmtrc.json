@@ -1,0 +1,64 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 88,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": false,
+  "quoteProps": "as-needed",
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "proseWrap": "preserve",
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": false,
+  "sortPackageJson": false,
+  "sortImports": {
+    "newlinesBetween": false,
+    "partitionByComment": true
+  },
+  "ignorePatterns": ["docs/**/*.md"],
+  "overrides": [
+    {
+      "files": ["docs/.vitepress/components/01_basic/*.vue"],
+      "options": {
+        "singleAttributePerLine": true
+      }
+    },
+    {
+      "files": [
+        "docs/.vitepress/components/01_basic/InitialDisplay.vue",
+        "docs/.vitepress/components/01_basic/Minimal.vue"
+      ],
+      "options": {
+        "singleAttributePerLine": false
+      }
+    },
+    {
+      "files": ["docs/.vitepress/components/02_layout/05/LayoutSwitching.vue"],
+      "options": {
+        "printWidth": 86
+      }
+    },
+    {
+      "files": ["docs/.vitepress/components/04_label/02/NodeCustomLabels.vue"],
+      "options": {
+        "printWidth": 96
+      }
+    },
+    {
+      "files": [
+        "docs/.vitepress/components/controls/appearance/EdgeMarkerConfigPanel.vue"
+      ],
+      "options": {
+        "printWidth": 97
+      }
+    },
+    {
+      "files": ["docs/.vitepress/components/controls/appearance/LabelConfigPanel.vue"],
+      "options": {
+        "printWidth": 99
+      }
+    }
+  ]
+}

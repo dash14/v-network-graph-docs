@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive } from "vue"
 import data from "./data"
 
 const initialConfigs = vNG.defineConfigs({
@@ -36,9 +36,9 @@ const configs = reactive(initialConfigs)
       <el-tab-pane label="Appearance">
         <demo-label-config-panel
           v-model:visible="configs.node.label.visible"
-          v-model:fontFamily="configs.node.label.fontFamily"
-          v-model:fontSize="configs.node.label.fontSize"
-          v-model:lineHeight="configs.node.label.lineHeight"
+          v-model:font-family="configs.node.label.fontFamily"
+          v-model:font-size="configs.node.label.fontSize"
+          v-model:line-height="configs.node.label.lineHeight"
           v-model:color="configs.node.label.color"
           v-model:margin="configs.node.label.margin"
           v-model:direction="configs.node.label.direction"

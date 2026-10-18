@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import * as vNG from "v-network-graph";
+import * as vNG from "v-network-graph"
 import {
   ForceLayout,
   ForceNodeDatum,
   ForceEdgeDatum,
-} from "v-network-graph/lib/force-layout";
+} from "v-network-graph/lib/force-layout"
 import data from "./data"
 
 const configs = vNG.defineConfigs({
@@ -21,7 +21,7 @@ const configs = vNG.defineConfigs({
       createSimulation: (d3, nodes, edges) => {
         const forceLink = d3
           .forceLink<ForceNodeDatum, ForceEdgeDatum>(edges)
-          .id((d: ForceNodeDatum) => d.id);
+          .id((d: ForceNodeDatum) => d.id)
         // Specify your own d3-force parameters
         return d3
           .forceSimulation(nodes)
@@ -30,7 +30,7 @@ const configs = vNG.defineConfigs({
           .force("x", d3.forceX())
           .force("y", d3.forceY())
           .stop() // tick manually
-          .tick(100);
+          .tick(100)
       },
     }),
   },
@@ -39,13 +39,9 @@ const configs = vNG.defineConfigs({
       visible: false,
     },
   },
-});
+})
 </script>
 
 <template>
-  <v-network-graph
-    :nodes="data.nodes"
-    :edges="data.edges"
-    :configs="configs"
-  />
+  <v-network-graph :nodes="data.nodes" :edges="data.edges" :configs="configs" />
 </template>

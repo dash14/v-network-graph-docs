@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref } from "vue"
 import * as vNG from "v-network-graph"
+import { ref } from "vue"
 import data from "./data"
 
 // dagre: Directed graph layout for JavaScript
 // https://github.com/dagrejs/dagre
-//@ts-ignore
+// @ts-expect-error: dagre ships no type declarations for its bundled build
 import dagre from "dagre/dist/dagre.min.js"
 
 const nodeSize = 40
