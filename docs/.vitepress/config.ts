@@ -1,6 +1,6 @@
 import { visualizer } from "rollup-plugin-visualizer"
 import { defineConfig } from "vitepress"
-// @ts-ignore
+// @ts-expect-error: unplugin-element-plus ships no types for its Vite entry
 import ElementPlus from "unplugin-element-plus/vite"
 
 const ANALYZE_BUNDLE = false

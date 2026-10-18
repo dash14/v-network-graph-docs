@@ -48,8 +48,8 @@
           <el-color-picker
             v-model="normalColor"
             show-alpha
-            @active-change="normalColor = $event"
             :disabled="!visible"
+            @active-change="normalColor = $event"
           />
         </div>
         <div class="control">
@@ -74,8 +74,8 @@
           <el-color-picker
             v-model="thickColor"
             show-alpha
-            @active-change="thickColor = $event"
             :disabled="!visible"
+            @active-change="thickColor = $event"
           />
         </div>
         <div class="control">

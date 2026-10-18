@@ -82,6 +82,7 @@ function walkExpandedNodes(nodes: TreeNodes, cb: (node: TreeNode) => void) {
 
 <template>
   <v-network-graph
+    v-model:zoom-level="zoomLevel"
     class="graph"
     :nodes="nodes"
     :edges="edges"
@@ -89,7 +90,6 @@ function walkExpandedNodes(nodes: TreeNodes, cb: (node: TreeNode) => void) {
     :layers="layers"
     :layouts="layouts"
     :event-handlers="eventHandlers"
-    v-model:zoomLevel="zoomLevel"
   >
     <!-- +/- badge layer -->
     <template #badge="{ scale }">

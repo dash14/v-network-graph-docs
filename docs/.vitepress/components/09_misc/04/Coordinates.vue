@@ -32,8 +32,8 @@ const eventHandlers: vNG.EventHandlers = {
   <v-network-graph
     ref="graph"
     v-model:nodes="nodes"
-    :edges="data.edges"
     v-model:layouts="layouts"
+    :edges="data.edges"
     :event-handlers="eventHandlers"
   />
 </template>

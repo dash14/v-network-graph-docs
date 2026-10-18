@@ -77,13 +77,13 @@ function rgba2hex(orig: string) {
 <template>
   <el-color-picker
     v-bind="$attrs"
-    class="color-picker"
     v-model="rgbaValue"
+    class="color-picker"
     color-format="rgb"
     show-alpha
     @active-change="rgbaValue = $event"
   />
-  <el-input v-model="input" @change="hexValue = input" class="input" />
+  <el-input v-model="input" class="input" @change="hexValue = input" />
 </template>
 
 <style lang="scss" scoped>
