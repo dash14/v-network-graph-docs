@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive, ref } from "vue"
 import data from "./data"
 
 const graph = ref<vNG.Instance>()

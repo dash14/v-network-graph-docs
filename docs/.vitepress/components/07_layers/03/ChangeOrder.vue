@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref, watch } from "vue"
 import { defineConfigs, VNetworkGraphInstance } from "v-network-graph"
+import { reactive, ref, watch } from "vue"
 import data from "./data"
 
 const graph = ref<VNetworkGraphInstance>()
@@ -44,7 +44,9 @@ watch(nodeLabelsToForefront, v => {
 
 <template>
   <div class="demo-control-panel">
-    <el-checkbox v-model="nodeLabelsToForefront">Set node labels to the forefront</el-checkbox>
+    <el-checkbox v-model="nodeLabelsToForefront"
+      >Set node labels to the forefront</el-checkbox
+    >
   </div>
 
   <v-network-graph

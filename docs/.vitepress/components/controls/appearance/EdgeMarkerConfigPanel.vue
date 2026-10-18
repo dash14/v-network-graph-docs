@@ -80,7 +80,7 @@ export default defineComponent({
     color: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     units: {
       type: String,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive } from "vue"
 import data from "./data"
 
 const paths: vNG.Paths = {
@@ -102,7 +102,7 @@ const configs = reactive(initialConfigs)
               v-model:linecap="configs.path.hover.linecap"
               v-model:animate="configs.path.hover.animate"
               v-model:animationSpeed="configs.path.hover.animationSpeed"
-            /></el-tab-pane>
+          /></el-tab-pane>
           <el-tab-pane label="selected">
             <demo-path-stroke-config-panel
               v-model:width="configs.path.selected.width"
@@ -111,7 +111,7 @@ const configs = reactive(initialConfigs)
               v-model:linecap="configs.path.selected.linecap"
               v-model:animate="configs.path.selected.animate"
               v-model:animationSpeed="configs.path.selected.animationSpeed"
-            /></el-tab-pane>
+          /></el-tab-pane>
         </el-tabs>
       </el-tab-pane>
     </el-tabs>

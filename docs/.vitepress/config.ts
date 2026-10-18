@@ -1,38 +1,70 @@
-import { defineConfig } from "vitepress"
 import { visualizer } from "rollup-plugin-visualizer"
+import { defineConfig } from "vitepress"
 // @ts-ignore
 import ElementPlus from "unplugin-element-plus/vite"
 
 const ANALYZE_BUNDLE = false
 
- export default defineConfig({
+export default defineConfig({
   base: "/v-network-graph/",
   lang: "en-US",
   title: "v-network-graph",
   description: "An interactive network graph visualization library for Vue 3",
   appearance: false,
   head: [
-      // Google Search Console
-      [ "meta", { name: "google-site-verification", content: "0nPNAdUYrhvg27b84hgrPPPsjIDmMIBIKz3hNd23mXA" } ],
-      // Google Analytics
-      [ "script", { src: 'https://www.googletagmanager.com/gtag/js?id=G-TVV8JY0JNE', async: "true" } ],
-      [ "script", {}, `window.GA_MEASUREMENT_ID = 'G-TVV8JY0JNE';window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`],
-      // Google Fonts
-      [ "link", { href: "https://fonts.googleapis.com/css2?family=Sarabun:wght@800", rel: "stylesheet" } ],
-      // Image for SNS
-      [ "meta", { property: "og:type", content: "website" } ],
-      [ "meta", { property: "og:url", content: "https://dash14.github.io/v-network-graph/" } ],
-      [ "meta", { property: "og:title", content: "v-network-graph" } ],
-      [ "meta", { property: "og:description", content: "An interactive network graph visualization component for Vue 3" } ],
-      [ "meta", { property: "og:image", content: "/v-network-graph/site-image.png" } ],
-      [ "meta", { property: "og:image:alt", content: "v-network-graph" } ],
-      [ "meta", { property: "og:image:width", content: "1200" } ],
-      [ "meta", { property: "og:image:height", content: "630" } ],
+    // Google Search Console
+    [
+      "meta",
+      {
+        name: "google-site-verification",
+        content: "0nPNAdUYrhvg27b84hgrPPPsjIDmMIBIKz3hNd23mXA",
+      },
+    ],
+    // Google Analytics
+    [
+      "script",
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-TVV8JY0JNE",
+        async: "true",
+      },
+    ],
+    [
+      "script",
+      {},
+      `window.GA_MEASUREMENT_ID = 'G-TVV8JY0JNE';window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`,
+    ],
+    // Google Fonts
+    [
+      "link",
+      {
+        href: "https://fonts.googleapis.com/css2?family=Sarabun:wght@800",
+        rel: "stylesheet",
+      },
+    ],
+    // Image for SNS
+    ["meta", { property: "og:type", content: "website" }],
+    [
+      "meta",
+      { property: "og:url", content: "https://dash14.github.io/v-network-graph/" },
+    ],
+    ["meta", { property: "og:title", content: "v-network-graph" }],
+    [
+      "meta",
+      {
+        property: "og:description",
+        content: "An interactive network graph visualization component for Vue 3",
+      },
+    ],
+    ["meta", { property: "og:image", content: "/v-network-graph/site-image.png" }],
+    ["meta", { property: "og:image:alt", content: "v-network-graph" }],
+    ["meta", { property: "og:image:width", content: "1200" }],
+    ["meta", { property: "og:image:height", content: "630" }],
   ],
   themeConfig: {
     logo: {
-      src:  "/header-logo.svg",
-      srcset: "/v-network-graph/header-logo.png 1x, /v-network-graph/header-logo@2x.png 2x"
+      src: "/header-logo.svg",
+      srcset:
+        "/v-network-graph/header-logo.png 1x, /v-network-graph/header-logo@2x.png 2x",
     },
     siteTitle: false,
     nav: [
@@ -49,7 +81,7 @@ const ANALYZE_BUNDLE = false
       },
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/dash14/v-network-graph' },
+      { icon: "github", link: "https://github.com/dash14/v-network-graph" },
     ],
     sidebar: [
       { text: "Getting Started", link: "/getting-started" },
@@ -95,7 +127,7 @@ const ANALYZE_BUNDLE = false
       rollupOptions: {
         output: {
           manualChunks: {
-            "ui": ["element-plus", "v-network-graph"],
+            ui: ["element-plus", "v-network-graph"],
           },
         },
       },
@@ -104,19 +136,20 @@ const ANALYZE_BUNDLE = false
       preprocessorOptions: {
         scss: {
           api: "modern-compiler",
-          charset: false
-        }
-      }
+          charset: false,
+        },
+      },
     },
     plugins: [
       ElementPlus({}),
       // analyze bundle sizes
-      ANALYZE_BUNDLE && visualizer({
-        open: true,
-        filename: "docs/.vitepress/dist/stats.html",
-        gzipSize: true,
-        brotliSize: true,
-      }),
+      ANALYZE_BUNDLE &&
+        visualizer({
+          open: true,
+          filename: "docs/.vitepress/dist/stats.html",
+          gzipSize: true,
+          brotliSize: true,
+        }),
     ],
     ssr: {
       noExternal: ["element-plus", "lodash-es", "d3-force", "v-network-graph"],

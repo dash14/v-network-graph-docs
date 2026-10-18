@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue"
 import * as vNG from "v-network-graph"
-
+import { ref, onMounted, onUnmounted } from "vue"
 import data from "./data"
 
 const holdingShift = ref(false)

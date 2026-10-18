@@ -36,11 +36,7 @@ export default defineComponent({
       required: true,
     },
   },
-  emits: [
-    "update:gap",
-    "update:lineType",
-    "update:summarize"
-  ],
+  emits: ["update:gap", "update:lineType", "update:summarize"],
   setup(props, { emit }) {
     const vars: { [name: string]: WritableComputedRef<any> } = {}
     const keys = Object.keys(props) as (keyof typeof props)[]
@@ -76,7 +72,6 @@ export default defineComponent({
   margin-left: 10px;
   margin-right: 10px;
 }
-
 
 :deep(.el-slider) {
   width: 80px;

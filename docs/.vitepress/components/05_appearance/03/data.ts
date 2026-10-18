@@ -1,5 +1,5 @@
-import { reactive } from "vue"
 import * as vNG from "v-network-graph"
+import { reactive } from "vue"
 
 interface Node extends vNG.Node {
   size: number

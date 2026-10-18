@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue"
 import * as vNG from "v-network-graph"
 import { withBase } from "vitepress"
+import { ref } from "vue"
 import data from "./data"
 
 // additional layers definition

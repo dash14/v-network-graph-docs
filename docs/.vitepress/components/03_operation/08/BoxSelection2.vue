@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from "vue"
 import { defineConfigs, VNetworkGraphInstance, EventHandlers } from "v-network-graph"
+import { ref } from "vue"
 import data from "./data"
 
 const graph = ref<VNetworkGraphInstance>()
@@ -34,16 +34,10 @@ function stopBoxSelection() {
 
 <template>
   <div class="demo-control-panel">
-    <el-button
-      type="primary"
-      :disabled="isBoxSelectionMode"
-      @click="startBoxSelection"
+    <el-button type="primary" :disabled="isBoxSelectionMode" @click="startBoxSelection"
       >Start to selection</el-button
     >
-    <el-button
-      type="primary"
-      :disabled="!isBoxSelectionMode"
-      @click="stopBoxSelection"
+    <el-button type="primary" :disabled="!isBoxSelectionMode" @click="stopBoxSelection"
       >Stop to selection</el-button
     >
   </div>

@@ -33,7 +33,7 @@ export default defineComponent({
     visible: {
       type: Boolean,
       required: false,
-      default: undefined
+      default: undefined,
     },
     paddingVertical: {
       type: Number,

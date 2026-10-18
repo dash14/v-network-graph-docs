@@ -8,7 +8,7 @@
         :max="32"
         :step="1"
         :disabled="margin === null"
-        @update:modelValue="(margin !== null) ? $emit('update:margin', $event) : null"
+        @update:modelValue="margin !== null ? $emit('update:margin', $event) : null"
       />
       (between node and edge)
     </div>
@@ -47,7 +47,7 @@ export default defineComponent({
     margin: {
       type: Number,
       required: false,
-      default: null
+      default: null,
     },
     lineType: {
       type: String,
@@ -58,11 +58,7 @@ export default defineComponent({
       required: true,
     },
   },
-  emits: [
-    "update:margin",
-    "update:lineType",
-    "update:gap",
-  ],
+  emits: ["update:margin", "update:lineType", "update:gap"],
   setup(props, { emit }) {
     const vars: { [name: string]: WritableComputedRef<any> } = {}
     const keys = Object.keys(props) as (keyof typeof props)[]
@@ -115,5 +111,4 @@ export default defineComponent({
   margin-left: 10px;
   margin-right: 10px;
 }
-
 </style>

@@ -1,9 +1,9 @@
 {
-    "baseUrl": "http://localhost:3001/v-network-graph/",
-    "snapshot": {
-        "fullPage": true
-    },
-    "match": {
-        "maxDiffPixelRatio": 0.04
-    }
+  "baseUrl": "http://localhost:3001/v-network-graph/",
+  "snapshot": {
+    "fullPage": true
+  },
+  "match": {
+    "maxDiffPixelRatio": 0.04
+  }
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue"
 import * as vNG from "v-network-graph"
+import { computed, ref, watch } from "vue"
 import data from "./data"
 
 // ref="graph"

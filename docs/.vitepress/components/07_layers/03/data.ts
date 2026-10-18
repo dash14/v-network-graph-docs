@@ -19,8 +19,8 @@ const edges: Edges = {
 
 const paths: Paths = {
   path1: {
-    edges: ["edge1", "edge3", "edge4"]
-  }
+    edges: ["edge1", "edge3", "edge4"],
+  },
 }
 
 const layouts: Layouts = {
