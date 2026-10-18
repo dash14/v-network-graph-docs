@@ -1,13 +1,11 @@
-import { watch } from "vue"
-
 import Theme from "vitepress/theme"
+// Each style overrides those above it, so keep them after the theme in this order
 import "./custom.scss"
-
 import "element-plus/theme-chalk/src/index.scss"
-
-import VNetworkGraph from "v-network-graph"
 import "v-network-graph/lib/style.css"
-
+// Components
+import VNetworkGraph from "v-network-graph"
+import { watch } from "vue"
 import DemoTabs from "../components/DemoTabs.vue"
 import SliderZoom from "../components/controls/SliderZoom.vue"
 import ColorPicker from "../components/controls/ColorPicker.vue"
@@ -25,7 +23,7 @@ import EdgeSelfLoopPanel from "../components/controls/appearance/EdgeSelfLoopPan
 import PathConfigPanel from "../components/controls/paths/PathConfigPanel.vue"
 import PathStrokeConfigPanel from "../components/controls/paths/PathStrokeConfigPanel.vue"
 import GridPanel from "../components/controls/misc/GridPanel.vue"
-
+// unplugin-element-plus adds each component's styles here, after the controls' styles
 import {
   ElButton,
   ElCard,
