@@ -1,6 +1,11 @@
 import { test, expect } from "@playwright/test"
 import config from "./config.json" assert { type: "json" }
-import { openSourceTabs, waitForPreviewVNetworkGraph } from "./utils"
+import {
+  freezeTime,
+  openSourceTabs,
+  waitForImages,
+  waitForPreviewVNetworkGraph,
+} from "./utils"
 
 test("VRT: Examples", async ({ page }) => {
   await page.goto(config.baseUrl)
@@ -58,17 +63,27 @@ const loosely = [
   "event" // Ignore timestamp field for event handling example
 ]
 
+// Random labels and d3-force layouts keep changing unless time is frozen
+const animated = ["layout", "labels", "misc"]
+
 Object.entries(pages).forEach(([key, { name, url }]) => {
   test.describe("VRT: Examples: Preview", () => {
     test(name, async ({ page }) => {
+      const frozen = animated.includes(key)
+      if (frozen) {
+        await freezeTime(page)
+      }
+
       await page.goto(`${config.baseUrl}examples/`)
       await page.locator("#VPContent .main").getByText(name).click()
       await waitForPreviewVNetworkGraph(page)
+      await waitForImages(page)
 
-      // Wait for transition to be stable.
-      await page.waitForTimeout(1500)
-
-      if (key === "layout") {
+      if (frozen) {
+        // Run the layouts long enough to settle
+        await page.clock.runFor(10_000)
+      } else {
+        // Wait for transition to be stable.
         await page.waitForTimeout(1500)
       }
 
