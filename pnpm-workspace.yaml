@@ -10,8 +10,9 @@ trustPolicyExclude:
   - "vite@5.4.21"
 
 allowBuilds:
-  '@parcel/watcher': false
+  "@parcel/watcher": false
   esbuild: false
+  lefthook: false
   unrs-resolver: false
   vue-demi: false
 
