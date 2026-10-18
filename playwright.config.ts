@@ -31,6 +31,8 @@ export default defineConfig({
   use: {
     headless: true,
     viewport: { width: 1280, height: 720 },
+    // Examples print local times
+    timezoneId: "UTC",
   },
   fullyParallel: true,
 })

@@ -1,6 +1,13 @@
 import { test, expect } from "@playwright/test"
 import config from "./config.json" assert { type: "json" }
-import { openSourceTabs, waitForPreviewVNetworkGraph } from "./utils"
+import {
+  freezeTime,
+  openSourceTabs,
+  resetRandomSeed,
+  seedRandom,
+  waitForImagesAndFonts,
+  waitForPreviewVNetworkGraph,
+} from "./utils"
 
 test("VRT: Examples", async ({ page }) => {
   await page.goto(config.baseUrl)
@@ -53,32 +60,39 @@ const pages = {
   },
 }
 
-const loosely = [
-  "appearance", // Ignore dash lines
-  "event" // Ignore timestamp field for event handling example
-]
-
 Object.entries(pages).forEach(([key, { name, url }]) => {
   test.describe("VRT: Examples: Preview", () => {
-    test(name, async ({ page }) => {
+    test(name, async ({ page, browserName }) => {
+      // Moving dashes, timestamps, random labels and d3-force layouts keep
+      // changing unless time is frozen and the random sequence is fixed
+      await freezeTime(page)
+      await seedRandom(page)
+
       await page.goto(`${config.baseUrl}examples/`)
+      await resetRandomSeed(page)
       await page.locator("#VPContent .main").getByText(name).click()
+      await expect(page.locator("#VPContent h1")).toContainText(name)
+
+      // Let the browser lay out the page in real time before running timers
       await waitForPreviewVNetworkGraph(page)
+      // Run the layouts long enough to settle
+      await page.clock.runFor(10_000)
+      // Apply what loading images and fonts scheduled, then let them paint
+      await waitForImagesAndFonts(page)
+      await page.clock.runFor(1_000)
+      await page.waitForTimeout(500)
 
-      // Wait for transition to be stable.
-      await page.waitForTimeout(1500)
-
-      if (key === "layout") {
-        await page.waitForTimeout(1500)
-      }
-
-      // Ignore timestamp field for event handling example
-      const threshold = loosely.includes(key) ? 0.8 : 0.5
-
-      expect(await page.screenshot(config.snapshot)).toMatchSnapshot(
-        `examples-${key}.png`,
-        { threshold }
-      )
+      expect(
+        await page.screenshot({
+          ...config.snapshot,
+          // A fake clock does not drive CSS animations, so stop them instead
+          animations: "disabled",
+        })
+      ).toMatchSnapshot(`examples-${key}.png`, {
+        threshold: 0.5,
+        // Firefox antialiases some node labels in one of two ways from run to run
+        maxDiffPixels: browserName === "firefox" && key === "layout" ? 300 : 0,
+      })
     })
   })
 
