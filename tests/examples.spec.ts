@@ -3,7 +3,8 @@ import config from "./config.json" assert { type: "json" }
 import {
   freezeTime,
   openSourceTabs,
-  waitForImages,
+  resetRandomSeed,
+  waitForImagesAndFonts,
   waitForPreviewVNetworkGraph,
 } from "./utils"
 
@@ -58,44 +59,37 @@ const pages = {
   },
 }
 
-// Moving dashes, timestamps, random labels and d3-force layouts keep changing
-// unless time is frozen
-const animated = ["layout", "labels", "appearance", "event", "misc"]
-
 Object.entries(pages).forEach(([key, { name, url }]) => {
   test.describe("VRT: Examples: Preview", () => {
     test(name, async ({ page, browserName }) => {
-      const frozen = animated.includes(key)
-      if (frozen) {
-        await freezeTime(page)
-      }
+      // Moving dashes, timestamps, random labels and d3-force layouts keep
+      // changing unless time is frozen
+      await freezeTime(page)
 
       await page.goto(`${config.baseUrl}examples/`)
+      await resetRandomSeed(page)
       await page.locator("#VPContent .main").getByText(name).click()
       await expect(page.locator("#VPContent h1")).toContainText(name)
 
-      if (frozen) {
-        await waitForImages(page)
-        // Run the layouts long enough to settle
-        await page.clock.runFor(10_000)
-        await waitForImages(page)
-      } else {
-        await waitForPreviewVNetworkGraph(page)
-        await waitForImages(page)
-        // Wait for transition to be stable.
-        await page.waitForTimeout(1500)
-      }
+      // Layout and resize observers run in real time, so let the graphs size up
+      await waitForPreviewVNetworkGraph(page)
+      // Run the layouts long enough to settle
+      await page.clock.runFor(10_000)
+      // Apply what loading images and fonts scheduled, then let them paint
+      await waitForImagesAndFonts(page)
+      await page.clock.runFor(1_000)
+      await page.waitForTimeout(500)
 
       expect(
         await page.screenshot({
           ...config.snapshot,
           // A fake clock does not drive CSS animations, so stop them instead
-          animations: frozen ? "disabled" : "allow",
+          animations: "disabled",
         })
       ).toMatchSnapshot(`examples-${key}.png`, {
         threshold: 0.5,
         // Firefox antialiases some node labels in one of two ways from run to run
-        maxDiffPixels: browserName === "firefox" ? 300 : 0,
+        maxDiffPixels: browserName === "firefox" && key === "layout" ? 300 : 0,
       })
     })
   })

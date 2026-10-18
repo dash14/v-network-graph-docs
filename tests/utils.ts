@@ -14,14 +14,24 @@ export async function freezeTime(page: Page) {
       seed = (seed * 16807) % 2147483647
       return (seed - 1) / 2147483646
     }
+    Object.assign(window, { resetRandomSeed: () => (seed = 1) })
   })
   await page.clock.pauseAt(FROZEN_TIME)
 }
 
-export async function waitForImages(page: Page) {
+// Pages reached by client-side navigation would otherwise get whatever is left
+// of the sequence
+export async function resetRandomSeed(page: Page) {
   await page.evaluate(() =>
-    Promise.all(
-      Array.from(document.querySelectorAll("svg image"), element => {
+    (window as unknown as { resetRandomSeed: () => void }).resetRandomSeed()
+  )
+}
+
+export async function waitForImagesAndFonts(page: Page) {
+  await page.evaluate(() =>
+    Promise.all([
+      document.fonts.ready,
+      ...Array.from(document.querySelectorAll("svg image"), element => {
         const image = new Image()
         image.src = new URL(
           (element as SVGImageElement).href.baseVal,
@@ -29,8 +39,8 @@ export async function waitForImages(page: Page) {
         ).href
         // A broken image shows up in the screenshot diff instead
         return image.decode().catch(() => {})
-      })
-    )
+      }),
+    ])
   )
 }
 
