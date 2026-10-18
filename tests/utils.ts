@@ -15,12 +15,10 @@ export async function freezeTime(page: Page) {
       return (seed - 1) / 2147483646
     }
   })
-  await page.clock.install({ time: FROZEN_TIME })
   await page.clock.pauseAt(FROZEN_TIME)
 }
 
 export async function waitForImages(page: Page) {
-  await page.waitForLoadState("networkidle")
   await page.evaluate(() =>
     Promise.all(
       Array.from(document.querySelectorAll("svg image"), element => {
@@ -29,7 +27,8 @@ export async function waitForImages(page: Page) {
           (element as SVGImageElement).href.baseVal,
           location.href
         ).href
-        return image.decode()
+        // A broken image shows up in the screenshot diff instead
+        return image.decode().catch(() => {})
       })
     )
   )

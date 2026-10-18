@@ -58,13 +58,9 @@ const pages = {
   },
 }
 
-const loosely = [
-  "appearance", // Ignore dash lines
-  "event" // Ignore timestamp field for event handling example
-]
-
-// Random labels and d3-force layouts keep changing unless time is frozen
-const animated = ["layout", "labels", "misc"]
+// Moving dashes, timestamps, random labels and d3-force layouts keep changing
+// unless time is frozen
+const animated = ["layout", "labels", "appearance", "event", "misc"]
 
 Object.entries(pages).forEach(([key, { name, url }]) => {
   test.describe("VRT: Examples: Preview", () => {
@@ -76,24 +72,27 @@ Object.entries(pages).forEach(([key, { name, url }]) => {
 
       await page.goto(`${config.baseUrl}examples/`)
       await page.locator("#VPContent .main").getByText(name).click()
-      await waitForPreviewVNetworkGraph(page)
-      await waitForImages(page)
+      await expect(page.locator("#VPContent h1")).toContainText(name)
 
       if (frozen) {
+        await waitForImages(page)
         // Run the layouts long enough to settle
         await page.clock.runFor(10_000)
+        await waitForImages(page)
       } else {
+        await waitForPreviewVNetworkGraph(page)
+        await waitForImages(page)
         // Wait for transition to be stable.
         await page.waitForTimeout(1500)
       }
 
-      // Ignore timestamp field for event handling example
-      const threshold = loosely.includes(key) ? 0.8 : 0.5
-
-      expect(await page.screenshot(config.snapshot)).toMatchSnapshot(
-        `examples-${key}.png`,
-        { threshold }
-      )
+      expect(
+        await page.screenshot({
+          ...config.snapshot,
+          // A fake clock does not drive CSS animations, so stop them instead
+          animations: frozen ? "disabled" : "allow",
+        })
+      ).toMatchSnapshot(`examples-${key}.png`, { threshold: 0.5 })
     })
   })
 
