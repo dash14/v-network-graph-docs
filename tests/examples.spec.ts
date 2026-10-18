@@ -64,7 +64,7 @@ const animated = ["layout", "labels", "appearance", "event", "misc"]
 
 Object.entries(pages).forEach(([key, { name, url }]) => {
   test.describe("VRT: Examples: Preview", () => {
-    test(name, async ({ page }) => {
+    test(name, async ({ page, browserName }) => {
       const frozen = animated.includes(key)
       if (frozen) {
         await freezeTime(page)
@@ -92,7 +92,11 @@ Object.entries(pages).forEach(([key, { name, url }]) => {
           // A fake clock does not drive CSS animations, so stop them instead
           animations: frozen ? "disabled" : "allow",
         })
-      ).toMatchSnapshot(`examples-${key}.png`, { threshold: 0.5 })
+      ).toMatchSnapshot(`examples-${key}.png`, {
+        threshold: 0.5,
+        // Firefox antialiases some node labels in one of two ways from run to run
+        maxDiffPixels: browserName === "firefox" ? 300 : 0,
+      })
     })
   })
 
