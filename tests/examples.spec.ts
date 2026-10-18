@@ -4,6 +4,7 @@ import {
   freezeTime,
   openSourceTabs,
   resetRandomSeed,
+  seedRandom,
   waitForImagesAndFonts,
   waitForPreviewVNetworkGraph,
 } from "./utils"
@@ -63,15 +64,16 @@ Object.entries(pages).forEach(([key, { name, url }]) => {
   test.describe("VRT: Examples: Preview", () => {
     test(name, async ({ page, browserName }) => {
       // Moving dashes, timestamps, random labels and d3-force layouts keep
-      // changing unless time is frozen
+      // changing unless time is frozen and the random sequence is fixed
       await freezeTime(page)
+      await seedRandom(page)
 
       await page.goto(`${config.baseUrl}examples/`)
       await resetRandomSeed(page)
       await page.locator("#VPContent .main").getByText(name).click()
       await expect(page.locator("#VPContent h1")).toContainText(name)
 
-      // Layout and resize observers run in real time, so let the graphs size up
+      // Let the browser lay out the page in real time before running timers
       await waitForPreviewVNetworkGraph(page)
       // Run the layouts long enough to settle
       await page.clock.runFor(10_000)
