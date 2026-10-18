@@ -1,6 +1,14 @@
+import path from "node:path"
 import { defineConfig, devices } from "@playwright/test"
+
+// Keeps baselines in one place shared by every checkout, e.g. one directory per library version
+const snapshotDir = process.env.VRT_SNAPSHOT_DIR
+
 export default defineConfig({
   reporter: "html",
+  snapshotPathTemplate: snapshotDir
+    ? `${path.resolve(snapshotDir)}/{testFileName}-snapshots/{arg}{-projectName}{-snapshotSuffix}{ext}`
+    : undefined,
   projects: [
     {
       name: "chromium",
