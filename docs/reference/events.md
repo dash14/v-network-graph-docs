@@ -14,6 +14,12 @@
 
 </div>
 
+::: tip
+The graph checks for an `update:layouts` listener once, when it is created, and skips tracking
+the node positions for this event when there is none. A listener added later, for example by a
+`v-on` object that changes after mounting, does not receive the event.
+:::
+
 ## Events (with event-handlers)
 
 The following is a list of events that can be specified for `event-handlers` prop.
