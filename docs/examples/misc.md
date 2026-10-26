@@ -268,42 +268,6 @@ the end.
 </template>
 </demo-tabs>
 
-## Draw a large network
-
-For networks with thousands of nodes and edges, use `v-network-graph-lite`
-(`VNetworkGraphLite`) instead of `v-network-graph`.
-It draws each node and edge as a single SVG element, so that dragging,
-zooming and a force layout run smoothly even for a large network.  
-It takes the same props as `v-network-graph` except `paths`, and its
-configs can be defined with `vNG.defineLiteConfigs()`.
-
-<demo-tabs :demo-height="500">
-<template v-slot:demo>
-  <DemoLargeNetwork />
-</template>
-<template v-slot:source>
-
-  <<< @/.vitepress/components/09_misc/11/LargeNetwork.vue{21-58,93-98}
-
-</template>
-</demo-tabs>
-
-To keep the drawing light, `v-network-graph-lite` supports only a part of
-the features of `v-network-graph`.
-
-- Supported: node shapes and their states (hover, selected), node labels,
-  dragging, selection and hover of nodes and edges, edge markers and margins,
-  multiple edges between the same nodes, z-order, custom layers, the grid,
-  box selection, the view methods and the SVG export.
-- Not supported: paths, curved edges, self-loop edges (not drawn),
-  summarized edges, edge labels, focus rings, label backgrounds, the slots
-  that replace nodes, node labels or edges, and `transitionWhile()`.
-
-While a force layout runs, the `layouts` prop is updated at most
-`view.layoutsUpdateInterval` milliseconds (300 by default) after the nodes
-are drawn, which keeps each frame light. To get the positions as they are
-drawn, call the `getLayouts()` method.
-
 <script setup>
 import DemoExportSvg from '../.vitepress/components/09_misc/01/ExportSvg.vue'
 import DemoExportSvgWithImage from '../.vitepress/components/09_misc/02/ExportSvgWithImage.vue'
@@ -315,5 +279,4 @@ import DemoViewBox from '../.vitepress/components/09_misc/07/ViewBox.vue'
 import DemoViewPropGetter from '../.vitepress/components/09_misc/08/ViewPropGetter.vue'
 import DemoNodeCollapse from '../.vitepress/components/09_misc/09/NodeCollapse.vue'
 import DemoFindShortestPath from '../.vitepress/components/09_misc/10/FindShortestPath.vue'
-import DemoLargeNetwork from '../.vitepress/components/09_misc/11/LargeNetwork.vue'
 </script>
