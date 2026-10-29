@@ -30,7 +30,7 @@ Those slots are left out, with a warning in the console.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/10_lite/01/LargeNetwork.vue{21-55,90-95}
+  <<< @/.vitepress/components/10_lite/01/LargeNetwork.vue{21-55,90-97}
 
 </template>
 </demo-tabs>

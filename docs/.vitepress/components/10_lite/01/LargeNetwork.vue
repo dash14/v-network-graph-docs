@@ -29,8 +29,8 @@ const configs = reactive(
             .id(d => d.id)
           return d3
             .forceSimulation(nodes)
-            .force("edge", forceLink.distance(20).strength(0.5))
-            .force("charge", d3.forceManyBody().strength(-40))
+            .force("edge", forceLink.distance(15).strength(0.5))
+            .force("charge", d3.forceManyBody().strength(-20))
             .force("center", d3.forceCenter().strength(0.05))
             .alphaMin(0.001)
         },
@@ -38,7 +38,7 @@ const configs = reactive(
     },
     node: {
       normal: {
-        radius: 4,
+        radius: 2,
         color: "#4466cc",
       },
       label: {
@@ -83,11 +83,13 @@ function buildNetwork(count: number, nodes: vNG.Nodes, edges: vNG.Edges) {
 <template>
   <div class="demo-control-panel">
     <label>Node count:</label>
-    <el-input-number v-model="nodeCount" :min="100" :max="3000" :step="100" />
-    <label>(&lt;= 3000)</label>
+    <el-input-number v-model="nodeCount" :min="100" :max="2000" :step="100" />
+    <label>(&lt;= 2000)</label>
   </div>
 
+  <!-- Mounted again for a new count, so that the layout starts over -->
   <v-network-graph-lite
+    :key="nodeCount"
     :zoom-level="0.2"
     :nodes="nodes"
     :edges="edges"
