@@ -58,6 +58,10 @@ const pages = {
     name: "Miscellaneous",
     url: "examples/misc.html",
   },
+  lite: {
+    name: "Lite Component",
+    url: "examples/lite.html",
+  },
 }
 
 Object.entries(pages).forEach(([key, { name, url }]) => {

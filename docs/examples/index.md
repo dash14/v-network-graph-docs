@@ -66,4 +66,11 @@ See below for live examples of various uses.
 [Miscellaneous](./misc)
 
 </div>
+<div class="example-item">
+
+[![Lite Component](/examples/lite.png)](./lite)
+
+[Lite Component](./lite)
+
+</div>
 </div>

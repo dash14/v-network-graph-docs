@@ -98,6 +98,7 @@ export default defineConfig({
           { text: "Layers", link: "/examples/layers" },
           { text: "Event Handling", link: "/examples/event" },
           { text: "Miscellaneous", link: "/examples/misc" },
+          { text: "Lite Component", link: "/examples/lite" },
         ],
       },
       {
