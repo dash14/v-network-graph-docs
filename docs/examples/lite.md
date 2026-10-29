@@ -5,8 +5,8 @@
 It draws each node and edge as a single SVG element, so that dragging,
 zooming and a force layout run smoothly even for a large network.  
 It is registered together with `v-network-graph` by `app.use(VNetworkGraph)`.
-It takes the same props as `v-network-graph` except `paths`, and its
-configs can be defined with `vNG.defineLiteConfigs()`.
+It takes the same props as `v-network-graph` except `paths` and
+`selectedPaths`, and its configs can be defined with `vNG.defineLiteConfigs()`.
 
 ## Supported features
 
@@ -15,11 +15,14 @@ the features of `v-network-graph`.
 
 - Supported: node shapes and their states (hover, selected), node labels,
   dragging, selection and hover of nodes and edges, edge markers and margins,
-  multiple edges between the same nodes, z-order, custom layers, the grid,
-  box selection, the view methods and the SVG export.
-- Not supported: paths, curved edges, self-loop edges (not drawn),
-  summarized edges, edge labels, focus rings, label backgrounds, the slots
-  that replace nodes, node labels or edges, and `transitionWhile()`.
+  multiple edges between the same nodes, self-loop edges, z-order, custom
+  layers, the grid, box selection, the view methods and the SVG export.
+- Not supported: paths, curved edges, summarized edges, edge labels, focus
+  rings, label backgrounds, the slots that replace nodes, node labels or
+  edges, and `transitionWhile()`.
+
+The props and slots it does not support are left out, with a warning in the
+console.
 
 ## Draw a large network
 
