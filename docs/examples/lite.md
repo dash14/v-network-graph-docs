@@ -2,15 +2,14 @@
 
 `v-network-graph-lite` (`VNetworkGraphLite`) is a lighter version of
 `v-network-graph` for networks with thousands of nodes and edges.
-It draws each node and edge as a single SVG element, so that dragging,
-zooming and a force layout run smoothly even for a large network.  
-It is registered together with `v-network-graph` by `app.use(VNetworkGraph)`.
-It takes the same props as `v-network-graph` except `paths` and
-`selected-paths`, and its configs can be defined with `vNG.defineLiteConfigs()`.
+It draws each node and edge as a single SVG element, so dragging, zooming
+and force layouts stay smooth with that many objects.
 
-## Supported features
+`app.use(VNetworkGraph)` registers it along with `v-network-graph`.
+It takes the same props except `paths` and `selected-paths`, and you can
+define its configs with `vNG.defineLiteConfigs()`.
 
-It supports a subset of the features of `v-network-graph`.
+## Differences from v-network-graph
 
 - Supported: node shapes and their states (hover, selected), node labels,
   dragging, selection and hover of nodes and edges, edge markers and margins,
@@ -20,9 +19,13 @@ It supports a subset of the features of `v-network-graph`.
   rings, label backgrounds, the slots `override-node`, `override-node-label`,
   `edge-overlay`, `edge-label` and `edges-label`, and `transitionWhile()`.
 
-Those slots are left out, with a warning in the console.
+If you pass one of the unsupported slots, the component ignores it and logs
+a warning to the console.
 
 ## Draw a large network
+
+The example below lays out 1000 nodes and about 1700 edges with a force
+layout. You can change the number of nodes up to 2000.
 
 <demo-tabs :demo-height="500">
 <template v-slot:demo>
@@ -35,10 +38,9 @@ Those slots are left out, with a warning in the console.
 </template>
 </demo-tabs>
 
-While a force layout runs, the `layouts` prop is updated at most
-`view.layoutsUpdateInterval` milliseconds (300 by default) after the nodes
-are drawn. To get the positions as they are drawn, call the `getLayouts()`
-method.
+While a force layout runs, the component draws the nodes first and updates
+the `layouts` prop up to `view.layoutsUpdateInterval` milliseconds later
+(300 by default). To get the positions as they are drawn, call `getLayouts()`.
 
 <script setup>
 import DemoLargeNetwork from '../.vitepress/components/10_lite/01/LargeNetwork.vue'
