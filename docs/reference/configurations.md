@@ -317,3 +317,27 @@ Values that are not specified will be used as default values.
 ```
 
 </div>
+
+## Lite component
+
+The `configs` of `<v-network-graph-lite>` take the same fields as above,
+except `path`, `node.focusring`, `node.transition`, `node.label.background`,
+`edge.type`, `edge.summarize`, `edge.summarized` and `edge.label`.
+Its `view.builtInLayerOrder` takes only `"edges"`, `"nodes"` and
+`"node-labels"`. It adds the following, and can be defined with
+`vNG.defineLiteConfigs()`.
+
+<div class="reference-configs">
+
+```ts
+{
+  view: {
+    layoutsUpdateInterval: number
+        // longest time in milliseconds by which the `layouts` prop is updated
+        // after the nodes are drawn, while a layout such as a force layout
+        // runs. default: 300
+  }
+}
+```
+
+</div>

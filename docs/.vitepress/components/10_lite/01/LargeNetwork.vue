@@ -14,8 +14,8 @@ const edges = reactive<vNG.Edges>({})
 // initialize network
 buildNetwork(nodeCount.value, nodes, edges)
 
-watch(nodeCount, () => {
-  buildNetwork(nodeCount.value, nodes, edges)
+watch(nodeCount, count => {
+  if (count) buildNetwork(count, nodes, edges)
 })
 
 const configs = reactive(

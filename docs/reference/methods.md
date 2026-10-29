@@ -3,6 +3,8 @@
 ## Instance Methods
 
 Instance methods of `<v-network-graph>` component shown below.
+`<v-network-graph-lite>` has the same methods except `transitionWhile()`,
+and has `getLayouts()` of its own.
 
 <div class="reference-table">
 
@@ -131,6 +133,14 @@ Instance methods of `<v-network-graph>` component shown below.
         When the position of a node changes within the function specified by the argument,
         a transition animation is triggered.<br />
         <code>duration</code> in milliseconds.
+      </td>
+    </tr>
+    <tr>
+      <td><em>[Lite only]</em><br/>getLayouts(): Layouts</td>
+      <td>
+        Get a copy of the positions of the nodes as they are drawn.<br />
+        While a force layout runs, the <code>layouts</code> prop is updated at most
+        <code>configs.view.layoutsUpdateInterval</code> milliseconds after the nodes are drawn.
       </td>
     </tr>
 

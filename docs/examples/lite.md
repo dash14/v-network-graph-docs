@@ -18,11 +18,10 @@ the features of `v-network-graph`.
   multiple edges between the same nodes, self-loop edges, z-order, custom
   layers, the grid, box selection, the view methods and the SVG export.
 - Not supported: paths, curved edges, summarized edges, edge labels, focus
-  rings, label backgrounds, the slots that replace nodes, node labels or
-  edges, and `transitionWhile()`.
+  rings, label backgrounds, the slots `override-node`, `override-node-label`,
+  `edge-overlay`, `edge-label` and `edges-label`, and `transitionWhile()`.
 
-The props and slots it does not support are left out, with a warning in the
-console.
+Those slots are left out, with a warning in the console.
 
 ## Draw a large network
 
