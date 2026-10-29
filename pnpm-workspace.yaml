@@ -1,6 +1,7 @@
 minimumReleaseAge: 10080 # 1 week
 
 minimumReleaseAgeExclude:
+  - "@dash14/svg-pan-zoom"
   - v-network-graph
 
 trustPolicy: no-downgrade
