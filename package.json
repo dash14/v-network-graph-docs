@@ -32,7 +32,6 @@
     "docs:build:vp": "vitepress build docs",
     "docs:link": "npm link v-network-graph",
     "docs:serve": "vitepress serve docs --port 3001",
-    "docs:publish": "./docs/.vitepress/publish.sh",
     "docs:clean": "rimraf docs/.vitepress/dist",
     "vrt:update": "playwright test --update-snapshots",
     "vrt": "playwright test",
