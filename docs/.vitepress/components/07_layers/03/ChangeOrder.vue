@@ -28,7 +28,7 @@ const initialConfig = defineConfigs({
   },
   path: {
     visible: true,
-    path: {
+    normal: {
       width: 10,
       color: "#eeaa88aa",
     },
