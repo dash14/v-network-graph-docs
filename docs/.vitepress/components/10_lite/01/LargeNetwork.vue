@@ -5,17 +5,14 @@ import {
   ForceNodeDatum,
   ForceEdgeDatum,
 } from "v-network-graph/lib/force-layout"
-import { reactive, ref, watch } from "vue"
+import { reactive, ref, shallowRef, watch } from "vue"
 
 const nodeCount = ref(1000)
-const nodes = reactive<vNG.Nodes>({})
-const edges = reactive<vNG.Edges>({})
+const network = shallowRef(buildNetwork(nodeCount.value))
 
-// initialize network
-buildNetwork(nodeCount.value, nodes, edges)
-
+// A new network for a new count, leaving the graph being replaced as it is
 watch(nodeCount, count => {
-  if (count) buildNetwork(count, nodes, edges)
+  if (count) network.value = buildNetwork(count)
 })
 
 const configs = reactive(
@@ -55,28 +52,25 @@ const configs = reactive(
 )
 
 // A tree, with each node also linked to the next of its siblings
-function buildNetwork(count: number, nodes: vNG.Nodes, edges: vNG.Edges) {
+function buildNetwork(count: number) {
   const idNums = [...Array(count)].map((_, i) => i)
 
   // nodes
-  const newNodes = Object.fromEntries(idNums.map(id => [`node${id}`, {}]))
-  Object.keys(nodes).forEach(id => delete nodes[id])
-  Object.assign(nodes, newNodes)
+  const nodes: vNG.Nodes = Object.fromEntries(idNums.map(id => [`node${id}`, {}]))
 
   // edges
   const parentOf = (n: number) => Math.floor((n - 1) / 3)
   const makeEdgeEntry = (id1: number, id2: number) => {
     return [`edge${id1}-${id2}`, { source: `node${id1}`, target: `node${id2}` }]
   }
-  const newEdges = Object.fromEntries([
+  const edges: vNG.Edges = Object.fromEntries([
     ...idNums.slice(1).map(n => makeEdgeEntry(parentOf(n), n)),
     ...idNums
       .slice(1, -1)
       .filter(n => parentOf(n) === parentOf(n + 1))
       .map(n => makeEdgeEntry(n, n + 1)),
   ])
-  Object.keys(edges).forEach(id => delete edges[id])
-  Object.assign(edges, newEdges)
+  return { count, nodes, edges }
 }
 </script>
 
@@ -87,12 +81,12 @@ function buildNetwork(count: number, nodes: vNG.Nodes, edges: vNG.Edges) {
     <label>(&lt;= 2000)</label>
   </div>
 
-  <!-- Mounted again for a new count, so that the layout starts over -->
+  <!-- Mounted again for a new network, so that the layout starts over -->
   <v-network-graph-lite
-    :key="nodeCount"
+    :key="network.count"
     :zoom-level="0.2"
-    :nodes="nodes"
-    :edges="edges"
+    :nodes="network.nodes"
+    :edges="network.edges"
     :configs="configs"
   />
 </template>

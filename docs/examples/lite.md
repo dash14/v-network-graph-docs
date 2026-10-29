@@ -2,8 +2,9 @@
 
 `v-network-graph-lite` (`VNetworkGraphLite`) is a lighter version of
 `v-network-graph` for networks with thousands of nodes and edges.
-It draws each node and edge as a single SVG element, so dragging, zooming
-and force layouts stay smooth with that many objects.
+It draws each node and edge as a single SVG element, and a node label as
+one more, so dragging, zooming and force layouts stay smooth with that many
+objects.
 
 `app.use(VNetworkGraph)` registers it along with `v-network-graph`.
 It takes the same props except `paths` and `selected-paths`, and you can
@@ -33,7 +34,7 @@ layout. You can change the number of nodes up to 2000.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/10_lite/01/LargeNetwork.vue{21-55,90-97}
+  <<< @/.vitepress/components/10_lite/01/LargeNetwork.vue{18-52,84-91}
 
 </template>
 </demo-tabs>
