@@ -4,7 +4,7 @@
 
 Instance methods of `<v-network-graph>` component shown below.
 `<v-network-graph-lite>` has the same methods except `transitionWhile()`,
-and has `getLayouts()` of its own.
+and adds `getLayouts()`.
 
 <div class="reference-table">
 

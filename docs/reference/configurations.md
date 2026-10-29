@@ -332,10 +332,8 @@ Its `view.builtInLayerOrder` takes only `"edges"`, `"nodes"` and
 ```ts
 {
   view: {
-    layoutsUpdateInterval: number
-        // longest time in milliseconds by which the `layouts` prop is updated
-        // after the nodes are drawn, while a layout such as a force layout
-        // runs. default: 300
+    layoutsUpdateInterval: number // max delay in ms of `layouts` prop updates
+                                  // while a layout runs. default: 300
   }
 }
 ```

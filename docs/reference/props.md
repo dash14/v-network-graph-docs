@@ -20,7 +20,7 @@ A prop with the Update column set to yes can receive updated data with
 a 2-way binding using `v-model:{prop name}`.
 
 `<v-network-graph-lite>` takes the same props except `paths` and
-`selected-paths`.
+`selected-paths`, and its `configs` is of type `LiteUserConfigs`.
 
 See below for definitions of the original interface types listed in the Type column.  
 (cf. https://github.com/dash14/v-network-graph/blob/main/src/common/types.ts)

@@ -6,12 +6,11 @@ It draws each node and edge as a single SVG element, so that dragging,
 zooming and a force layout run smoothly even for a large network.  
 It is registered together with `v-network-graph` by `app.use(VNetworkGraph)`.
 It takes the same props as `v-network-graph` except `paths` and
-`selectedPaths`, and its configs can be defined with `vNG.defineLiteConfigs()`.
+`selected-paths`, and its configs can be defined with `vNG.defineLiteConfigs()`.
 
 ## Supported features
 
-To keep the drawing light, `v-network-graph-lite` supports only a part of
-the features of `v-network-graph`.
+It supports a subset of the features of `v-network-graph`.
 
 - Supported: node shapes and their states (hover, selected), node labels,
   dragging, selection and hover of nodes and edges, edge markers and margins,
@@ -31,15 +30,15 @@ Those slots are left out, with a warning in the console.
 </template>
 <template v-slot:source>
 
-  <<< @/.vitepress/components/10_lite/01/LargeNetwork.vue{21-58,93-98}
+  <<< @/.vitepress/components/10_lite/01/LargeNetwork.vue{21-55,90-95}
 
 </template>
 </demo-tabs>
 
 While a force layout runs, the `layouts` prop is updated at most
 `view.layoutsUpdateInterval` milliseconds (300 by default) after the nodes
-are drawn, which keeps each frame light. To get the positions as they are
-drawn, call the `getLayouts()` method.
+are drawn. To get the positions as they are drawn, call the `getLayouts()`
+method.
 
 <script setup>
 import DemoLargeNetwork from '../.vitepress/components/10_lite/01/LargeNetwork.vue'

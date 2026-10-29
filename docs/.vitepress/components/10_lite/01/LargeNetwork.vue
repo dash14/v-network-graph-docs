@@ -41,9 +41,6 @@ const configs = reactive(
         radius: 4,
         color: "#4466cc",
       },
-      hover: {
-        radius: 6,
-      },
       label: {
         visible: false,
       },
