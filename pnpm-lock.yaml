@@ -303,8 +303,8 @@ importers:
         specifier: ^0.11.2
         version: 0.11.2
       v-network-graph:
-        specifier: ^0.9.23
-        version: 0.9.23(d3-force@3.0.0)(vue@3.5.34(typescript@5.9.3))
+        specifier: ^0.10.1
+        version: 0.10.1(d3-force@3.0.0)(vue@3.5.34(typescript@5.9.3))
       vite:
         specifier: ^7.3.3
         version: 7.3.3(@types/node@24.12.3)(jiti@2.6.1)(sass@1.99.0)
@@ -426,8 +426,8 @@ packages:
     resolution: {integrity: sha512-kzyuwOAQnXJNLS9PSyrk0CWk35nWJW/zl/6KvnTBMFK65gm7U1/Z5BqjxeapjZCIhQcM/DsrEmcbRwDyXyXK4A==}
     engines: {node: '>=14'}
 
-  '@dash14/svg-pan-zoom@3.6.9':
-    resolution: {integrity: sha512-6u+KTQec+9+3bRdk2mReix8AGsp2mB40cw0iYfQQzo22QBkeCNpXl2amnfwQzK7xB9oH/62Wvf2z7l6l2w+csA==}
+  '@dash14/svg-pan-zoom@4.0.1':
+    resolution: {integrity: sha512-2xEURmdxr/ygYx11Y3J2u1+t6+aKet6xI2wyJH8EaJCvUTsAx/KG6WvUCez0Q7s2OfrP9cH7TA22ozHIlh0+kA==}
 
   '@docsearch/css@3.8.2':
     resolution: {integrity: sha512-y05ayQFyUmCXze79+56v/4HpycYF3uFqB78pLPrSV5ZKAlDuIAAJNhaRi8tTdRNXh05yxX/TyNnzD6LwSM89vQ==}
@@ -2706,8 +2706,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  v-network-graph@0.9.23:
-    resolution: {integrity: sha512-DByEHnwjTxgOjpyxEW48PyWTLTYcAxGtzMg6EW1dL5Jntx1OxP07NUzFjPB8IN1Qjerd6mqRrLphJCWubXnHPw==}
+  v-network-graph@0.10.1:
+    resolution: {integrity: sha512-FDTEdpxSwXc6Q19uOdmg8m7YLE8q/DogmO6QqX6Qv+mqUTIuvncRddeex9KJy3TkP/dFrHwcfODzysxjTaDWsA==}
     peerDependencies:
       d3-force: ^3.0.0
       vue: ^3.5.13
@@ -3024,7 +3024,7 @@ snapshots:
 
   '@ctrl/tinycolor@4.2.0': {}
 
-  '@dash14/svg-pan-zoom@3.6.9': {}
+  '@dash14/svg-pan-zoom@4.0.1': {}
 
   '@docsearch/css@3.8.2': {}
 
@@ -4947,9 +4947,9 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  v-network-graph@0.9.23(d3-force@3.0.0)(vue@3.5.34(typescript@5.9.3)):
+  v-network-graph@0.10.1(d3-force@3.0.0)(vue@3.5.34(typescript@5.9.3)):
     dependencies:
-      '@dash14/svg-pan-zoom': 3.6.9
+      '@dash14/svg-pan-zoom': 4.0.1
       lodash-es: 4.18.1
       mitt: 3.0.1
       vue: 3.5.34(typescript@5.9.3)
