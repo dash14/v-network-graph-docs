@@ -1,7 +1,7 @@
 minimumReleaseAge: 10080 # 1 week
 
 minimumReleaseAgeExclude:
-  - "@dash14/svg-pan-zoom"
+  - "@dash14/svg-pan-zoom" # Our own fork, a dependency of v-network-graph
   - v-network-graph
 
 trustPolicy: no-downgrade
