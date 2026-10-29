@@ -59,7 +59,7 @@ const configs = defineConfigs({
   path: {
     visible: true,
     curveInNode: true,
-    path: {
+    normal: {
       width: 14,
       color: "#ff000088",
     },

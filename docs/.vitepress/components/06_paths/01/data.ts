@@ -64,7 +64,7 @@ const configs = defineConfigs({
   },
   path: {
     visible: true,
-    path: {
+    normal: {
       width: 10,
     },
   },
