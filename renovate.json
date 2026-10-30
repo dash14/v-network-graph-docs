@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "description": [
+    "lockFileMaintenance is how transitive dependencies get updated at all. It has no release timestamp, so Renovate's minimumReleaseAge would keep it pending forever and is \"0 days\" there; pnpm applies the one in pnpm-workspace.yaml when it regenerates the lockfile.",
+    "lockFileMaintenance has its own default schedule, so it repeats the weekly one."
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["* * * * 6"],
+  "minimumReleaseAge": "7 days",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["* * * * 6"],
+    "minimumReleaseAge": "0 days"
+  },
+  "packageRules": [
+    {
+      "description": "The library these docs document, exempt from minimumReleaseAge in pnpm-workspace.yaml too, so a new release lands right away.",
+      "matchPackageNames": ["v-network-graph"],
+      "minimumReleaseAge": "0 days",
+      "schedule": ["at any time"]
+    },
+    {
+      "description": "TypeScript 7 ships no JS API yet, and vue-tsc and typescript-eslint run on it.",
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<7"
+    }
+  ]
+}
