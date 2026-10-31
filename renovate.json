@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
   "description": [
     "lockFileMaintenance is how transitive dependencies get updated at all. It has no release timestamp, so Renovate's minimumReleaseAge would keep it pending forever and is \"0 days\" there; pnpm applies the one in pnpm-workspace.yaml when it regenerates the lockfile.",
     "lockFileMaintenance has its own default schedule, so it repeats the weekly one."

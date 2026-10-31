@@ -4,6 +4,7 @@ lib
 *.local
 /docs/.vitepress/dist
 /docs/.vitepress/cache
+/docs/.temp
 /tests/*.spec.ts-snapshots
 /test-results
 /playwright-report
