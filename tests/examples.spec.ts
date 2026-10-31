@@ -97,7 +97,7 @@ Object.entries(pages).forEach(([key, { name, url, mask }]) => {
           // Give the masked box a fixed size so the mask does not depend on its content
           ...(mask && {
             mask: [page.locator(mask)],
-            style: `${mask} { left: 10px !important; height: 66px; overflow: hidden; }`,
+            style: `${mask} { width: 300px; height: 22px; overflow: hidden; }`,
           }),
         })
       ).toMatchSnapshot(`examples-${key}.png`, {
