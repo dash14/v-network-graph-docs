@@ -79,6 +79,103 @@ jobs:
           - name: Build
             run: pnpm run docs:build
 
+  # Screenshots the pages in tests/ in Chromium. Runs on main save them as the baseline, and other runs
+  # compare against the latest one.
+  vrt:
+    name: Visual regression test
+    # Pinned, as a newer image renders fonts differently from the baseline.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      actions: read
+      contents: read
+    env:
+      BASELINE_BRANCH: main
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: package.json
+
+      - name: Locate the pnpm store
+        id: pnpm-store
+        run: echo "path=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
+
+      # Only restored: the test job saves the store.
+      - name: Restore the pnpm store
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ steps.pnpm-store.outputs.path }}
+          key: pnpm-store-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: ${{ github.ref != 'refs/heads/main' && format('pnpm-store-{0}-', runner.os) || '' }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Playwright reads and writes the snapshots here instead of next to the tests.
+      - name: Set the snapshot directory
+        run: echo "VRT_SNAPSHOT_DIR=$RUNNER_TEMP/vrt-snapshots" >> "$GITHUB_ENV"
+
+      - parallel:
+          - name: Build
+            run: pnpm run docs:build
+
+          - name: Install Chromium
+            run: pnpm exec playwright install --with-deps chromium
+
+      - name: Take the baseline
+        if: github.ref == format('refs/heads/{0}', env.BASELINE_BRANCH)
+        run: pnpm exec playwright test --project=chromium --update-snapshots=all --reporter=list
+
+      - name: Upload the baseline
+        if: github.ref == format('refs/heads/{0}', env.BASELINE_BRANCH)
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: vrt-snapshots
+          path: ${{ env.VRT_SNAPSHOT_DIR }}
+          if-no-files-found: error
+          retention-days: 90
+
+      # Only runs on the baseline branch upload the artifact, so pull requests from forks cannot
+      # plant one. Without a baseline, for example before the first run on main, it skips the
+      # comparison rather than failing every pull request.
+      - name: Download the baseline
+        id: baseline
+        if: github.ref != format('refs/heads/{0}', env.BASELINE_BRANCH)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          run_id=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=vrt-snapshots&per_page=100" \
+            --jq "[.artifacts[] | select(.workflow_run.head_branch == \"$BASELINE_BRANCH\" and (.expired | not))][0].workflow_run.id // empty")
+          if [ -z "$run_id" ]; then
+            echo "::warning::No baseline from $BASELINE_BRANCH, so the screenshots are not compared. Run this workflow on $BASELINE_BRANCH to take one."
+            exit 0
+          fi
+          echo "Comparing against the baseline from run $run_id"
+          gh run download "$run_id" --repo "$GITHUB_REPOSITORY" --name vrt-snapshots --dir "$VRT_SNAPSHOT_DIR"
+          echo "found=true" >> "$GITHUB_OUTPUT"
+
+      - name: Compare with the baseline
+        if: steps.baseline.outputs.found == 'true'
+        run: pnpm exec playwright test --project=chromium --update-snapshots=none --reporter=list,html
+
+      # The HTML report shows the expected, actual and diff images of each failure.
+      - name: Upload the report
+        if: failure() && steps.baseline.outputs.found == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: vrt-report
+          path: playwright-report/
+          if-no-files-found: ignore
+
   # A single, stably named job for branch protection to require.
   tests-passed:
     name: Tests passed
