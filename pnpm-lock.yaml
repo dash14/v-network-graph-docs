@@ -253,7 +253,7 @@ importers:
         version: 0.8.5
       date-fns:
         specifier: ^4.1.0
-        version: 4.1.0
+        version: 4.4.0
       element-plus:
         specifier: ^2.14.0
         version: 2.14.7(vue@3.5.44(typescript@5.9.3))
@@ -1757,8 +1757,8 @@ packages:
   dagre@0.8.5:
     resolution: {integrity: sha512-/aTqmnRta7x7MCCpExk7HQL2O4owCT2h8NT//9I1OQ9vt29Pa0BzSAkR5lwFUcQ7491yVi/3CXU9jQ5o0Mn2Sw==}
 
-  date-fns@4.1.0:
-    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
+  date-fns@4.4.0:
+    resolution: {integrity: sha512-+1UMbeh68lH1SegH83CGWwpb6OHHbpSgr3+s5Eww5M4CAgswBpoWS0AjTOfEJ33HiYKz1hdj/KTFprzXHmq/6w==}
 
   dayjs@1.11.23:
     resolution: {integrity: sha512-QDTCU0M0MxR3hQfnlDJfwekQiaanm1ubOD231u73WBckQ/fsamwRLiE2GBz6D3a/xF1NgfiDLJjXBa1hYOYTtQ==}
@@ -4068,7 +4068,7 @@ snapshots:
       graphlib: 2.1.8
       lodash: 4.18.1
 
-  date-fns@4.1.0: {}
+  date-fns@4.4.0: {}
 
   dayjs@1.11.23: {}
 
