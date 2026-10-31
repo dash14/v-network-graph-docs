@@ -144,20 +144,31 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
-      # Only runs on the baseline branch upload the artifact, so pull requests from forks cannot
-      # plant one. Without a baseline, for example before the first run on main, it skips the
-      # comparison rather than failing every pull request.
+      # Takes artifacts only from runs of this repository, as a pull request from a fork can change
+      # this workflow to upload one from its own branch named main. Prefers the baseline of the
+      # commit the pull request is merged into, as the latest one may be from an earlier commit
+      # while main is running.
+      # Without a baseline, for example before the first run on main, it skips the comparison
+      # rather than failing every pull request.
       - name: Download the baseline
         id: baseline
         if: github.ref != format('refs/heads/{0}', env.BASELINE_BRANCH)
         env:
           GH_TOKEN: ${{ github.token }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
-          run_id=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=vrt-snapshots&per_page=100" \
-            --jq "[.artifacts[] | select(.workflow_run.head_branch == \"$BASELINE_BRANCH\" and (.expired | not))][0].workflow_run.id // empty")
+          runs=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=vrt-snapshots&per_page=100" \
+            --jq "[.artifacts[] | select(.workflow_run.head_branch == \"$BASELINE_BRANCH\" and .workflow_run.head_repository_id == .workflow_run.repository_id and (.expired | not)) | .workflow_run]")
+          run_id=$(jq -r --arg sha "$BASE_SHA" '[.[] | select(.head_sha == $sha)][0].id // empty' <<< "$runs")
           if [ -z "$run_id" ]; then
-            echo "::warning::No baseline from $BASELINE_BRANCH, so the screenshots are not compared. Run this workflow on $BASELINE_BRANCH to take one."
-            exit 0
+            run_id=$(jq -r '.[0].id // empty' <<< "$runs")
+            if [ -z "$run_id" ]; then
+              echo "::warning::No baseline from $BASELINE_BRANCH, so the screenshots are not compared. Run this workflow on $BASELINE_BRANCH to take one."
+              exit 0
+            fi
+            if [ -n "$BASE_SHA" ]; then
+              echo "::warning::No baseline for $BASE_SHA yet, so the screenshots are compared with an older one. Rerun this job after the run on $BASELINE_BRANCH finishes if they differ."
+            fi
           fi
           echo "Comparing against the baseline from run $run_id"
           gh run download "$run_id" --repo "$GITHUB_REPOSITORY" --name vrt-snapshots --dir "$VRT_SNAPSHOT_DIR"
