@@ -12,7 +12,9 @@ on:
       - main
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  # Runs outside pull requests are grouped by commit, so that a later merge does not cancel or
+  # replace the run of an earlier one.
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: true
 
 permissions: {}
