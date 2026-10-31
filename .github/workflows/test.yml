@@ -6,6 +6,8 @@ on:
   pull_request:
     branches:
       - main
+    # Adding or removing the "vrt-approved" label reruns the visual regression test.
+    types: [opened, synchronize, reopened, labeled, unlabeled]
   # Catches breakage from pull requests that pass on their own but not together.
   push:
     branches:
@@ -80,7 +82,9 @@ jobs:
             run: pnpm run docs:build
 
   # Screenshots the pages in tests/ in Chromium. Runs on main save them as the baseline, and other runs
-  # compare against the latest one.
+  # compare against the latest one. A pull request that changes the screenshots on purpose passes once
+  # the "vrt-approved" label is added after reviewing the differences; the comparison still runs and
+  # lists them. A new push revokes the approval.
   vrt:
     name: Visual regression test
     # Pinned, as a newer image renders fonts differently from the baseline.
@@ -91,6 +95,7 @@ jobs:
       contents: read
     env:
       BASELINE_BRANCH: main
+      APPROVED: ${{ contains(github.event.pull_request.labels.*.name, 'vrt-approved') && github.event.action != 'synchronize' }}
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -175,23 +180,66 @@ jobs:
           echo "found=true" >> "$GITHUB_OUTPUT"
 
       - name: Compare with the baseline
+        id: compare
         if: steps.baseline.outputs.found == 'true'
-        run: pnpm exec playwright test --project=chromium --update-snapshots=none --reporter=list,html
+        continue-on-error: true
+        env:
+          PLAYWRIGHT_JSON_OUTPUT_FILE: ${{ runner.temp }}/vrt-results.json
+        run: pnpm exec playwright test --project=chromium --update-snapshots=none --reporter=list,html,json
+
+      - name: List the differences
+        if: steps.compare.outcome == 'failure'
+        run: |
+          {
+            echo "### Screenshots that differ from the baseline"
+            jq -r '.. | objects | select(has("specs")) as $suite | $suite.specs[] | select(.ok | not) | "- \($suite.title) › \(.title)"' \
+              "$RUNNER_TEMP/vrt-results.json"
+            if [ "$APPROVED" = "true" ]; then
+              echo "Approved with the \"vrt-approved\" label."
+            else
+              echo "Review them in the vrt-report artifact. If they are intended, add the \"vrt-approved\" label."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
       # The HTML report shows the expected, actual and diff images of each failure.
       - name: Upload the report
-        if: failure() && steps.baseline.outputs.found == 'true'
+        if: steps.compare.outcome == 'failure'
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: vrt-report
           path: playwright-report/
           if-no-files-found: ignore
 
+      - name: Check the comparison
+        if: steps.compare.outcome == 'failure' && env.APPROVED != 'true'
+        run: |
+          echo "::error::The screenshots differ from the baseline. Add the \"vrt-approved\" label if the differences are intended."
+          exit 1
+
+  # Removes the label on a new push, so an approval covers only the differences it was given for.
+  # Labels removed with this token start no new run.
+  revoke-vrt-approval:
+    name: Revoke the visual regression test approval
+    if: >-
+      github.event.action == 'synchronize' &&
+      contains(github.event.pull_request.labels.*.name, 'vrt-approved') &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Remove the label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: gh api --method DELETE "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/labels/vrt-approved"
+
   # A single, stably named job for branch protection to require.
   tests-passed:
     name: Tests passed
     runs-on: ubuntu-latest
-    needs: [test]
+    needs: [test, vrt]
     if: always()
     permissions: {}
     steps:
