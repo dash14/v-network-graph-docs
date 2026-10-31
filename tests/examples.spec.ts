@@ -21,7 +21,7 @@ test("VRT: Examples", async ({ page }) => {
   )
 })
 
-const pages = {
+const pages: Record<string, { name: string; url: string; mask?: string }> = {
   basic: {
     name: "Basic Usage",
     url: "examples/basic.html",
@@ -53,6 +53,9 @@ const pages = {
   event: {
     name: "Event Handling",
     url: "examples/event.html",
+    // A full-page screenshot resizes the viewport, and whether the events
+    // logged for it make the capture is a race
+    mask: ".event-logs",
   },
   misc: {
     name: "Miscellaneous",
@@ -64,7 +67,7 @@ const pages = {
   },
 }
 
-Object.entries(pages).forEach(([key, { name, url }]) => {
+Object.entries(pages).forEach(([key, { name, url, mask }]) => {
   test.describe("VRT: Examples: Preview", () => {
     test(name, async ({ page, browserName }) => {
       // Moving dashes, timestamps, random labels and d3-force layouts keep
@@ -91,6 +94,11 @@ Object.entries(pages).forEach(([key, { name, url }]) => {
           ...config.snapshot,
           // A fake clock does not drive CSS animations, so stop them instead
           animations: "disabled",
+          // Give the masked box a fixed size so the mask does not depend on its content
+          ...(mask && {
+            mask: [page.locator(mask)],
+            style: `${mask} { width: 300px; height: 22px; overflow: hidden; }`,
+          }),
         })
       ).toMatchSnapshot(`examples-${key}.png`, {
         threshold: 0.5,
