@@ -29,8 +29,7 @@ on the network graph by setting a value to the same prop.
 </demo-tabs>
 
 :::tip
-It is also available to select nodes by enclosing them in a rectangle
-by dragging.
+You can also select nodes by dragging a rectangle around them.
 See [below](#select-nodes-at-once-with-a-rectangle) for details.
 :::
 
@@ -159,21 +158,19 @@ possible to select individual summarized edges.
 </template>
 </demo-tabs>
 
-Whether or not to aggregate can be specified by a function that
-returns a boolean or a boolean value, as specified in the
-configuration `edge.summarize`.
+To control whether edges are summarized, set `configs.edge.summarize`
+to a boolean or to a function that returns one.
 
 ## Select nodes at once with a rectangle
 
-There is a feature that enables selection of nodes within the
-rectangle of the dragged area at once. This is accomplished
-by changing to a different mode ("box-selection" mode) than
-normal to distinguish it from dragging for panning operations.
+You can select all nodes inside a dragged rectangle at once.
+Since dragging the background normally pans the view, this works
+in a separate mode called "box-selection" mode.
 
 In the following example, clicking the "Start to select" button
-starts the "box-selection" mode. Then, dragging pointer is released
-(pointerup) or the Escape key is pressed, the mode is exited and
-the mode returns to accepting regular pointer operations.
+starts the "box-selection" mode. Releasing the pointer after dragging
+(pointerup) or pressing the Escape key exits the mode, and pointer
+operations work as usual again.
 If "Start with Ctrl/Cmd key" is checked, pressing the Cmd key on
 a Mac or Ctrl key otherwise will automatically start "box-selection"
 mode.
@@ -201,8 +198,7 @@ configuration.
 
 In the example above, the "box-selection" mode was automatically
 exited when the user finished dragging, but in the example below,
-the mode will continue until the user intentionally performs a
-exit operation.
+the mode continues until the user exits it explicitly.
 
 "box-selection" mode exit operation:
 * Click on the view area
@@ -235,8 +231,8 @@ and deselects those that are selected).
 If you do not want to exit "box-selection" mode even by clicking or
 pressing the Escape key, specify `{ stop: "manual" }` to the
 `startBoxSelection()` method.
-In this way it will not be exited "box-selection" mode unless you
-call the `stopBoxSelection()` method.
+The mode then exits only when you call the `stopBoxSelection()`
+method.
 :::
 
 

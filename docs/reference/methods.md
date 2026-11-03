@@ -2,7 +2,7 @@
 
 ## Instance Methods
 
-Instance methods of `<v-network-graph>` component shown below.
+The instance methods of the `<v-network-graph>` component are shown below.
 `<v-network-graph-lite>` has the same methods except `transitionWhile()`,
 and adds `getLayouts()`.
 
@@ -138,7 +138,8 @@ and adds `getLayouts()`.
     <tr>
       <td><em>[Lite only]</em><br/>getLayouts(): Layouts</td>
       <td>
-        Get a copy of the positions of the nodes as they are drawn.<br />
+        Get a copy of the positions of the nodes as they are drawn, for example to
+        save them while a force layout is moving the nodes.<br />
         While a force layout runs, the <code>layouts</code> prop is updated at most
         <code>configs.view.layoutsUpdateInterval</code> milliseconds after the nodes are drawn.
       </td>

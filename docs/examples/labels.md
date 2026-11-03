@@ -139,7 +139,8 @@ Return value:
 
 ## Edge labels
 
-For edge labels, use slots similar to custom labels for nodes.
+Edge labels are drawn with the `edge-label` slot, in the same way
+as the `override-node-label` slot for nodes.
 
 <demo-tabs :use-data="true">
 <template v-slot:demo>
