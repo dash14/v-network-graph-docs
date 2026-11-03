@@ -52,9 +52,9 @@ Add css to `nuxt.config.ts`
 
 ```ts
 // nuxt.config.ts
-import { defineNuxtConfig } from "nuxt3"
+import { defineNuxtConfig } from "nuxt/config"
 
-// https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
+// https://nuxt.com/docs/api/nuxt-config
 export default defineNuxtConfig({
   css: ["v-network-graph/lib/style.css"],
 })

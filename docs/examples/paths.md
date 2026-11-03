@@ -32,7 +32,7 @@ from the default.
 :::
 
 ::: tip
-By default, the path color is automatically selected from a several
+By default, the path color is automatically selected from several
 colors, but the same color may be selected for some paths. It is
 also possible to specify colors individually, see the following sample.
 :::

@@ -23,7 +23,7 @@ be displayed as labels, and change the display position.
 
 :::tip
 In the above example, the key in the node object is specified as
-`configs.node.text`. Instead of a key, you can also specify a
+`configs.node.label.text`. Instead of a key, you can also specify a
 function that returns a string with the node object as an argument
 (`(node) => string`).  If so, the return value of the executed
 function will be displayed as a label.

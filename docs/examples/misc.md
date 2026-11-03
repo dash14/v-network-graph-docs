@@ -54,7 +54,7 @@ An example using images also shown in
 </demo-tabs>
 
 :::tip
-Performing `exportAsSvgData()` instead of `exportAsSvgText()` will get a DOM object.
+Calling `exportAsSvgElement()` instead of `exportAsSvgText()` returns an SVG element.
 After manipulating the DOM (e.g., removing unwanted elements or rewriting attributes),
 you can retrieve the SVG string from `outerHTML`.
 :::
@@ -191,7 +191,7 @@ However, it is possible to specify a function by using
 of JavaScript.
 
 In the following example, the configuration specifies a function
-that changes whether panning/zooming is enabled depending on the
+that changes whether panning/zooming is enabled depending on
 the state of shift/ctrl key presses.
 
 <demo-tabs :demo-height="250" :use-data="true">

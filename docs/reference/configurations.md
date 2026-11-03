@@ -176,6 +176,7 @@ Values that are not specified will be used as default values.
         // func : function to calculate gap from edge list between nodes.
         // default: 3
     type: "straight" | "curve" // edge type when there are multiple edges between the nodes.
+                               // default: "straight"
     marker: {
       source: {
         // * These fields can also be specified with the function as `(args: [Edge, StrokeStyle]) => value`.
@@ -240,7 +241,7 @@ Values that are not specified will be used as default values.
       radius: number       // radius of edge. default: 12
       isClockwise: boolean // whether the arc is clockwise or not. default: true
       offset: number       // distance to node. default: 10
-      angle:               // angle from node to be displayed. default: 270
+      angle: number        // angle from node to be displayed. default: 270
     }
     keepOrder: "clock" | "vertical" | "horizontal"
       // orientation to be considered when keeping multiple edge alignments.
@@ -268,7 +269,7 @@ Values that are not specified will be used as default values.
     }
     zOrder: {
       enabled: boolean  // whether the z-order control is enable or not. default: false
-      zIndex: number | (node: Node) => number // edge's z-index value.   default: 0
+      zIndex: number | (edge: Edge) => number // edge's z-index value.   default: 0
       bringToFrontOnHover: boolean    // whether to bring to front on hover.    default: true
       bringToFrontOnSelected: boolean // whether to bring to front on selected. default: true
     }
@@ -307,7 +308,7 @@ Values that are not specified will be used as default values.
         // }
     zOrder: {
       enabled: boolean  // whether the z-order control is enable or not. default: false
-      zIndex: number | (node: Node) => number // path's z-index value.   default: 0
+      zIndex: number | (path: Path) => number // path's z-index value.   default: 0
       bringToFrontOnHover: boolean    // whether to bring to front on hover.    default: true
       bringToFrontOnSelected: boolean // whether to bring to front on selected. default: true
     }
