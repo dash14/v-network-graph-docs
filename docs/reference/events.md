@@ -42,12 +42,12 @@ The following is a list of events that can be specified for `event-handlers` pro
     </tr>
     <tr>
       <td>"view:unload"</td>
-      <td>mouse mode changed</td>
+      <td>component unloaded</td>
       <td><code>undefined</code></td>
     </tr>
     <tr>
       <td>"view:mode"</td>
-      <td>component unloaded</td>
+      <td>mouse mode changed</td>
       <td><code>"default"</code> / <code>"node"</code> / <code>"edge"</code></td>
     </tr>
     <tr>
@@ -57,11 +57,11 @@ The following is a list of events that can be specified for `event-handlers` pro
         <code>{ event: MouseEvent }</code><br />
         When a double click occurs, the "view:click" event is fired twice.
         If you want to determine the second click that is judged to be a
-        double click, you can use the value of <code>event.detail`</code>.
+        double click, you can use the value of <code>event.detail</code>.
         (When it is a double click, the value will be 2.)<br />
         <br />
         By default, double-clicking the background will zoom it.
-        To disable this behavior, set <code>view.doubleClickZoomEnabled"</code>
+        To disable this behavior, set <code>view.doubleClickZoomEnabled</code>
         to <code>false</code> in Configuration.
       </td>
     </tr>
@@ -105,7 +105,7 @@ The following is a list of events that can be specified for `event-handlers` pro
         <code>{ node: string, event: MouseEvent }</code><br />
         When a double click occurs, the "node:click" event is fired twice.
         If you want to determine the second click that is judged to be a
-        double click, you can use the value of <code>event.detail`</code>.
+        double click, you can use the value of <code>event.detail</code>.
         (When it is a double click, the value will be 2.)
       </td>
     </tr>
@@ -170,7 +170,7 @@ The following is a list of events that can be specified for `event-handlers` pro
         <br />
         When a double click occurs, the "edge:click" event is fired twice.
         If you want to determine the second click that is judged to be a
-        double click, you can use the value of <code>event.detail`</code>.
+        double click, you can use the value of <code>event.detail</code>.
         (When it is a double click, the value will be 2.)
       </td>
     </tr>
@@ -219,10 +219,10 @@ The following is a list of events that can be specified for `event-handlers` pro
       <td>"path:click"</td>
       <td>path clicked</td>
       <td rowspan="2">
-        <code>{ path: Path, event: MouseEvent }</code><br />
+        <code>{ path: PATH_ID, event: MouseEvent }</code><br />
         When a double click occurs, the "path:click" event is fired twice.
         If you want to determine the second click that is judged to be a
-        double click, you can use the value of <code>event.detail`</code>.
+        double click, you can use the value of <code>event.detail</code>.
       </td>
     </tr>
     <tr>
@@ -251,7 +251,7 @@ The following is a list of events that can be specified for `event-handlers` pro
     <tr>
       <td>"path:contextmenu"</td>
       <td>path right-clicked</td>
-      <td><code>{ path: Path, event: MouseEvent }</code></td>
+      <td><code>{ path: PATH_ID, event: MouseEvent }</code></td>
     </tr>
     <tr>
       <td>"path:select"</td>

@@ -90,7 +90,7 @@ do by using the `override-node-label` slot.
 </demo-tabs>
 
 An example of specifying an image instead of an icon is shown below.  
-The images of the faces ware created https://generated.photos/.
+The images of the faces were created by https://generated.photos/.
 
 <demo-tabs :use-data="true">
 <template v-slot:demo>

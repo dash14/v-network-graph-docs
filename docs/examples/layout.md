@@ -76,9 +76,6 @@ will return it to the position of the d3-force calculation result.
 </template>
 </demo-tabs>
 
-Currently, the `d3-force` package is bundled, so you do not need
-to install it in your application.
-
 
 ## Fix the position of a specific node in the force layout
 

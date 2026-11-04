@@ -87,7 +87,7 @@ See the "[Configurations](./configurations.md)" page.
 
 ```js
 {
-  "LAYER_ID": POSITION, // "paths" | "nodes" | "focusring" | "edges" | "base" | "grid" | "background" | "root"
+  "LAYER_ID": POSITION, // "paths" | "node-labels" | "nodes" | "focusring" | "edge-labels" | "edges" | "base" | "grid" | "background" | "root"
   ...
 }
 ```
@@ -95,7 +95,7 @@ See the "[Configurations](./configurations.md)" page.
 The layer specified by `"LAYER_ID"` will be placed above the layer
 specified by `POSITION`.  
 The actual drawing of the layer is done using v-slots.
-Examples are in preparation.
+See the [Layers](../examples/layers.md) examples.
 
 ### EventHandlers:
 

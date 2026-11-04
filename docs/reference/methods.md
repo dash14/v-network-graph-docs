@@ -57,7 +57,7 @@ and adds `getLayouts()`.
     <tr>
       <td>getSizes(): Sizes</td>
       <td>
-        Get all calculate svg dimensions. <br>
+        Get all calculated svg dimensions. <br>
         Sizes: <code>{width, height, viewBox:{x, y, width, height}}</code>
       </td>
     </tr>
