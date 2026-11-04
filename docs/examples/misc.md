@@ -213,13 +213,11 @@ the state of shift/ctrl key presses.
 
 ## Node expand/collapse
 
-For the implementation of node expand and collapse, the structure of node
-relationships is a tree structure, which is a type of graph structure.
-This means that the parent-child relationship needs to be included in the
-data, and there are restrictions such as not circulating edges in the part
-of tree structure.  
-To keep the generality and simplicity of the library, please handle these
-things on the application.
+v-network-graph does not provide node expand/collapse itself.
+Collapsing a node means hiding its descendants, so the nodes involved
+must form a tree: the data needs parent-child relationships, and edges
+in that part must not form a cycle. To keep the library general and
+simple, these rules are left to the application.
 
 The following is an example of creating a partially tree-structured graph and
 passing it to v-network-graph so that the parent node can collapse its child nodes.

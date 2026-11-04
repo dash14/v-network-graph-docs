@@ -15,9 +15,10 @@
 </div>
 
 ::: tip
-The graph checks for an `update:layouts` listener once, when it is created, and skips tracking
-the node positions for this event when there is none. A listener added later, for example by a
-`v-on` object that changes after mounting, does not receive the event.
+Set the `update:layouts` listener (or `v-model:layouts`) when the graph is created. The graph
+checks for the listener only once, at creation, and does not track node positions for this event
+when there is none. A listener added later, for example by a `v-on` object that changes after
+mounting, does not receive the event.
 :::
 
 ## Events (with event-handlers)

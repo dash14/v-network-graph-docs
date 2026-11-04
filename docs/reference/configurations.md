@@ -10,7 +10,8 @@ Values that are not specified will be used as default values.
 ```ts
 {
   view: {
-    scalingObjects: boolean // whether to expand the entire object.    default: false
+    scalingObjects: boolean // whether zooming also scales nodes, labels and edges.
+                            // default: false
     panEnabled: boolean     // whether the pan is enabled or not.      default: true
     zoomEnabled: boolean    // whether the zoom is enabled or not.     default: true
     minZoomLevel: number    // minimum zoom level.                     default: 0.1
@@ -127,7 +128,7 @@ Values that are not specified will be used as default values.
                  "south-west" | "west" | "north-west"
                  // node label display direction. default: "south"
       directionAutoAdjustment: boolean | (params: NodeLabelDirectionHandlerParams) => NodeLabelDirectionType
-                 // whether auto adjustment node label display position. default: false
+                 // whether to adjust the label direction automatically. default: false
       text: string    // field name in the node object to use as the label. default: "name"
                       // if function is specified the return value is string of label.
     }
@@ -325,8 +326,9 @@ The `configs` of `<v-network-graph-lite>` take the same fields as above,
 except `path`, `node.focusring`, `node.transition`, `node.label.background`,
 `edge.type`, `edge.summarize`, `edge.summarized` and `edge.label`.
 Its `view.builtInLayerOrder` takes only `"edges"`, `"nodes"` and
-`"node-labels"`. It adds the following, and can be defined with
-`vNG.defineLiteConfigs()`.
+`"node-labels"`. It also has the following field. To get type checking,
+define the configs with `vNG.defineLiteConfigs()`, where `vNG` is
+`import * as vNG from "v-network-graph"`.
 
 <div class="reference-configs">
 

@@ -7,8 +7,6 @@ edges between the same nodes.
 
 ## Basic
 
-A simple example is shown below.
-
 <demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoBasic />

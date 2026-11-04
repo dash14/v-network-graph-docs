@@ -76,7 +76,7 @@ This is an example of adding an SVG layer to the foreground of the nodes layer.
 
 The following is a list of the built-in layers of this library and the layers of
 which the order can be changed.  
-The higher layer is on the list, the more it appears in the foreground by default.
+By default, a layer higher in the list is drawn in front of the ones below it.
 
 <div class="reference-table">
 

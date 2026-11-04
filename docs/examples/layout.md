@@ -95,8 +95,9 @@ the node will be fixed without the effect of force layout.
 
 ## Enable and disable force layout
 
-Force layout is good for demo but sometimes annoying when we
-want to observe a single node. So we can enable it first then disable it later.
+Nodes keep moving while the force layout runs, which can get in the
+way when you want to look at a particular node. You can enable the
+force layout first and disable it later.
 
 <demo-tabs>
 <template v-slot:demo>

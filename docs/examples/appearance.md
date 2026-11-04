@@ -61,8 +61,8 @@ be reflected by changing the data of reactive data.
 ## Custom Node
 
 In case you want to change not only the shape of the node, but
-also its elements and behavior, it is now possible to replace
-the components of the node.
+also its elements and behavior, you can replace the components
+of the node.
 
 The following is an example of replacing the default node
 component with a combination of a circle and an icon.  

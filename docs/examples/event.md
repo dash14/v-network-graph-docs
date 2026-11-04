@@ -74,7 +74,7 @@ const eventHandlers: EventHandlers = {
 v-network-graph does not have the ability to show a context menu,
 but it can capture the right-clicking event (`"contextmenu"` event)
 on objects of the network graph.
-From this event, a standard `Event` object is obtained.
+The handler receives the browser's `MouseEvent` in `event`.
 You can combine your own components or other libraries to display
 the menu.
 
@@ -164,19 +164,17 @@ Below is an example of deleting a selected node/edge using the
 This section shows how to set raw event handlers to a node when
 the event mechanism with `event-handlers` is insufficient.
 
-The handling process of mousedown/up events in `event-handlers`
-is implemented with consideration to avoid situations where only
-one of `node:pointerdown` and `node:pointerup` can occur.
-This means that `node:pointerup` occurs only for the node where
-`node:pointerdown` occurs, and conversely, `node:pointerup` occurs
-for a node where `node:pointerdown` occurs even if the mouse button
-is released on another element in the browser.  
-This behavior may not be desirable, for example, if you want to
-be able to drag a node to specify a start point to an end point.
+In `event-handlers`, every `node:pointerdown` is followed by a
+`node:pointerup`.
+The `node:pointerup` event is fired for the node where the pointer
+went down, even if the pointer is released over another node or
+anywhere else on the page.  
+This is not what you want if, for example, the user drags from one
+node to another to pick a start point and an end point, because the
+end node never receives the event.
 
-In such cases, it is possible to expose Node's visual elements
-in the following way, so please specify directly the own handler
-you want to set.
+In such cases, you can access the SVG elements of each node as
+shown below and set your own handlers on them directly.
 
 <demo-tabs :use-data="true" message="Disabled dragging of background and nodes so that mouse down/up events can be tested inside/outside the node.">
 <template v-slot:demo>

@@ -2,13 +2,15 @@
 
 `v-network-graph-lite` (`VNetworkGraphLite`) is a lighter version of
 `v-network-graph` for networks with thousands of nodes and edges.
-It draws each node and edge as a single SVG element, and a node label as
-one more, so dragging, zooming and force layouts stay smooth with that many
-objects.
+Where `v-network-graph` renders each node and edge as its own Vue component,
+the lite component draws each node and edge as a single SVG element and each
+node label as one more. This keeps dragging, zooming and force layouts
+responsive with that many objects.
 
 `app.use(VNetworkGraph)` registers it along with `v-network-graph`.
 It takes the same props except `paths` and `selected-paths`, and you can
-define its configs with `vNG.defineLiteConfigs()`.
+define its configs with `vNG.defineLiteConfigs()`
+(`import * as vNG from "v-network-graph"`).
 
 ## Differences from v-network-graph
 
@@ -41,7 +43,8 @@ layout. You can change the number of nodes up to 2000.
 
 While a force layout runs, the component draws the nodes first and updates
 the `layouts` prop up to `view.layoutsUpdateInterval` milliseconds later
-(300 by default). To get the positions as they are drawn, call `getLayouts()`.
+(300 by default). To get the positions as they are drawn, for example to save
+them while the layout is running, call `getLayouts()`.
 
 <script setup>
 import DemoLargeNetwork from '../.vitepress/components/10_lite/01/LargeNetwork.vue'
