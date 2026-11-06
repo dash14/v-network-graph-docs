@@ -304,7 +304,7 @@ importers:
         version: 0.11.2
       v-network-graph:
         specifier: ^0.10.1
-        version: 0.10.1(d3-force@3.0.0)(vue@3.5.44(typescript@5.9.3))
+        version: 0.10.2(d3-force@3.0.0)(vue@3.5.44(typescript@5.9.3))
       vite:
         specifier: ^7.3.3
         version: 7.3.7(@types/node@24.19.2)(jiti@2.6.1)(sass@1.106.1)
@@ -426,8 +426,8 @@ packages:
     resolution: {integrity: sha512-Vh5uy9Y1JBMId6J1f68TMXnZrTCvNdo9Fu2k0d1YnJngR+sM5kWTKl441c/3TFs+cG0NWOjRWgQ/iaWhbYx+7A==}
     engines: {node: '>=14'}
 
-  '@dash14/svg-pan-zoom@4.0.1':
-    resolution: {integrity: sha512-2xEURmdxr/ygYx11Y3J2u1+t6+aKet6xI2wyJH8EaJCvUTsAx/KG6WvUCez0Q7s2OfrP9cH7TA22ozHIlh0+kA==}
+  '@dash14/svg-pan-zoom@4.1.0':
+    resolution: {integrity: sha512-0ZzKDjkgcfNm1K9Kr6TjyUtzCAUzSXV+q85NpXhCqCmAbEJwJQiEOEgvRtifPX5v1HBDWtLmt4lPEag3IKuJYg==}
 
   '@docsearch/css@3.8.2':
     resolution: {integrity: sha512-y05ayQFyUmCXze79+56v/4HpycYF3uFqB78pLPrSV5ZKAlDuIAAJNhaRi8tTdRNXh05yxX/TyNnzD6LwSM89vQ==}
@@ -2693,8 +2693,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  v-network-graph@0.10.1:
-    resolution: {integrity: sha512-FDTEdpxSwXc6Q19uOdmg8m7YLE8q/DogmO6QqX6Qv+mqUTIuvncRddeex9KJy3TkP/dFrHwcfODzysxjTaDWsA==}
+  v-network-graph@0.10.2:
+    resolution: {integrity: sha512-/uTb8Je3lgYf6bKUT48TSf/mshRHcIKpQGEK/aOr1lgCrU6bA/+IyZ6NJu/RdDvhMk0jc2YfRaQmD8aQ8zrxuw==}
     peerDependencies:
       d3-force: ^3.0.0
       vue: ^3.5.13
@@ -3011,7 +3011,7 @@ snapshots:
 
   '@ctrl/tinycolor@4.2.1': {}
 
-  '@dash14/svg-pan-zoom@4.0.1': {}
+  '@dash14/svg-pan-zoom@4.1.0': {}
 
   '@docsearch/css@3.8.2': {}
 
@@ -4912,9 +4912,9 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  v-network-graph@0.10.1(d3-force@3.0.0)(vue@3.5.44(typescript@5.9.3)):
+  v-network-graph@0.10.2(d3-force@3.0.0)(vue@3.5.44(typescript@5.9.3)):
     dependencies:
-      '@dash14/svg-pan-zoom': 4.0.1
+      '@dash14/svg-pan-zoom': 4.1.0
       lodash-es: 4.18.1
       mitt: 3.0.1
       vue: 3.5.44(typescript@5.9.3)
