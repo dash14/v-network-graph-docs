@@ -19,11 +19,6 @@
 A prop with the Update column set to yes can receive updated data with
 a 2-way binding using `v-model:{prop name}`.
 
-The graph follows changes to `nodes`, `edges` and `paths` through Vue's
-reactivity. A change made in place to data that is not reactive, such as
-an object passed through `markRaw()`, does not reach the graph. To show
-it, replace the whole object.
-
 `<v-network-graph-lite>` takes the same props except `paths` and
 `selected-paths`, and its `configs` is of type `LiteUserConfigs`.
 

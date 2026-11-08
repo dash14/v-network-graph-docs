@@ -69,6 +69,16 @@ The newly added node will be placed in the center of the view area.
 Deleting a node with edges will automatically delete the associated edges as well.  
 Multiple edges can be placed between the same two nodes.
 
+These changes are tracked through Vue's reactivity. If you keep the data
+non-reactive for performance, for example with `markRaw()`, a change made
+in place is not tracked, and the graph may not show it or show only part
+of it. Assign a new object instead, for example with `nodes` held in a
+`shallowRef`:
+
+```js
+nodes.value = markRaw({ ...nodes.value, [nodeId]: node })
+```
+
 <demo-tabs :use-data="true">
 <template v-slot:demo>
   <DemoAddElements />
