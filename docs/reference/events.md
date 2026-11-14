@@ -271,3 +271,15 @@ The following is a list of events that can be specified for `event-handlers` pro
 </table>
 
 </div>
+
+::: tip
+`node:dragstart` and `node:dragend` come in pairs for each node: a node named in
+`node:dragstart` is named again in a later `node:dragend`. The selected nodes follow the dragged
+one, and a node that starts or stops following during the drag gets its own event at that moment.
+This happens when it is selected or deselected, or when another pointer presses it. A
+`node:dragend` can therefore come before the pointer is released.
+
+To tell which nodes are being dragged, add the nodes of `node:dragstart` to a set and delete
+those of `node:dragend`. A node removed during its drag is left out of `node:dragend`, so delete it
+from the set when you remove it from the nodes.
+:::
