@@ -7,7 +7,7 @@
   "engines": {
     "npm": "please_use_pnpm_instead"
   },
-  "packageManager": "pnpm@11.28.11",
+  "packageManager": "pnpm@12.18.0",
   "devEngines": {
     "runtime": {
       "name": "node",
@@ -16,7 +16,7 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "11.28.11",
+      "version": "12.18.0",
       "onFail": "download"
     }
   },
