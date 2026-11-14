@@ -1,7 +1,6 @@
 import { visualizer } from "rollup-plugin-visualizer"
-import { defineConfig } from "vitepress"
-// @ts-expect-error: unplugin-element-plus ships no types for its Vite entry
 import ElementPlus from "unplugin-element-plus/vite"
+import { defineConfig } from "vitepress"
 
 const ANALYZE_BUNDLE = false
 
@@ -142,6 +141,7 @@ export default defineConfig({
       },
     },
     plugins: [
+      // @ts-expect-error: typed against the docs' Vite 8, while VitePress runs on Vite 6
       ElementPlus({}),
       // analyze bundle sizes
       ANALYZE_BUNDLE &&
