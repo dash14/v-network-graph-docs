@@ -147,8 +147,8 @@ The following is a list of events that can be specified for `event-handlers` pro
     </tr>
     <tr>
       <td>"node:pointermove"</td>
-      <td>pointer move on node</td>
-      <td><code>{ node: string, event: PointerEvent }</code></td>
+      <td>node dragged</td>
+      <td><code>{ NODE_ID: { x: number; y: number }, ... }</code></td>
     </tr>
     <tr>
       <td>"node:dragend"</td>
@@ -263,3 +263,8 @@ The following is a list of events that can be specified for `event-handlers` pro
 </table>
 
 </div>
+
+::: tip
+The values of `node:pointermove` and `node:dragend` leave out the nodes removed during the drag, so
+`node:dragend` is `{}` when all the dragged nodes are removed.
+:::
