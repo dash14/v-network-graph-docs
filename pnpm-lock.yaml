@@ -381,8 +381,8 @@ packages:
   '@cacheable/utils@2.5.0':
     resolution: {integrity: sha512-buipgOVDkkPXNR5+xBpDw7Zk2n1EvU7qBJCNUcL7rhQ//kfpOXPAvQ511Os0vpLYJ1pZnvudNytkQt2hst3wqA==}
 
-  '@ctrl/tinycolor@4.2.2':
-    resolution: {integrity: sha512-9rQHijqB2Rq6qOEC/xHaA6aPlsKGi5kmCQW50O1asn9g63XFeD5NmBwysriistW5Xx0JPafyD/TA7yk2S3pXGQ==}
+  '@ctrl/tinycolor@4.3.0':
+    resolution: {integrity: sha512-6V0+8vw/GmH92URQ/Ki12FPhoB3nqaQUJE+5xgbFbB5ok0OXYK5jCQsQQoyR3BzCddHsCpyCFRnIcI1PSOVYkQ==}
     engines: {node: '>=14'}
 
   '@dash14/svg-pan-zoom@4.1.0':
@@ -3007,7 +3007,7 @@ snapshots:
       hashery: 1.5.1
       keyv: 5.6.0
 
-  '@ctrl/tinycolor@4.2.2': {}
+  '@ctrl/tinycolor@4.3.0': {}
 
   '@dash14/svg-pan-zoom@4.1.0': {}
 
@@ -3985,7 +3985,7 @@ snapshots:
 
   element-plus@2.14.8(vue@3.5.45(typescript@6.0.3)):
     dependencies:
-      '@ctrl/tinycolor': 4.2.2
+      '@ctrl/tinycolor': 4.3.0
       '@element-plus/icons-vue': 2.3.2(vue@3.5.45(typescript@6.0.3))
       '@floating-ui/dom': 1.8.0
       '@popperjs/core': '@sxzz/popperjs-es@2.11.8'
