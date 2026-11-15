@@ -87,7 +87,8 @@ jobs:
   # lists them. A new push revokes the approval.
   vrt:
     name: Visual regression test
-    # Pinned, as a newer image renders fonts differently from the baseline.
+    # Pinned, so a new image, which can render fonts differently, arrives in a pull request that
+    # compares its screenshots with the baseline.
     runs-on: ubuntu-26.04
     timeout-minutes: 30
     permissions:
