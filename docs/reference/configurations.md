@@ -267,6 +267,7 @@ Values that are not specified will be used as default values.
       } | undefined
       margin: number              // distance from edge stroke. default: 4
       padding: number             // distance from end node.    default: 4
+                                  // stops at the middle of the edge.
     }
     zOrder: {
       enabled: boolean  // whether the z-order control is enable or not. default: false

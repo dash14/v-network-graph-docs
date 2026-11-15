@@ -167,7 +167,7 @@ The props provided by the `edge-label` slot are as follows:
 | edgeId   | string          | edge Id                                   |
 | edge     | Edge            | user defined edge object                  |
 | config   | EdgeLabelStyle  | style config for edge labels              |
-| area     | {source: {above: 0, below: 0},<br> target: {above: 0, below: 0} } | coordinates of the area to display labels |
+| area     | {source: {above: 0, below: 0},<br> target: {above: 0, below: 0},<br> direction: {x: 0, y: 0} } | coordinates of the area to display labels, and the direction of the edge |
 | hovered  | boolean         | whether hovered or not                    |
 | selected | boolean         | whether selected or not                   |
 
@@ -198,6 +198,13 @@ Of the props provided in the `edge-label` slot, edgeId and edge are not
 required for `<v-edge-label>`. Other props should always be passed on
 to `<v-edge-label>` by using `v-bind` or by specifying them directly.
 :::
+
+`area.direction` is the unit vector from the source to the target.
+When `configs.edge.label.padding` is half the length of the edge or
+more, the area shrinks to a point at the middle of the edge, and its
+corners no longer show which way the edge runs.
+Only then does `<v-edge-label>` use `direction`: the labels aligned
+to the source and the target run from the middle toward their own ends.
 
 ## Multiple edge labels
 
