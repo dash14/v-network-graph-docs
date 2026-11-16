@@ -280,6 +280,9 @@ The following configuration items can be specified for
 
 </div>
 
+Summarized edges are drawn with these markers too. To draw them with other
+markers, set `configs.edge.summarized.marker`.
+
 ## Custom markers on edges
 
 In addition to the preset marker types, you can also specify your own markers.
