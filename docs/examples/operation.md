@@ -171,6 +171,10 @@ possible to select individual summarized edges.
 To control whether edges are summarized, set `configs.edge.summarize`
 to a boolean or to a function that returns one.
 
+A summarized line carries the markers of its edges: an end gets a marker
+if any edge puts one there, so edges in both directions give it markers
+at both ends. To draw other markers, set `configs.edge.summarized.marker`.
+
 ## Select nodes at once with a rectangle
 
 You can select all nodes inside a dragged rectangle at once.
