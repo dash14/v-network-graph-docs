@@ -18,7 +18,7 @@ allowBuilds:
   vue-demi: false
 
 overrides:
-  brace-expansion@<1.1.13: ^1.1.13
+  brace-expansion@<1.1.13: ^5.0.0
   defu@<=6.1.4: ^6.1.5
   esbuild@<=0.24.2: ^0.24.3
   flatted@<3.4.0: ^3.4.0
