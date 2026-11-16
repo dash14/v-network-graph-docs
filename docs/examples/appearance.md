@@ -280,6 +280,9 @@ The following configuration items can be specified for
 
 </div>
 
+These markers are also shown on
+[summarized edges](operation.html#summarize-edges-between-the-same-nodes).
+
 ## Custom markers on edges
 
 In addition to the preset marker types, you can also specify your own markers.
