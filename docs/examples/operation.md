@@ -174,6 +174,7 @@ to a boolean or to a function that returns one.
 A summarized line carries the markers of its edges: an end gets a marker
 if any edge puts one there, so edges in both directions give it markers
 at both ends. To draw other markers, set `configs.edge.summarized.marker`.
+For no markers, set its `source.type` and `target.type` to `"none"`.
 
 ## Select nodes at once with a rectangle
 
