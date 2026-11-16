@@ -237,14 +237,13 @@ Values that are not specified will be used as default values.
         //   animationSpeed: 50
         // }
       marker: {
-        // The source end is the source of the first edge in the order of `edges`.
+        // The source end is at the source node of the first edge in `edges`.
         source: { /* same fields as `edge.marker.source`. */ }
           // * These fields can also be specified with the function as
           //   `(args: [Record<string, Edge>, StrokeStyle]) => value`.
-          // default: the marker that the edges put at this end, taking each edge's
-          //          direction into account: the first one other than "none".
-          //          Each edge's `edge.marker` gets this line's stroke as the StrokeStyle.
-          //          A field left out of a user config keeps this default.
+          // default: the first marker other than "none" that the edges have at
+          //          this end. Fields not specified keep this default.
+          //          (`edge.marker` functions get this line's stroke.)
         target: { /* same structure as `source`. */ }
       }
     }

@@ -280,8 +280,8 @@ The following configuration items can be specified for
 
 </div>
 
-Summarized edges are drawn with these markers too. To draw them with other
-markers, set `configs.edge.summarized.marker`.
+These markers are also shown on
+[summarized edges](operation.html#summarize-edges-between-the-same-nodes).
 
 ## Custom markers on edges
 
