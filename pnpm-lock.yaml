@@ -193,14 +193,14 @@ importers:
         specifier: ^4.17.12
         version: 4.17.12
       '@types/node':
-        specifier: ^24.12.3
-        version: 24.19.2
+        specifier: ^26.0.0
+        version: 26.6.6
       '@typescript-eslint/parser':
         specifier: ^8.71.1
         version: 8.72.2(eslint@10.15.0)(typescript@6.0.3)
       '@vitejs/plugin-vue':
         specifier: ^6.0.6
-        version: 6.0.11(vite@8.3.8(@types/node@24.19.2)(sass@1.108.2))(vue@3.5.45(typescript@6.0.3))
+        version: 6.0.11(vite@8.3.8(@types/node@26.6.6)(sass@1.108.2))(vue@3.5.45(typescript@6.0.3))
       color-convert:
         specifier: ^3.1.3
         version: 3.1.3
@@ -235,8 +235,8 @@ importers:
         specifier: ^4.18.1
         version: 4.18.1
       node:
-        specifier: runtime:24.22.3
-        version: runtime:24.22.3
+        specifier: runtime:26.13.1
+        version: runtime:26.13.1
       npm-run-all2:
         specifier: ^9.0.3
         version: 9.0.4
@@ -266,10 +266,10 @@ importers:
         version: 0.10.5(d3-force@3.0.1)(vue@3.5.45(typescript@6.0.3))
       vite:
         specifier: ^8.0.0
-        version: 8.3.8(@types/node@24.19.2)(sass@1.108.2)
+        version: 8.3.8(@types/node@26.6.6)(sass@1.108.2)
       vitepress:
         specifier: ^1.6.4
-        version: 1.6.4(@algolia/client-search@5.64.0)(@types/node@24.19.2)(async-validator@4.2.5)(lightningcss@1.33.0)(postcss@8.5.33)(sass@1.108.2)(search-insights@2.17.3)(typescript@6.0.3)
+        version: 1.6.4(@algolia/client-search@5.64.0)(@types/node@26.6.6)(async-validator@4.2.5)(lightningcss@1.33.0)(postcss@8.5.33)(sass@1.108.2)(search-insights@2.17.3)(typescript@6.0.3)
       vue:
         specifier: ^3.5.34
         version: 3.5.45(typescript@6.0.3)
@@ -1359,8 +1359,8 @@ packages:
   '@types/mdurl@2.0.0':
     resolution: {integrity: sha512-RGdgjQUZba5p6QEFAVx2OGb8rQDL/cPRG7GiedRzMcJ1tYnUANBncjbSB1NRGwbvjcPeikRABz2nshyPk1bhWg==}
 
-  '@types/node@24.19.2':
-    resolution: {integrity: sha512-93d49wCWJkCyN87MxLpNN6KXPCwFw7bVUg79mGUV1OS40JGWwVCr8n61DXCSqz7CV6/VfPkb7xec7uP2M+QHWQ==}
+  '@types/node@26.6.6':
+    resolution: {integrity: sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -2195,7 +2195,7 @@ packages:
   node-addon-api@7.1.1:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
 
-  node@runtime:24.22.3:
+  node@runtime:26.13.1:
     resolution:
       type: variations
       variants:
@@ -2203,9 +2203,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-aT/ojEqF5+Fy7BMvdg5ns5JbLWRCyxyzp0tz/Pgx9wo=
+            integrity: sha256-ZeVfsT3W2dQ+JhNSbnKssb/8svPxhVmNe3bnjsI3rQM=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-aix-ppc64.tar.gz
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-aix-ppc64.tar.gz
           targets:
             - cpu: ppc64
               os: aix
@@ -2213,9 +2213,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-/24X1IdLdtJyISuQjMAg1ugV+6Wmx+qqBq3XJYQDB/0=
+            integrity: sha256-rsJRTqHOsrpSRV6exlmG9nSaBt11nl2ypy5oiWaMlzU=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-darwin-arm64.tar.gz
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-darwin-arm64.tar.gz
           targets:
             - cpu: arm64
               os: darwin
@@ -2223,9 +2223,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-l3YUrwUEyBBF5/2FWW28oOX5UblmgVFtra/tzKjER/c=
+            integrity: sha256-gruWB4okylC5yaOPI3nmvm2HFx/NQA/BTIk0s7zpbi8=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-darwin-x64.tar.gz
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-darwin-x64.tar.gz
           targets:
             - cpu: x64
               os: darwin
@@ -2233,9 +2233,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-JhryryUN/X6fJc8VHRsnE6Ct+PEKmtEWxJR/aGJ6/+g=
+            integrity: sha256-gKMws1QVOCh43xjUGvvRBuqJv7O+AIfWYI4omhTFzH0=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-linux-arm64.tar.gz
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-arm64.tar.gz
           targets:
             - cpu: arm64
               os: linux
@@ -2243,9 +2243,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-uksmreH3s/W6Z1aFaBXeWONTdGAE5+RsyDgkOmy/Mpk=
+            integrity: sha256-+Vi7pelENE1N2HMF67q6Vc21vlghGiT09qEqaua9Fu4=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-linux-ppc64le.tar.gz
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-ppc64le.tar.gz
           targets:
             - cpu: ppc64le
               os: linux
@@ -2253,9 +2253,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-2PhDl8FHjA7QwbKTQ2Ju0PXxoJhd8MWXXDDwwDg2Yx8=
+            integrity: sha256-8rrre+iCFpfnA4RGvY0GrxZMDo3LxAQ5r+hB3Gjm2N4=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-linux-s390x.tar.gz
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-s390x.tar.gz
           targets:
             - cpu: s390x
               os: linux
@@ -2263,9 +2263,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-VJm2Y/Yscgk3FdqY9K6m+DQnrYurnPnHXwkk4ORWzhQ=
+            integrity: sha256-uqI7bs2FVYBL96TocC8WNyA5FqENKG0+4W/Oi/Vje4M=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-linux-x64-musl.tar.gz
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-x64-musl.tar.gz
           targets:
             - cpu: x64
               os: linux
@@ -2274,9 +2274,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-Bh7D4wYhFXBbVrUfqcwzCrUNNLaWk4fU5LGlDGgJrMI=
+            integrity: sha256-UYZ03itiFyil5EhvX7O30pALs8xKqXlp7apGPbmfl3g=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-linux-x64.tar.gz
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-x64.tar.gz
           targets:
             - cpu: x64
               os: linux
@@ -2284,10 +2284,10 @@ packages:
             archive: zip
             bin:
               node: node.exe
-            integrity: sha256-s8x0opWznU8nMnHpb1jAbdKzV1fKEqvsZMfQWYtDTxQ=
-            prefix: node-v24.22.3-win-arm64
+            integrity: sha256-GB6+QxuQeHETqeT8gNOM6G03iIo1OgOG3kTShy5Iy5c=
+            prefix: node-v26.13.1-win-arm64
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-win-arm64.zip
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-win-arm64.zip
           targets:
             - cpu: arm64
               os: win32
@@ -2295,10 +2295,10 @@ packages:
             archive: zip
             bin:
               node: node.exe
-            integrity: sha256-5hKvmfYmq0FeoiWva85clx/rRIy1yuJQuxw/pQxffZ8=
-            prefix: node-v24.22.3-win-x64
+            integrity: sha256-4u3adb+wiWVHBc9loTtYkzv9X1cUjo69qRb1iiR08fc=
+            prefix: node-v26.13.1-win-x64
             type: binary
-            url: https://nodejs.org/download/release/v24.22.3/node-v24.22.3-win-x64.zip
+            url: https://nodejs.org/download/release/v26.13.1/node-v26.13.1-win-x64.zip
           targets:
             - cpu: x64
               os: win32
@@ -2306,9 +2306,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-JIyWqE9sgzhka5/XO/ElEkZ4+PsI218jAj9GIFXg7tw=
+            integrity: sha256-QmhOfxgw756q3QQGcsukG7r/lUnYNGAGmfku4e5bH7E=
             type: binary
-            url: https://unofficial-builds.nodejs.org/download/release/v24.22.3/node-v24.22.3-linux-arm64-musl.tar.gz
+            url: https://unofficial-builds.nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-arm64-musl.tar.gz
           targets:
             - cpu: arm64
               os: linux
@@ -2317,14 +2317,14 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-LbT4pAq+X1tdEZlkIj/tycTHxefGMpAa6GCvUix4RLI=
+            integrity: sha256-BL+e0+MuoTnJr1L23QaHn/b4iAVVoKoRg+8tFWwOAtM=
             type: binary
-            url: https://unofficial-builds.nodejs.org/download/release/v24.22.3/node-v24.22.3-linux-x64-musl.tar.gz
+            url: https://unofficial-builds.nodejs.org/download/release/v26.13.1/node-v26.13.1-linux-x64-musl.tar.gz
           targets:
             - cpu: x64
               os: linux
               libc: musl
-    version: 24.22.3
+    version: 26.13.1
     hasBin: true
 
   normalize-wheel-es@1.2.0:
@@ -2657,8 +2657,8 @@ packages:
       unplugin:
         optional: true
 
-  undici-types@7.24.6:
-    resolution: {integrity: sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==}
+  undici-types@8.9.0:
+    resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
 
   unist-util-is@6.0.1:
     resolution: {integrity: sha512-LsiILbtBETkDz8I9p1dQ0uyRUWuaQzd/cuEeS1hoRSyW5E5XGmTzlwY1OrNzzakGowI9Dr/I8HVaw4hTtnxy8g==}
@@ -3672,9 +3672,9 @@ snapshots:
 
   '@types/mdurl@2.0.0': {}
 
-  '@types/node@24.19.2':
+  '@types/node@26.6.6':
     dependencies:
-      undici-types: 7.24.6
+      undici-types: 8.9.0
 
   '@types/unist@3.0.3': {}
 
@@ -3734,15 +3734,15 @@ snapshots:
 
   '@ungap/structured-clone@1.4.0': {}
 
-  '@vitejs/plugin-vue@5.2.4(vite@6.4.6(@types/node@24.19.2)(lightningcss@1.33.0)(sass@1.108.2))(vue@3.5.45(typescript@6.0.3))':
+  '@vitejs/plugin-vue@5.2.4(vite@6.4.6(@types/node@26.6.6)(lightningcss@1.33.0)(sass@1.108.2))(vue@3.5.45(typescript@6.0.3))':
     dependencies:
-      vite: 6.4.6(@types/node@24.19.2)(lightningcss@1.33.0)(sass@1.108.2)
+      vite: 6.4.6(@types/node@26.6.6)(lightningcss@1.33.0)(sass@1.108.2)
       vue: 3.5.45(typescript@6.0.3)
 
-  '@vitejs/plugin-vue@6.0.11(vite@8.3.8(@types/node@24.19.2)(sass@1.108.2))(vue@3.5.45(typescript@6.0.3))':
+  '@vitejs/plugin-vue@6.0.11(vite@8.3.8(@types/node@26.6.6)(sass@1.108.2))(vue@3.5.45(typescript@6.0.3))':
     dependencies:
       '@rolldown/pluginutils': 1.1.1
-      vite: 8.3.8(@types/node@24.19.2)(sass@1.108.2)
+      vite: 8.3.8(@types/node@26.6.6)(sass@1.108.2)
       vue: 3.5.45(typescript@6.0.3)
 
   '@volar/language-core@2.4.30':
@@ -4498,7 +4498,7 @@ snapshots:
   node-addon-api@7.1.1:
     optional: true
 
-  node@runtime:24.22.3: {}
+  node@runtime:26.13.1: {}
 
   normalize-wheel-es@1.2.0: {}
 
@@ -4852,7 +4852,7 @@ snapshots:
       rolldown: 1.2.19
       unplugin: 2.3.11
 
-  undici-types@7.24.6: {}
+  undici-types@8.9.0: {}
 
   unist-util-is@6.0.1:
     dependencies:
@@ -4929,7 +4929,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.4
 
-  vite@6.4.6(@types/node@24.19.2)(lightningcss@1.33.0)(sass@1.108.2):
+  vite@6.4.6(@types/node@26.6.6)(lightningcss@1.33.0)(sass@1.108.2):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.7)
@@ -4938,12 +4938,12 @@ snapshots:
       rollup: 4.68.3
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 24.19.2
+      '@types/node': 26.6.6
       fsevents: 2.3.3
       lightningcss: 1.33.0
       sass: 1.108.2
 
-  vite@8.3.8(@types/node@24.19.2)(sass@1.108.2):
+  vite@8.3.8(@types/node@26.6.6)(sass@1.108.2):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -4951,11 +4951,11 @@ snapshots:
       rolldown: 1.2.19
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 24.19.2
+      '@types/node': 26.6.6
       fsevents: 2.3.3
       sass: 1.108.2
 
-  vitepress@1.6.4(@algolia/client-search@5.64.0)(@types/node@24.19.2)(async-validator@4.2.5)(lightningcss@1.33.0)(postcss@8.5.33)(sass@1.108.2)(search-insights@2.17.3)(typescript@6.0.3):
+  vitepress@1.6.4(@algolia/client-search@5.64.0)(@types/node@26.6.6)(async-validator@4.2.5)(lightningcss@1.33.0)(postcss@8.5.33)(sass@1.108.2)(search-insights@2.17.3)(typescript@6.0.3):
     dependencies:
       '@docsearch/css': 3.8.2
       '@docsearch/js': 3.8.2(@algolia/client-search@5.64.0)(search-insights@2.17.3)
@@ -4964,7 +4964,7 @@ snapshots:
       '@shikijs/transformers': 2.5.0
       '@shikijs/types': 2.5.0
       '@types/markdown-it': 14.2.0
-      '@vitejs/plugin-vue': 5.2.4(vite@6.4.6(@types/node@24.19.2)(lightningcss@1.33.0)(sass@1.108.2))(vue@3.5.45(typescript@6.0.3))
+      '@vitejs/plugin-vue': 5.2.4(vite@6.4.6(@types/node@26.6.6)(lightningcss@1.33.0)(sass@1.108.2))(vue@3.5.45(typescript@6.0.3))
       '@vue/devtools-api': 7.7.10
       '@vue/shared': 3.5.45
       '@vueuse/core': 12.8.2(typescript@6.0.3)
@@ -4973,7 +4973,7 @@ snapshots:
       mark.js: 8.11.1
       minisearch: 7.2.0
       shiki: 2.5.0
-      vite: 6.4.6(@types/node@24.19.2)(lightningcss@1.33.0)(sass@1.108.2)
+      vite: 6.4.6(@types/node@26.6.6)(lightningcss@1.33.0)(sass@1.108.2)
       vue: 3.5.45(typescript@6.0.3)
     optionalDependencies:
       postcss: 8.5.33
