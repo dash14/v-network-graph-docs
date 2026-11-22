@@ -236,6 +236,16 @@ Values that are not specified will be used as default values.
         //   animate: false,
         //   animationSpeed: 50
         // }
+      marker: {
+        // The source end is at the source node of the first edge in `edges`.
+        source: { /* same fields as `edge.marker.source`. */ }
+          // * These fields can also be specified with the function as
+          //   `(args: [Record<string, Edge>, StrokeStyle]) => value`.
+          // default: the first marker other than "none" that the edges have at
+          //          this end. Fields not specified keep this default.
+          //          (`edge.marker` functions get this line's stroke.)
+        target: { /* same structure as `source`. */ }
+      }
     }
     selfLoop: {
       // * These fields can also be specified with the function as `(edge: Edge) => value`.
